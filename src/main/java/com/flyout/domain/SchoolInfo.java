@@ -6,6 +6,8 @@ import javax.persistence.*;
  * Created by LiMeiyuan on 2016/9/26 15:07.
  * description:
  */
+@Entity
+@Table(name = "school_info_si")
 public class SchoolInfo {
     @Id
     @GeneratedValue
