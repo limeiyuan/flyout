@@ -2,6 +2,9 @@ package com.flyout.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.flyout.common.enums.EnableEnum;
+import com.flyout.common.enums.SexEnum;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -14,6 +17,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "account_ac")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type_ac", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue(value = "student")
 public class Account {
     @Id
     @GeneratedValue
@@ -35,14 +41,16 @@ public class Account {
     @Column(name = "username_ac")
     private String username;
 
-    @Column(name = "userpwd_ac")
-    private String userpwd;
-
     @Column(name = "screenname_ac")
     private String screenname;
 
     @Column(name = "sex_ac")
-    private Boolean sex;
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.SexEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private SexEnum sex;
 
     @Column(name = "phonearea_ac")
     private String phonearea;
@@ -89,11 +97,13 @@ public class Account {
     @OneToMany(mappedBy = "account")
     private List<BankCard> bankCards;
 
-    @Column(name = "type_ac")
-    private String type;//用户类型：学生，顾问
-
     @Column(name = "isbuddy_ac")
-    private Boolean isbuddy;//是否是buddy
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum isbuddy;//是否是buddy
 
     @Column(name = "lifeold_ac")
     private Integer lifeOld;//如果是buddy，需要填写海外生活的时间，单位年
@@ -114,7 +124,12 @@ public class Account {
     private String token;//融云token
 
     @Column(name = "enable_ac")
-    private Boolean enable;
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;
 
     @Column(name = "invitation_ac")
     private String invitationCode;
@@ -173,14 +188,6 @@ public class Account {
         this.username = username;
     }
 
-    public String getUserpwd() {
-        return userpwd;
-    }
-
-    public void setUserpwd(String userpwd) {
-        this.userpwd = userpwd;
-    }
-
     public String getScreenname() {
         return screenname;
     }
@@ -189,12 +196,12 @@ public class Account {
         this.screenname = screenname;
     }
 
-    public Boolean getSex() {
-        return sex;
+    public EnableEnum getIsbuddy() {
+        return isbuddy;
     }
 
-    public void setSex(Boolean sex) {
-        this.sex = sex;
+    public void setIsbuddy(EnableEnum isbuddy) {
+        this.isbuddy = isbuddy;
     }
 
     public String getPhonearea() {
@@ -293,20 +300,12 @@ public class Account {
         this.bankCards = bankCards;
     }
 
-    public String getType() {
-        return type;
+    public SexEnum getSex() {
+        return sex;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Boolean getIsbuddy() {
-        return isbuddy;
-    }
-
-    public void setIsbuddy(Boolean isbuddy) {
-        this.isbuddy = isbuddy;
+    public void setSex(SexEnum sex) {
+        this.sex = sex;
     }
 
     public Integer getLifeOld() {
@@ -357,11 +356,11 @@ public class Account {
         this.token = token;
     }
 
-    public Boolean getEnable() {
+    public EnableEnum getEnable() {
         return enable;
     }
 
-    public void setEnable(Boolean enable) {
+    public void setEnable(EnableEnum enable) {
         this.enable = enable;
     }
 

@@ -1,6 +1,7 @@
 package com.flyout.dao;
 
 import com.flyout.common.dao.BaseHibernateDao;
+import com.flyout.common.enums.EnableEnum;
 import com.flyout.domain.SchoolInfo;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
@@ -22,7 +23,7 @@ public class SchoolDaoImpl extends BaseHibernateDao<SchoolInfo, Long> {
             Criterion eNameCri = Restrictions.like("ownname", name);
             dc.add(Restrictions.or(nameCri, eNameCri));
         }
-        dc.add(Restrictions.eq("enable", 1));
+        dc.add(Restrictions.eq("enable", EnableEnum.enable));
         return query(dc);
     }
 }

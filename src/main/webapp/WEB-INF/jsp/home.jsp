@@ -16,5 +16,6 @@
 <div>
     123
 </div>
+<%@include file="footer.jsp" %>
 </body>
 </html>

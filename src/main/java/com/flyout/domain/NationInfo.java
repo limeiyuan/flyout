@@ -1,5 +1,8 @@
 package com.flyout.domain;
 
+import com.flyout.common.enums.EnableEnum;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -23,7 +26,12 @@ public class NationInfo implements Serializable{
     private Photo photo;
 
     @Column(name = "enable_ni")
-    private Boolean enable;
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;
 
     public Long getId() {
         return id;
@@ -49,11 +57,11 @@ public class NationInfo implements Serializable{
         this.photo = photo;
     }
 
-    public Boolean getEnable() {
+    public EnableEnum getEnable() {
         return enable;
     }
 
-    public void setEnable(Boolean enable) {
+    public void setEnable(EnableEnum enable) {
         this.enable = enable;
     }
 }

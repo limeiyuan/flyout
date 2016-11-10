@@ -1,5 +1,8 @@
 package com.flyout.domain;
 
+import com.flyout.common.enums.EnableEnum;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 /**
@@ -52,7 +55,12 @@ public class SchoolInfo {
     private String flyDic;//飞出国宝典
 
     @Column(name = "enable_si")
-    private Boolean enable;//有效
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;//有效
 
     public Long getId() {
         return id;
@@ -158,11 +166,11 @@ public class SchoolInfo {
         this.flyDic = flyDic;
     }
 
-    public Boolean getEnable() {
+    public EnableEnum getEnable() {
         return enable;
     }
 
-    public void setEnable(Boolean enable) {
+    public void setEnable(EnableEnum enable) {
         this.enable = enable;
     }
 }
