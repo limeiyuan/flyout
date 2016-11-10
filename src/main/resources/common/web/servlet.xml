@@ -43,27 +43,17 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-<!-- 
-    <mvc:view-controller path="/" view-name="redirect:/index.htm"/>
- -->
- 
- <!--   <mvc:interceptors>
+    <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/mobile/**"/>
-            <bean class="cn.flyout.console.auth.web.AuthenticationInterceptor">
-                <property name="excludeUrls">
+            <bean class="com.flyout.common.auth.AuthenticationInterceptor">
+                <property name="forbidUrls">
                     <list>
-                        <value>/login/doLogin.htm</value>
-                        <value>/login/index.htm</value>
-                        <value>/login/doLogout.htm</value>
-                        <value>/index.htm</value>
-                        <value>/base/photo/get.htm</value>
                     </list>
                 </property>
             </bean>
         </mvc:interceptor>
-    </mvc:interceptors>-->
+    </mvc:interceptors>
 
     <!--文件上传-->
     <bean id="multipartResolver"

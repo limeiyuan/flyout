@@ -20,6 +20,9 @@ public class Account {
     @Column(name = "id_ac")
     private Long id;
 
+    @Column(name = "userpwd_ac")
+    private String password;
+
     @Column(name = "opentype_ac")
     private int opentype; // 1:weibo 2:weixin 3:qq
 
@@ -128,6 +131,14 @@ public class Account {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getOpentype() {
