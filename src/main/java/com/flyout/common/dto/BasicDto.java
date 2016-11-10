@@ -5,9 +5,9 @@ package com.flyout.common.dto;
  * description:
  */
 public class BasicDto {
-    private String message;
-    private Boolean result = false;
-    private Object data;
+    protected String message;
+    protected Boolean result = false;
+    protected Object data;
 
     public String getMessage() {
         return message;

@@ -9,10 +9,10 @@ public class PaginationInfo {
     private int count;
 
     /** 每页行数 **/
-    private int pageRows = 30;
+    private int pageSizes = 30;
 
     /** 当前页数 **/
-    private int pageNum;
+    private int pageNo;
 
     /** 总页数 **/
     private int pageCount;
@@ -33,19 +33,19 @@ public class PaginationInfo {
         this.count = count;
     }
 
-    public int getPageRows() {
-        return pageRows;
+    public int getpageSizes() {
+        return pageSizes;
     }
 
-    public void setPageRows(int pageRows) {
-        this.pageRows = pageRows;
+    public void setpageSizes(int pageSizes) {
+        this.pageSizes = pageSizes;
     }
 
-    public int getPageNum() {
-        return pageNum;
+    public int getpageNo() {
+        return pageNo;
     }
 
-    public void setPageNum(int pageNum) {
-        this.pageNum = pageNum;
+    public void setpageNo(int pageNo) {
+        this.pageNo = pageNo;
     }
 }

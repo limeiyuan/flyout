@@ -160,18 +160,18 @@ public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T
             int count = Integer.parseInt(c.setProjection(Projections.countDistinct("id")).uniqueResult().toString());
             c.setProjection(null);
 
-            int pageCount = count / pageInfo.getPageRows();
-            if (count % pageInfo.getPageRows() > 0) {
+            int pageCount = count / pageInfo.getpageSizes();
+            if (count % pageInfo.getpageSizes() > 0) {
                 pageCount++;
             }
 
-            int pageNum = pageInfo.getPageNum();
-            int pageRow = pageInfo.getPageRows();
-            if (pageNum <= 0) pageNum = 1;
-            if (pageNum > pageCount) pageNum = pageCount;
+            int pageNo = pageInfo.getpageNo();
+            int pageSize = pageInfo.getpageSizes();
+            if (pageNo <= 0) pageNo = 1;
+            if (pageNo > pageCount) pageNo = pageCount;
 
-            c.setFirstResult((pageNum - 1) * pageRow)
-                    .setMaxResults(pageRow);
+            c.setFirstResult((pageNo - 1) * pageSize)
+                    .setMaxResults(pageSize);
 
             PaginationUtil.setPaginationToRequest(count, pageCount);
         }
