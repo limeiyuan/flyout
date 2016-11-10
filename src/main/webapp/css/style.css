@@ -1,0 +1,138 @@
+/*这里面写各个模块的样式*/
+.topHead{ height: 35px; width: 100%; background: #f5f5f5; border-bottom: 1px solid #eee;}
+.topHeadContent{
+        width: 1200px; margin:0 auto;line-height: 30px;font-size: 12px;font-family: 微软雅黑;
+}
+.topHeadContentLeft a,.topHeadContentRightUl li a{ color: #666;}
+.topHeadContentRightUl .hiName{color:#ff3638;margin:0 10px;}
+.registerMargin{ margin: 0 20px 0 8px}
+.topHeadContentRightUl li{ float: left; width: 100px; text-align: center}
+.topHeadContentRightUl li.iconImage{ width: 45px;}
+.topHeadContentRightUl li a:hover{}
+.topHeadContentRightUl li.shuxian{ width: 28px; text-align: center;color: #999;}
+.topHeadContentRightUl li.goalCol::before{content: url("../image/col.png");margin-right: 8px;}
+.topHeadContentRightUl .moreServ::before{ content: url("../image/more.png");margin-right: 8px; }
+.topHeadContentRightUl .moreServ::after{ content: url("../image/arrow_down.png");margin-left: 8px; }
+.topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("../image/weibo.png") no-repeat left center}
+.topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("../image/weixin.png") no-repeat right center}
+
+/*logoSearch开始*/
+.logoSearch{ width: 1200px; height: 100px; margin: 0 auto; overflow: hidden ;}
+.logoSearch .logo{ background:url("../image/logo.png")no-repeat center center;width: 160px;height: 100px;}
+.logoSearch .search{ width: 500px;height: 32px;margin: 0 auto;margin-top: 26px;}
+.logoSearch .freeTel{width: 180px;height: 100px;}
+.logoSearch .freeTel .telIcon{ width: 30px;height: 35px;margin-top: 35px;}
+.logoSearch .freeTel>div{ margin-top: 32px;}
+.logoSearch .freeTel .telNum{ font-size: 18px;font-weight: bold;color: #fb5454;padding: 0;margin: 0}
+.logoSearch .freeTel .telTime{ font-size: 12px;color: #666;padding: 0;margin: 0}
+
+.search .searchBox{overflow: hidden;width: 478px;}
+.search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("../image/select.png") no-repeat 65px center;background-size: 10%;}
+
+.search .searchInput{ border: 1px solid #0099ec;}
+.search input{ width: 300px; border:none; padding: 0 0 0 22px;padding-left: 16px;}
+.search a{ width: 80px; height: 35px; background:#0099ec; line-height: 35px; font-size: 16px; color: #fff;text-align: center }
+
+/*logoSearch结束*/
+/*nav开始*/
+.nav{ height: 50px; width: 100%; line-height: 50px }
+.navContent{ width: 1200px; margin: auto;}
+
+.navContent ul li{ display: inline;}
+.navContent ul li a{
+        float: left;
+        width: 100px; font-size: 14px; text-align: center ; color: #333;
+}
+.navContent ul li a:hover{background: #0099ec;color: #fff;}
+.active{ }
+/*nav结束*/
+/*banner开始*/
+.banner{width: 100%;height: 400px;position: relative}
+.banner .bannerImage img{`width: 100%;height: 100%;}
+.banner .estimate{width: 300px;height: 400px;position: absolute;top: 1px;right: 284px;background: #fff;}
+.estimate div{height: 40px;}
+.estimate div span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;}
+.estimate div .active{color: #0099ec;background: #fff;}
+.estimate ul{}
+.estimate ul li{width: 240px;height: 30px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 45px;}
+.estimate ul .focusCur{border-color: #0099ec;}
+.estimate ul .fastEst{background: #0099ec;color: #fff;text-align: center;line-height: 30px;margin: 0 auto;}
+.estimate ul li input{width: 200px;border: none;outline: none;text-indent: 11px;line-height: 30px;border-radius: 45px;}
+.estimate ul li span{font-size: 18px;color: #999;line-height: 12px;}
+.estimate ul li img{position: relative;top: -2px;}
+.estimate p{color: #666;text-align: center;line-height: 40px;}
+.estimate p span{color: #fb5454;}
+/*banner结束*/
+/*products 开始*/
+.productsContent{ width: 1200px; margin: auto;height: 500px;margin-top: 20px;}
+.productsInfo{height: 34px;overflow: hidden;}
+.productsInfo::before{content:'|';background: #fb5454;width: 6px;height: 30px;float: left;color: #fb5454;margin-right: 5px;}
+.productsInfo h3,.teacher h3,.community h3{font-size: 16px;color: #333;font-weight: bold;font-family: 微软雅黑;}
+.productsInfo .abroad p,.abroad p,.community p,.teacher p{font-size: 12px;color: #666;font-family: Arial}
+.moreAbroad{line-height: 30px; color: #666;}
+.productsList{overflow: hidden;margin-top: 5px;background: #ccc;}
+.productsList ul{float: right;}
+/*products结束*/
+/*consultant 开始*/
+.consultant{ width: 1200px; margin: auto;margin-top: 20px;}
+.teacher{height: 34px;overflow: hidden;}
+.teacher::before{content:'|';background: #0099ec;width: 6px;height: 30px;float: left;color: #0099ec;margin-right: 5px;}
+.repuTeacher{}
+.repuTeacher ul{width: 100%;overflow: hidden;}
+.repuTeacher ul li{width: 180px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 15px;border-radius: 11px;margin-top: 60px;}
+.repuTeacher ul li img{margin: 14px auto;}
+.repuTeacher ul li p{font-size: 18px;font-weight: bold;color: #0099ec;margin-bottom: 8px;}
+.repuTeacher ul li span{color: #999;}
+.repuTeacher ul li.arrow{width: 1%;line-height: 220px;border: none;}
+.repuTeacher ul li.teacherCur{width: 220px;height: 300px;margin-top: 12px;}
+.repuTeacher .teacherCur .teacherInfo p{color:#fb5454;width: 80%;margin: 14px auto; }
+.repuTeacher .teacherCur .teacherInfo div{margin:0 auto;width: 80px;height: 24px;line-height:24px;color: #999;border: 1px solid #999;border-radius: 12px;text-align: center; }
+/*consultant结束*/
+/*questionsAnswers开始*/
+.queAns{width: 1200px; margin: auto;margin-top: 20px;font-family: 微软雅黑;}
+.communityBox{width: 1200px;height: 30px;}
+.communityBox .shuxian{font-size: 18px;padding: 0;color: #999;}
+.community::before{content:'|';background: #fb5454;width: 6px;height: 30px;float: left;color: #fb5454;margin-right: 5px;}
+.community{ width: 166px;}
+.communityBox ul li{ float: left;line-height: 30px;padding: 0 16px;font-size: 14px;}
+.communityBox ul li img{vertical-align: middle;}
+.communityBox ul li span{color:#0099ec;}
+.queAnsExam{width: 1200px;height: 180px;border: 1px solid #999;margin-top: 12px;}
+.examples{width: 960px;height: 180px;float: left;}
+.queAnsExam .goQues{width: 239px;height: 160px;float: left;border-left: 1px solid #999;margin-top: 10px;}
+ .examples li{font-size: 14px;color: #666;margin: 20px 24px;}
+.examples li p{display: inline-block;width: 850px;white-space:nowrap;overflow: hidden;text-overflow:ellipsis;}
+.examples li span{float: right;font-size: 12px;color: #666;}
+.examples .quePre, .examples .quePre span{color: #999;}
+.goQues div{width: 120px;height: 42px;background: #0099ec;margin: 56px auto 13px;line-height: 42px;text-align: center;color: #fff;border-radius: 30px;}
+.goQues p{font-size: 14px;color: #666;text-align: center;}
+/*questionsAnswers结束*/
+/*studyAbroad开始*/
+.studyAbroad{width: 1200px;margin: 20px auto;}
+.studyTab{width: 1200px;height: 320px;}
+.studyTab .tabBox{width: 820px;height: 320px;}
+.studyTab .vidoBox{width: 320px;height: 320px;}
+.studyTab .vidoBox h3{font-size: 16px;color: #333;font-weight: bold;font-family: 微软雅黑;padding: 0 5px;margin: 10px auto;}
+.studyTab .vidoBox h3 a{float: right;color: #999;}
+.studyTab .vidoBox div{ width: 100%;height: 100%;border-top: 1px solid #999;}
+.studyTab .vidoBox .vidoContent{width: 80%;height: 80%;background: red;margin: 5% auto;}
+.tabbedPanels{ overflow:hidden; margin:10px auto;}
+.tabbedPanels .examples li p{width:520px;}
+.tabbedPanels ul{ list-style:none; margin:0; padding:0; overflow:hidden; margin-left:15px;    font-family: 微软雅黑; border-bottom: 1px solid #999;width: 820px;}
+.tabbedPanels li.tab{ float:left; width:120px;font-size:16px;text-align:center; cursor:pointer;color: #666;  padding-bottom: 10px; }
+.tabbedPanels div.contentGroup{ clear:both; overflow:hidden;}
+.tabbedPanels div.content{ width:100%; display:none; height:400px;}
+
+.tabbedPanels li.selectedTab{font-weight:bold; color: #0099ec;border-bottom: 1px solid #0099ec; }
+.tabbedPanels div.selectedContent{ display:block;}
+
+/*studyAbroad结束*/
+/*caseBox开始*/
+.caseBox{width: 1200px;margin: 20px auto;height: 500px;}
+.caseBox .repuTeacher ul .arrow{width: 1200px;margin: 20px auto;height: 500px; width: 1%; line-height: 220px; border: none;}
+.caseBox .repuTeacher ul li{`width: 180px;height:220px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
+.caseBox .repuTeacher ul .caseA{height:78px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
+.caseBox .repuTeacher ul .caseB{height:108px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
+.caseBox .repuTeacher ul .caseC{height:128px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
+.caseBox .repuTeacher ul .caseD{height:164px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
+/*caseBox结束*/

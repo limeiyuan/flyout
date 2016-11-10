@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>飞出国</title>
+    <link rel="stylesheet" href="css/global.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+</head>
+<script>
+    $(function(){
+      /*  var $window = $(window),window_width = $window.width();
+        $('#js_banner, #js_banner_img li').width(window_width);*/
+        new $.Tab({
+            target: $('#js_banner_img li'),
+            effect: 'slide3d',
+            animateTime: 1000,
+            stay: 3500,
+            autoPlay: true,
+            merge: true,
+            prevBtn: $('#js_banner_pre'),
+            nextBtn: $('#js_banner_next')
+        });
+    });
+</script>
+
+<body>
+<div class="topHead">
+    <div class="topHeadContent">
+        <div class="topHeadContentLeft fl">
+            <a href="#">咨询热线：40012345678</a>
+        </div>
+        <div class="topHeadContentRight fr">
+            <ul class="topHeadContentRightUl">
+                <li><a href="#">Hi,</a><a href="#" class="hiName">Deany</a><a href="#">退出</a></li>
+                <li class="shuxian">|</li>
+                <li class="goalCol"><a href="#">目标院校</a></li>
+                <li class="shuxian">|</li>
+                <li class="moreServ">更多服务</li>
+                <li class="shuxian">|</li>
+                <li class="iconImage"><a href="#" class="weibo fl"></a><a href="#" class="weixin fr"></a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="logoSearch">
+    <div class="logo fl"></div>
+    <div class="freeTel fr">
+        <img class="telIcon fl" src="image/tel.png" alt="">
+        <div class="fr">
+            <p class="telNum">400-12345678</p>
+            <p class="telTime">免费咨询电话：9:00-18:00</p>
+
+        </div>
+    </div>
+    <div class="search">
+        <div class=searchBox>
+            <div class="searchInput fl"><div class="seatchSchool">搜学校</div><input type="text" placeholder="澳大利亚留学"/></div><a href="#" class="fr">搜索</a>
+        </div>
+
+    </div>
+</div>
+<div class="nav">
+    <div class="navContent">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">留学优选</a></li>
+            <li><a href="#">推荐商家</a></li>
+            <li><a href="#">海外院校</a></li>
+            <li><a href="#">特色游学</a></li>
+            <li><a href="#">海外实习</a></li>
+            <li><a href="#">海外生活</a></li>
+            <li><a href="#">出国社区</a></li>
+            <li><a href="#">在线语言私塾</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner">
+    <div id="js_banner" class="fx_banner">
+        <ul id="js_banner_img" class="fx_banner_img clear">
+            <li>
+                <div class="fx_banner_inner fx_grid_c1">
+                    <div class="child child0" data-z="1"><img src="image/banner.jpg" alt="misfit shine"></div>
+                </div>
+            </li>
+            <li>
+                <div class="fx_banner_inner fx_grid_c1">
+                    <div class="child child0" data-z="1"><img src="image/banner.jpg" alt="latin"></div>
+                </div>
+            </li>
+            <li>
+                <div class="fx_banner_inner fx_grid_c1">
+                    <div class="child child0" data-z="1"><img src="image/banner.jpg" alt="sony"></div>
+                </div>
+            </li>
+            <li>
+                <div class="fx_banner_inner fx_grid_c1">
+                    <div class="child child0" data-z="1"><img src="image/banner.jpg" alt="洁灵卡"></div>
+                </div>
+            </li>
+            <li>
+                <div class="fx_banner_inner fx_grid_c1">
+                    <div class="child child0" data-z="1"><img src="image/banner.jpg" alt="海尔天樽"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="estimate">
+        <div>
+            <span class="active">留学评估</span><span>移民评估</span>
+        </div>
+        <ul>
+            <li class="focusCur">
+                <input type="text" placeholder="意向留学国家">
+                <span>|</span>
+                <img src="image/select.png" alt="">
+            </li>
+            <li>
+                <input type="text" placeholder="意向留学国家">
+                <span>|</span>
+                <img src="image/select.png" alt="">
+            </li>
+            <li>
+                <input type="text" placeholder="意向留学国家">
+                <span>|</span>
+                <img src="image/select.png" alt="">
+            </li>
+            <li>
+                <input type="text" placeholder="意向留学国家">
+                <span>|</span>
+                <img src="image/select.png" alt="">
+            </li>
+
+            <li class="fastEst">快速评估</li>
+        </ul>
+        <p>已有<span>2355</span>人参与免费在线评估</p>
+    </div>
+</div>
+<div class="productsContent">
+    <div class="productsInfo">
+        <div class="abroad fl">
+            <h3>热门留学产品</h3>
+            <p>Recommend abroad</p>
+        </div>
+        <div class="moreAbroad fr">查看更多</div>
+    </div>
+    <div class="productsList">
+        <img src="image/ad_left.jpg" alt="">
+        <ul>
+            <li>
+                <img src="image/" alt="">
+                <p></p>
+                <span></span>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+</div>
+<div class="consultant">
+    <div class="teacher">
+        <h3>明星顾问</h3>
+        <p>Teacher Consultant</p>
+    </div>
+    <div class="repuTeacher">
+        <ul>
+            <li class="arrow">
+                <img src="image/arrow_left.png" alt="">
+            </li>
+            <li>
+                <img src="image/avatar1.png" alt="">
+                <p>Stevev</p>
+                <span>美国顾问专家</span>
+            </li>
+            <li>
+                <img src="image/avatar2.png" alt="">
+                <p>陈老师</p>
+                <span>十五年从业经验</span>
+            </li>
+            <li class="teacherCur">
+                <img src="image/avatar3.png" alt="">
+                <p>史老师</p>
+                <span>鹏润留学移民首席顾问咨询师</span>
+                <div class="teacherInfo">
+                    <p>/海外留学生活背景，精通澳洲留学程序/</p>
+                    <div>鹏润留学</div>
+                </div>
+            </li>
+            <li>
+                <img src="image/avatar4.png" alt="">
+                <p>Lillian Liu</p>
+                <span>鹏润留学移民顾问咨询师</span>
+            </li>
+            <li>
+                <img src="image/avatar5.png" alt="">
+                <p>赵老师</p>
+                <span>山西省教育自费留学服务中心</span>
+            </li>
+            <li class="arrow">
+                <img src="image/arrow_right.png" alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="queAns">
+   <div class="communityBox">
+       <div class="community fl">
+           <h3>问答社区</h3>
+           <p>Q&A community</p>
+       </div>
+       <ul>
+           <li class="shuxian">|</li>
+           <li><img src="image/placard.png" alt=""></li>
+           <li>Jerry正则咨询<span>陈老师</span> </li>
+           <li>小鱼米正在咨询<span>LillianLIU</span>老师</li>
+           <li>Jerry正则咨询<span>陈老师</span></li>
+           <li>Jerry正则咨询<span>陈老师</span></li>
+           <li class="shuxian">|</li>
+           <li>当前在线人数：2256</li>
+       </ul>
+       <div class="moreAbroad fr">更多</div>
+   </div>
+    <div class="queAnsExam">
+        <div class="examples">
+            <ul>
+                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
+                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
+                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p><span>2016-3-17</span></li>
+                <li class="quePre"><P>李一毛虫：去英国留学有什么要求？准备去读研，商业专科。</P><span>2016-3-17</span></li>
+            </ul>
+        </div>
+        <div class="goQues">
+            <div>免费提问</div>
+            <p>明显顾问为您专业解答</p>
+        </div>
+    </div>
+</div>
+<div class="studyAbroad">
+    <div class="teacher">
+        <h3>今日留学</h3>
+        <p>Study information</p>
+    </div>
+    <div class="studyTab">
+        <div class="tabBox fl">
+            <div class="tabbedPanels">
+                <ul class="tabGroup">
+                    <li class="tab">留学咨询</li>
+                    <li class="tab selectedTab">留学干货</li>
+                    <li class="tab">澳大利亚</li>
+                    <li class="tab promoted">新西兰</li>
+                </ul>
+                <div class="contentGroup">
+                    <div class="content">内容一</div>
+                    <div class="content selectedContent">
+                        <div class="examples">
+                            <ul>
+                                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
+                                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
+                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p><span>2016-3-17</span></li>
+                                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
+                                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
+                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p><span>2016-3-17</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content">内容三</div>
+                    <div class="content">内容四</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="vidoBox fr">
+            <h3>相关视频 <a href="#">更多</a></h3>
+            <div>
+                <div class="vidoContent"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="caseBox">
+    <div class="community fl">
+        <h3>成功案例</h3>
+        <p>Successful case</p>
+    </div>
+    <div class="repuTeacher">
+        <ul>
+            <li class="arrow">
+                <img src="image/arrow_left.png" alt="">
+            </li>
+            <li class="caseA">
+                <img src="image/avatar1.png" alt="">
+            </li>
+            <li class="caseB">
+                <img src="image/avatar1.png" alt="">
+            </li>
+            <li class="caseC">
+                <img src="image/avatar1.png" alt="">
+                <p>Stevev</p>
+                <span>美国顾问专家</span>
+            </li>
+            <li class="caseD">
+                <img src="image/avatar1.png" alt="">
+                <p>Stevev</p>
+                <span>美国顾问专家</span>
+            </li>
+            <li class="caseC">
+                <img src="image/avatar2.png" alt="">
+                <p>陈老师</p>
+                <span>十五年从业经验</span>
+            </li>
+            <li class="teacherCur">
+                <img src="image/avatar3.png" alt="">
+            </li>
+            <li class="caseB">
+                <img src="image/avatar4.png" alt="">
+            </li>
+            <li class="caseA">
+                <img src="image/avatar5.png" alt="">
+            </li>
+            <li class="arrow">
+                <img src="image/arrow_right.png" alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

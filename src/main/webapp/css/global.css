@@ -1,0 +1,12 @@
+/*这里面写格式化样式的CSS*/
+body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,div,span,a,input,img,p{ margin: 0; padding: 0;}
+body{ font-size: 12px; font-family: 微软雅黑;}
+ul{ list-style: none;}
+ol{ list-style: none;}
+a{ text-decoration: none;  color:black; outline: none}
+img{border: none;}
+input{ outline: none}
+
+.fl{ float: left;}
+.fr{ float: right;}
+.cl{clear: both;}
