@@ -10,15 +10,15 @@
 .topHeadContentRightUl li.iconImage{ width: 45px;}
 .topHeadContentRightUl li a:hover{}
 .topHeadContentRightUl li.shuxian{ width: 28px; text-align: center;color: #999;}
-.topHeadContentRightUl li.goalCol::before{content: url("../image/col.png");margin-right: 8px;}
-.topHeadContentRightUl .moreServ::before{ content: url("../image/more.png");margin-right: 8px; }
-.topHeadContentRightUl .moreServ::after{ content: url("../image/arrow_down.png");margin-left: 8px; }
-.topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("../image/weibo.png") no-repeat left center}
-.topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("../image/weixin.png") no-repeat right center}
+.topHeadContentRightUl li.goalCol::before{content: url("../img/col.png");margin-right: 8px;}
+.topHeadContentRightUl .moreServ::before{ content: url("../img/more.png");margin-right: 8px; }
+.topHeadContentRightUl .moreServ::after{ content: url("../img/arrow_down.png");margin-left: 8px; }
+.topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("../img/weibo.png") no-repeat left center}
+.topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("../img/weixin.png") no-repeat right center}
 
 /*logoSearch开始*/
 .logoSearch{ width: 1200px; height: 100px; margin: 0 auto; overflow: hidden ;}
-.logoSearch .logo{ background:url("../image/logo.png")no-repeat center center;width: 160px;height: 100px;}
+.logoSearch .logo{ background:url("../img/logo.png")no-repeat center center;width: 160px;height: 100px;}
 .logoSearch .search{ width: 500px;height: 32px;margin: 0 auto;margin-top: 26px;}
 .logoSearch .freeTel{width: 180px;height: 100px;}
 .logoSearch .freeTel .telIcon{ width: 30px;height: 35px;margin-top: 35px;}
@@ -27,7 +27,7 @@
 .logoSearch .freeTel .telTime{ font-size: 12px;color: #666;padding: 0;margin: 0}
 
 .search .searchBox{overflow: hidden;width: 478px;}
-.search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("../image/select.png") no-repeat 65px center;background-size: 10%;}
+.search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("../img/select.png") no-repeat 65px center;background-size: 10%;}
 
 .search .searchInput{ border: 1px solid #0099ec;}
 .search input{ width: 300px; border:none; padding: 0 0 0 22px;padding-left: 16px;}
