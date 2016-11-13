@@ -6,12 +6,17 @@
 
 <%
     String path = request.getContextPath();
+    String resourcePath = request.getContextPath();
 %>
 
-<link href="<%=path%>/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="<%=resourcePath%>/css/bootstrap.css" rel="stylesheet" type="text/css">
 
-<script src="<%=path%>/js/jquery-3.1.1.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=path%>/js/angular/angular.1.6.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=path%>/js/angular/angular-animate.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=path%>/js/angular/ui-bootstrap-tpls-1.3.2.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=path%>/js/bootstrap/bootstrap.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/jquery-3.1.1.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular.1.6.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular-animate.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular-resource.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/ui-bootstrap-tpls-2.2.0.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/bootstrap/bootstrap.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
