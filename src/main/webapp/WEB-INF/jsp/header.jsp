@@ -108,7 +108,12 @@
 
     .navigation {
         height: 50px;
-        border: solid 1px;
+    }
+
+    .navigation div{
+        width: 100px;
+        height: 50px;
+        padding-left: 0;
     }
 
     .nav_button {
@@ -119,6 +124,8 @@
         font-size: 14px;
         background: transparent;
         color: #333;
+        border: none;
+        margin: 0;
     }
 
     .btn_active {
@@ -173,8 +180,29 @@
     <div class="navigation header_center row">
         <div class="col-md-2" style="padding-right: 0;">
             <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
-                    onclick="toUrl('product/index.htm')">
-                产品管理
+                    url="home/home.htm">
+                首页
+            </button>
+        </div>
+
+        <div class="col-md-2" style="padding-right: 0;">
+            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
+                    url="product/index.htm">
+                留学优选
+            </button>
+        </div>
+
+        <div class="col-md-2" style="padding-right: 0;">
+            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
+                    url="school/index.htm">
+                学校列表
+            </button>
+        </div>
+
+        <div class="col-md-2" style="padding-right: 0;">
+            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
+                    url="product/index.htm">
+                产品列表
             </button>
         </div>
     </div>
@@ -217,7 +245,16 @@
         window.location = '<%=path%>' + '/' + url;
     }
 
-    var navBtn = [];
+    $($('.nav_button')[0]).addClass('btn_active');
     $('.nav_button').each(function (index, btn) {
+        var url = $(btn).attr('url');
+        console.log(url);
+        $(btn).on('click', function () {
+            toUrl(url);
+        });
+        if (window.location.href.indexOf(url) > -1) {
+            $('.nav_button').removeClass('btn_active');
+            $(btn).addClass('btn_active');
+        }
     });
 </script>
