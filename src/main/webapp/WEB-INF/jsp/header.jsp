@@ -110,7 +110,7 @@
         height: 50px;
     }
 
-    .navigation div{
+    .navigation div {
         width: 100px;
         height: 50px;
         padding-left: 0;
@@ -234,7 +234,7 @@
     } else {
         var _span = $('<span>');
         _span.append('Hi，');
-        _span.append('<a href="person.htm" id="username">' + username);
+        _span.append('<a href="profile/index.htm" id="username">' + username);
         _span.append('&nbsp;&nbsp;<a href="logout.htm" id="logout">退出');
         $('#userShow').append(_span);
     }
