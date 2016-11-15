@@ -26,6 +26,11 @@ public class LoginController {
         return "/login";
     }
 
+    @RequestMapping("register")
+    public String register() {
+        return "/register";
+    }
+
     @RequestMapping("login")
     @ResponseBody
     public BasicDto login(@RequestParam String username, @RequestParam String password) {

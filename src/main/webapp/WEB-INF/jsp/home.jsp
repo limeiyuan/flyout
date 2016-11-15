@@ -169,6 +169,10 @@
         .advantageMedia ul{padding: 0 23px;overflow: hidden;}
         .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin-top: 23px;}
         /*advantage结束*/
+
+        .right.carousel-control, .left.carousel-control {
+            display: none;
+        }
     </style>
 </head>
 <body>
