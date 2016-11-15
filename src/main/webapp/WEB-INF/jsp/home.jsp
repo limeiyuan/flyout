@@ -11,22 +11,10 @@
     <%@include file="commonResource.jsp" %>
     <title>飞出国</title>
     <style>
-        body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,div,span,a,input,img,p{ margin: 0; padding: 0;}
-        body{ font-size: 12px; font-family: "Microsoft YaHei","Arial";background: #f7f7f7;}
-        ul{ list-style: none;}
-        ol{ list-style: none;}
-        a{ text-decoration: none;  color:black; outline: none}
-        a:hover{ text-decoration: none;  color:black; outline: none}
-        img{border: none;}
-        input{ outline: none}
-
-        .fl{ float: left;}
-        .fr{ float: right;}
-        .cl{clear: both;}
         /*banner开始*/
         .banner{width: 100%;height: 400px;position: relative}
         .banner .bannerImage img{height: 100%;}
-        .banner .estimate{width: 300px;height: 400px;position: absolute;top: 1px;right: 234px;background: #fff;}
+        .banner .estimate{width: 300px;height: 400px;position: absolute;top: 0px;right: 356px;background: #fff;}
         .estimate div{height: 40px;}
         .estimate div span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;cursor:pointer;}
         .estimate div .active{color: #0099ec;background: #fff;}
@@ -56,14 +44,14 @@
         .productImag{width: 228px;height: 450px;}
         .estimate >ul{width: 100%;height: 300px;overflow: hidden;position: relative;}
         .estimate>ul>li{width: 240px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 20px;position: absolute;left: 10%}
-        .productsList ul li{float: right; width: 228px; height: 220px; margin: 5px; background: #fff;}
-        .productsList ul li div{width: 210px; height: 150px; background: red; margin: 8px auto;}
+        .productsList ul li{float: right; width: 228px; height: 220px; margin: 5px; background: #fff;cursor: pointer;}
+        .productsList ul li div{width: 210px; height: 150px; background: #ccc; margin: 8px auto;}
         .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;line-height: 20px;}
         .productsList ul li span{ height: 34px; display: block;font-size: 12px;color: #666; padding-left: 14px;line-height: 17px;overflow: hidden;}
         .productsList ul .productCurr div{ height: 110px; }
-        .productsList ul .productCurr .productFly{ height: 32px; color: #666;background: none;}
-        .productsList ul .productCurr .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 70px;background: url("<%=resourcePath%>/img/brand.png")no-repeat left center;padding-left: 26px;}
-        .productsList ul .productCurr .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/like_slect.png")no-repeat left center;padding-left: 16px;}
+        .productsList ul  .productFly{ height: 32px; color: #666;background: none;}
+        .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 70px;background: url("<%=resourcePath%>/img/brand.png")no-repeat left center;padding-left: 26px;}
+        .productsList ul .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/like_slect.png")no-repeat left center;padding-left: 16px;}
         .intentionA{  top: 0px}
         .intentionB{ top: 56px;}
         .intentionC{ top: 112px;}
@@ -74,9 +62,10 @@
         .consultant{ width: 1200px; margin: auto;margin-top: 20px;}
         .teacher{height: 34px;overflow: hidden;padding-bottom: 6px;background: #f7f7f7;}
         .teacher::before{content:'|';background: #0099ec;width: 6px;height: 30px;float: left;color: #0099ec;margin-right: 5px;}
-        .repuTeacher{margin: 30px auto;}
-        .repuTeacher ul{width: 100%;overflow: hidden;}
-        .repuTeacher ul li{width: 180px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 15px;border-radius: 11px;margin-top: 60px;background: #fff;}
+        .repuTeacher{margin: 30px auto; width: 1200px; position: relative;}
+        .arrow_img{position: absolute; width: 100%; top: 50%;margin-top:-34px;}
+        .repuTeacher ul{width: 100%;overflow: hidden; padding: 0 24px;}
+        .repuTeacher ul li{width: 180px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 21px;border-radius: 11px;margin-top: 60px;background: #fff;}
         .repuTeacher ul li .teacherImag{width: 120px;height: 120px;margin: auto;margin: 14px auto }
 
         .repuTeacher ul li p{font-size: 18px;font-weight: bold;color: #0099ec;margin-bottom: 8px;}
@@ -117,7 +106,7 @@
         .studyTab .vidoBox h3{font-size: 16px;color: #333;font-weight: bold;padding: 0 5px;margin: 10px auto;}
         .studyTab .vidoBox h3 a{float: right;color: #999;font-size: 14px;}
         .studyTab .vidoBox div{ width: 100%;height: 100%;border-top: 1px solid #999;}
-        .studyTab .vidoBox .vidoContent{width: 80%;height: 80%;background: red;margin: 5% auto;}
+        .studyTab .vidoBox .vidoContent{width: 80%;height: 80%;background: #ccc;margin: 5% auto;}
         .tabbedPanels{ overflow:hidden; margin:10px auto;}
         .tabbedPanels .examples li p{width:520px;}
         .tabbedPanels .examplesCoten{height: 286px;}
@@ -132,16 +121,18 @@
         /*studyAbroad结束*/
         /*caseBox开始*/
         .caseBox{width: 1200px;margin: 20px auto;}
-        .caseContent{width: 1200px;overflow: hidden}
+        .caseContent{width: 1200px;overflow: hidden;position: relative;}
         .caseContent li{float: left;}
         .caseBox .caseContent li img{width: 80%;}
-        .caseContent ul{overflow: hidden;}
+        .caseContent ul{overflow: hidden;padding: 0 14px;}
         .caseBox .caseContent ul .arrow{width: 1200px;margin:0 auto; width: 1%; line-height: 220px; border: none;}
         .caseBox .caseContent ul li{height:220px;float: left; text-align: center;margin: 0 26px;margin-top: 60px;}
-        .caseBox .caseContent ul .caseA{height:78px;width:104px;float: left; text-align: center;margin: 60px 14px 0;}
-        .caseBox .caseContent ul .caseB{height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;}
-        .caseBox .caseContent ul .caseC{height:128px;width:154px;float: left; text-align: center;margin: 35px 14px 0;}
-        .caseBox .caseContent ul .caseD{width:190px;float: left; text-align: center;margin:25px 14px 0;;}
+        .caseBox .caseContent ul .case0,.caseBox .caseContent ul .case6{height:78px;width:104px;float: left; text-align: center;margin: 60px 14px 0;}
+        .caseBox .caseContent ul .case0 div,.caseBox .caseContent ul .case6 div{display: none;}
+        .caseBox .caseContent ul .case1,.caseBox .caseContent ul .case5{height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;}
+        .caseBox .caseContent ul .case1 div,.caseBox .caseContent ul .case5 div{display: none;}
+        .caseBox .caseContent ul .case2,.caseBox .caseContent ul .case4{height:128px;width:154px;float: left; text-align: center;margin: 35px 14px 0;}
+        .caseBox .caseContent ul .case3{width:190px;float: left; text-align: center;margin:25px 14px 0;;}
         .caseBox .caseContent ul .arrowR{float: right;}
         .caseBox .caseContent ul li span a {color: red;}
         .caseBox .caseContent ul li p{text-align: center;font-size: 14px;color: #666;margin: 8px auto;}
@@ -290,6 +281,10 @@
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写内容简介，签证通过率95%以上，专家跟踪办理。</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
             <li class="productCurr">
                 <div></div>
@@ -304,31 +299,55 @@
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
             <li>
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
             <li>
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
             <li>
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
             <li>
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
             <li>
                 <div></div>
                 <p>英国高中留学申请</p>
                 <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                <div class="productFly">
+                    <div class="flyAbroad fl">飞出国</div>
+                    <div class="likeNum fr">284</div>
+                </div>
             </li>
         </ul>
     </div>
@@ -341,9 +360,9 @@
     </div>
     <div class="repuTeacher">
         <ul>
-            <li class="arrow">
+           <%-- <li class="arrow">
                 <img src="<%=resourcePath%>/img/arrow_left.png" alt="">
-            </li>
+            </li>--%>
             <li class="famousTeacher">
                 <div class="teacherImag"><img src="<%=resourcePath%>/img/avatar1.png" alt=""></div>
                 <p>Stevev</p>
@@ -389,10 +408,14 @@
                     <div>鹏润留学</div>
                 </div>
             </li>
-            <li class="arrow">
+           <%-- <li class="arrow">
                 <img src="<%=resourcePath%>/img/arrow_right.png" alt="">
-            </li>
+            </li>--%>
         </ul>
+        <div class="arrow_img">
+            <img id="leftArrow" class="fl" src="<%=resourcePath%>/img/arrow_left.png" alt="">
+            <img id=rightArrow class="fr" src="<%=resourcePath%>/img/arrow_right.png" alt="">
+        </div>
     </div>
 </div>
 <div class="queAns">
@@ -480,40 +503,66 @@
     </div>
     <div class="caseContent">
         <ul>
-            <li class="arrow fl">
+          <%--  <li class="arrow fl">
                 <img src="<%=resourcePath%>/img/arrow_left_red.png" alt="">
-            </li>
-            <li class="caseA">
+            </li>--%>
+            <li class="case0">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="caseB">
+            <li class="case1">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="caseC">
+            <li class="case2">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
-                <p>加雪佩</p>
-                <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="caseD">
+            <li class="case3">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
-                <p>加雪佩</p>
-                <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="caseC">
+            <li class="case4">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
-                <p>加雪佩</p>
-                <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="caseB">
+            <li class="case5">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="caseA">
+            <li class="case6">
                 <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <div>
+                    <p>加雪佩</p>
+                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                </div>
             </li>
-            <li class="arrow arrowR">
+         <%--   <li class="arrow arrowR">
                 <img src="<%=resourcePath%>/img/arrow_right_red.png" alt="">
-            </li>
+            </li>--%>
         </ul>
+        <div class="arrow_img">
+            <img  id="left__red_img" class="fl" src="<%=resourcePath%>/img/arrow_left_red.png" alt="">
+            <img id="right__red_img" class="fr" src="<%=resourcePath%>/img/arrow_right_red.png" alt="">
+        </div>
     </div>
     <div class="viewCase">
         <ul>
@@ -610,7 +659,7 @@
         <div class="advantageCont">
             <ul>
                 <li>
-                    <img src="<%=resourcePath%>/img/consultant.png" alt="">
+                    <img src="<%=resourcePath%>/img/adviser.png" alt="">
                     <h6>平台顾问</h6>
                     <p>平台顾问平均行业经验<span>5年+</span></p>
 
@@ -621,12 +670,12 @@
                     <p>海外<span>2000</span>多所合规院校合作</p>
                 </li>
                 <li>
-                    <img src="<%=resourcePath%>/img/service.png" alt="">
+                    <img src="<%=resourcePath%>/img/services.png" alt="">
                     <h6>专业服务</h6>
                     <p>每年近<span>千名</span>留学生拿到漫游结果</p>
                 </li>
                 <li>
-                    <img src="<%=resourcePath%>/img/protection.png" alt="">
+                    <img src="<%=resourcePath%>/img/guarantee.png" alt="">
                     <h6>保障机构</h6>
                     <p>平台<span>2000万</span>基金保障</p>
                 </li>
@@ -740,6 +789,22 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
+        //左箭头
+        $('#leftArrow').click(function () {
+            $(this).parent().prev("ul").append($(this).parent().prev("ul").find('li:eq(0)'));
+        });
+     //右箭头
+        $('#rightArrow').click(function () {
+            $(this).parent().prev("ul").prepend($(this).parent().prev("ul").find('li:last'));
+        });
+      /* //    right__red_img
+        $('#left__red_img').click(function () {
+            $(this).parent().prev("ul").append($(this).parent().prev("ul").find('li:eq(0)'));
+            reload($(this).parent().prev("ul").find('li'))
+           // $(this)
+        });*/
+
+    //选项卡
         $(".tabGroup li").click(function(){
             $(this).addClass("selectedTab").siblings().removeClass('selectedTab');
             $(".contentGroup div").eq($(".tabGroup li").index(this)).addClass("selectedContent").siblings().removeClass('selectedContent');
@@ -775,7 +840,21 @@
 
         $('.famousTeacher').hover(function () {
            $(this).addClass("teacherCur").siblings().removeClass('teacherCur');
-        })
+        });
+        $('.productsList ul li').hover(function () {
+            $(this).addClass("productCurr").siblings().removeClass('productCurr');
+
+        });
+   /*     //回显
+       function reload(dom) {
+           for(var i=0;i<dom.length;i++){
+             // dom[i].style.className='case'+i  .removeClass('a b c')
+               var $dom=dom[i];
+               $dom.style.className='case1';
+
+             // $('$dom').removeClass('case0 case1 case2 case3 case4 case5 case6 case7').addClass('addClass'+i)
+           }
+       }*/
     });
 </script>
 <%@include file="footer.jsp" %>

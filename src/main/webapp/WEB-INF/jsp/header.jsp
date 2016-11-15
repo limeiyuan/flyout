@@ -5,199 +5,115 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style type="text/css">
-    .header {
-        height: 180px;
-        font-size: 12px;
-        font-family: 微软雅黑;
-    }
+    body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,div,span,a,input,img,p{ margin: 0; padding: 0;}
+    body{ font-size: 12px; font-family: "Microsoft YaHei","Arial";background: #f7f7f7;}
+    ul{ list-style: none;}
+    ol{ list-style: none;}
+    a{ text-decoration: none;  color:black; outline: none}
+    a:hover{ text-decoration: none;outline: none}
+    img{border: none;}
+    input{ outline: none}
 
-    .header_center {
-        margin: 0 auto;
-        width: 1200px;
-    }
+    .fl{ float: left;}
+    .fr{ float: right;}
+    .cl{clear: both;}
+    .topHead{ height: 35px; width: 100%; background: #f5f5f5; border-bottom: 1px solid #eee;}
+    .topHeadContent{ width: 1200px; margin:0 auto;line-height: 30px;font-size: 12px; }
+    .regisLogin{display: none}
+    .login{margin-right: 18px;}
+    .topHeadContentLeft a,.topHeadContentRightUl li a{ color: #666;}
+    .topHeadContentLeft a:hover{ color: #666; text-decoration: none;outline: none}
+    .topHeadContentRightUl .hiName{color:#ff3638;margin:0 10px;}
+    .registerMargin{ margin: 0 20px 0 8px}
+    .topHeadContentRightUl li{ float: left; width: 100px; text-align: center}
+    .topHeadContentRightUl li.iconImage{ width: 45px;}
+    .topHeadContentRightUl li a:hover{}
+    .topHeadContentRightUl li.shuxian{ width: 28px; text-align: center;color: #999;}
+    .topHeadContentRightUl li.goalCol::before{content: url("<%=resourcePath%>/img/col.png");margin-right: 8px;}
+    .topHeadContentRightUl .moreServ::before{ content: url("<%=resourcePath%>/img/more.png");margin-right: 8px; }
+    .topHeadContentRightUl .moreServ::after{ content: url("<%=resourcePath%>/img/arrow_down.png");margin-left: 8px; }
+    .topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("<%=resourcePath%>/img//weibo.png") no-repeat left center}
+    .topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("<%=resourcePath%>/img/weixin.png") no-repeat right center}
 
-    .top {
-        background: #f7f7f7;
-        height: 30px;
-        color: #666;
-        padding-top: 10px;
-        line-height: 12px;
-    }
+    /*logoSearch开始*/
+    .logoFly{width: 100%;background: #fff;}
+    .logoSearch{ width: 1200px; height: 100px; margin: 0 auto; overflow: hidden ;}
+    .logoSearch .logo{ background:url("<%=resourcePath%>/img/logo.png")no-repeat center center;width: 160px;height: 100px;}
+    .logoSearch .search{ width: 500px;height: 32px;margin: 26px auto 0;}
+    .logoSearch .freeTel{width: 180px;height: 100px;}
+    .logoSearch .freeTel .telIcon{ width: 30px;height: 35px;margin-top: 35px;}
+    .logoSearch .freeTel>div{ margin-top: 32px;}
+    .logoSearch .freeTel .telNum{ font-size: 18px;font-weight: bold;color: #fb5454;padding: 0;margin: 0;line-height: 24px;}
+    .logoSearch .freeTel .telTime{ font-size: 12px;color: #666;padding: 0;margin: 0}
 
-    .banner {
-    }
+    .search .searchBox{overflow: hidden;width: 478px;}
+    .search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("<%=resourcePath%>/img/select.png") no-repeat 65px center;background-size: 10%;}
 
-    .banner > .menu {
-        display: inline;
-        float: right;
-    }
+    .search .searchInput{ border: 1px solid #0099ec;}
+    .search input{ width: 316px; border:none; padding: 0 22px 0 16px;;line-height: 22px;}
+    .search a{ width: 80px; height: 35px; background:#0099ec; line-height: 35px; font-size: 16px; color: #fff;text-align: center }
+    .search a:hover{ color: #fff; }
 
-    .banner > .menu div {
-        color: black;
-        display: inline;
-        border-right: solid #999 1px;
-        height: 14px;
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-
-    .banner > .menu div > img {
-        width: auto;
-        height: auto;
-        vertical-align: top;
-    }
-
-    .banner > .menu span {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .banner > .menu a {
-        color: black;
-        display: inline;
-    }
-
-    .banner > .menu a:hover {
-        text-decoration: none;
-    }
-
-    .banner > .menu a:visited {
-        text-decoration: none;
-    }
-
-    #username {
-        color: #ff3636;
-    }
-
-    .topCenter {
-        height: 100px;
-        text-align: center;
-    }
-
-    .topCenter div {
-        /*display: inline;*/
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .topCenter img {
-        width: auto;
-        height: auto;
-    }
-
-    .searchBar {
-        display: inline-block;
-        width: 500px;
-        height: 35px;
-        border: solid #0099ec 1px;
-        margin: 0 auto;
-    }
-
-    .searchBar div {
-        display: inline;
-    }
-
-    .searchBar input {
-        border: 0 solid;
-    }
-
-    .searchBar input:focus {
-        outline: none;
-    }
-
-    .navigation {
-        height: 50px;
-    }
-
-    .navigation div {
-        width: 100px;
-        height: 50px;
-        padding-left: 0;
-    }
-
-    .nav_button {
-        width: 100px;
-        height: 50px;
-        border-radius: 0;
-        font-family: 微软雅黑;
-        font-size: 14px;
-        background: transparent;
-        color: #333;
-        border: none;
-        margin: 0;
-    }
-
-    .btn_active {
-        background: #0099ec;
-        color: #FFFFFF
-    }
+    /*logoSearch结束*/
+    /*nav开始*/
+    .nav{ height: 50px; width: 100%; line-height: 50px;background: #fff;border-bottom: 1px solid #0099ec; }
+    .navContent{ width: 1200px; margin: auto;}
+    .navContent ul li{ display: inline;}
+    .navContent ul li a{ float: left; width: 100px; font-size: 14px; text-align: center ; color: #333; }
+    .navContent ul li a:hover{background: #0099ec;color: #fff;}
 </style>
-<div class="header">
-    <div class="top">
-        <div class="banner header_center">
-            <div style="display: inline;">
-                咨询热线：40012345678
-            </div>
-            <div class="menu">
-                <div id="userShow"></div>
-                <div><img src="<%=resourcePath%>/img/col.png"><span>目标院校</span></div>
-                <div><img src="<%=resourcePath%>/img/more.png" style="padding-top: 1px"><span>更多服务</span>
-                    <img src="<%=resourcePath%>/img/arrow_down.png" style="padding-top: 5px;">
-                </div>
-                <div>
-                    <img src="<%=resourcePath%>/img/weibo.png" style="padding-right: 10px;padding-left: 3px">
-                    <img src="<%=resourcePath%>/img/weixin.png">
-                </div>
-            </div>
+<div class="topHead">
+    <div class="topHeadContent">
+        <div class="topHeadContentLeft fl">
+            <a href="#">咨询热线：40012345678</a>
+        </div>
+        <div class="topHeadContentRight fr">
+            <ul class="topHeadContentRightUl">
+                <li class="sayHi"><a href="#">Hi,</a><a href="#" class="hiName">Deany</a><a href="#">退出</a></li>
+                <li class="regisLogin"><a href="#" class="login">登陆</a><a href="#">注册</a></li>
+                <li class="shuxian">|</li>
+                <li class="goalCol"><a href="#">目标院校</a></li>
+                <li class="shuxian">|</li>
+                <li class="moreServ">更多服务</li>
+                <li class="shuxian">|</li>
+                <li class="iconImage"><a href="#" class="weibo fl"></a><a href="#" class="weixin fr"></a></li>
+
+            </ul>
         </div>
     </div>
-    <div class="topCenter header_center">
-        <div style="float: left;">
-            <img src="<%=resourcePath%>/img/logo.png">
-        </div>
-        <div class="searchBar">
-            <div style="height: 100%;width: 80px;color: #666;background: #f7f7f7;line-height: 35px;float: left;">
-                <span>搜学校</span>
-                <img src="<%=resourcePath%>/img/select.png" style="height: 4px;width: 5px;margin-left: 5px">
-            </div>
-            <div style="width: 330px;height: 100%;top: 7px;color: #999;">
-                <input type="text" style="width: 330px;">
-            </div>
-            <div style="width: 80px;height: 100%;background: #0099ec;line-height: 35px;float: right;">
-                <span style="color: #fff;font-size: 16px">搜索</span>
-            </div>
-        </div>
-        <div style="float: right;height: 100%;">
-            <img src="<%=resourcePath%>/img/tel.png" style="width: 30px;height: 35px;margin-top: 33px;">
+</div>
+<div class="logoFly">
+    <div class="logoSearch">
+        <div class="logo fl"></div>
+        <div class="freeTel fr">
+            <img class="telIcon fl" src="<%=resourcePath%>/img/tel.png" alt="">
+            <div class="fr">
+                <p class="telNum">400-12345678</p>
+                <p class="telTime">免费咨询电话：9:00-18:00</p>
 
-            <div style="display: inline-block">
-                <span style="display: block;font: 18px bold;color: #fb5454;">400-12345678</span>
-                <span style="display: block;font-size: 12px;color: #666;">免费咨询电话 9:00-18:00</span>
             </div>
+        </div>
+        <div class="search">
+            <div class=searchBox>
+                <div class="searchInput fl"><div class="seatchSchool">搜学校</div><input type="text" placeholder="澳大利亚留学"/></div><a href="#" class="fr">搜索</a>
+            </div>
+
         </div>
     </div>
-    <div class="navigation header_center row">
-        <div class="col-md-2" style="padding-right: 0;">
-            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
-                    url="home/home.htm">
-                首页
-            </button>
-        </div>
-
-        <div class="col-md-2" style="padding-right: 0;">
-            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
-                    url="abroadRecommend/index.htm">
-                留学优选
-            </button>
-        </div>
-
-        <div class="col-md-2" style="padding-right: 0;">
-            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
-                    url="school/index.htm">
-                学校列表
-            </button>
-        </div>
+</div>
+<div class="nav">
+    <div class="navContent">
+        <ul>
+            <li><a href="home/home.htm">首页</a></li>
+            <li><a href="product/index.htm">留学优选</a></li>
+            <li><a href="product/index.htm">推荐商家</a></li>
+            <li><a href="school/index.htm">海外院校</a></li>
+            <li><a href="product/index.htm">特色游学</a></li>
+            <li><a href="product/index.htm">海外实习</a></li>
+            <li><a href="product/index.htm">海外生活</a></li>
+            <li><a href="product/index.htm">出国社区</a></li>
+            <li><a href="product/index.htm">在线语言私塾</a></li>
+        </ul>
     </div>
 </div>
 

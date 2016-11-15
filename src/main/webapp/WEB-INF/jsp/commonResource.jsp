@@ -4,6 +4,8 @@
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <title>飞出国</title>
 
 <%
