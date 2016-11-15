@@ -187,7 +187,7 @@
 
         <div class="col-md-2" style="padding-right: 0;">
             <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
-                    url="product/index.htm">
+                    url="abroadRecommend/index.htm">
                 留学优选
             </button>
         </div>
@@ -196,13 +196,6 @@
             <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
                     url="school/index.htm">
                 学校列表
-            </button>
-        </div>
-
-        <div class="col-md-2" style="padding-right: 0;">
-            <button type="button" class="nav_button btn btn-primary btn-lg btn-block"
-                    url="product/index.htm">
-                产品列表
             </button>
         </div>
     </div>

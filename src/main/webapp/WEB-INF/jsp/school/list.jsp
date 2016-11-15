@@ -13,6 +13,10 @@
 <body>
 <%@include file="../header.jsp" %>
 <div ng-controller="mainController">
+    <div class="col-md-2"><input type="text" class="form-control" id="searchText" ng-model="queryObj"
+                                 ng-keyup="$event.keyCode == 13 && query()"
+                                 placeholder="学校名称"></div>
+
     <table class="table table-bordered table-hover">
         <thead>
         <tr>

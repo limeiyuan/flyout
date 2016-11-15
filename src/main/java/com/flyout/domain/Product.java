@@ -1,5 +1,7 @@
 package com.flyout.domain;
 
+import com.flyout.common.enums.CategoryEnum;
+import com.flyout.common.enums.EnableEnum;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -28,11 +30,13 @@ public class Product {
     /**
      * 类型
      **/
-    @Type(type = "cn.flyout.common.util.EnumUserType", parameters = {
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
             @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.CategoryEnum"),
             @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
             @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
     })
+    @Column(name = "category_pi")
+    private CategoryEnum category;
 
     @ManyToOne
     @JoinColumn(name = "nation_id_pi")
@@ -122,7 +126,12 @@ public class Product {
     private Date createTime;
 
     @Column(name = "enable_pi")
-    private Integer enable;//有效
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;//有效
 
     @OneToOne(mappedBy = "product")
     private ProductRatio productRatio;
@@ -365,11 +374,11 @@ public class Product {
         this.createTime = createTime;
     }
 
-    public Integer getEnable() {
+    public EnableEnum getEnable() {
         return enable;
     }
 
-    public void setEnable(Integer enable) {
+    public void setEnable(EnableEnum enable) {
         this.enable = enable;
     }
 
@@ -395,5 +404,13 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public CategoryEnum getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEnum category) {
+        this.category = category;
     }
 }

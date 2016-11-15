@@ -6,6 +6,7 @@ import com.flyout.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by LiMeiyuan on 2016/11/15 9:52.
@@ -23,13 +24,16 @@ public class AbroadRecommendController {
     }
 
     @RequestMapping("getRecommend")
+    @ResponseBody
     public PaginationDto<Product> getRecommend() {
         PaginationDto<Product> dto = new PaginationDto<>();
+        dto.setResult(true);
         dto.autoFill(productService.getRecommend());
         return dto;
     }
 
     @RequestMapping("query")
+    @ResponseBody
     public PaginationDto<Product> query(String name) {
         PaginationDto<Product> dto = new PaginationDto<>();
         dto.autoFill(productService.query(name));
