@@ -1,9 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.flyout.common.auth.AuthHelper" %>
+<%@ page import="com.flyout.domain.Account" %>
+<%
+    Account user = AuthHelper.getLoginUser();
+%>
 <style type="text/css">
     body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,div,span,a,input,img,p{ margin: 0; padding: 0;}
     body{ font-size: 12px; font-family: "Microsoft YaHei","Arial";background: #f7f7f7;}
@@ -19,7 +20,7 @@
     .cl{clear: both;}
     .topHead{ height: 35px; width: 100%; background: #f5f5f5; border-bottom: 1px solid #eee;}
     .topHeadContent{ width: 1200px; margin:0 auto;line-height: 30px;font-size: 12px; }
-    .regisLogin{display: none}
+    .regisLogin{}
     .login{margin-right: 18px;}
     .topHeadContentLeft a,.topHeadContentRightUl li a{ color: #666;}
     .topHeadContentLeft a:hover{ color: #666; text-decoration: none;outline: none}
@@ -57,6 +58,7 @@
     /*logoSearch结束*/
     /*nav开始*/
     .nav{ height: 50px; width: 100%; line-height: 50px;background: #fff;border-bottom: 1px solid #0099ec; }
+    .nav_active {background: #0099ec;color: #fff;}
     .navContent{ width: 1200px; margin: auto;}
     .navContent ul li{ display: inline;}
     .navContent ul li a{ float: left; width: 100px; font-size: 14px; text-align: center ; color: #333; }
@@ -69,15 +71,14 @@
         </div>
         <div class="topHeadContentRight fr">
             <ul class="topHeadContentRightUl">
-                <li class="sayHi"><a href="#">Hi,</a><a href="#" class="hiName">Deany</a><a href="#">退出</a></li>
-                <li class="regisLogin"><a href="#" class="login">登陆</a><a href="#">注册</a></li>
+                <li class="sayHi"><a href="#">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user==null?"":user.getScreenname()%></a><a href="#">退出</a></li>
+                <li class="regisLogin"><a href="/login/index.htm" class="login">登陆</a><a href="/login/index.htm">注册</a></li>
                 <li class="shuxian">|</li>
                 <li class="goalCol"><a href="#">目标院校</a></li>
                 <li class="shuxian">|</li>
                 <li class="moreServ">更多服务</li>
                 <li class="shuxian">|</li>
                 <li class="iconImage"><a href="#" class="weibo fl"></a><a href="#" class="weixin fr"></a></li>
-
             </ul>
         </div>
     </div>
@@ -104,15 +105,9 @@
 <div class="nav">
     <div class="navContent">
         <ul>
-            <li><a href="home/home.htm">首页</a></li>
-            <li><a href="product/index.htm">留学优选</a></li>
-            <li><a href="product/index.htm">推荐商家</a></li>
-            <li><a href="school/index.htm">海外院校</a></li>
-            <li><a href="product/index.htm">特色游学</a></li>
-            <li><a href="product/index.htm">海外实习</a></li>
-            <li><a href="product/index.htm">海外生活</a></li>
-            <li><a href="product/index.htm">出国社区</a></li>
-            <li><a href="product/index.htm">在线语言私塾</a></li>
+            <li><a href="/home/home.htm">首页</a></li>
+            <li><a href="/abroadRecommend/index.htm">留学优选</a></li>
+            <li><a href="/school/index.htm">海外院校</a></li>
         </ul>
     </div>
 </div>
@@ -137,15 +132,11 @@
 </div>
 
 <script type="text/javascript">
-    var username = '123';
+    var username = '<%=user==null?"":"123"%>';
     if (!username) {
-        $('#userShow').append('<a href="login.htm">登录</a>');
+        $('.sayHi').css({"display": "none"});
     } else {
-        var _span = $('<span>');
-        _span.append('Hi，');
-        _span.append('<a href="profile/index.htm" id="username">' + username);
-        _span.append('&nbsp;&nbsp;<a href="logout.htm" id="logout">退出');
-        $('#userShow').append(_span);
+        $('.regisLogin').css({"display": "none"});
     }
 </script>
 
@@ -154,16 +145,13 @@
         window.location = '<%=path%>' + '/' + url;
     }
 
-    $($('.nav_button')[0]).addClass('btn_active');
-    $('.nav_button').each(function (index, btn) {
-        var url = $(btn).attr('url');
+    $($('.navContent a')[0]).addClass('nav_active');
+    $('.navContent a').each(function (index, a) {
+        var url = $(a).attr('href');
         console.log(url);
-        $(btn).on('click', function () {
-            toUrl(url);
-        });
         if (window.location.href.indexOf(url) > -1) {
-            $('.nav_button').removeClass('btn_active');
-            $(btn).addClass('btn_active');
+            $('.navContent a').removeClass('nav_active');
+            $(a).addClass('nav_active');
         }
     });
 </script>

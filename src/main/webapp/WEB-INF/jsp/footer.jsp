@@ -108,23 +108,3 @@
         </ul>
     </div>
 </div>
-
-<!-- 数据loading -->
-<div id="queryCoverModal" style="display: none;" class="modal fade bs-example-modal-sm" tabindex="-1"
-     role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">×</span></button>
-                <h4 class="modal-title" id="mySmallModalLabel">查询数据中</h4>
-            </div>
-            <div class="modal-body">
-                喝杯咖啡，稍等片刻，正在飞速赶来......
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-
