@@ -14,21 +14,23 @@
         /*banner开始*/
         .banner{width: 100%;height: 400px;position: relative}
         .banner .bannerImage img{height: 100%;}
-        .banner .estimate{width: 300px;height: 400px;position: absolute;top: 0px;right: 356px;background: #fff;}
+        .banner .estimateContainer{width: 1200px;position: absolute;right: 50%;top: 0;}
+        .banner .estimate{width: 300px;height: 400px;position: relative;right: -50%;float: right;background: #fff;}
         .estimate div{height: 40px;}
-        .estimate div span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;cursor:pointer;}
+        .estimate div>span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;cursor:pointer;}
         .estimate div .active{color: #0099ec;background: #fff;}
-        .estimate ul{width: 100%;}
+        .estimate ul{width: 100%;overflow: hidden;}
         /*.estimate ul li{width: 240px;height: 30px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 45px;}*/
-        .estimate ul .focusCur{border-color: #0099ec;}
+        .estimate ul .focusCur{border-color: #0099ec;overflow: hidden; background: #fff;}
         .estimate ul .fastEst{background: #0099ec;color: #fff;text-align: center;line-height: 30px;margin: 0 auto;cursor:pointer;}
+        .estimate>ul>li{width: 240px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 15px;position: absolute;left: 10%}
         .estimate ul li input{margin-left: 18px;width: 180px;border: none;outline: none;line-height: 26px;border-radius: 45px;}
         .estimate ul li span{font-size: 18px;color: #999;line-height: 12px;}
         .estimate ul li img{position: relative;top: -2px;}
         .estimate p{color: #666;text-align: center;line-height: 40px;}
         .estimate p span{color: #fb5454;}
         .select_box ul li { cursor: pointer; }
-        .estimate .son_ul {text-indent: 12px; text-indent: 12px; background: #fff; position: relative; z-index: 5; }
+        .estimate .son_ul {text-indent: 12px; text-indent: 12px;border-radius:20px;background:#fff; position: relative; z-index: 5; }
         .estimate .son_ul li { display: block; line-height: 25px;  }
         .hover { background: #ccc; color: #fff; }
         /*banner结束*/
@@ -42,8 +44,6 @@
         .moreAbroad{ color: #666;    padding-right: 19px;line-height: 30px;cursor:pointer;}
         .productsList{overflow: hidden;margin-top: 5px;}
         .productImag{width: 228px;height: 450px;}
-        .estimate >ul{width: 100%;height: 300px;overflow: hidden;position: relative;}
-        .estimate>ul>li{width: 240px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 20px;position: absolute;left: 10%}
         .productsList ul li{float: right; width: 228px; height: 220px; margin: 5px; background: #fff;cursor: pointer;}
         .productsList ul li div{width: 210px; height: 150px; background: #ccc; margin: 8px auto;}
         .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;line-height: 20px;}
@@ -52,11 +52,11 @@
         .productsList ul  .productFly{ height: 32px; color: #666;background: none;}
         .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 70px;background: url("<%=resourcePath%>/img/brand.png")no-repeat left center;padding-left: 26px;}
         .productsList ul .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/like_slect.png")no-repeat left center;padding-left: 16px;}
-        .intentionA{  top: 0px}
-        .intentionB{ top: 56px;}
-        .intentionC{ top: 112px;}
-        .intentionD{ top: 168px;}
-        .intentionE{top: 254px;}
+        .intentionA{top:50px}
+        .intentionB{top:110px}
+        .intentionC{ top:170px}
+        .intentionD{top:230px}
+        .intentionE{bottom: 42px;}
         /*products结束*/
         /*consultant 开始*/
         .consultant{ width: 1200px; margin: auto;margin-top: 20px;}
@@ -173,25 +173,6 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-<%--<div ng-controller="mainController">
-    <div>
-        <div uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="active"
-             style="margin:auto;height: 400px;">
-            <div uib-slide ng-repeat="slide in slides track by slide.id" index="$index"
-                 style="margin:auto;max-height: 100%;">
-                <img ng-src="{{slide.image}}">
-
-                <div class="carousel-caption">
-                    <h4>Slide {{$index}}</h4>
-
-                    <p>{{slide.text}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>--%>
-
-
 <div class="banner" ng-controller="mainController">
     <div id="js_banner" class="fx_banner" uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="active">
         <ul id="js_banner_img" class="fx_banner_img clear" uib-slide ng-repeat="slide in slides track by slide.id" index="$index">
@@ -202,63 +183,76 @@
             </li>
         </ul>
     </div>
-    <div class="estimate">
-        <div>
-            <span class="active" id="studyAsse">留学评估</span><span id="colonAsse">移民评估</span>
+    <div class="estimateContainer">
+        <div class="estimate">
+            <div>
+                <span class="active" id="studyAsse">留学评估</span><span id="colonAsse">移民评估</span>
+            </div>
+            <ul>
+                <li class="focusCur intentionA">
+                    <input type="text" placeholder="意向留学国家">
+                    <span>|</span>
+                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <ul class="son_ul" style="display: none">
+                        <li>选项一</li>
+                        <li>选项二</li>
+                        <li>选项三</li>
+                        <li>选项四</li>
+                        <li>选项五</li>
+                    </ul>
+                </li>
+                <li class="focusCur intentionB">
+                    <input type="text" placeholder="意向留学国家">
+                    <span>|</span>
+                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <ul class="son_ul" style="display: none">
+                        <li>选项一</li>
+                        <li>选项二</li>
+                        <li>选项三</li>
+                        <li>选项四</li>
+                        <li>选项五</li>
+                    </ul>
+                </li>
+                <li class="focusCur intentionC">
+                    <input type="text" placeholder="意向留学国家">
+                    <span>|</span>
+                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <ul class="son_ul" style="display: none">
+                        <li>选项一</li>
+                        <li>选项二</li>
+                        <li>选项三</li>
+                        <li>选项四</li>
+                        <li>选项五</li>
+                    </ul>
+                </li>
+                <li class="focusCur intentionD">
+                    <input type="text" placeholder="意向留学国家">
+                    <span>|</span>
+                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <ul class="son_ul" style="display: none">
+                        <li>选项一</li>
+                        <li>选项二</li>
+                        <li>选项三</li>
+                        <li>选项四</li>
+                        <li>选项五</li>
+                        <li>选项一</li>
+                        <li>选项二</li>
+                        <li>选项三</li>
+                        <li>选项四</li>
+                        <li>选项五</li>
+                        <li>选项一</li>
+                        <li>选项二</li>
+                        <li>选项三</li>
+                        <li>选项四</li>
+                        <li>选项五</li>
+                    </ul>
+                </li>
+                <li class="fastEst intentionE">快速评估</li>
+            </ul>
+            <div style="bottom: 5px;position: absolute;width: 300px;">
+                <p>已有<span>1</span>人参与免费在线评估</p>
+            </div>
         </div>
-        <ul>
-            <li class="focusCur intentionA">
-                <input type="text" placeholder="意向留学国家">
-                <span>|</span>
-                <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-            <li class="focusCur intentionB">
-                <input type="text" placeholder="意向留学国家">
-                <span>|</span>
-                <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-            <li class="focusCur intentionC">
-                <input type="text" placeholder="意向留学国家">
-                <span>|</span>
-                <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-            <li class="focusCur intentionD">
-                <input type="text" placeholder="意向留学国家">
-                <span>|</span>
-                <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-
-            <li class="fastEst intentionE">快速评估</li>
-        </ul>
-        <p>已有<span>2355</span>人参与免费在线评估</p>
     </div>
 </div>
 <div class="productsContent">
@@ -793,8 +787,8 @@
         });
 
         $('.son_ul').hide(); //初始ul隐藏
-        $('.selectedInput').hover(function () { //鼠标移动函数
-                    $(this).parent()[0].style.borderRadius="20px 20px 0 0";
+        $('.selectedInput').hover(function () {//鼠标移动函数
+                    $(this).parent()[0].style.borderRadius = "15px";
                     $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
                     $(this).parent().find('li').hover(function () {
                         $(this).addClass('hover')
@@ -808,7 +802,7 @@
                             }
                     );
                 }, function () {
-            $(this).parents('li')[0].style.borderRadius="20px";
+                    $(this).parents('li')[0].style.borderRadius = "15px";
                 }
         );
         $('ul.son_ul li').click(function () {
