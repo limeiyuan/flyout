@@ -1,7 +1,6 @@
-/*这里面写各个模块的样式*/
 .topHead{ height: 35px; width: 100%; background: #f5f5f5; border-bottom: 1px solid #eee;}
 .topHeadContent{
-        width: 1200px; margin:0 auto;line-height: 30px;font-size: 12px;font-family: 微软雅黑;
+    width: 1200px; margin:0 auto;line-height: 30px;font-size: 12px;font-family: 微软雅黑;
 }
 .topHeadContentLeft a,.topHeadContentRightUl li a{ color: #666;}
 .topHeadContentRightUl .hiName{color:#ff3638;margin:0 10px;}
@@ -40,15 +39,15 @@
 
 .navContent ul li{ display: inline;}
 .navContent ul li a{
-        float: left;
-        width: 100px; font-size: 14px; text-align: center ; color: #333;
+    float: left;
+    width: 100px; font-size: 14px; text-align: center ; color: #333;
 }
 .navContent ul li a:hover{background: #0099ec;color: #fff;}
 .active{ }
 /*nav结束*/
 /*banner开始*/
 .banner{width: 100%;height: 400px;position: relative}
-.banner .bannerImage img{`width: 100%;height: 100%;}
+.banner .bannerImage img{height: 100%;}
 .banner .estimate{width: 300px;height: 400px;position: absolute;top: 1px;right: 284px;background: #fff;}
 .estimate div{height: 40px;}
 .estimate div span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;}
@@ -70,8 +69,18 @@
 .productsInfo h3,.teacher h3,.community h3{font-size: 16px;color: #333;font-weight: bold;font-family: 微软雅黑;}
 .productsInfo .abroad p,.abroad p,.community p,.teacher p{font-size: 12px;color: #666;font-family: Arial}
 .moreAbroad{line-height: 30px; color: #666;}
-.productsList{overflow: hidden;margin-top: 5px;background: #ccc;}
-.productsList ul{float: right;}
+.productsList{overflow: hidden;margin-top: 5px;}
+.productImag{}
+.productsList ul{width: 80%;overflow: hidden;}
+.productsList ul li{float: right;width: 228px;height: 220px;margin: 5px;}
+.productsList ul li div{width: 210px; height: 150px; background: red; margin: 8px auto;}
+.productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;line-height: 20px;}
+.productsList ul li span{    display: block;font-size: 12px;color: #666; padding-left: 14px;line-height: 17px;}
+.productsList ul .productCurr div{ height: 110px; }
+.productsList ul .productCurr .productFly{ height: 32px; color: #666;background: none;}
+.productsList ul .productCurr .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 50px;background: url("../img/brand.png")no-repeat left center;padding-left: 26px;}
+.productsList ul .productCurr .productFly .likeNum{ height: 20px;line-height: 20px;width: 32px; background: url("../img/like_slect.png")no-repeat left center;padding-left: 20px;}
+
 /*products结束*/
 /*consultant 开始*/
 .consultant{ width: 1200px; margin: auto;margin-top: 20px;}
@@ -100,7 +109,7 @@
 .queAnsExam{width: 1200px;height: 180px;border: 1px solid #999;margin-top: 12px;}
 .examples{width: 960px;height: 180px;float: left;}
 .queAnsExam .goQues{width: 239px;height: 160px;float: left;border-left: 1px solid #999;margin-top: 10px;}
- .examples li{font-size: 14px;color: #666;margin: 20px 24px;}
+.examples li{font-size: 14px;color: #666;margin: 20px 24px;}
 .examples li p{display: inline-block;width: 850px;white-space:nowrap;overflow: hidden;text-overflow:ellipsis;}
 .examples li span{float: right;font-size: 12px;color: #666;}
 .examples .quePre, .examples .quePre span{color: #999;}
@@ -128,11 +137,70 @@
 
 /*studyAbroad结束*/
 /*caseBox开始*/
-.caseBox{width: 1200px;margin: 20px auto;height: 500px;}
-.caseBox .repuTeacher ul .arrow{width: 1200px;margin: 20px auto;height: 500px; width: 1%; line-height: 220px; border: none;}
-.caseBox .repuTeacher ul li{`width: 180px;height:220px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
-.caseBox .repuTeacher ul .caseA{height:78px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
-.caseBox .repuTeacher ul .caseB{height:108px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
-.caseBox .repuTeacher ul .caseC{height:128px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
-.caseBox .repuTeacher ul .caseD{height:164px;float: left; text-align: center;margin: 0 15px;margin-top: 60px;}
+.caseBox{width: 1200px;margin: 20px auto;}
+.caseContent{width: 1200px;overflow: hidden}
+.caseContent li{float: left;}
+.caseBox .caseContent li img{width: 80%;}
+.caseContent ul{overflow: hidden;}
+.caseBox .caseContent ul .arrow{width: 1200px;margin:0 auto; width: 1%; line-height: 220px; border: none;}
+.caseBox .caseContent ul li{height:220px;float: left; text-align: center;margin: 0 26px;margin-top: 60px;}
+.caseBox .caseContent ul .caseA{height:78px;width:104px;float: left; text-align: center;margin: 60px 14px 0;}
+.caseBox .caseContent ul .caseB{height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;}
+.caseBox .caseContent ul .caseC{height:128px;width:154px;float: left; text-align: center;margin: 35px 14px 0;}
+.caseBox .caseContent ul .caseD{width:190px;float: left; text-align: center;margin:25px 14px 0;;}
+.caseBox .caseContent ul .arrowR{float: right;}
+.caseBox .caseContent ul li span a {color: red;}
+.caseBox .caseContent ul li p{text-align: center;font-size: 14px;color: #666;margin: 8px auto;}
+.caseBox .caseContent ul li span{text-align: center;font-size: 12px;color: #666;}
+.viewCase{width: 1200px;overflow: hidden;}
+.viewCase ul{overflow: hidden;}
+.viewCase .viewBox{float: left;width: 232px;height: 312px; border: 1px solid #eee;border-radius: 10px;padding: 24px;margin: 0 9px;}
+.viewCase .viewBox .titeBox{border-bottom: 1px solid #eee;}
+.viewCase .viewBox div p{font-size: 14px;color: #333;}
+.viewCase .viewBox div h3{font-size: 18px;font-weight: bold;color: #333;line-height: 28px;}
+.viewCase .viewBox ul{padding: 10px 0;font-size: 14px;color: #666;}
+.viewCase .viewBox ul li{line-height: 22px;}
+.viewCase .viewBox .viewTit{display: inline-block;width: 34%;}
+.viewCase .viewBox .viewTitCont{display: inline-block;width: 65%;}
+.viewCase .viewBox .btnBox{margin:10px auto;}
+.viewCase .btnBox span{width: 100px;height: 32px; border-radius: 60px;line-height: 32px;display: inline-block;border: 1px solid #fb5454;text-align: center;}
+.viewCase .viwExam{background: #fb5454;color: #fff;}
+.viewCase .onlineQue{background: #fff;color:#fb5454; }
+.clickMore{display: block; margin: 25px auto; width: 100px;color: #333;font-size: 14px;}
 /*caseBox结束*/
+/*advantage开始*/
+.advantage{width: 1200px;margin: 20px auto;font-family: 微软雅黑}
+.advantage .advantageBox{height: 394px;border: 1px solid #eee;}
+.advantageCont ul{overflow: hidden; padding: 40px 0;border-bottom: 1px solid #000;}
+.advantageCont li{float: left; text-align: center;width: 20%;}
+.advantageCont li h6{color: #333;font-size: 16px;}
+.advantageCont li p{color: #666;font-size: 14px;}
+.advantageCont li p span{color: #fb5454;}
+.advantageMedia li{float: left; text-align: center;margin: 10px 20px;}
+.advantageMedia{overflow: hidden}
+.advantageMedia ul{padding: 23px;overflow: hidden;}
+.advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin-top: 23px;}
+/*advantage结束*/
+/*footer开始*/
+.footer{width: 100%;height: 360px;background: #303030;font-family: 微软雅黑}
+.footerBox{width: 1200px;height: 360px;margin: 20px auto;}
+.footerLogo{width: 160px;height: 250px;}
+.footerLogo img{margin-top: 50%;}
+.footerCont{padding-top: 30px;}
+.footerwei{width: 660px;height: 250px;margin:0 360px 0 205px;border-left:  1px solid #eee;border-right:  1px solid #eee;;}
+.footerwei ul{overflow: hidden;}
+.footerwei li{float: left; text-align: center;margin: 26px 50px;}
+.footerwei li p{color: #f2f2f2;}
+.footerwei p{text-align: center;font-size: 12px;color: #f2f2f2;line-height: 20px;}
+.footerTel{width: 300px;height: 250px;;color: #f2f2f2;}
+.footerTel div{margin: 50px 0 0 30px;}
+.serviceTel{background: url("../img/hotline.png")no-repeat left center;text-indent: 20px;}
+.serviceNum{font-size: 30px;font-weight: bold;line-height: 50px;}
+.serviceQQ{margin-top: 5px;}
+.serviceQQ,.serviceEmail{line-height: 22px;}
+.footerBox .footerInfo {height: 30px;color: #f2f2f2;}
+.footerBox .footerInfo .shuxian{width: 28px;text-align: center;}
+.footerBox ul li{float: left;text-align: center;}
+.footerAgency{width: 500px;margin: 20px auto 0;}
+.VIPAgency{color:#fb5454;}
+/*footer结束*/
