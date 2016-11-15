@@ -4,6 +4,8 @@
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 
+<title>飞出国</title>
+
 <%
     String path = request.getContextPath();
     String resourcePath = request.getContextPath();
