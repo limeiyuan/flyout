@@ -30,7 +30,7 @@
         <tr ng-repeat="product in products">
             <td class="text-left">{{product.title}}
             </td>
-            <td class="text-center">{{product.photo.path}}
+            <td class="text-center"><img src="<%=picPath%>{{product.photo.path}}"/>
             </td>
             <td class="text-center">{{product.intro}}
             </td>

@@ -16,6 +16,8 @@
 			">
     <context:annotation-config/>
 
+    <bean id="applicationProperties" class="com.flyout.common.ApplicationProperties"/>
+
     <!--<context:property-placeholder location="classpath:/**/*.properties,file:/usr/tomcat/apache-tomcat-8.0.28_7080/conf/flyconsole/ds.properties" />-->
     <context:property-placeholder location="classpath:/**/*.properties"/>
 </beans>
