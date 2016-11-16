@@ -207,37 +207,37 @@
     <div class="school_sort fl">
         <ul>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p class="passing_rate">申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
