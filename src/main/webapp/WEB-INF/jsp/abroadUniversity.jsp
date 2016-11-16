@@ -189,5 +189,42 @@
 
 </div>
 <%@include file="footer.jsp" %>
+
+<script>
+    $(document).ready(function(){
+        $(document).ready(function () {
+                    $('.son_ul').hide(); //初始ul隐藏
+                    $('.selectedInput').click(function () { //鼠标移动函数
+                                $(this).parent()[0].style.borderRadius="20px 20px 0 0";
+                                $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
+                                $(this).parent().find('li').hover(function () {
+                                    $(this).addClass('hover')
+                                }, function () {
+                                    $(this).removeClass('hover')
+                                }); //li的hover效果
+                                $(this).parent().hover(function () {
+                                        },
+                                        function () {
+                                            $(this).parent().find("ul.son_ul").slideUp();
+                                        }
+                                );
+                            }, function () {
+                            }
+                    );
+                    $('ul.son_ul li').click(function () {
+                        $(this).parents('li').find('input').val($(this).html());
+                        $(this).parents('li').find('ul').slideUp();
+                        $(this).parents('li')[0].style.borderRadius="20px";
+                    });
+                },
+
+                $('.school_list').mouseover(function(){
+                    $('.mask_school').hide();
+                    $(this).find('.mask_school').show()
+                })
+
+        );
+    });
+</script>
 </body>
 </html>
