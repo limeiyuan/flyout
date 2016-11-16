@@ -35,20 +35,31 @@ public class LoginController {
     @ResponseBody
     public BasicDto login(@RequestParam String username, @RequestParam String password) {
         BasicDto dto = new BasicDto();
+        dto.setResult(false);
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
-            dto.setResult(false);
             dto.setMessage("用户名或者密码不能为空");
+            return dto;
         }
 
         Account account = accountService.login("86" + username, password);
         if (account == null) {
-            dto.setResult(false);
             dto.setMessage("用户不存在");
+            return dto;
         }
         AuthHelper.login(account);
 
         dto.setResult(true);
-        dto.setMessage("登陆成功");
+        dto.setMessage("登录成功");
+        return dto;
+    }
+
+    @RequestMapping("logout")
+    @ResponseBody
+    public BasicDto logout() {
+        AuthHelper.logout();
+        BasicDto dto = new BasicDto();
+        dto.setResult(true);
+        dto.setMessage("账户已退出");
         return dto;
     }
 }

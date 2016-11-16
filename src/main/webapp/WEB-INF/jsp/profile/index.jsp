@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>个人中心</title>
+    <%c
 </head>
 <body>
 

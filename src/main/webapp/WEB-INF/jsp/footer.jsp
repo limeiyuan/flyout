@@ -1,8 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style type="text/css">
     body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,div,span,a,input,img,p{ margin: 0; padding: 0;}

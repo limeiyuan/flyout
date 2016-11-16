@@ -1,6 +1,7 @@
 package com.flyout.dao;
 
 import com.flyout.common.dao.BaseHibernateDao;
+import com.flyout.common.enums.EnableEnum;
 import com.flyout.domain.Account;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
@@ -16,8 +17,8 @@ import java.util.List;
 public class AccountDaoImpl extends BaseHibernateDao<Account, Long> {
     public Account findByUsername(String username) {
         DetachedCriteria dc = createDetachedCriteria();
-        dc.add(Restrictions.eq("userName", username));
-        dc.add(Restrictions.eq("enable", 1));
+        dc.add(Restrictions.eq("username", username));
+        dc.add(Restrictions.eq("enable", EnableEnum.enable));
         List<Account> accounts = query(dc);
         if (accounts.size() == 1) {
             return accounts.get(0);

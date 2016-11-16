@@ -71,8 +71,8 @@
         </div>
         <div class="topHeadContentRight fr">
             <ul class="topHeadContentRightUl">
-                <li class="sayHi"><a href="#">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user==null?"":user.getScreenname()%></a><a href="#">退出</a></li>
-                <li class="regisLogin"><a href="/login/index.htm" class="login">登陆</a><a href="/login/register.htm">注册</a></li>
+                <li class="sayHi"><a href="#">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user==null?"":user.getScreenname()%></a><a href="#" onclick="logout()">退出</a></li>
+                <li class="regisLogin"><a href="/login/index.htm" class="login">登录</a><a href="/login/register.htm">注册</a></li>
                 <li class="shuxian">|</li>
                 <li class="goalCol"><a href="#">目标院校</a></li>
                 <li class="shuxian">|</li>
@@ -137,6 +137,20 @@
         $('.sayHi').css({"display": "none"});
     } else {
         $('.regisLogin').css({"display": "none"});
+    }
+
+    function logout() {
+        $.ajax({
+            url: '<%=path%>/login/logout.htm',
+            method: 'post',
+            success: function (data) {
+                if (!!data.result) {
+                    username = "";
+                    $('.sayHi').css({"display": "none"});
+                    $('.regisLogin').css({"display": "inline"});
+                }
+            }
+        });
     }
 </script>
 
