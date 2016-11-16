@@ -50,8 +50,8 @@
         .productsList ul li span{ height: 34px; display: block;font-size: 12px;color: #666; padding-left: 14px;line-height: 17px;overflow: hidden;}
         .productsList ul .productCurr div{ height: 110px; }
         .productsList ul  .productFly{ height: 32px; color: #666;background: none;}
-        .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 70px;background: url("<%=resourcePath%>/img/brand.png")no-repeat left center;padding-left: 26px;}
-        .productsList ul .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/like_slect.png")no-repeat left center;padding-left: 16px;}
+        .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 70px;background: url("<%=resourcePath%>/img/home/brand.png")no-repeat left center;padding-left: 26px;}
+        .productsList ul .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/home/like_slect.png")no-repeat left center;padding-left: 16px;}
         .intentionA{top:50px}
         .intentionB{top:110px}
         .intentionC{ top:170px}
@@ -196,7 +196,7 @@
                 <li class="focusCur intentionA">
                     <input type="text" placeholder="意向留学国家">
                     <span>|</span>
-                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
                         <li>选项一</li>
                         <li>选项二</li>
@@ -208,7 +208,7 @@
                 <li class="focusCur intentionB">
                     <input type="text" placeholder="意向留学国家">
                     <span>|</span>
-                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
                         <li>选项一</li>
                         <li>选项二</li>
@@ -220,7 +220,7 @@
                 <li class="focusCur intentionC">
                     <input type="text" placeholder="意向留学国家">
                     <span>|</span>
-                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
                         <li>选项一</li>
                         <li>选项二</li>
@@ -232,7 +232,7 @@
                 <li class="focusCur intentionD">
                     <input type="text" placeholder="意向留学国家">
                     <span>|</span>
-                    <img class="selectedInput" src="<%=resourcePath%>/img/select.png" alt="">
+                    <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
                         <li>选项一</li>
                         <li>选项二</li>
@@ -270,7 +270,7 @@
 
     <div class="productsList">
         <div class="productImag fl">
-            <img src="<%=resourcePath%>/img/ad_left.jpg" alt="热门留学产品">
+            <img src="<%=resourcePath%>/img/home/ad_left.jpg" alt="热门留学产品">
         </div>
 
         <ul>
@@ -362,7 +362,7 @@
                 <img src="<%=resourcePath%>/img/arrow_left.png" alt="">
             </li>--%>
             <li class="famousTeacher">
-                <div class="teacherImag"><img src="<%=resourcePath%>/img/avatar1.png" alt=""></div>
+                <div class="teacherImag"><img src="<%=resourcePath%>/img/home/avatar1.png" alt=""></div>
                 <p>Stevev</p>
                 <span>美国顾问专家</span>
                 <div class="teacherInfo">
@@ -371,7 +371,7 @@
                 </div>
             </li>
             <li class="famousTeacher">
-                <div class="teacherImag"><img src="<%=resourcePath%>/img/avatar2.png" alt=""></div>
+                <div class="teacherImag"><img src="<%=resourcePath%>/img/home/avatar2.png" alt=""></div>
                 <p>陈老师</p>
                 <span>十五年从业经验</span>
                 <div class="teacherInfo">
@@ -380,7 +380,7 @@
                 </div>
             </li>
             <li class="teacherCur famousTeacher">
-                <div class="teacherImag"><img src="<%=resourcePath%>/img/avatar3.png" alt=""></div>
+                <div class="teacherImag"><img src="<%=resourcePath%>/img/home/avatar3.png" alt=""></div>
                 <p>史老师</p>
                 <span>鹏润留学移民首席顾问咨询师</span>
                 <div class="teacherInfo">
@@ -389,7 +389,7 @@
                 </div>
             </li>
             <li class="famousTeacher">
-                <div class="teacherImag"><img src="<%=resourcePath%>/img/avatar4.png" alt=""></div>
+                <div class="teacherImag"><img src="<%=resourcePath%>/img/home/avatar4.png" alt=""></div>
                 <p>Lillian Liu</p>
                 <span>鹏润留学移民顾问咨询师</span>
                 <div class="teacherInfo">
@@ -398,7 +398,7 @@
                 </div>
             </li>
             <li class="famousTeacher">
-                <div class="teacherImag"><img src="<%=resourcePath%>/img/avatar5.png" alt=""></div>
+                <div class="teacherImag"><img src="<%=resourcePath%>/img/home/avatar5.png" alt=""></div>
                 <p>赵老师</p>
                 <span>山西省教育自费留学服务中心</span>
                 <div class="teacherInfo">
@@ -411,8 +411,8 @@
             </li>--%>
         </ul>
         <div class="arrow_img">
-            <img id="leftArrow" class="fl" src="<%=resourcePath%>/img/arrow_left.png" alt="">
-            <img id=rightArrow class="fr" src="<%=resourcePath%>/img/arrow_right.png" alt="">
+            <img id="leftArrow" class="fl" src="<%=resourcePath%>/img/home/arrow_left.png" alt="">
+            <img id=rightArrow class="fr" src="<%=resourcePath%>/img/home/arrow_right.png" alt="">
         </div>
     </div>
 </div>
@@ -424,7 +424,7 @@
         </div>
         <ul>
             <li class="shuxian">|</li>
-            <li><img src="<%=resourcePath%>/img/placard.png" alt=""></li>
+            <li><img src="<%=resourcePath%>/img/home/placard.png" alt=""></li>
             <li>Jerry正则咨询<span>陈老师</span> </li>
             <li>小鱼米正在咨询<span>LillianLIU</span>老师</li>
             <li>Jerry正则咨询<span>陈老师</span></li>
@@ -505,49 +505,49 @@
                 <img src="<%=resourcePath%>/img/arrow_left_red.png" alt="">
             </li>--%>
             <li class="case0">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
                 </div>
             </li>
             <li class="case1">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
                 </div>
             </li>
             <li class="case2">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
                 </div>
             </li>
             <li class="case3">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
                 </div>
             </li>
             <li class="case4">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
                 </div>
             </li>
             <li class="case5">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
                 </div>
             </li>
             <li class="case6">
-                <img src="<%=resourcePath%>/img/avatar5.png" alt="">
+                <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
                     <p>加雪佩</p>
                     <span>成功获取<a href="">莫纳什大学</a>Offer</span>
@@ -558,8 +558,8 @@
             </li>--%>
         </ul>
         <div class="arrow_img">
-            <img  id="left__red_img" class="fl" src="<%=resourcePath%>/img/arrow_left_red.png" alt="">
-            <img id="right__red_img" class="fr" src="<%=resourcePath%>/img/arrow_right_red.png" alt="">
+            <img id="left__red_img" class="fl" src="<%=resourcePath%>/img/home/arrow_left_red.png" alt="">
+            <img id="right__red_img" class="fr" src="<%=resourcePath%>/img/home/arrow_right_red.png" alt="">
         </div>
     </div>
     <div class="viewCase">
@@ -657,28 +657,28 @@
         <div class="advantageCont">
             <ul>
                 <li>
-                    <img src="<%=resourcePath%>/img/adviser.png" alt="">
+                    <img src="<%=resourcePath%>/img/home/adviser.png" alt="">
                     <h6>平台顾问</h6>
                     <p>平台顾问平均行业经验<span>5年+</span></p>
 
                 </li>
                 <li>
-                    <img src="<%=resourcePath%>/img/academy.png" alt="">
+                    <img src="<%=resourcePath%>/img/home/academy.png" alt="">
                     <h6>合作院校</h6>
                     <p>海外<span>2000</span>多所合规院校合作</p>
                 </li>
                 <li>
-                    <img src="<%=resourcePath%>/img/services.png" alt="">
+                    <img src="<%=resourcePath%>/img/home/services.png" alt="">
                     <h6>专业服务</h6>
                     <p>每年近<span>千名</span>留学生拿到漫游结果</p>
                 </li>
                 <li>
-                    <img src="<%=resourcePath%>/img/guarantee.png" alt="">
+                    <img src="<%=resourcePath%>/img/home/guarantee.png" alt="">
                     <h6>保障机构</h6>
                     <p>平台<span>2000万</span>基金保障</p>
                 </li>
                 <li>
-                    <img src="<%=resourcePath%>/img/cooperation.png" alt="">
+                    <img src="<%=resourcePath%>/img/home/cooperation.png" alt="">
                     <h6>合作机构</h6>
                     <p><span>200多</span>家知名机构合作</p>
                 </li>
@@ -738,22 +738,22 @@
         $scope.addSlide = function () {
             slides.push({
                 id: 1,
-                image: '<%=resourcePath%>/img/banner.jpg',
+                image: '<%=resourcePath%>/img/home/banner.jpg',
                 text: '测试图片'
             });
             slides.push({
                 id: 2,
-                image: '<%=resourcePath%>/img/banner.jpg',
+                image: '<%=resourcePath%>/img/home/banner.jpg',
                 text: '测试图片'
             });
             slides.push({
                 id: 3,
-                image: '<%=resourcePath%>/img/banner.jpg',
+                image: '<%=resourcePath%>/img/home/banner.jpg',
                 text: '测试图片'
             });
             slides.push({
                 id: 4,
-                image: '<%=resourcePath%>/img/banner.jpg',
+                image: '<%=resourcePath%>/img/home/banner.jpg',
                 text: '测试图片'
             });
         };

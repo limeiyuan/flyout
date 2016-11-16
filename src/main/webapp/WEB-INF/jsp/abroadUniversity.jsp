@@ -57,7 +57,7 @@
 <div class="banner">
     <div id="js_banner" class="fx_banner">
                     <div class="child child0" data-z="1">
-                        <img src="<%=resourcePath%>/img/abroad_univer.png" alt="">
+                        <img src="<%=resourcePath%>/img/abroad/abroad_univer.png" alt="">
                     </div>
     </div>
     <div class="fly_intention">
@@ -113,7 +113,7 @@
         <ul>
 
             <li class="school_list fl">
-                <div><img src="<%=resourcePath%>/img/MIT.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/MIT.png" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">Massachusetts Institute of Technology</p>
                     <p>地区：美国.波士顿</p>
@@ -125,7 +125,7 @@
                 <p>Massachusetts Institute of Technology</p>
             </li>
             <li class="school_list midd_school">
-                <div><img src="<%=resourcePath%>/img/HF.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/HF.png" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">Massachusetts Institute of Technology</p>
                     <p>地区：美国.波士顿</p>
@@ -137,7 +137,7 @@
                 <p>Harvard University</p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/SU.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/SU.png" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">Massachusetts Institute of Technology</p>
                     <p>地区：美国.波士顿</p>
@@ -149,7 +149,7 @@
                 <p>Stanford University</p>
             </li>
             <li class="school_list fl">
-                <div><img src="<%=resourcePath%>/img/MIT.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/MIT.png" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">Massachusetts Institute of Technology</p>
                     <p>地区：美国.波士顿</p>
@@ -161,7 +161,7 @@
                 <p>Massachusetts Institute of Technology</p>
             </li>
             <li class="school_list midd_school">
-                <div><img src="<%=resourcePath%>/img/HF.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/HF.png" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">Massachusetts Institute of Technology</p>
                     <p>地区：美国.波士顿</p>
@@ -173,7 +173,7 @@
                 <p>Harvard University</p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/SU.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/SU.png" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">Massachusetts Institute of Technology</p>
                     <p>地区：美国.波士顿</p>

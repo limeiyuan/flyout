@@ -30,16 +30,16 @@
     .topHeadContentRightUl li.iconImage{ width: 45px;}
     .topHeadContentRightUl li a:hover{}
     .topHeadContentRightUl li.shuxian{ width: 28px; text-align: center;color: #999;}
-    .topHeadContentRightUl li.goalCol::before{content: url("<%=resourcePath%>/img/col.png");margin-right: 8px;}
-    .topHeadContentRightUl .moreServ::before{ content: url("<%=resourcePath%>/img/more.png");margin-right: 8px; }
-    .topHeadContentRightUl .moreServ::after{ content: url("<%=resourcePath%>/img/arrow_down.png");margin-left: 8px; }
-    .topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("<%=resourcePath%>/img//weibo.png") no-repeat left center}
-    .topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("<%=resourcePath%>/img/weixin.png") no-repeat right center}
+    .topHeadContentRightUl li.goalCol::before{content: url("<%=resourcePath%>/img/home/col.png");margin-right: 8px;}
+    .topHeadContentRightUl .moreServ::before{ content: url("<%=resourcePath%>/img/home/more.png");margin-right: 8px; }
+    .topHeadContentRightUl .moreServ::after{ content: url("<%=resourcePath%>/img/home/arrow_down.png");margin-left: 8px; }
+    .topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("<%=resourcePath%>/img/home/weibo.png") no-repeat left center}
+    .topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("<%=resourcePath%>/img/home/weixin.png") no-repeat right center}
 
     /*logoSearch开始*/
     .logoFly{width: 100%;background: #fff;}
     .logoSearch{ width: 1200px; height: 100px; margin: 0 auto; overflow: hidden ;}
-    .logoSearch .logo{ background:url("<%=resourcePath%>/img/logo.png")no-repeat center center;width: 160px;height: 100px;}
+    .logoSearch .logo{ background:url("<%=resourcePath%>/img/home/logo.png")no-repeat center center;width: 160px;height: 100px;}
     .logoSearch .search{ width: 500px;height: 32px;margin: 26px auto 0;}
     .logoSearch .freeTel{width: 180px;height: 100px;}
     .logoSearch .freeTel .telIcon{ width: 30px;height: 35px;margin-top: 35px;}
@@ -48,7 +48,7 @@
     .logoSearch .freeTel .telTime{ font-size: 12px;color: #666;padding: 0;margin: 0}
 
     .search .searchBox{overflow: hidden;width: 478px;}
-    .search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("<%=resourcePath%>/img/select.png") no-repeat 65px center;background-size: 10%;}
+    .search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("<%=resourcePath%>/img/home/select.png") no-repeat 65px center;background-size: 10%;}
 
     .search .searchInput{ border: 1px solid #0099ec;}
     .search input{ width: 316px; border:none; padding: 0 22px 0 16px;;line-height: 22px;}
@@ -87,7 +87,7 @@
     <div class="logoSearch">
         <div class="logo fl"></div>
         <div class="freeTel fr">
-            <img class="telIcon fl" src="<%=resourcePath%>/img/tel.png" alt="">
+            <img class="telIcon fl" src="<%=resourcePath%>/img/home/tel.png" alt="">
             <div class="fr">
                 <p class="telNum">400-12345678</p>
                 <p class="telTime">免费咨询电话：9:00-18:00</p>
@@ -155,14 +155,9 @@
 </script>
 
 <script type="text/javascript">
-    function toUrl(url) {
-        window.location = '<%=path%>' + '/' + url;
-    }
-
     $($('.navContent a')[0]).addClass('nav_active');
     $('.navContent a').each(function (index, a) {
         var url = $(a).attr('href');
-        console.log(url);
         if (window.location.href.indexOf(url) > -1) {
             $('.navContent a').removeClass('nav_active');
             $(a).addClass('nav_active');

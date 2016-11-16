@@ -66,31 +66,31 @@
 <div class="schoo_li">
     <ul>
         <li>
-            <div><img src="<%=resourcePath%>/img/mel.png" alt=""></div>
+            <div><img src="<%=resourcePath%>/img/abroad/mel.png" alt=""></div>
             <p class="appli_name">墨尔本大学</p>
             <p><span class="appli_num">35233</span><span class="applied">人已申请</span></p>
             <div class="free_appli">免费申请</div>
         </li>
         <li>
-            <div><img src="<%=resourcePath%>/img/mel.png" alt=""></div>
+            <div><img src="<%=resourcePath%>/img/abroad/mel.png" alt=""></div>
             <p class="appli_name">墨尔本大学</p>
             <p><span class="appli_num">35233</span><span class="applied">人已申请</span></p>
             <div class="free_appli">免费申请</div>
         </li>
         <li>
-            <div><img src="<%=resourcePath%>/img/mel.png" alt=""></div>
+            <div><img src="<%=resourcePath%>/img/abroad/mel.png" alt=""></div>
             <p class="appli_name">墨尔本大学</p>
             <p><span class="appli_num">35233</span><span class="applied">人已申请</span></p>
             <div class="free_appli">免费申请</div>
         </li>
         <li>
-            <div><img src="<%=resourcePath%>/img/mel.png" alt=""></div>
+            <div><img src="<%=resourcePath%>/img/abroad/mel.png" alt=""></div>
             <p class="appli_name">墨尔本大学</p>
             <p><span class="appli_num">35233</span><span class="applied">人已申请</span></p>
             <div class="free_appli">免费申请</div>
         </li>
         <li class="last_school">
-            <div><img src="<%=resourcePath%>/img/mel.png" alt=""></div>
+            <div><img src="<%=resourcePath%>/img/abroad/mel.png" alt=""></div>
             <p class="appli_name">墨尔本大学</p>
             <p><span class="appli_num">35233</span><span class="applied">人已申请</span></p>
             <div class="free_appli">免费申请</div>
@@ -200,44 +200,44 @@
 <div class="filter_factor">
     <div class="popularity">人气最高</div>
     <div class="worth">最值</div>
-    <div class="keyword"><input type="text" placeholder="请输入关键字"><span><img src="<%=resourcePath%>/img/search.png" alt="搜索"></span></div>
+    <div class="keyword"><input type="text" placeholder="请输入关键字"><span><img src="<%=resourcePath%>/img/abroad/search.png" alt="搜索"></span></div>
 </div>
 
 <div class="school_view">
     <div class="school_sort fl">
         <ul>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p class="passing_rate">申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
             </li>
             <li class="school_list fr">
-                <div><img src="<%=resourcePath%>/img/schoo_view.png" alt=""></div>
+                <div><img src="<%=resourcePath%>/img/abroad/schoo_view.png" alt=""></div>
                 <p>斯坦福斯坦福大学斯坦福大学斯坦福大学斯坦福大学大学</p>
                 <p>申请通过率8%</p>
                 <p><span class="now_price">￥23543</span><span class="original_price">￥34543</span><span class="collection">收藏</span></p>
@@ -245,8 +245,8 @@
         </ul>
     </div>
     <div class="may_like fr">
-        <div><img src="<%=resourcePath%>/img/may_like1.png" alt=""></div>
-        <div><img src="<%=resourcePath%>/img/may_like2.png" alt=""></div>
+        <div><img src="<%=resourcePath%>/img/abroad/may_like1.png" alt=""></div>
+        <div><img src="<%=resourcePath%>/img/abroad/may_like2.png" alt=""></div>
 
     </div>
     <div class="fenye cl">

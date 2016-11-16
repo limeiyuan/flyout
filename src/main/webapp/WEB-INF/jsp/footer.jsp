@@ -24,7 +24,7 @@
     .footerwei p{text-align: center;font-size: 12px;color: #f2f2f2;line-height: 20px;}
     .footerTel{width: 300px;height: 250px;;color: #f2f2f2;}
     .footerTel div{margin: 50px 0 0 30px;}
-    .serviceTel{background: url("<%=resourcePath%>/img/hotline.png")no-repeat left center;text-indent: 20px;}
+    .serviceTel{background: url("<%=resourcePath%>/img/home/hotline.png")no-repeat left center;text-indent: 20px;}
     .serviceNum{font-size: 30px;font-weight: bold;line-height: 50px;}
     .serviceQQ{margin-top: 5px;}
     .serviceQQ,.serviceEmail{line-height: 22px;}
@@ -38,7 +38,7 @@
     <div class="footerBox">
         <div class="footerCont">
             <div class="footerLogo fl">
-                <img src="<%=resourcePath%>/img/logo_bottom.png" alt="">
+                <img src="<%=resourcePath%>/img/home/logo_bottom.png" alt="">
             </div>
             <div class="footerTel fr">
                 <div>
@@ -50,12 +50,12 @@
             </div>
             <div class="footerwei">
                 <ul>
-                    <li class="weChat"><img src="<%=resourcePath%>/img/qrcode_weixin.png" alt="">
+                    <li class="weChat"><img src="<%=resourcePath%>/img/home/qrcode_weixin.png" alt="">
                         <p>微信</p>
                     </li>
-                    <li><img src="<%=resourcePath%>/img/qrcode_weixin.png" alt="">
+                    <li><img src="<%=resourcePath%>/img/home/qrcode_weixin.png" alt="">
                         <p>微信</p></li>
-                    <li><img src="<%=resourcePath%>/img/qrcode_weixin.png" alt="">
+                    <li><img src="<%=resourcePath%>/img/home/qrcode_weixin.png" alt="">
                         <p>微信</p></li>
                 </ul>
                 <p>海拓华星教育科技（北京）有限公司 </p>

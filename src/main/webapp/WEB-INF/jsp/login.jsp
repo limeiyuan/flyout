@@ -39,6 +39,10 @@
             border-radius: 5px;
         }
 
+        .loginArea input:-webkit-autofill {
+            background-color: transparent !important;
+        }
+
         .loginArea div > span {
             display: inline-block;
             width: 40%;
