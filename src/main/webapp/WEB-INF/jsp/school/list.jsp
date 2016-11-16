@@ -11,8 +11,13 @@
     <title>学校列表</title>
     <style>
         .banner{width: 100%;;position: relative}
-        .banner .bannerImage img{height: 100%;width: 100%;}
-        .banner .fly_intention{width: 350px;height: 360px;position: absolute; top: 36px;  left: 1108px;background: rgba(0,0,0,.3);border-radius: 8px}
+        .banner .fx_banner{height: 520px;width: 100%;background: url('<%=resourcePath%>/img/school/abroad_univer.png') no-repeat center}
+        .banner .fx_banner .child {
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+        .banner .fly_intention{width: 350px;height: 360px;float: right; top: 36px;background: rgba(0,0,0,.3);border-radius: 8px}
         .fly_intention div{height: 40px;}
         .fly_intention div span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;cursor:pointer;}
         .fly_intention div .active{color: #0099ec;background: #fff;}
@@ -55,48 +60,47 @@
 <%@include file="../header.jsp" %>
 <div class="banner">
     <div id="js_banner" class="fx_banner">
-        <div class="child child0" data-z="1">
-            <img src="<%=resourcePath%>/img/school/abroad_univer.png" alt="">
-        </div>
-    </div>
-    <div class="fly_intention">
-        <ul>
-            <li class="select_input">
-                <input class="selectedInput" type="text" placeholder="意向留学国家">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-            <li class="select_input">
-                <input class="selectedInput" type="text" placeholder="学校类型">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-            <li class="select_input">
-                <input class="selectedInput" type="text" placeholder="申请阶段">
-                <ul class="son_ul" style="display: none">
-                    <li>选项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项四</li>
-                    <li>选项五</li>
-                </ul>
-            </li>
-            <li>
-                <input class="" type="text" placeholder="请输入学校名称">
-            </li>
+        <div class="child" data-z="1">
+            <div class="fly_intention">
+                <ul>
+                    <li class="select_input">
+                        <input class="selectedInput" type="text" placeholder="意向留学国家">
+                        <ul class="son_ul" style="display: none">
+                            <li>选项一</li>
+                            <li>选项二</li>
+                            <li>选项三</li>
+                            <li>选项四</li>
+                            <li>选项五</li>
+                        </ul>
+                    </li>
+                    <li class="select_input">
+                        <input class="selectedInput" type="text" placeholder="学校类型">
+                        <ul class="son_ul" style="display: none">
+                            <li>选项一</li>
+                            <li>选项二</li>
+                            <li>选项三</li>
+                            <li>选项四</li>
+                            <li>选项五</li>
+                        </ul>
+                    </li>
+                    <li class="select_input">
+                        <input class="selectedInput" type="text" placeholder="申请阶段">
+                        <ul class="son_ul" style="display: none">
+                            <li>选项一</li>
+                            <li>选项二</li>
+                            <li>选项三</li>
+                            <li>选项四</li>
+                            <li>选项五</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input class="" type="text" placeholder="请输入学校名称">
+                    </li>
 
-            <li class="fastEst">自主择校</li>
-        </ul>
+                    <li class="fastEst">自主择校</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 <div class="schoolContent"  ng-controller="mainController">
