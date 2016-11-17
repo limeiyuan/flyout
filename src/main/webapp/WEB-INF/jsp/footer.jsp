@@ -50,13 +50,13 @@
             </div>
             <div class="footerwei">
                 <ul>
-                    <li class="weChat"><img src="<%=resourcePath%>/img/home/qrcode_weixin.png" alt="">
-                        <p>微信</p>
+                    <li class="weChat"><img src="<%=resourcePath%>/img/downloadApp.png" alt="">
+                        <p>下载App</p>
                     </li>
-                    <li><img src="<%=resourcePath%>/img/home/qrcode_weixin.png" alt="">
-                        <p>微信</p></li>
-                    <li><img src="<%=resourcePath%>/img/home/qrcode_weixin.png" alt="">
-                        <p>微信</p></li>
+                    <li><img src="<%=resourcePath%>/img/weibo.png" alt="">
+                        <p>官方微博</p></li>
+                    <li><img src="<%=resourcePath%>/img/weixin.jpg" alt="">
+                        <p>订阅号</p></li>
                 </ul>
                 <p>海拓华星教育科技（北京）有限公司 </p>
                 <p>北京市朝阳区东三环中路7号北京财务中心916A</p>

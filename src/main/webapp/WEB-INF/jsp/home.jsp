@@ -168,6 +168,7 @@
         .advantageMedia{overflow: hidden}
         .advantageMedia ul{padding: 0 23px;overflow: hidden;}
         .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin-top: 23px;}
+        .advantageMedia img{height: 32px;width: 115px;}
         /*advantage结束*/
 
         .right.carousel-control, .left.carousel-control {
@@ -491,22 +492,22 @@
             <li class="case0">
                 <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
-                    <p>加雪佩</p>
-                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                    <p>王同学</p>
+                    <span>成功获取<a href="">悉尼大学</a>Offer</span>
                 </div>
             </li>
             <li class="case1">
                 <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
-                    <p>加雪佩</p>
-                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                    <p>李同学</p>
+                    <span>成功获取<a href="">新南威尔士大学</a>Offer</span>
                 </div>
             </li>
             <li class="case2">
                 <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                 <div>
-                    <p>加雪佩</p>
-                    <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                    <p>刘同学</p>
+                    <span>成功获取<a href="">博文中学</a>Offer</span>
                 </div>
             </li>
             <li class="case3">
@@ -550,18 +551,18 @@
         <ul>
             <li class="viewBox">
                 <div class="titeBox">
-                    <p>蒋思然</p>
-                    <h3>新南威尔士大学</h3>
+                    <p>王同学</p>
+                    <h3>悉尼大学</h3>
                 </div>
                 <ul>
                     <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">深圳大学</span></li>
-                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">软件工程</span></li>
-                    <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科</span></li>
-                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">2.90</span></li>
+                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">计算机专业</span></li>
+                    <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科（专接本）</span></li>
+                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.0</span></li>
                     <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
                     <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">研究生</span></li>
-                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The university of New South Wales</span></li>
-                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">Master of Information Technology</span></li>
+                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of Sydney</span></li>
+                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">计算机技术专业</span></li>
                 </ul>
                 <div class="btnBox">
                     <span class="viwExam fl">查看案例</span>
@@ -570,18 +571,18 @@
             </li>
             <li class="viewBox">
                 <div class="titeBox">
-                    <p>蒋思然</p>
+                    <p>李同学</p>
                     <h3>新南威尔士大学</h3>
                 </div>
                 <ul>
-                    <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">深圳大学</span></li>
-                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">软件工程</span></li>
+                    <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">中国政法大学</span></li>
+                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">法学专业</span></li>
                     <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科</span></li>
-                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">2.90</span></li>
+                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.0</span></li>
                     <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
                     <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">研究生</span></li>
-                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The university of New South Wales</span></li>
-                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">Master of Information Technology</span></li>
+                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of New South Wales</span></li>
+                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">Juris Doctor</span></li>
                 </ul>
                 <div class="btnBox">
                     <span class="viwExam fl">查看案例</span>
@@ -590,18 +591,18 @@
             </li>
             <li class="viewBox">
                 <div class="titeBox">
-                    <p>蒋思然</p>
-                    <h3>新南威尔士大学</h3>
+                    <p>刘同学</p>
+                    <h3>博文中学</h3>
                 </div>
                 <ul>
-                    <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">深圳大学</span></li>
-                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">软件工程</span></li>
-                    <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科</span></li>
-                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">2.90</span></li>
+                    <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">北京师范大学附属中学</span></li>
+                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">高一</span></li>
+                    <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">高中</span></li>
+                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">80</span></li>
                     <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
-                    <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">研究生</span></li>
-                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The university of New South Wales</span></li>
-                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">Master of Information Technology</span></li>
+                    <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">高中</span></li>
+                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">Balwyn High School</span></li>
+                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">无</span></li>
                 </ul>
                 <div class="btnBox">
                     <span class="viwExam fl">查看案例</span>
@@ -610,18 +611,18 @@
             </li>
             <li class="viewBox">
                 <div class="titeBox">
-                    <p>蒋思然</p>
-                    <h3>新南威尔士大学</h3>
+                    <p>孙同学</p>
+                    <h3>奥克兰大学</h3>
                 </div>
                 <ul>
-                    <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">深圳大学</span></li>
-                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">软件工程</span></li>
-                    <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科</span></li>
-                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">2.90</span></li>
+                    <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">天津商业大学</span></li>
+                    <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">机械工程</span></li>
+                    <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科大一</span></li>
+                    <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.4</span></li>
                     <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
-                    <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">研究生</span></li>
-                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The university of New South Wales</span></li>
-                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">Master of Information Technology</span></li>
+                    <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">本科</span></li>
+                    <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of Auckland</span></li>
+                    <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">商科</span></li>
                 </ul>
                 <div class="btnBox">
                     <span class="viwExam fl">查看案例</span>
@@ -671,20 +672,18 @@
         <div class="advantageMedia">
             <h3>媒体报道</h3>
             <ul>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
-                <li><img src="http://i3.sinaimg.cn/cj/pic/newLogo/logo_home_fin.gif" alt=""></li>
+                <li><a href="http://mt.sohu.com/20160507/n448161814.shtml" target="_blank">
+                    <img src="http://www.sohu.com/upload/images20140108/sohulogo.png" alt=""></a></li>
+                <li><a href="http://yueyu.cntv.cn/2015/10/10/ARTI1444465144332545.shtml" target="_blank">
+                    <img src="<%=resourcePath%>/img/home/cntv.png" alt=""></a></li>
+                <li><a href="http://36kr.com/p/5044173.html" target="_blank">
+                    <img src="http://sta.36krcnd.com/common-module/common-header/images/logo.png" alt=""></a></li>
+                <li><a href="http://www.jiemodui.com/N/44388.html" target="_blank">
+                    <img src="http://www.jiemodui.com/Static/HomeV2/images/jmd_logo.svg" alt=""></a></li>
+                <li><a href="http://www.51vv.com/zhuanti/youthModel03.shtml" target="_blank">
+                    <img src="http://www.51vv.com/images_1405/logo.png" alt=""></a></li>
+                <li><a href="http://www.donews.com/m/2927947" target="_blank">
+                    <img src="http://ui.donews.com/donews2013/img/donews_logo.gif" alt=""></a></li>
             </ul>
         </div>
     </div>
