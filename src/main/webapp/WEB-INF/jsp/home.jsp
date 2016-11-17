@@ -198,63 +198,47 @@
                     <span>|</span>
                     <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
-                        <li>选项一</li>
-                        <li>选项二</li>
-                        <li>选项三</li>
-                        <li>选项四</li>
-                        <li>选项五</li>
+                        <li>美国</li>
+                        <li>英国</li>
+                        <li>澳大利亚</li>
+                        <li>新西兰</li>
+                        <li>加拿大</li>
                     </ul>
                 </li>
                 <li class="focusCur intentionB">
-                    <input type="text" placeholder="意向留学国家">
+                    <input type="text" placeholder="计划出国时间">
                     <span>|</span>
                     <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
-                        <li>选项一</li>
-                        <li>选项二</li>
-                        <li>选项三</li>
-                        <li>选项四</li>
-                        <li>选项五</li>
+                        <li>2017年</li>
+                        <li>2018年</li>
+                        <li>三年以后</li>
                     </ul>
                 </li>
                 <li class="focusCur intentionC">
-                    <input type="text" placeholder="意向留学国家">
+                    <input type="text" placeholder="申请阶段">
                     <span>|</span>
                     <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
-                        <li>选项一</li>
-                        <li>选项二</li>
-                        <li>选项三</li>
-                        <li>选项四</li>
-                        <li>选项五</li>
+                        <li>高中</li>
+                        <li>本科</li>
+                        <li>硕士</li>
                     </ul>
                 </li>
                 <li class="focusCur intentionD">
-                    <input type="text" placeholder="意向留学国家">
+                    <input type="text" placeholder="平均分或预估">
                     <span>|</span>
                     <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
                     <ul class="son_ul" style="display: none">
-                        <li>选项一</li>
-                        <li>选项二</li>
-                        <li>选项三</li>
-                        <li>选项四</li>
-                        <li>选项五</li>
-                        <li>选项一</li>
-                        <li>选项二</li>
-                        <li>选项三</li>
-                        <li>选项四</li>
-                        <li>选项五</li>
-                        <li>选项一</li>
-                        <li>选项二</li>
-                        <li>选项三</li>
-                        <li>选项四</li>
-                        <li>选项五</li>
+                        <li>80分以上</li>
+                        <li>70-80分</li>
+                        <li>70分以下</li>
                     </ul>
                 </li>
                 <li class="fastEst intentionE">快速评估</li>
             </ul>
             <div style="bottom: 5px;position: absolute;width: 300px;">
-                <p>已有<span>1</span>人参与免费在线评估</p>
+                <p>已有<span>1342</span>人参与免费在线评估</p>
             </div>
         </div>
     </div>
