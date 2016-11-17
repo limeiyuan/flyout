@@ -4,23 +4,23 @@ import com.flyout.common.PaginationInfo;
 import com.flyout.common.util.GenericUtil;
 import com.flyout.common.util.PaginationUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.hibernate.metadata.ClassMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by LiMeiyuan on 2016/9/26 15:35.
  * description:
  */
-public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T, ID>  {
+public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T, ID> {
     @Autowired
     private SessionFactory sf;
 
@@ -85,9 +85,41 @@ public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T
         return list;
     }
 
-    public int count() {
-        return findAll().size();
+    public int count(String hql) throws DataAccessException {
+        return count(hql, Collections.<String, Object>emptyMap());
     }
+
+    public int count(String hql, Map<String, Object> param) throws DataAccessException {
+        Session session = sf.getCurrentSession();
+        Integer amount = 0;
+        int sqlFrom = hql.indexOf("from");
+        int sqlOrderby = hql.indexOf("order by");
+        String countStr = "";
+        if (sqlOrderby > 0) {
+            countStr = "select count(*) " + hql.substring(sqlFrom, sqlOrderby);
+        } else {
+            countStr = "select count(*) " + hql.substring(sqlFrom);
+        }
+        Query query = null;
+        try {
+            query = session.createQuery(countStr);
+            query.setProperties(param);
+            List list = query.list();
+            if (!list.isEmpty()) {
+                if (hql.contains("group by") || hql.contains("GROUP BY")) {
+                    amount = list.size();
+                } else {
+                    amount = new Integer(list.get(0).toString());
+                }
+            } else {
+                return 0;
+            }
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        }
+        return amount;
+    }
+
 
     @Override
     public void create(T domain) {

@@ -1,5 +1,7 @@
 package com.flyout.common;
 
+import com.flyout.common.util.LogUtil;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.ResourceLoader;
@@ -13,13 +15,16 @@ import java.util.Properties;
  * description:
  */
 public class ApplicationProperties implements InitializingBean {
+    private static Logger logger = Logger.getLogger(ApplicationProperties.class);
+
     private Map<String, Object> map;
+    private Properties properties;
 
     @Override
     public void afterPropertiesSet() throws Exception {
         ResourceLoader resourceLoader = new DefaultResourceLoader();
 
-        Properties properties = new Properties();
+        properties = new Properties();
         properties.load(resourceLoader.getResource("classpath:application.properties").getInputStream());
         if (properties.stringPropertyNames() != null && properties.stringPropertyNames().size() > 0) {
             map = new HashMap<>(properties.stringPropertyNames().size());
@@ -27,9 +32,18 @@ public class ApplicationProperties implements InitializingBean {
                 map.put(key, properties.get(key));
             }
         }
+        properties.load(resourceLoader.getResource("classpath:flyout.properties").getInputStream());
+
+        for (String s : map.keySet()) {
+            LogUtil.getLogger().debug("===========" + s + "===========");
+        }
     }
 
     public Map<String, Object> getMap() {
         return map;
+    }
+
+    public String getValue(String key){
+        return properties.get(key).toString();
     }
 }

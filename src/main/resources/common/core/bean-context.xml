@@ -17,6 +17,7 @@
     <context:annotation-config/>
 
     <bean id="applicationProperties" class="com.flyout.common.ApplicationProperties"/>
+    <bean id="memcacheManager" class="com.flyout.common.cache.MemcachedManager"/>
 
     <!--<context:property-placeholder location="classpath:/**/*.properties,file:/usr/tomcat/apache-tomcat-8.0.28_7080/conf/flyconsole/ds.properties" />-->
     <context:property-placeholder location="classpath:/**/*.properties"/>

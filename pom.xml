@@ -173,6 +173,11 @@
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.chinatelecom.tymh.xmemcached</groupId>
+            <artifactId>xmemcached-nodebug</artifactId>
+            <version>1.4.2</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>flyout-web</finalName>
