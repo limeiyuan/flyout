@@ -24,4 +24,16 @@ public class AccountServiceImpl {
         }
         return null;
     }
+
+    public void register(String username, String password) {
+        Account account = new Account();
+        account.setPassword(AuthUtil.getPassword(password));
+        account.setUsername(username);
+        account.setScreenname(username);
+        accountDao.saveOrUpdate(account, null);
+    }
+
+    public void save(Account account) {
+        accountDao.saveOrUpdate(account, account.getId());
+    }
 }
