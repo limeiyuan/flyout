@@ -20,8 +20,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("home")
 public class HomeController {
-    private static Logger logger = Logger.getLogger(HomeController.class);
-
     @Autowired
     private AdviserServiceImpl adviserService;
 
@@ -33,7 +31,6 @@ public class HomeController {
 
     @RequestMapping("home")
     public String home() {
-        logger.debug("123=456");
         return "home";
     }
 
