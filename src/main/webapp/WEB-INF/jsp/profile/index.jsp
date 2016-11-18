@@ -59,7 +59,7 @@
         .tabbed_panels div.selectedContent{ display:block;}
         /*我的收藏结束*/
         /*详细设置开始*/
-        .person_info{width: 975px;height: 670px;border: 1px solid #eee;display: .none;color: #999;}
+        .person_info{width: 975px;height: 670px;border: 1px solid #eee;display: none;color: #999;}
         .detailed_set{height: 100%;height: 100%;display: none;}
         .basic_set{height: 100%;height: 100%;display: block;}
         .avatar_box{width: 160px;height: 100%;}
