@@ -105,10 +105,10 @@ public class VerificationServiceImpl {
         Integer backNum = (Integer) resMap.get("code");
         String msg = (String) resMap.get("msg");
         if (backNum == 2) {
-            String key = MemcachedConstance.sms_key + accountFull;//组装短信key
+            String key = MemcachedConstance.SMS_KEY + accountFull;//组装短信key
             memcachedManager.del(key);//先删除memcache中的该手机号码的缓存数据
             //重新保存当前手机的手机验证码
-            memcachedManager.add(key, MemcachedConstance.sms_expire, verification);//把生成的验证码放入到memcache中，有效期10分钟
+            memcachedManager.add(key, MemcachedConstance.SMS_EXPIRE, verification);//把生成的验证码放入到memcache中，有效期10分钟
             dto.setResult(true);
             dto.setMessage("短信发送成功");
             return dto;

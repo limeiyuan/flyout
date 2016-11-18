@@ -5,6 +5,9 @@ package com.flyout.common.constance;
  * description:
  */
 public interface MemcachedConstance {
-    Integer sms_expire = 10 * 60;
-    String sms_key = "flyout_web_sms_";
+    Integer SMS_EXPIRE = 10 * 60;
+    String SMS_KEY = "flyout_web_sms_";
+
+    Integer DATA_EXPIRE = 10 * 60;
+    String DATA_ID = "flyout_web_dataId_";
 }
