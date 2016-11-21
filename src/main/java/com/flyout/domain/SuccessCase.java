@@ -1,5 +1,8 @@
 package com.flyout.domain;
 
+import com.flyout.common.enums.EnableEnum;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 /**
@@ -8,11 +11,14 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "success_case_sc")
-public class sccussCase {
+public class SuccessCase {
     @Id
     @GeneratedValue
     @Column(name = "id_sc")
     private Long id;
+
+    @Column(name = "name_sc")
+    private String name;
 
     @ManyToOne()
     @JoinColumn(name = "nation_id_sc")
@@ -36,12 +42,34 @@ public class sccussCase {
     @Column(name = "school_sc")
     private String school;
 
+    @Column(name = "order_sc")
+    private Integer order;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "enable_pi")
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;//有效
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public NationInfo getNation() {
@@ -98,5 +126,29 @@ public class sccussCase {
 
     public void setSchool(String school) {
         this.school = school;
+    }
+
+    public Integer getOrder() {
+        return order;
+    }
+
+    public void setOrder(Integer order) {
+        this.order = order;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public EnableEnum getEnable() {
+        return enable;
+    }
+
+    public void setEnable(EnableEnum enable) {
+        this.enable = enable;
     }
 }
