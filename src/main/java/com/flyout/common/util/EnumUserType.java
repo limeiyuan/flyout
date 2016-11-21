@@ -35,7 +35,7 @@ public class EnumUserType implements UserType, ParameterizedType {
             String enumMthd = parameters.getProperty("recreateEnumMthd");
             String strMthd = parameters.getProperty("recreateStringMthd");
             String className = parameters.getProperty("enumClassName");
-            Class<?> returnType = null;
+            Class<?> returnType;
 
             try {
                 enumClass = Class.forName(className);

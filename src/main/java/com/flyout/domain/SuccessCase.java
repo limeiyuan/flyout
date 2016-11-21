@@ -39,8 +39,9 @@ public class SuccessCase {
     @Column(name = "graduate_school_sc")
     private String graduateSchool;
 
-    @Column(name = "school_sc")
-    private String school;
+    @ManyToOne()
+    @JoinColumn(name = "school_id_sc")
+    private SchoolInfo school;
 
     @Column(name = "order_sc")
     private Integer order;
@@ -120,11 +121,11 @@ public class SuccessCase {
         this.graduateSchool = graduateSchool;
     }
 
-    public String getSchool() {
+    public SchoolInfo getSchool() {
         return school;
     }
 
-    public void setSchool(String school) {
+    public void setSchool(SchoolInfo school) {
         this.school = school;
     }
 
