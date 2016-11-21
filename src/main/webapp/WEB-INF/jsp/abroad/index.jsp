@@ -36,14 +36,14 @@
     .filter_school .country_study .body .country_item span{color: #0099ec;line-height: 40px;padding: 0 20px;}
     .filter_school .country_study .body .country_item ul{display: inline-block;}
     .filter_school .country_study .foot{width: 8%;line-height: 40px; position: absolute; top: 0; right: 0;}
-    .filter_school .country_study .foot span{text-align: center; display: block;background: url("<%=resourcePath%>/img/arrow_down.png")no-repeat 70% center;}
+    .filter_school .country_study .foot span{text-align: center; display: block;background: url("<%=resourcePath%>/img/home/arrow_down.png")no-repeat 70% center;}
     .filter_factor{width: 1200px;    padding: 26px 0;}
     .filter_factor>div{display: inline-block;margin-right: 24px;}
-    .filter_factor .popularity{color: #0099ec;border: 1px solid #0099ec; padding: 0 25px 0 14px; line-height: 20px; border-radius: 37px;background: url("<%=resourcePath%>/img/arrow_blue.png")no-repeat 92% center;}
-    .filter_factor .worth{color: #ccc;border: 1px solid #ccc; padding: 0 25px 0 14px;line-height: 20px;border-radius: 37px;background: url("<%=resourcePath%>/img/arrow_grey.png")no-repeat 92% center;}
+    .filter_factor .popularity{color: #0099ec;border: 1px solid #0099ec; padding: 0 25px 0 14px; line-height: 20px; border-radius: 37px;background: url("<%=resourcePath%>/img/abroad/arrow_blue.png")no-repeat 92% center;}
+    .filter_factor .worth{color: #ccc;border: 1px solid #ccc; padding: 0 25px 0 14px;line-height: 20px;border-radius: 37px;background: url("<%=resourcePath%>/img/abroad/arrow_grey.png")no-repeat 92% center;}
     .filter_factor .keyword input{line-height: 20px;border: 1px solid #0099ec;text-indent: 10px;  border-radius: 50px;}
     .filter_factor .keyword{position: relative}
-    .filter_factor .keyword span{width:40px;position: absolute;display: inline-block;background: url("<%=resourcePath%>/img/seach_bg.png")no-repeat center center;vertical-align: middle;right: 1px;text-align: center; top:1px;}
+    .filter_factor .keyword span{width:40px;position: absolute;display: inline-block;background: url("<%=resourcePath%>/img/home/search_bg.png")no-repeat center center;vertical-align: middle;right: 1px;text-align: center; top:1px;}
     .school_view{width: 1200px;overflow: hidden;}
     .school_sort{width: 80%;}
     .school_sort ul{overflow: hidden}
@@ -56,7 +56,7 @@
     .may_like img{width: 88%;}
     .school_sort .now_price{font-size: 16px;color: red;}
     .school_sort .original_price{color: #ccc;text-decoration: line-through;}
-    .school_sort .collection{float: right;padding-right: 24px;margin-right: 10px;background: url("<%=resourcePath%>/img/heart_grey.png")no-repeat 92% center;}
+    .school_sort .collection{float: right;padding-right: 24px;margin-right: 10px;background: url("<%=resourcePath%>/img/abroad/heart_grey.png")no-repeat 92% center;}
     .school_view .fenye{ padding-bottom: 5px;}
     .school_view .fenye  p{ text-align: center;  color: #ccc;}
     .school_view .fenye  p span{text-align: center;  color: #ccc; padding: 4px 10px; border: 1px solid #0099ec; margin-right: 9px;}
@@ -223,18 +223,26 @@
             <div><img src="<%=resourcePath%>/img/abroad/may_like2.png" alt=""></div>
 
         </div>
-        <div class="fenye cl">
-            <p> 26条记录 1/2页 <span class="cur">1</span> <span>2</span><span>下一页</span></p>
+        <div class="fenye cl" ng-controller="paginationCtrl">
+            <p> {{totalItems}}条记录 {{currentPage}}/{{numPages}}页 <span class="cur">1</span> <span>2</span><span>下一页</span></p>
+
+            <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
+            boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
+            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
+            last-text="&raquo;"></uib-pagination>
+
+            <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize"
+                previous-text="上一页" next-text="下一页" force-ellipses="true"></ul>
         </div>
 
         <!-- 分页-->
-<%--        <div ng-controller="paginationCtrl" style="text-align: right">
-            <pre>共{{totalItems}}条 {{numPages}}页</pre>
-            <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
-                            boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
-                            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
-                            last-text="&raquo;"></uib-pagination>
-        </div>--%>
+        <%--<div ng-controller="paginationCtrl" style="text-align: right">--%>
+            <%--<pre>共{{totalItems}}条 {{numPages}}页</pre>--%>
+            <%--<uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"--%>
+                            <%--boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"--%>
+                            <%--previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"--%>
+                            <%--last-text="&raquo;"></uib-pagination>--%>
+        <%--</div>--%>
     </div>
 </div>
 <script type="text/javascript">
@@ -282,19 +290,19 @@
 
     app.controller('paginationCtrl', function ($scope) {
         $scope.maxSize = 5;
-        $scope.totalItems = $scope.$$prevSibling.pagination.count;
-        $scope.currentPage = $scope.$$prevSibling.pagination.pageNo;
+        $scope.totalItems = $scope.$parent.pagination.count;
+        $scope.currentPage = $scope.$parent.pagination.pageNo;
 
         $scope.$on('queryFinished', function () {
-            $scope.totalItems = $scope.$$prevSibling.pagination.count;
-            $scope.currentPage = $scope.$$prevSibling.pagination.pageNo;
-            $scope.numPages = $scope.$$prevSibling.pagination.pageCount;
-            $scope.itemsPerPage = $scope.$$prevSibling.pagination.count;
+            $scope.totalItems = $scope.$parent.pagination.count;
+            $scope.currentPage = $scope.$parent.pagination.pageNo;
+            $scope.numPages = $scope.$parent.pagination.pageCount;
+            $scope.itemsPerPage = $scope.$parent.pagination.count;
         });
 
         $scope.pageChanged = function () {
-            $scope.$$prevSibling.pagination.pageNo = $scope.currentPage;
-            $scope.$$prevSibling.query();
+            $scope.$parent.pagination.pageNo = $scope.currentPage;
+            $scope.$parent.query();
         };
     });
 </script>

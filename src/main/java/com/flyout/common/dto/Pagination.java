@@ -5,10 +5,10 @@ package com.flyout.common.dto;
  * description:
  */
 public class Pagination {
-    private Long count;
-    private Integer pageNo;
-    private Integer pageSize;
-    private Integer pageCount;
+    private Long count = 0L;
+    private Integer pageNo = 1;
+    private Integer pageSize = 30;
+    private Integer pageCount = 0;
 
     public Long getCount() {
         return count;

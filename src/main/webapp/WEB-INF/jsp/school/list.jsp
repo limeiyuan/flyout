@@ -8,7 +8,6 @@
 <html ng-app="app">
 <head>
     <%@include file="../commonResource.jsp" %>
-    <title>学校列表</title>
     <style>
         .banner{width: 100%;;position: relative}
         .banner .fx_banner{height: 520px;width: 100%;background: url('<%=resourcePath%>/img/school/abroad_univer.png') no-repeat center}

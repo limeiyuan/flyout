@@ -30,6 +30,8 @@ public class PaginationDto<T> extends BasicDto {
                         int pageCount = Integer.parseInt(request.getAttribute("pageCount").toString());
                         if (pageCount == 0) {
                             pagination.setPageCount(1);
+                        } else {
+                            pagination.setPageCount(pageCount);
                         }
                         pagination.setCount(Long.parseLong(request.getAttribute("count").toString()));
                         pagination.setPageNo(Integer.parseInt(request.getParameter("pageNo")));

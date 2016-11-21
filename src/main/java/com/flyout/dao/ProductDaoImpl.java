@@ -29,8 +29,8 @@ public class ProductDaoImpl extends BaseHibernateDao<Product, Long> {
         DetachedCriteria dc = createDetachedCriteria();
         dc.add(Restrictions.eq("enable", EnableEnum.enable));
         dc.add(Restrictions.like("title", name, MatchMode.ANYWHERE));
-        dc.addOrder(Order.desc("top_flag_pi"));
-        dc.addOrder(Order.desc("top_order_by_pi"));
+        dc.addOrder(Order.desc("topFlag"));
+        dc.addOrder(Order.desc("topOrder"));
         return query(dc);
     }
 }
