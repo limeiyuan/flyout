@@ -169,7 +169,7 @@
         .advantageMedia{overflow: hidden}
         .advantageMedia ul{padding: 0 23px;overflow: hidden;}
         .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin-top: 23px;}
-        .advantageMedia img{height: 32px;width: 115px;}
+        .advantageMedia img{height: 32px;}
         /*advantage结束*/
 
         .right.carousel-control, .left.carousel-control {
@@ -578,7 +578,7 @@
                         <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">机械工程</span></li>
                         <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科大一</span></li>
                         <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.4</span></li>
-                        <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
+                        <li><span class="viewTit">申请国家</span><span  class="viewTitCont">新西兰</span></li>
                         <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">本科</span></li>
                         <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of Auckland</span></li>
                         <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">商科</span></li>
@@ -632,7 +632,7 @@
                 <h3>媒体报道</h3>
                 <ul>
                     <li><a href="http://mt.sohu.com/20160507/n448161814.shtml" target="_blank">
-                        <img src="http://www.sohu.com/upload/images20140108/sohulogo.png" alt=""></a></li>
+                        <img src="<%=resourcePath%>/img/home/Sohu.png" alt=""></a></li>
                     <li><a href="http://yueyu.cntv.cn/2015/10/10/ARTI1444465144332545.shtml" target="_blank">
                         <img src="<%=resourcePath%>/img/home/cntv.png" alt=""></a></li>
                     <li><a href="http://36kr.com/p/5044173.html" target="_blank">
@@ -643,6 +643,10 @@
                         <img src="http://www.51vv.com/images_1405/logo.png" alt=""></a></li>
                     <li><a href="http://www.donews.com/m/2927947" target="_blank">
                         <img src="http://ui.donews.com/donews2013/img/donews_logo.gif" alt=""></a></li>
+                    <li><a href="http://qianbidao.baijia.baidu.com/article/441594" target="_blank">
+                        <img src="http://baijia.baidu.com/static/home/widget/header/images/logo_7745737.jpg" alt=""></a></li>
+                    <li><a href="http://finance.jrj.com.cn/tech/2016/03/06184520650106.shtml" target="_blank">
+                        <img src="http://i0.jrjimg.cn/textv2015/titlogo01.png" alt=""></a></li>
                 </ul>
             </div>
         </div>
