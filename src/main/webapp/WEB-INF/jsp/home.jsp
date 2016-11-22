@@ -345,8 +345,8 @@
         </div>
         <div class="repuTeacher">
             <ul>
-                <li class="famousTeacher" ng-class="{teacherCur:0==$index}" ng-repeat="adviser in advisers | orderBy:$index"
-                    ng-show="adviserShowList.indexOf($index) > 0" adviser-loaded>
+                <li class="famousTeacher" ng-repeat="adviser in advisers"
+                    adviser-loaded>
                     <div class="teacherImag"><img ng-src="<%=picPath%>/{{adviser.photo.path}}" alt=""></div>
                     <p>{{adviser.screenname}}</p>
                     <span>美国顾问专家</span>
@@ -357,8 +357,8 @@
                 </li>
             </ul>
             <div class="arrow_img">
-                <img id="leftArrow" ng-click="adviserPre()" class="fl" src="<%=resourcePath%>/img/home/arrow_left.png" alt="">
-                <img id="rightArrow" ng-click="adviserNext()" class="fr" src="<%=resourcePath%>/img/home/arrow_right.png" alt="">
+                <img id="leftArrow" ng-click="adviserPre($event.target)" class="fl" src="<%=resourcePath%>/img/home/arrow_left.png" alt="">
+                <img id="rightArrow" ng-click="adviserNext($event.target)" class="fr" src="<%=resourcePath%>/img/home/arrow_right.png" alt="">
             </div>
         </div>
     </div>
@@ -669,7 +669,7 @@
                 var result = response.data;
                 $scope.advisers = result.data.advisers;
                 $.each($scope.advisers, function (index) {
-                    if (index < 6) {
+                    if (index < 5) {
                         adviserShowList.push(index);
                     }
                 });
@@ -705,24 +705,38 @@
             });
         };
 
-        $scope.adviserPre = function () {
+        $scope.adviserPre = function (dom) {
+            if (adviserShowList[adviserShowList.length - 1] == ($scope.advisers.length - 1)) {
+                adviserShowList.push(0);
+            } else {
+                adviserShowList.push(adviserShowList[adviserShowList.length - 1] + 1);
+            }
+            $(dom).parent().prev("ul").prepend($(dom).parent().prev("ul").find('li:last'));
+            adviserShowList.shift();
+            $scope.renderAdviser();
+        };
+
+        $scope.adviserNext = function (dom) {
             if ((adviserShowList[0] - 1) < 0) {
                 adviserShowList.unshift($scope.advisers.length - 1);
             } else {
                 adviserShowList.unshift(adviserShowList[0] - 1);
             }
             adviserShowList.pop();
-            console.log(adviserShowList);
+            $(dom).parent().prev("ul").append($(dom).parent().prev("ul").find('li:eq(0)'));
+            $scope.renderAdviser();
         };
 
-        $scope.adviserNext = function () {
-            if (adviserShowList[adviserShowList.length - 1] == ($scope.advisers.length - 1)) {
-                adviserShowList.push(0);
-            } else {
-                adviserShowList.push(adviserShowList[$scope.advisers.length - 1] + 1);
-            }
-            adviserShowList.shift();
-            console.log(adviserShowList);
+        $scope.renderAdviser = function () {
+            $(".famousTeacher").css("display", "none");
+            $(".famousTeacher").each(function (index, item) {
+                if (index in adviserShowList) {
+                    $(item).css("display", "block");
+                }
+                if (index == 2) {
+                    $(item).addClass("teacherCur").siblings().removeClass('teacherCur');
+                }
+            });
         };
 
         $scope.render = function () {
@@ -745,27 +759,13 @@
                         $(this).addClass("teacherCur").siblings().removeClass('teacherCur');
                     });
                 }
+                scope.renderAdviser();
             }
         };
     });
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-/*        //左箭头
-        $('#leftArrow').click(function () {
-            $(this).parent().prev("ul").append($(this).parent().prev("ul").find('li:eq(0)'));
-        });
-     //右箭头
-        $('#rightArrow').click(function () {
-            $(this).parent().prev("ul").prepend($(this).parent().prev("ul").find('li:last'));
-        });*/
-      /* //    right__red_img
-        $('#left__red_img').click(function () {
-            $(this).parent().prev("ul").append($(this).parent().prev("ul").find('li:eq(0)'));
-            reload($(this).parent().prev("ul").find('li'))
-           // $(this)
-        });*/
-
     //选项卡
         $(".tabGroup li").click(function(){
             $(this).addClass("selectedTab").siblings().removeClass('selectedTab');
