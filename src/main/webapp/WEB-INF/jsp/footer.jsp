@@ -43,9 +43,9 @@
             <div class="footerTel fr">
                 <div>
                     <p class="serviceTel">客服热线</p>
-                    <p class="serviceNum">010-52126919</p>
+                    <p class="serviceNum">010-65308635</p>
                     <p class="serviceQQ">QQ咨询：3269155071</p>
-                    <p class="serviceEmail">服务邮箱： info@feichuguo.cn</p>
+                    <p class="serviceEmail">服务邮箱： Info@fcgliuxue.com</p>
                 </div>
             </div>
             <div class="footerwei">
@@ -58,16 +58,14 @@
                     <li><img src="<%=resourcePath%>/img/weixin.jpg" alt="">
                         <p>订阅号</p></li>
                 </ul>
-                <p>海拓华星教育科技（北京）有限公司 </p>
+                <p>鹏润海微咨询（北京）有限公司 </p>
                 <p>北京市朝阳区东三环中路7号北京财务中心916A</p>
-                <p>版权所有 copyright ©京ICP备 15033976号</p>
+                <p>版权所有 copyright ©京ICP备 16057147号</p>
             </div>
         </div>
         <ul class="footerInfo footerAgency">
             <li>合作机构：</li>
             <li class="VIPAgency">太平洋教育联盟</li>
-            <li class="shuxian">|</li>
-            <li>美联英语</li>
             <li class="shuxian">|</li>
             <li>澳洲移民局</li>
             <li class="shuxian">|</li>
@@ -75,7 +73,7 @@
             <li class="shuxian">|</li>
             <li>华夏银行</li>
         </ul>
-        <ul class="footerInfo">
+<%--        <ul class="footerInfo">
             <li>友情链接：</li>
             <li>国际游学</li>
             <li class="shuxian">|</li>
@@ -100,6 +98,6 @@
             <li>新东方gre培训</li>
             <li class="shuxian">|</li>
             <li>教育论文发表</li>
-        </ul>
+        </ul>--%>
     </div>
 </div>

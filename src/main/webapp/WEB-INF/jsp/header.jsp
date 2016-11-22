@@ -67,7 +67,7 @@
 <div class="topHead">
     <div class="topHeadContent">
         <div class="topHeadContentLeft fl">
-            <a href="#">咨询热线：40012345678</a>
+            <a href="#">咨询热线：4006688066</a>
         </div>
         <div class="topHeadContentRight fr">
             <ul class="topHeadContentRightUl">
@@ -89,7 +89,7 @@
         <div class="freeTel fr">
             <img class="telIcon fl" src="<%=resourcePath%>/img/home/tel.png" alt="">
             <div class="fr">
-                <p class="telNum">400-12345678</p>
+                <p class="telNum">400-6688066</p>
                 <p class="telTime">免费咨询电话：9:00-18:00</p>
 
             </div>
