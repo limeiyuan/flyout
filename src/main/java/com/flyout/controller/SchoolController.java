@@ -3,6 +3,7 @@ package com.flyout.controller;
 import com.flyout.common.cache.MemcachedManager;
 import com.flyout.common.constance.MemcachedConstance;
 import com.flyout.common.dto.PaginationDto;
+import com.flyout.common.util.HtmlUtil;
 import com.flyout.common.util.RandomUtil;
 import com.flyout.domain.SchoolInfo;
 import com.flyout.service.SchoolServiceImpl;
@@ -54,7 +55,23 @@ public class SchoolController {
     @ResponseBody
     public PaginationDto<SchoolInfo> getSchoolList(String name) {
         PaginationDto<SchoolInfo> dto = new PaginationDto<>();
-        dto.autoFill(schoolService.getSchoolList(name));
+        List<SchoolInfo> schools = schoolService.getSchoolList(name);
+        for (SchoolInfo school : schools) {
+            String subject = HtmlUtil.getPlainText(school.getSubject().replace("<div>", "：").replace("<br>", "、"));
+            if (subject.indexOf("、") > 0) {
+                int offset = subject.indexOf("、", subject.indexOf("、") + 1);
+                if (offset > 0) {
+                    subject = subject.substring(0, offset);
+                }
+            }
+            school.setSubject(subject);
+            school.setHonour(HtmlUtil.getPlainText(school.getHonour()));
+            school.setDescription("");
+            school.setTerm("");
+            school.setFlyDic("");
+            school.setPriceCk("");
+        }
+        dto.autoFill(schools);
         return dto;
     }
 

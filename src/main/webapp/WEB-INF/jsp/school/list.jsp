@@ -42,6 +42,7 @@
         .schoolList ul li{float: left; background: #fff; width: 33%;}
         .schoolList ul .midd_school{margin: 0 2%;}
         .schoolList ul .school_list{position: relative;}
+        .schoolList ul .school_list img{height: 260px}
         .schoolList ul .mask_school{position: absolute; top:0;background: rgba(0,0,0,.5);color: #fff;width: 99%;display: none; }
         .schoolList ul .mask_school p{font-weight: bold;margin: 0 40px;text-align: left; color: #fff;    line-height: 30px; }
         .schoolList ul .mask_school .schoo_name{font-size: 20px;    margin: 20px 40px; }
@@ -114,7 +115,7 @@
     <div class="schoolList">
         <ul>
             <li class="school_list" ng-repeat="school in schools">
-                <div><img src="<%=resourcePath%>/img/school/MIT.png" alt=""></div>
+                <div><img src="{{school.detailPhotos.length>0 ? '<%=picPath%>'+school.detailPhotos[0].path : '<%=resourcePath%>/img/school/MIT.png'}}" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">{{school.ownname}}</p>
                     <p>地区：{{school.nation.name}}</p>

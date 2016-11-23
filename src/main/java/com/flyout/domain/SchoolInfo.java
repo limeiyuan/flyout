@@ -4,6 +4,7 @@ import com.flyout.common.enums.EnableEnum;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by LiMeiyuan on 2016/9/26 15:07.
@@ -61,6 +62,18 @@ public class SchoolInfo {
             @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
     })
     private EnableEnum enable;//有效
+
+    @OneToOne
+    @JoinTable(name = "school_logo_pic_slp",
+            joinColumns = {@JoinColumn(name = "school_id_slp")},
+            inverseJoinColumns = {@JoinColumn(name = "photo_id_slp")})
+    private Photo logoPhoto;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "school_detail_pic_sdp",
+            joinColumns = {@JoinColumn(name = "school_id_sdp")},
+            inverseJoinColumns = {@JoinColumn(name = "photo_id_sdp")})
+    private List<Photo> detailPhotos;
 
     public Long getId() {
         return id;
@@ -172,5 +185,21 @@ public class SchoolInfo {
 
     public void setEnable(EnableEnum enable) {
         this.enable = enable;
+    }
+
+    public Photo getLogoPhoto() {
+        return logoPhoto;
+    }
+
+    public void setLogoPhoto(Photo logoPhoto) {
+        this.logoPhoto = logoPhoto;
+    }
+
+    public List<Photo> getDetailPhotos() {
+        return detailPhotos;
+    }
+
+    public void setDetailPhotos(List<Photo> detailPhotos) {
+        this.detailPhotos = detailPhotos;
     }
 }
