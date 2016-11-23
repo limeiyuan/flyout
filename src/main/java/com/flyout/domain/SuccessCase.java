@@ -31,7 +31,11 @@ public class SuccessCase {
     private String major;//当前专业
 
     @Column(name = "dest_major_sc")
-    private String dest_major;//申请专业
+    private String destMajor;//申请专业
+
+    @OneToOne()
+    @JoinColumn(name = "photo_id_sc")
+    private Photo photo;
 
     @Column(name = "gpa_sc")
     private String gpa;
@@ -97,12 +101,20 @@ public class SuccessCase {
         this.major = major;
     }
 
-    public String getDest_major() {
-        return dest_major;
+    public String getDestMajor() {
+        return destMajor;
     }
 
-    public void setDest_major(String dest_major) {
-        this.dest_major = dest_major;
+    public void setDestMajor(String destMajor) {
+        this.destMajor = destMajor;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 
     public String getGpa() {
