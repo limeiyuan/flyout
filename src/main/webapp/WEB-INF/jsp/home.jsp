@@ -159,7 +159,7 @@
         /*caseBox结束*/
         /*advantage开始*/
         .advantage{width: 1200px;margin: 30px auto;background: #fff;}
-        .advantage .advantageBox{height: 394px;border: 1px solid #eee;}
+        .advantage .advantageBox{height: 320px;border: 1px solid #eee;}
         .advantageCont ul{overflow: hidden; padding: 40px 0;border-bottom: 1px solid #eee;margin: 0 24px;}
         .advantageCont li{float: left; text-align: center;width: 20%;}
         .advantageCont li h6{color: #333;font-size: 16px;line-height: 33px;}
@@ -647,6 +647,10 @@
                         <img src="http://baijia.baidu.com/static/home/widget/header/images/logo_7745737.jpg" alt=""></a></li>
                     <li><a href="http://finance.jrj.com.cn/tech/2016/03/06184520650106.shtml" target="_blank">
                         <img src="http://i0.jrjimg.cn/textv2015/titlogo01.png" alt=""></a></li>
+                    <li><a href="http://news.cnfol.com/it/20160306/22359490.shtml" target="_blank">
+                        <img src="http://i8.cnfolimg.com/file/201402/Logo_201402071215264931.jpg" alt=""></a></li>
+                    <%--<li><a href="http://info.it.hc360.com/2015/10/101433830042.shtml" target="_blank">--%>
+                        <%--<img src="http://style.org.hc360.com/css_hy/images/2011nlogo/it_172X45_zg.gif" alt=""></a></li>--%>
                 </ul>
             </div>
         </div>
