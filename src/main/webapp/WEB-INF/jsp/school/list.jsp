@@ -25,7 +25,7 @@
         .fly_intention>ul>li{width: 260px;margin: 26px auto;padding: 2px ;position: relative;}
         .fly_intention ul .fastEst{background: #0099ec;color: #fff;text-align: center;line-height: 36px;margin: 0 auto;cursor:pointer;}
         .fly_intention ul li input{border: none;outline: none;text-indent: 11px;line-height: 36px;width: 100%;background: #fff}
-        .fly_intention ul li .selectedInput{background: #fff url("<%=resourcePath%>/img/select.png")no-repeat 96% center;}
+        .fly_intention ul li .selectedInput{background: #fff url("<%=resourcePath%>/img/home/select.png")no-repeat 96% center;}
         .fly_intention ul li .son_ul{position: absolute;width: 236px; z-index: 20;cursor: pointer;}
         .fly_intention ul li .son_ul li:hover{background: #ccc;}
         /*banner结束*/
@@ -115,7 +115,7 @@
     <div class="schoolList">
         <ul>
             <li class="school_list" ng-repeat="school in schools">
-                <div><img src="{{school.detailPhotos.length>0 ? '<%=picPath%>'+school.detailPhotos[0].path : '<%=resourcePath%>/img/school/MIT.png'}}" alt=""></div>
+                <div><img ng-src="{{school.detailPhotos.length>0 ? '<%=picPath%>'+school.detailPhotos[0].path : '<%=resourcePath%>/img/school/MIT.png'}}" alt=""></div>
                 <div class="mask_school">
                     <p class="schoo_name">{{school.ownname}}</p>
                     <p>地区：{{school.nation.name}}</p>
