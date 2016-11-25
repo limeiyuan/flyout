@@ -1,6 +1,5 @@
 package com.flyout.common;
 
-import com.flyout.common.util.LogUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.DefaultResourceLoader;
@@ -33,10 +32,6 @@ public class ApplicationProperties implements InitializingBean {
             }
         }
         properties.load(resourceLoader.getResource("classpath:flyout.properties").getInputStream());
-
-        for (String s : map.keySet()) {
-            LogUtil.getLogger().debug("===========" + s + "===========");
-        }
     }
 
     public Map<String, Object> getMap() {
