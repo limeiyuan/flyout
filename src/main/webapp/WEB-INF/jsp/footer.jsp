@@ -101,3 +101,25 @@
         </ul>--%>
     </div>
 </div>
+
+<rong-widget></rong-widget>
+
+<script type="text/javascript">
+    var demo = angular.module("demo", ["RongWebIMWidget"]);
+    WebIMWidget.init({
+        appkey: "kj7swf8o7cx92",
+        token: "****",
+        style: {
+            width: 500,
+            height: 600,
+            bottom: 0,
+            left: 0
+        },
+        onSuccess: function () {
+            //初始化完成
+        },
+        onError: function () {
+            //初始化错误
+        }
+    });
+</script>
