@@ -1,4 +1,7 @@
 <%@ page import="com.flyout.common.ApplicationProperties" %>
+<%@ page import="com.flyout.common.auth.AuthHelper" %>
+<%@ page import="com.flyout.common.dto.RongyunDto" %>
+<%@ page import="com.flyout.controller.RongyunController" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,12 +19,24 @@
 <%
     String path = request.getContextPath();
     String resourcePath = request.getContextPath();
+    String rongyunToken = "";
+    String rongyunName = "";
 
     ApplicationProperties properties = (ApplicationProperties) WebApplicationContextUtils.getWebApplicationContext(application).getBean(ApplicationProperties.class);
     String picPath = properties.getMap().get("SERVER_PIC_PATH").toString();
+
+    RongyunDto rongyunDto = AuthHelper.getRongyunDto();
+    if (rongyunDto != null) {
+        rongyunToken = rongyunDto.getToken();
+        rongyunName = rongyunDto.getName();
+    } else {
+        RongyunController rongyunService = (RongyunController) WebApplicationContextUtils.getWebApplicationContext(application).getBean(RongyunController.class);
+        rongyunToken = rongyunService.getToken(null).getData().toString();
+    }
 %>
 
 <link href="<%=resourcePath%>/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link type="text/css" href="<%=resourcePath%>/rongyun/css/RongIMWidget.css" rel="stylesheet"/>
 
 <script src="<%=resourcePath%>/js/jquery-3.1.1.min.js" type="text/javascript" charset="UTF-8"
         language="javascript"></script>
@@ -35,3 +50,4 @@
         language="javascript"></script>
 <script src="<%=resourcePath%>/js/bootstrap/bootstrap.js" type="text/javascript" charset="UTF-8"
         language="javascript"></script>
+<script src="<%=resourcePath%>/rongyun/RongIMWidget.js" type="text/javascript"></script>

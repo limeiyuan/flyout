@@ -8,9 +8,17 @@ import java.security.NoSuchAlgorithmException;
  * description:
  */
 public class AuthUtil {
+    public static final String MD5 = "MD5";
+    public static final String SHA1 = "SHA-1";
+    public static final String SHA256 = "SHA-256";
+
     public static String getPassword(String password) {
+        return gen(password, MD5);
+    }
+
+    public static String gen(String src, String type) {
         try {
-            byte[] destBytes = MessageDigest.getInstance("MD5").digest(password.getBytes());
+            byte[] destBytes = MessageDigest.getInstance(type).digest(src.getBytes());
             StringBuilder builder = new StringBuilder();
             for (byte destByte : destBytes) {
                 builder.append(Integer.toHexString((destByte & 0xFF) | 0x100).substring(1, 3));

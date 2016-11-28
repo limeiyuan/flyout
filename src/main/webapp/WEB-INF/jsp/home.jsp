@@ -656,8 +656,26 @@
         </div>
     </div>
 </div>
+
+<rong-widget ng-controller="testtest"></rong-widget>
+
 <script type="text/javascript">
-    var app = angular.module("app", ['ngAnimate', 'ui.bootstrap']);
+    var app = angular.module("app", ['ngAnimate', 'ui.bootstrap', 'RongWebIMWidget']);
+    app.controller("testtest", function ($scope, $http, WebIMWidget) {
+        WebIMWidget.init({
+            appkey: "kj7swf8o7cx92",
+            token: <%=rongyunToken%>,
+            displayConversationList:true,
+            conversationListPosition:WebIMWidget.EnumConversationListPosition.left,
+            style:{
+                width:500,
+                height:600,
+                bottom:0,
+                left:0
+            }
+        });
+    });
+
     app.controller("mainController", function ($scope, $http) {
         $scope.myInterval = 3000;
         $scope.noWrapSlides = false;
