@@ -661,17 +661,18 @@
 
 <script type="text/javascript">
     var app = angular.module("app", ['ngAnimate', 'ui.bootstrap', 'RongWebIMWidget']);
-    app.controller("testtest", function ($scope, $http, WebIMWidget) {
-        WebIMWidget.init({
-            appkey: "kj7swf8o7cx92",
-            token: <%=rongyunToken%>,
-            displayConversationList:true,
-            conversationListPosition:WebIMWidget.EnumConversationListPosition.left,
-            style:{
-                width:500,
-                height:600,
-                bottom:0,
-                left:0
+    app.controller("testtest", function ($scope, $http, RongKefu) {
+        RongKefu.init({
+            appkey: "qf3d5gbj3i7ch",
+            token: '<%=rongyunToken%>',
+            customerServiceId: 'KEFU145912956717622',
+            position: RongKefu.KefuPostion.right,
+            reminder: "在线咨询",
+            style: {
+                width: 500,
+                height: 600,
+                bottom: 0,
+                left: 0
             }
         });
     });

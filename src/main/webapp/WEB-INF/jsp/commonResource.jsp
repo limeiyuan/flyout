@@ -19,20 +19,11 @@
 <%
     String path = request.getContextPath();
     String resourcePath = request.getContextPath();
-    String rongyunToken = "";
-    String rongyunName = "";
+    String rongyunToken = AuthHelper.getRongyunDto().getToken();
+    String rongyunName = AuthHelper.getRongyunDto().getName();
 
     ApplicationProperties properties = (ApplicationProperties) WebApplicationContextUtils.getWebApplicationContext(application).getBean(ApplicationProperties.class);
     String picPath = properties.getMap().get("SERVER_PIC_PATH").toString();
-
-    RongyunDto rongyunDto = AuthHelper.getRongyunDto();
-    if (rongyunDto != null) {
-        rongyunToken = rongyunDto.getToken();
-        rongyunName = rongyunDto.getName();
-    } else {
-        RongyunController rongyunService = (RongyunController) WebApplicationContextUtils.getWebApplicationContext(application).getBean(RongyunController.class);
-        rongyunToken = rongyunService.getToken(null).getData().toString();
-    }
 %>
 
 <link href="<%=resourcePath%>/css/bootstrap.css" rel="stylesheet" type="text/css">

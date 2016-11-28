@@ -1,7 +1,10 @@
 package com.flyout.common.auth;
 
+import com.flyout.common.dto.RongyunDto;
 import com.flyout.common.util.WebContextUtil;
+import com.flyout.controller.RongyunController;
 import com.flyout.domain.Account;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,8 +27,16 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         this.forbidUrls = forbidUrls;
     }
 
+    @Autowired
+    private RongyunController rongyunController;
+
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+        RongyunDto rongyunDto = AuthHelper.getRongyunDto();
+        if (rongyunDto == null) {
+            rongyunController.getToken(null);
+        }
+
         Account account = AuthHelper.getLoginUser();
         if (account != null) {
             return true;

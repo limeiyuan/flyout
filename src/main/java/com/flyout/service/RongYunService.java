@@ -42,6 +42,8 @@ public class RongyunService {
             JsonObject json = parser.parse(result).getAsJsonObject();
             if (json.get("code").getAsInt() == 200) {
                 token = json.get("token").getAsString();
+            } else {
+                LogUtil.getLogger().debug("获取token错误，返回值=" + result);
             }
         } catch (JsonSyntaxException e) {
             LogUtil.getLogger().error(e);

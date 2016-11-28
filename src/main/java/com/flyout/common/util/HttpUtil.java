@@ -23,8 +23,7 @@ public class HttpUtil {
             paramStr += s + "=" + params.get(s) + "&";
         }
         paramStr = paramStr.substring(0, paramStr.length() - 1);
-        String data = url + paramStr;
-        return request(url, data, headers);
+        return request(url, paramStr, headers);
     }
 
     public static String request(String url, String data, Map<String, String> headers) {
@@ -40,7 +39,12 @@ public class HttpUtil {
             OutputStream out = con.getOutputStream();
             out.write(data.getBytes());
             out.flush();
-            InputStream in = con.getInputStream();
+            InputStream in;
+            if (con.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                in = con.getErrorStream();
+            } else {
+                in = con.getInputStream();
+            }
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             StringBuilder builder = new StringBuilder("");
             String line;
