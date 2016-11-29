@@ -657,25 +657,8 @@
     </div>
 </div>
 
-<rong-widget ng-controller="testtest"></rong-widget>
-
 <script type="text/javascript">
-    var app = angular.module("app", ['ngAnimate', 'ui.bootstrap', 'RongWebIMWidget']);
-    app.controller("testtest", function ($scope, $http, RongKefu) {
-        RongKefu.init({
-            appkey: "qf3d5gbj3i7ch",
-            token: '<%=rongyunToken%>',
-            customerServiceId: 'KEFU145912956717622',
-            position: RongKefu.KefuPostion.right,
-            reminder: "在线咨询",
-            style: {
-                width: 500,
-                height: 600,
-                bottom: 0,
-                left: 0
-            }
-        });
-    });
+    var app = angular.module("app", ['ngAnimate', 'ui.bootstrap']);
 
     app.controller("mainController", function ($scope, $http) {
         $scope.myInterval = 3000;

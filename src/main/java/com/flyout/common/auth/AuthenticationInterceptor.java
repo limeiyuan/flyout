@@ -1,6 +1,7 @@
 package com.flyout.common.auth;
 
-import com.flyout.common.dto.RongyunDto;
+import com.flyout.common.dto.CustomServiceDto;
+import com.flyout.common.util.RandomUtil;
 import com.flyout.common.util.WebContextUtil;
 import com.flyout.controller.RongyunController;
 import com.flyout.domain.Account;
@@ -32,9 +33,12 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        RongyunDto rongyunDto = AuthHelper.getRongyunDto();
-        if (rongyunDto == null) {
-            rongyunController.getToken(null);
+        CustomServiceDto customServiceDto = AuthHelper.getCustomServiceDto();
+        if (customServiceDto == null) {
+            //随机用户名和用户id
+            String name = RandomUtil.genRandomChar(7, RandomUtil.RandomType.LOWER_UPPER_NUMBER);
+            customServiceDto.setName(name);
+            customServiceDto.setUserId("Id_" + name + "_" + RandomUtil.genRandomChar(4, RandomUtil.RandomType.LOWER_UPPER_NUMBER));
         }
 
         Account account = AuthHelper.getLoginUser();

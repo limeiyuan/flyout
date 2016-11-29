@@ -1,7 +1,4 @@
 <%@ page import="com.flyout.common.ApplicationProperties" %>
-<%@ page import="com.flyout.common.auth.AuthHelper" %>
-<%@ page import="com.flyout.common.dto.RongyunDto" %>
-<%@ page import="com.flyout.controller.RongyunController" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +16,6 @@
 <%
     String path = request.getContextPath();
     String resourcePath = request.getContextPath();
-    String rongyunToken = AuthHelper.getRongyunDto().getToken();
-    String rongyunName = AuthHelper.getRongyunDto().getName();
 
     ApplicationProperties properties = (ApplicationProperties) WebApplicationContextUtils.getWebApplicationContext(application).getBean(ApplicationProperties.class);
     String picPath = properties.getMap().get("SERVER_PIC_PATH").toString();

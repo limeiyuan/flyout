@@ -1,6 +1,6 @@
 package com.flyout.common.auth;
 
-import com.flyout.common.dto.RongyunDto;
+import com.flyout.common.dto.CustomServiceDto;
 import com.flyout.common.util.WebContextUtil;
 import com.flyout.domain.Account;
 
@@ -12,22 +12,30 @@ import javax.servlet.http.HttpSession;
  */
 public class AuthHelper {
     private static final String LOGIN_USER = "loginUser";
-    private static final String RONGYUN_DTO = "rongyunDto";
+    private static final String CUSTOM_SERVICE_DTO = "customServiceDto";
 
     public static void login(Account account) {
         HttpSession session = WebContextUtil.getSession();
+
+        CustomServiceDto customServiceDto = new CustomServiceDto();
+        customServiceDto.setUserId(account.getId() + "");
+        customServiceDto.setName(account.getScreenname());
+        customServiceDto.setEmail(account.getEmail());
+        customServiceDto.setTel(account.getUsername());
+
         session.setAttribute(LOGIN_USER, account);
+        session.setAttribute(CUSTOM_SERVICE_DTO, customServiceDto);
     }
 
-    public static void setRongyunDto(RongyunDto dto) {
+    public static void setCustomServiceDto(CustomServiceDto dto) {
         HttpSession session = WebContextUtil.getSession();
-        session.setAttribute(RONGYUN_DTO, dto);
+        session.setAttribute(CUSTOM_SERVICE_DTO, dto);
     }
 
-    public static RongyunDto getRongyunDto() {
+    public static CustomServiceDto getCustomServiceDto() {
         HttpSession session = WebContextUtil.getSession();
         if (session == null) return null;
-        return (RongyunDto) session.getAttribute(RONGYUN_DTO);
+        return (CustomServiceDto) session.getAttribute(CUSTOM_SERVICE_DTO);
     }
 
     public static Account getLoginUser() {
@@ -40,7 +48,7 @@ public class AuthHelper {
         HttpSession session = WebContextUtil.getSession();
         if (session != null) {
             session.removeAttribute(LOGIN_USER);
-            session.removeAttribute(RONGYUN_DTO);
+            session.removeAttribute(CUSTOM_SERVICE_DTO);
             session.invalidate();
         }
     }

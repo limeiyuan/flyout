@@ -1,7 +1,7 @@
 package com.flyout.service;
 
 import com.flyout.common.ApplicationProperties;
-import com.flyout.common.dto.RongyunDto;
+import com.flyout.common.dto.CustomServiceDto;
 import com.flyout.common.util.AuthUtil;
 import com.flyout.common.util.HttpUtil;
 import com.flyout.common.util.LogUtil;
@@ -26,11 +26,11 @@ public class RongyunService {
     @Autowired
     private ApplicationProperties properties;
 
-    public RongyunDto getToken(Account account) {
+    public CustomServiceDto getToken(Account account) {
         return getToken(account.getScreenname(), account.getId().toString(), properties.getValue("SERVER_PIC_PATH") + account.getPhoto().getPath());
     }
 
-    public RongyunDto getToken(String username, String userId, String avatarUrl) {
+    public CustomServiceDto getToken(String username, String userId, String avatarUrl) {
         Map<String, String> params = new HashMap<>();
         params.put("userId", userId);
         params.put("name", username);
@@ -49,7 +49,7 @@ public class RongyunService {
             LogUtil.getLogger().error(e);
             LogUtil.getLogger().debug("解析token返回值异常" + e.getMessage());
         }
-        RongyunDto dto = new RongyunDto();
+        CustomServiceDto dto = new CustomServiceDto();
         dto.setToken(token);
         dto.setUserId(userId);
         dto.setName(username);

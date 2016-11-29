@@ -1,4 +1,18 @@
+<%@ page import="com.flyout.common.dto.CustomServiceDto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    CustomServiceDto dto = AuthHelper.getCustomServiceDto();
+    String paramStr = "";
+    if (dto.getUserId() != null) {
+        paramStr = "&partnerId=" + dto.getUserId() + "&uname=" + dto.getName();
+        if (dto.getTel() != null) {
+            paramStr += "&tel=" + dto.getTel();
+        }
+        if (dto.getEmail() != null) {
+            paramStr += "&email=" + dto.getEmail();
+        }
+    }
+%>
 <style type="text/css">
     body, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, div, span, a, input, img, p {
         margin: 0;
@@ -164,7 +178,21 @@
     .VIPAgency {
         color: #fb5454;
     }
+
+    .zhichiContainer img {
+        width: 120px;
+        height: 120px;
+        position: fixed;
+        bottom: 50px;
+        right: 0;
+    }
 </style>
+<script src="http://www.sobot.com/chat/pc/pc.min.js?sysNum=adf09e896940434e948c99693048de37<%=paramStr%>"
+        id="zhichiload"
+        class="zhichi"></script>
+<div class="zhichiContainer"><a href="javascript:;" class="zhichi"><img
+        src="<%=resourcePath%>/img/services.customService.png"></a></div>
+
 <div class="footer">
     <div class="footerBox">
         <div class="footerCont">

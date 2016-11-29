@@ -3,7 +3,7 @@ package com.flyout.controller;
 import com.flyout.common.ApplicationProperties;
 import com.flyout.common.auth.AuthHelper;
 import com.flyout.common.dto.BasicDto;
-import com.flyout.common.dto.RongyunDto;
+import com.flyout.common.dto.CustomServiceDto;
 import com.flyout.common.util.RandomUtil;
 import com.flyout.domain.Account;
 import com.flyout.service.RongyunService;
@@ -47,13 +47,13 @@ public class RongyunController {
             name = "User_" + userId;
             path = properties.getValue("DEFAULT_AVATAR");
         }
-        RongyunDto rongyunDto = rongyunService.getToken(name, userId, properties.getValue("SERVER_PIC_PATH") + path);
-        if (rongyunDto == null) {
+        CustomServiceDto customServiceDto = rongyunService.getToken(name, userId, properties.getValue("SERVER_PIC_PATH") + path);
+        if (customServiceDto == null) {
             dto.setMessage("获取Token失败");
         } else {
-            AuthHelper.setRongyunDto(rongyunDto);
+            AuthHelper.setCustomServiceDto(customServiceDto);
             dto.setResult(true);
-            dto.setData(rongyunDto.getToken());
+            dto.setData(customServiceDto.getToken());
             dto.setMessage("获取Token成功");
         }
         return dto;

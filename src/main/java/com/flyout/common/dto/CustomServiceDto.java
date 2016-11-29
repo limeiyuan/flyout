@@ -4,10 +4,12 @@ package com.flyout.common.dto;
  * Created by LiMeiyuan on 2016/11/28 15:58.
  * description:
  */
-public class RongyunDto {
+public class CustomServiceDto {
     private String token;
     private String userId;
     private String name;
+    private String email;
+    private String tel;
 
     public String getToken() {
         return token;
@@ -31,5 +33,21 @@ public class RongyunDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 }

@@ -2,10 +2,8 @@ package com.flyout.controller;
 
 import com.flyout.common.auth.AuthHelper;
 import com.flyout.common.dto.BasicDto;
-import com.flyout.common.dto.RongyunDto;
 import com.flyout.domain.Account;
 import com.flyout.service.AccountServiceImpl;
-import com.flyout.service.RongyunService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,9 +20,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LoginController {
     @Autowired
     private AccountServiceImpl accountService;
-
-    @Autowired
-    private RongyunService rongyunService;
 
     @RequestMapping("index")
     public String index() {
@@ -51,10 +46,7 @@ public class LoginController {
             dto.setMessage("用户不存在");
             return dto;
         }
-        RongyunDto rongyunDto = rongyunService.getToken(account);
-        if (rongyunDto != null) {
-            AuthHelper.setRongyunDto(rongyunDto);
-        }
+
         AuthHelper.login(account);
 
         dto.setResult(true);
