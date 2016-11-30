@@ -67,7 +67,7 @@
         .repuTeacher ul{width: 100%;overflow: hidden; padding: 0 24px;}
         .repuTeacher ul li{width: 180px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 21px;border-radius: 11px;margin-top: 60px;background: #fff;}
         .repuTeacher ul li .teacherImag{width: 120px;height: 120px;margin: auto;margin: 14px auto }
-        .repuTeacher ul li .teacherImag img{width: 120px;height: 120px; border-radius: 50%}
+        .repuTeacher ul li .teacherImag img{width: 120px; height: 120px; border-radius: 50%;}
 
         .repuTeacher ul li p{font-size: 18px;font-weight: bold;color: #0099ec;margin-bottom: 8px;}
         .repuTeacher ul li span{color: #999;}
@@ -140,7 +140,7 @@
         .caseBox .caseContent ul li span{text-align: center;font-size: 12px;color: #666;}
         .viewCase{width: 1200px;overflow: hidden;}
         .viewCase ul{overflow: hidden;}
-        .viewCase .viewBox{float: left;width: 280px;height: 378px; border: 1px solid #eee;border-radius: 10px;padding: 24px;margin: 0 9px;background: #fff;}
+        .viewCase .viewBox{float: left;width: 280px;height: 378px; border: 1px solid #eee;border-radius: 10px;padding: 24px;margin: 0 9px;background: #fff;position: relative;}
         .viewCase .viewBox .titeBox{border-bottom: 1px solid #eee;    padding-bottom: 8px;}
         .viewCase .viewBox div p{font-size: 14px;color: #333;}
         .viewCase .viewBox div h3{font-size: 18px;font-weight: bold;color: #333;line-height: 28px;}
@@ -150,7 +150,9 @@
 
         .viewCase .viewBox .viewTit{display: inline-block;width: 34%;vertical-align: top;}
         .viewCase .viewBox .viewTitCont{display: inline-block;width: 65%;}
-        .viewCase .btnBox{overflow: hidden;}
+        .viewCase .btnBox{overflow: hidden;    position: absolute;
+            bottom: 22px;
+            width: 84%;}
         .viewCase .btnBox span{width: 100px;height: 32px; border-radius: 60px;line-height: 32px;display: inline-block;border: 1px solid #fb5454;text-align: center;cursor:pointer;}
         .viewCase .viwExam{background: #fb5454;color: #fff;}
         .viewCase .onlineQue{background: #fff;color:#fb5454; }
@@ -159,7 +161,7 @@
         /*caseBox结束*/
         /*advantage开始*/
         .advantage{width: 1200px;margin: 30px auto;background: #fff;}
-        .advantage .advantageBox{height: 320px;border: 1px solid #eee;}
+        .advantage .advantageBox{height: 394px;border: 1px solid #eee;}
         .advantageCont ul{overflow: hidden; padding: 40px 0;border-bottom: 1px solid #eee;margin: 0 24px;}
         .advantageCont li{float: left; text-align: center;width: 20%;}
         .advantageCont li h6{color: #333;font-size: 16px;line-height: 33px;}
@@ -168,8 +170,8 @@
         .advantageMedia li{float: left; text-align: center;margin: 10px 20px;}
         .advantageMedia{overflow: hidden}
         .advantageMedia ul{padding: 0 23px;overflow: hidden;}
-        .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin-top: 23px;}
-        .advantageMedia img{height: 32px;}
+        .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin: 23px 18px;}
+        .advantageMedia img{height: 32px;width: 115px;}
         /*advantage结束*/
 
         .right.carousel-control, .left.carousel-control {
@@ -192,10 +194,12 @@
         </div>
         <div class="estimateContainer">
             <div class="estimate">
-                <div>
+                <div id="asseSele">
                     <span class="active" id="studyAsse">留学评估</span><span id="colonAsse">移民评估</span>
                 </div>
-                <ul>
+
+
+                <ul class="asseContent">
                     <li class="focusCur intentionA">
                         <input type="text" placeholder="意向留学国家">
                         <span>|</span>
@@ -240,6 +244,52 @@
                     </li>
                     <li class="fastEst intentionE">快速评估</li>
                 </ul>
+                <ul class="asseContent" style="display: none">
+                    <li class="focusCur intentionA">
+                        <input type="text" placeholder="意向移民国家">
+                        <span>|</span>
+                        <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
+                        <ul class="son_ul" style="display: none">
+                            <li>美国</li>
+                            <li>英国</li>
+                            <li>澳大利亚</li>
+                            <li>新西兰</li>
+                            <li>加拿大</li>
+                        </ul>
+                    </li>
+                    <li class="focusCur intentionB">
+                        <input type="text" placeholder="计划出国时间">
+                        <span>|</span>
+                        <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
+                        <ul class="son_ul" style="display: none">
+                            <li>2017年</li>
+                            <li>2018年</li>
+                            <li>三年以后</li>
+                        </ul>
+                    </li>
+                    <li class="focusCur intentionC">
+                        <input type="text" placeholder="申请阶段">
+                        <span>|</span>
+                        <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
+                        <ul class="son_ul" style="display: none">
+                            <li>高中</li>
+                            <li>本科</li>
+                            <li>硕士</li>
+                        </ul>
+                    </li>
+                    <li class="focusCur intentionD">
+                        <input type="text" placeholder="平均分或预估">
+                        <span>|</span>
+                        <img class="selectedInput" src="<%=resourcePath%>/img/home/select.png" alt="">
+                        <ul class="son_ul" style="display: none">
+                            <li>80分以上</li>
+                            <li>70-80分</li>
+                            <li>70分以下</li>
+                        </ul>
+                    </li>
+                    <li class="fastEst intentionE">快速评估</li>
+                </ul>
+
                 <div style="bottom: 5px;position: absolute;width: 300px;">
                     <p>已有<span>1342</span>人参与免费在线评估</p>
                 </div>
@@ -776,10 +826,44 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-    //选项卡
+        //左箭头
+        $('#leftArrow').click(function () {
+            $(this).parent().prev("ul").append($(this).parent().prev("ul").find('li:eq(0)'));
+        });
+        //右箭头
+        $('#rightArrow').click(function () {
+            $(this).parent().prev("ul").prepend($(this).parent().prev("ul").find('li:last'));
+        });
+        //    right__red_img
+        var imgArr=[{url:"<%=resourcePath%>/img/home/avatar5.png",user:"林同学",effort:"普林斯顿大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"王同学",effort:"哈佛大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"张同学",effort:"耶鲁大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"刘同学",effort:"斯坦福大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"赵同学",effort:"芝加哥大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"薛同学",effort:"哥伦比亚大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"古同学",effort:"宾夕法尼亚大学"}];
+
+
+        reload();
+
+        $('#left__red_img').click(function () {
+            var imgArrs=[];
+            imgArrs=imgArr.shift();
+            imgArr.push(imgArrs);
+            reload();
+
+        });
+        $('#right__red_img').click(function () {
+            var imgArrs=[];
+            imgArrs=imgArr.pop();
+            imgArr.unshift(imgArrs);
+            reload();
+
+        });
+
+        //选项卡
         $(".tabGroup li").click(function(){
             $(this).addClass("selectedTab").siblings().removeClass('selectedTab');
             $(".contentGroup div").eq($(".tabGroup li").index(this)).addClass("selectedContent").siblings().removeClass('selectedContent');
+        });
+        $("#asseSele span").click(function(){
+            $(this).addClass("active").siblings().removeClass('active');
+            $(".asseContent").eq($("#asseSele span").index(this)).show().siblings().hide();
+            $('#asseSele').show();
         });
 
         $('.son_ul').hide(); //初始ul隐藏
@@ -806,24 +890,56 @@
             $(this).parents('li').find('ul').slideUp(1);
             $(this).parents('li')[0].style.borderRadius="20px";
         });
-       /* $('.son_ul').hover(function () {
-            $(this).parents('li')[0].style.borderRadius="20px";
-        })*/
+        /* $('.son_ul').hover(function () {
+         $(this).parents('li')[0].style.borderRadius="20px";
+         })*/
 
+        $('.famousTeacher').hover(function () {
+            $(this).addClass("teacherCur").siblings().removeClass('teacherCur');
+        });
         $('.productsList ul li').hover(function () {
             $(this).addClass("productCurr").siblings().removeClass('productCurr');
 
         });
-   /*     //回显
-       function reload(dom) {
-           for(var i=0;i<dom.length;i++){
-             // dom[i].style.className='case'+i  .removeClass('a b c')
-               var $dom=dom[i];
-               $dom.style.className='case1';
+        //回显
+        function reload() {
+            var html='';
+            html+='<li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
+                    <img src='+imgArr[0].url+' alt="">\
+                    </li>\
+                    <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\
+                      <img src='+imgArr[1].url+' alt="">\
+                    </li>\
+                    <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
+                    <img src='+imgArr[2].url+' alt="">\
+                    <div>\
+                    <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[2].user+'</p>\
+                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="" style="color: red;">'+imgArr[2].effort+'</a>Offer</span>\
+                    </div>\
+                    </li>\
+                    <li style="width:190px;float: left; text-align: center;margin:25px 14px 0;">\
+                     <img src='+imgArr[3].url+' alt="">\
+                    <div>\
+                       <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[3].user+'</p>\
+                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="" style="color: red;">'+imgArr[3].effort+'</a>Offer</span>\
+                    </div>\
+                    </li>\
+                    <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
+                    <img src='+imgArr[4].url+' alt="">\
+                    <div>\
+                      <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[4].user+'</p>\
+                    <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href=""  style="color: red;">'+imgArr[4].effort+'</a>Offer</span>\
+                    </div>\
+                    </li>\
+                    <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\
+                   <img src='+imgArr[5].url+' alt="">\
+                    </li>\
+                    <li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
+                    <img src='+imgArr[6].url+' alt="">\
+                    </li>';
 
-             // $('$dom').removeClass('case0 case1 case2 case3 case4 case5 case6 case7').addClass('addClass'+i)
-           }
-       }*/
+            $('.caseContent>ul').html(html);
+        }
     });
 </script>
 <%@include file="footer.jsp" %>

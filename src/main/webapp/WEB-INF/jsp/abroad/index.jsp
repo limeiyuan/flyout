@@ -10,10 +10,10 @@
 <head>
     <%@include file="../commonResource.jsp" %>
 </head>
-<style>
+    <style>
     .mainPanel {
-        width: 1200px;
-        margin: auto;
+    width: 1200px;
+    margin: auto;
     }
     .schoo_li{width: 1200px;}
     .schoo_li ul{overflow: hidden;}
@@ -43,7 +43,8 @@
     .filter_factor .worth{color: #ccc;border: 1px solid #ccc; padding: 0 25px 0 14px;line-height: 20px;border-radius: 37px;background: url("<%=resourcePath%>/img/abroad/arrow_grey.png")no-repeat 92% center;}
     .filter_factor .keyword input{line-height: 20px;border: 1px solid #0099ec;text-indent: 10px;  border-radius: 50px;}
     .filter_factor .keyword{position: relative}
-    .filter_factor .keyword span{width:40px;position: absolute;display: inline-block;background: url("<%=resourcePath%>/img/home/search_bg.png")no-repeat center center;vertical-align: middle;right: 1px;text-align: center; top:1px;}
+    .filter_factor .keyword span{width:40px;position: absolute;display: inline-block;background: url("<%=resourcePath%>/img/home/search_bg.png")no-repeat center center;vertical-align: middle;right: 1px;text-align: center; height: 100%;}
+    .filter_factor .keyword span img{position: absolute; top: 50%; margin-top: -8px;right: 50%; margin-right: -8px;}
     .school_view{width: 1200px;overflow: hidden;}
     .school_sort{width: 80%;}
     .school_sort ul{overflow: hidden}
@@ -53,15 +54,15 @@
     .school_sort li div img{width: 100%;}
     .school_sort li p{padding: 0 5px 0 15px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;    line-height: 20px;}
     .may_like{width: 20%;height: 500px;}
-    .may_like img{width: 88%;}
+    .may_like img{width: 100%;}
     .school_sort .now_price{font-size: 16px;color: red;}
     .school_sort .original_price{color: #ccc;text-decoration: line-through;}
     .school_sort .collection{float: right;padding-right: 24px;margin-right: 10px;background: url("<%=resourcePath%>/img/abroad/heart_grey.png")no-repeat 92% center;}
-    .school_view .fenye{ padding-bottom: 5px;}
+    .school_view .fenye{ padding-bottom: 5px;text-align: center;}
     .school_view .fenye  p{ text-align: center;  color: #ccc;}
     .school_view .fenye  p span{text-align: center;  color: #ccc; padding: 4px 10px; border: 1px solid #0099ec; margin-right: 9px;}
     .school_view .fenye  p .cur{background: #0099ec;color: #fff;}
-</style>
+    </style>
 <body>
 <%@include file="../header.jsp" %>
 <div ng-controller="mainController" class="mainPanel">
@@ -223,17 +224,17 @@
             <div><img src="<%=resourcePath%>/img/abroad/may_like2.png" alt=""></div>
 
         </div>
-        <div class="fenye cl" ng-controller="paginationCtrl">
-            <p> {{totalItems}}条记录 {{currentPage}}/{{numPages}}页 <span class="cur">1</span> <span>2</span><span>下一页</span></p>
+    <div class="fenye cl" ng-controller="paginationCtrl">
+    <%-- <p> {{totalItems}}条记录 {{currentPage}}/{{numPages}}页 <span class="cur">1</span> <span>2</span><span>下一页</span></p>--%>
 
-            <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
-            boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
-            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
-            last-text="&raquo;"></uib-pagination>
+    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
+    boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
+    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
+    last-text="&raquo;"></uib-pagination>
 
-            <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize"
-                previous-text="上一页" next-text="下一页" force-ellipses="true"></ul>
-        </div>
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize"
+    previous-text="上一页" next-text="下一页" force-ellipses="true"></ul>
+    </div>
 
         <!-- 分页-->
         <%--<div ng-controller="paginationCtrl" style="text-align: right">--%>
