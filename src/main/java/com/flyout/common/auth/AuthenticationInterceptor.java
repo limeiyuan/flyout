@@ -40,6 +40,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             String name = RandomUtil.genRandomChar(7, RandomUtil.RandomType.LOWER_UPPER_NUMBER);
             customServiceDto.setName(name);
             customServiceDto.setUserId("Id_" + name + "_" + RandomUtil.genRandomChar(4, RandomUtil.RandomType.LOWER_UPPER_NUMBER));
+            AuthHelper.setCustomServiceDto(customServiceDto);
         }
 
         Account account = AuthHelper.getLoginUser();

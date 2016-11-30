@@ -191,7 +191,7 @@
         id="zhichiload"
         class="zhichi"></script>
 <div class="zhichiContainer"><a href="javascript:;" class="zhichi"><img
-        src="<%=resourcePath%>/img/services.customService.png"></a></div>
+        src="<%=resourcePath%>/img/customService.png"></a></div>
 
 <div class="footer">
     <div class="footerBox">
