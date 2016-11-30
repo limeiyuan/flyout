@@ -2,7 +2,6 @@ package com.flyout.service;
 
 import com.flyout.dao.SchoolDaoImpl;
 import com.flyout.domain.SchoolInfo;
-import com.sun.istack.internal.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,7 @@ public class SchoolServiceImpl {
     @Autowired
     private SchoolDaoImpl schoolDao;
 
-    public List<SchoolInfo> getSchoolList(@Nullable String name) {
+    public List<SchoolInfo> getSchoolList(String name) {
         return schoolDao.findByName(name);
     }
 }
