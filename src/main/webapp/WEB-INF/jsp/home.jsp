@@ -481,7 +481,7 @@
                 </div>
             </div>
             <div class="vidoBox fr">
-                <h3>相关视频 <a href="#">更多</a></h3>
+                <h3>相关视频 <a href="javascript:void(0)">更多</a></h3>
                 <div>
                     <div class="vidoContent"></div>
                 </div>
@@ -502,49 +502,49 @@
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>王同学</p>
-                        <span>成功获取<a href="">悉尼大学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">悉尼大学</a>Offer</span>
                     </div>
                 </li>
                 <li class="case1">
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>李同学</p>
-                        <span>成功获取<a href="">新南威尔士大学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">新南威尔士大学</a>Offer</span>
                     </div>
                 </li>
                 <li class="case2">
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>刘同学</p>
-                        <span>成功获取<a href="">博文中学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">博文中学</a>Offer</span>
                     </div>
                 </li>
                 <li class="case3">
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>加雪佩</p>
-                        <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
                     </div>
                 </li>
                 <li class="case4">
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>加雪佩</p>
-                        <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
                     </div>
                 </li>
                 <li class="case5">
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>加雪佩</p>
-                        <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
                     </div>
                 </li>
                 <li class="case6">
                     <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
                     <div>
                         <p>加雪佩</p>
-                        <span>成功获取<a href="">莫纳什大学</a>Offer</span>
+                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
                     </div>
                 </li>
                 <%--   <li class="arrow arrowR">
@@ -914,21 +914,21 @@
                     <img src='+imgArr[2].url+' alt="">\
                     <div>\
                     <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[2].user+'</p>\
-                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="" style="color: red;">'+imgArr[2].effort+'</a>Offer</span>\
+                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">'+imgArr[2].effort+'</a>Offer</span>\
                     </div>\
                     </li>\
                     <li style="width:190px;float: left; text-align: center;margin:25px 14px 0;">\
                      <img src='+imgArr[3].url+' alt="">\
                     <div>\
                        <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[3].user+'</p>\
-                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="" style="color: red;">'+imgArr[3].effort+'</a>Offer</span>\
+                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">'+imgArr[3].effort+'</a>Offer</span>\
                     </div>\
                     </li>\
                     <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
                     <img src='+imgArr[4].url+' alt="">\
                     <div>\
                       <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[4].user+'</p>\
-                    <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href=""  style="color: red;">'+imgArr[4].effort+'</a>Offer</span>\
+                    <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)"  style="color: red;">'+imgArr[4].effort+'</a>Offer</span>\
                     </div>\
                     </li>\
                     <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\

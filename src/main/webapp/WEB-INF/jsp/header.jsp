@@ -32,7 +32,7 @@
     .topHeadContentRightUl li.shuxian{ width: 28px; text-align: center;color: #999;}
     .topHeadContentRightUl li.goalCol::before{content: url("<%=resourcePath%>/img/home/col.png");margin-right: 8px;}
     .topHeadContentRightUl .moreServ::before{ content: url("<%=resourcePath%>/img/home/more.png");margin-right: 8px; }
-    .topHeadContentRightUl .moreServ::after{ content: url("<%=resourcePath%>/img/home/arrow_down.png");margin-left: 8px; }
+    .topHeadContentRightUl .moreServ{     background: url("<%=resourcePath%>/img/home/arrow_down.png")no-repeat right 15px; }
     .topHeadContentRightUl .weibo{ display: inline-block;height:30px;width: 18px; background: url("<%=resourcePath%>/img/home/weibo.png") no-repeat left center}
     .topHeadContentRightUl .weixin{ display: inline-block;height:30px;width: 18px;background: url("<%=resourcePath%>/img/home/weixin.png") no-repeat right center}
 
@@ -46,15 +46,15 @@
     .logoSearch .freeTel>div{ margin-top: 32px;}
     .logoSearch .freeTel .telNum{ font-size: 18px;font-weight: bold;color: #fb5454;padding: 0;margin: 0;line-height: 24px;}
     .logoSearch .freeTel .telTime{ font-size: 12px;color: #666;padding: 0;margin: 0}
-
     .search .searchBox{overflow: hidden;width: 478px;}
-    .search .seatchSchool{width: 80px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("<%=resourcePath%>/img/home/select.png") no-repeat 65px center;background-size: 10%;}
-
+    .search .seatchSchool{width: 76px; display: inline-block; line-height: 33px;text-align: center;background: #f5f5f5;background: #f5f5f5 url("<%=resourcePath%>/img/home/select.png") no-repeat 65px center;background-size: 10%;    cursor: pointer;}
     .search .searchInput{ border: 1px solid #0099ec;}
+    .search .search_box{ display: inline-block;}
     .search input{ width: 316px; border:none; padding: 0 22px 0 16px;;line-height: 22px;}
     .search a{ width: 80px; height: 35px; background:#0099ec; line-height: 35px; font-size: 16px; color: #fff;text-align: center }
     .search a:hover{ color: #fff; }
-
+    .topHeadContentRightUl li .moreServList{display: none;    position: absolute; width: 100px; z-index: 99; background: #fff;cursor: pointer;text-indent: 2em}
+    .searchBox .searchList{position: absolute;display: none;z-index: 99;width: 80px;text-align: center;background: #fff; line-height: 2;}
     /*logoSearch结束*/
     /*nav开始*/
     .nav{ height: 50px; width: 100%; line-height: 50px;background: #fff;border-bottom: 1px solid #0099ec; }
@@ -67,18 +67,25 @@
 <div class="topHead">
     <div class="topHeadContent">
         <div class="topHeadContentLeft fl">
-            <a href="#">咨询热线：4006688066</a>
+            <a href="javascript:void(0)">咨询热线：4006688066</a>
         </div>
         <div class="topHeadContentRight fr">
             <ul class="topHeadContentRightUl">
-                <li class="sayHi"><a href="#">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user==null?"":user.getScreenname()%></a><a href="#" onclick="logout()">退出</a></li>
+                <li class="sayHi"><a href="javascript:void(0)">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user==null?"":user.getScreenname()%></a><a href="javascript:void(0)" onclick="logout()">退出</a></li>
                 <li class="regisLogin"><a href="/login/index.htm" class="login">登录</a><a href="/login/register.htm">注册</a></li>
                 <li class="shuxian">|</li>
-                <li class="goalCol"><a href="#">目标院校</a></li>
+                <li class="goalCol"><a href="javascript:void(0)">目标院校</a></li>
                 <li class="shuxian">|</li>
-                <li class="moreServ">更多服务</li>
+                <li class="moreServ">更多服务
+                     <ul class="moreServList">
+                        <li>海外移民</li>
+                        <li>海外房产</li>
+                        <li>帮助中心</li>
+                        <li>关于我们</li>
+                    </ul>
+                 </li>
                 <li class="shuxian">|</li>
-                <li class="iconImage"><a href="#" class="weibo fl"></a><a href="#" class="weixin fr"></a></li>
+                <li class="iconImage"><a href="javascript:void(0)" class="weibo fl"></a><a href="javascript:void(0)" class="weixin fr"></a></li>
             </ul>
         </div>
     </div>
@@ -96,7 +103,15 @@
         </div>
         <div class="search">
             <div class=searchBox>
-                <div class="searchInput fl"><div class="seatchSchool">搜学校</div><input type="text" placeholder="澳大利亚留学"/></div><a href="#" class="fr">搜索</a>
+                <div class="searchInput fl">
+                   <div class="search_box">
+                       <div class="seatchSchool">搜学校</div>
+                       <ul class="searchList">
+                           <li>移民项目</li>
+                           <li>海外房产</li>
+                       </ul>
+                   </div>
+                    <input type="text" placeholder="澳大利亚留学"/></div><a href="javascript:void(0)" class="fl">搜索</a>
             </div>
 
         </div>
@@ -162,5 +177,33 @@
             $('.navContent a').removeClass('nav_active');
             $(a).addClass('nav_active');
         }
+    });
+    $('.moreServ').mouseenter(function(){
+        $('.moreServList').show()
+        $(this).parent().find('li').hover(function () {
+            $(this).css('color','#0099ec')
+        }, function () {
+            $(this).css('color','#000')
+        });
+    });
+    $('.moreServ').mouseleave(function(){
+        $('.moreServList').hide()
+    });
+    $('.search_box').click(function(){
+
+        $('.searchList').toggle();
+        $(this).parent().find('li').hover(function () {
+            $(this).css('color','#0099ec')
+        }, function () {
+            $(this).css('color','#000')
+        });
+    });
+    $('.search_box').mouseleave(function(){
+        $('.searchList').hide()
+    });
+    $('.searchList li').click(function () {
+       // $(this).parents('li').find('input').val($(this).html());
+        $('.seatchSchool').html($(this).html());
+        $('.searchList').slideUp(1);
     });
 </script>

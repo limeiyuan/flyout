@@ -59,7 +59,7 @@
         .tabbed_panels div.selectedContent{ display:block;}
         /*我的收藏结束*/
         /*详细设置开始*/
-        .person_info{width: 975px;height: 670px;border: 1px solid #eee;display: none;color: #999;}
+        .person_info{width: 975px;height: 670px;border: 1px solid #eee;color: #999;}
         .detailed_set{height: 100%;height: 100%;display: none;}
         .basic_set{height: 100%;height: 100%;display: block;}
         .avatar_box{width: 160px;height: 100%;}
@@ -73,7 +73,7 @@
         .info_box .fill_name{width: 120px;}
         .save{ width: 100px; background: #0099ec; color: #fff; text-align: center; margin-top: 20px; line-height: 30px; border-radius: 20px;}
         .info_box .password{width: 200px;}
-        .info_box  ul li .modify{color: #0099ec;}
+        .info_box  ul li .modify{color: #0099ec;cursor: pointer;}
         /*详细设置结束*/
         /*收益情况开始*/
         .user_content{}
@@ -117,6 +117,35 @@
         .pending{text-align: center;}
         .pending p{background: #0099ec;color: #fff;width: 60%;margin: 10px auto;padding: 10px 0;border-radius: 50px;}
         /*我的订单结束*/
+          /* 基本设置开始*/
+        .basic_set .my_baseset{width: 90%;padding: 36px 0;margin: auto;border-bottom: 1px solid #eee;position: relative;}
+        .basic_set .my_baseset .basesety_tit{ margin-bottom: 10px;}
+        .basic_set .my_baseset .basesety_name{ color: #000; font-size: 14px;margin-right: 12px;}
+        .basic_set .my_baseset .my_adviser{display: inline-block; color: #fff; background: #0099ec;padding: 0 6px;border-radius: 5px;height: 30px;line-height: 30px;position: absolute;right: 0;top: 40px;}
+        .basic_set .base_account{}
+        .basic_set .base_account{width: 94%;margin: 36px auto 0;}
+        .basic_set .base_account h3::before{content: '|';  background: #0099ec;  width: 3px;  height: 24px;  float: left;  color: #0099ec;  margin-right: 12px;}
+        .basic_set .base_account h3{font-size: 14px;color: #000;line-height: 24px;height: 24px;}
+        .basic_set .base_account .account_de{margin: 30px auto;height: 56px;position: relative;width: 96%;}
+        .basic_set .base_account .account_de .account_sum{color: red;font-size: 16px;position: absolute;bottom: 10px;}
+        .basic_set .base_account .account_de .account_sum span{color: #999;font-size: 12px;margin-left: 10px;font-weight: bold;}
+        .basic_set .base_account .account_de .sub_btn{position: absolute;bottom: 10px;right: 0;}
+        .basic_set .base_account .account_de .sub_btn span{display: inline-block;width: 120px; height: 32px; border-radius: 60px; line-height: 32px; border: 1px solid #fb5454; text-align: center; cursor: pointer;}
+        .basic_set .base_account .account_de .sub_btn .account_recharge{color: #fff;background: red;margin-right: 40px;}
+        /* 基本设置end*/
+        .mask{width: 100%;height: 100%;overflow: hidden;background: #000;opacity:0.5;position: absolute;top: 0;display: none;}
+        .change_password{width: 500px; background: #fff;  position: fixed;top: 50%;margin-top: -200px;left: 50%;margin-left: -250px;display: none}
+        .change_password .password_tit{height: 40px; line-height: 40px;padding: 0 20px;border-bottom: 1px solid #eee;}
+        .change_password .password_enter{width: 74%; margin: 50px auto;}
+        .change_password h4{display: inline-block;font-size: 14px;font-weight: bold;line-height: 40px;}
+        .change_password .close{font-size: 20px;cursor: pointer;line-height: 40px;}
+        .change_password .password_enter .xiugai{width: 70px;height: 36px; line-height: 36px;font-size: 14px;}
+        .change_password .password_enter li{}
+        .change_password .password_enter li input{text-indent: 10px; display: block; width: 240px; height: 36px; line-height: 36px; border-radius: 5px; border: none; border: 1px solid #D4D3D3;}
+        .change_password .password_enter li p{text-indent: 72px;line-height: 30px;height: 30px;color: red;visibility: hidden;}
+        .change_password .password_enter .password_sure{width: 80%;margin: auto;overflow: hidden;}
+        .change_password .password_enter .password_sure span{width: 130px; height: 32px;color: #0099ec; border-radius: 6px; line-height: 32px; display: inline-block; border: 1px solid #0099ec; text-align: center; cursor: pointer;}
+        .change_password .password_enter .password_sure .sure{background: #0099ec;color: #fff;}
     </style>
 </head>
 <body>
@@ -127,17 +156,17 @@
             <ul class="user_nav">
                 <li>
                     <img  class="fl user_icon" src="<%=resourcePath%>/img/account/personal_enter.png" alt="">
-                    <a href="#" class="personal_enter">个人中心</a>
+                    <a href="javascript:void(0)" class="personal_enter">个人中心</a>
                     <ul class="next_item">
-                        <li><a href="##">基本设置</a></li>
+                        <li><a href="javascript:void(0)">基本设置</a></li>
                         <li class="next_li">
-                            <a href="##">详细设置</a>
+                            <a href="javascript:void(0)">详细设置</a>
                             <div class="clear"></div>
                     </ul>
                 </li>
-                <li> <img  class="fl user_icon" src="<%=resourcePath%>/img/account/income.png" alt=""><a href="#" class="income">收益情况</a></li>
-                <li> <img  class="fl user_icon" src="<%=resourcePath%>/img/account/order_list.png" alt=""><a href="#" class="order_list">我的订单</a></li>
-                <li> <img  class="fl user_icon" src="<%=resourcePath%>/img/account/collection.png" alt=""><a href="#" class="collection">我的收藏</a></li>
+                <li> <img  class="fl user_icon" src="<%=resourcePath%>/img/account/income.png" alt=""><a href="javascript:void(0)" class="income">收益情况</a></li>
+                <li> <img  class="fl user_icon" src="<%=resourcePath%>/img/account/order_list.png" alt=""><a href="javascript:void(0)" class="order_list">我的订单</a></li>
+                <li> <img  class="fl user_icon" src="<%=resourcePath%>/img/account/collection.png" alt=""><a href="javascript:void(0)" class="collection">我的收藏</a></li>
                 <div class="clear"></div>
             </ul>
             <div class="recommend">
@@ -149,7 +178,31 @@
             <div class="person_info fr">
                 <!-- 基本设置开始-->
                 <div class="basic_set">
-                    基本设置基本设置基本设置基本设置基本设置
+                    <div class='my_baseset'>
+                        <div class="fl" style="margin-right: 8px;"><img src="<%=resourcePath%>/img/account/thumbnail.png" alt=""></div>
+                        <p class="basesety_tit">
+                            <span class="basesety_name">小花匠的夏天</span>
+                            <span>你好</span>
+                        </p>
+                        <p>姓名：未填写</p>
+                        <p>性别：男</p>
+                        <p>城市:未填写</p>
+                        <span class="my_adviser">我的专属顾问</span>
+                    </div>
+                    <div class='base_account'>
+                        <h3>我的账户</h3>
+                        <div class="account_de">
+                            <span>资金金额</span>
+                            <div class="account_detaio" >
+                                <span class="account_sum">1200.00元<span>查看</span></span>
+
+                                <div class="fr sub_btn">
+                                    <span class="account_recharge">充值</span>
+                                    <span>体现</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--  基本设置结束-->
                 <!--  详细设置开始-->
@@ -437,6 +490,31 @@
             <!--我的收藏结束-->
         </div>
     </div>
+    <div class="mask"></div>
+    <!--修改密码弹窗-->
+    <div class="change_password">
+        <div class="password_tit"><h4>修改登录密码</h4><span class="close fr">x</span></div>
+        <div class="password_enter">
+            <ul>
+                <li class="clearfix">
+                    <div class="xiugai fl"><span>原密码</span></div><input type="text" placeholder="请输入当前密码"/>
+                    <p>请输入正确密码</p>
+                </li>
+                <li class="clearfix">
+                    <div class="xiugai fl"><span>新密码</span></div><input type="text" placeholder="请输入新密码"/>
+                    <p>请输入正确密码</p>
+                </li>
+                <li class="clearfix">
+                    <div class="xiugai fl"><span>确认密码</span></div><input type="text" placeholder="请输入确认密码"/>
+                    <p>请输入正确密码</p>
+                </li>
+            </ul>
+            <div class="password_sure">
+                <span class="sure fl">保存</span>
+                <span class="fr">取消</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 <%@include file="../footer.jsp" %>
@@ -521,6 +599,18 @@
             $(this).addClass("selectedTab").siblings().removeClass('selectedTab');
             $(".contentGroup > div").eq($(".tabGroup > li").index(this)).addClass("selectedContent").siblings().removeClass('selectedContent');
         });
+        $(".modify").click(function(){
+            $('body').css({'height':'100%','overflow':'hidden'});
+            $('.mask').show();
+            $('.change_password').show();
+
+
+        });
+        $(".close").click(function(){
+            $('body').css({'height':'auto','overflow-y':'auto'});
+            $('.change_password').hide();
+            $('.mask').hide()
+        })
     })
 </script>
 </body>
