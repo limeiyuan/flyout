@@ -119,7 +119,7 @@
             </ul>
         </div>
         <div class="elite_schools">
-            <div><img src="<%=resourcePath%>/img/school//MIT.png" alt=""></div>
+            <div><img src="<%=resourcePath%>/img/school/MIT.png" alt=""></div>
             <h4>麻省理工学院</h4>
             <p>Massachusetts Institute of Technology</p>
         </div>

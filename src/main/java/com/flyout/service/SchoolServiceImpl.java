@@ -19,4 +19,8 @@ public class SchoolServiceImpl {
     public List<SchoolInfo> getSchoolList(String name) {
         return schoolDao.findByName(name);
     }
+
+    public SchoolInfo getSchool(Long id) {
+        return schoolDao.find(id);
+    }
 }

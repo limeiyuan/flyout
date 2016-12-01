@@ -37,6 +37,13 @@ public class SchoolController {
         return "school/list";
     }
 
+    @RequestMapping("detail")
+    public String detail(Long id, ModelMap map) {
+        SchoolInfo schoolInfo = schoolService.getSchool(id);
+        map.put("school", schoolInfo);
+        return "school/detail";
+    }
+
     @RequestMapping("getInitData")
     @ResponseBody
     public PaginationDto<SchoolInfo> getInitData(String dataId) {
