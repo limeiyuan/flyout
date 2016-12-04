@@ -161,7 +161,7 @@
         /*caseBox结束*/
         /*advantage开始*/
         .advantage{width: 1200px;margin: 30px auto;background: #fff;}
-        .advantage .advantageBox{height: 394px;border: 1px solid #eee;}
+        .advantage .advantageBox{height: 320px;border: 1px solid #eee;}
         .advantageCont ul{overflow: hidden; padding: 40px 0;border-bottom: 1px solid #eee;margin: 0 24px;}
         .advantageCont li{float: left; text-align: center;width: 20%;}
         .advantageCont li h6{color: #333;font-size: 16px;line-height: 33px;}
@@ -171,7 +171,7 @@
         .advantageMedia{overflow: hidden}
         .advantageMedia ul{padding: 0 23px;overflow: hidden;}
         .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin: 23px 18px;}
-        .advantageMedia img{height: 32px;width: 115px;}
+        .advantageMedia img{height: 32px;}
         /*advantage结束*/
 
         .right.carousel-control, .left.carousel-control {
