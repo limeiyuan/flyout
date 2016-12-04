@@ -120,9 +120,9 @@
 <div class="nav">
     <div class="navContent">
         <ul>
-            <li><a href="/home/home.htm">首页</a></li>
-            <li><a href="/abroadRecommend/index.htm">留学优选</a></li>
-            <li><a href="/school/index.htm">海外院校</a></li>
+            <li><a href="<%=path%>/home/home.htm">首页</a></li>
+            <li><a href="<%=path%>/abroadRecommend/index.htm">留学优选</a></li>
+            <li><a href="<%=path%>/school/index.htm">海外院校</a></li>
         </ul>
     </div>
 </div>
@@ -170,7 +170,6 @@
 </script>
 
 <script type="text/javascript">
-    $($('.navContent a')[0]).addClass('nav_active');
     $('.navContent a').each(function (index, a) {
         var url = $(a).attr('href');
         if (window.location.href.indexOf(url) > -1) {
@@ -179,7 +178,7 @@
         }
     });
     $('.moreServ').mouseenter(function(){
-        $('.moreServList').show()
+        $('.moreServList').show();
         $(this).parent().find('li').hover(function () {
             $(this).css('color','#0099ec')
         }, function () {

@@ -7,7 +7,7 @@
     <display-name>flyout-web</display-name>
 
     <welcome-file-list>
-        <welcome-file>/home/home.htm</welcome-file>
+        <welcome-file>/home/index.htm</welcome-file>
     </welcome-file-list>
 
     <listener>

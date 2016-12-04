@@ -139,7 +139,7 @@
                     <p>地区：{{school.nation.name}}</p>
                     <p>类型：私立</p>
                     <p class="hot_prof">热门专业：{{school.subject}}</p>
-                    <div class="details">查看详情</div>
+                    <div class="details" ng-click="detail(school.id)">查看详情</div>
                 </div>
                 <p>{{school.name}}</p>
                 <p>{{school.ownname}}</p>
@@ -192,10 +192,9 @@
         $scope.sortOrder = true;
 
         $scope.query = function () {
-            var keyword = encodeURIComponent($scope.queryObj);
             var timestamp = (new Date()).valueOf();
 
-            var url = "list.htm?name=" + keyword + '&pageNo=' + $scope.pagination.pageNo
+            var url = "getEstimateResult.htm?pageNo=" + $scope.pagination.pageNo
                     + '&sortField=' + $scope.sortField + '&sortOrder=' + $scope.sortOrder
                     + '&timestamp=' + timestamp;
 
@@ -212,6 +211,10 @@
                 $('#queryCoverModal').modal('hide');
                 $scope.errorMsg = '发生未知错误，请与系统管理员联系！';
             });
+        };
+
+        $scope.detail = function (id) {
+            window.location.href = "<%=path%>/school/detail.htm?id=" + id;
         };
 
         $scope.query();

@@ -26,7 +26,7 @@
         .success_case .case_list .son_ul .hover{color: #000;}
         .success_case .case_list .school_filter{background: #ccc;margin: 16px auto;font-size: 14px;}
         .success_case .case_list .school_filter li{display: inline-block; width: 85px;  text-align: center;height: 36px;line-height: 36px;}
-        .success_case .case_list .school_filter .cuurent{color: #0099ec;cursor: pointer;}
+        .success_case .case_list .school_filter .current {color: #0099ec;cursor: pointer;}
         .success_case .case_list .school_case{}
         .success_case .case_list .school_case >ul{overflow: hidden;}
         .success_case .case_list .school_case >ul >li{float: left;width: 31%;height: 350px;border: 1px solid #eee;border-radius: 10px;padding: 24px;margin: 12px 9px;background: #fff;position: relative;}

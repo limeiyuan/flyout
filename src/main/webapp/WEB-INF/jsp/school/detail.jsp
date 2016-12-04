@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html ng-app="app">
+<html>
 <head>
     <%@include file="../commonResource.jsp" %>
     <style>
@@ -63,15 +63,15 @@
        <div class="schoo_dagai">
            <div class="school_xqt">
                <div>
-                   <p class="name">悉尼大学</p>
-                   <p class="en_name">The University of Sydney</p>
-                   <p class="rank">世界排名:<span>37</span></p>
+                   <p class="name">${school.name}</p>
+                   <p class="en_name">${school.ownname}</p>
+                   <p class="rank">世界排名:<span>${school.num}</span></p>
                </div>
            </div>
            <div class="school_xqc">
                <ul>
-                   <li>国家：<span>澳洲</span></li>
-                   <li>星级：<span>五星级</span></li>
+                   <li>国家：<span>${school.nation.name}</span></li>
+                   <li>星级：<span>${school.rate}</span></li>
                    <li>学院行政：公立</li>
                    <li>特色专业：商科 法律 教育 经济学 金融</li>
                </ul>
@@ -80,7 +80,9 @@
                    <span class="fr">免费咨询</span>
                </div>
            </div>
-           <div class="school_img"></div>
+           <div class="school_img">
+               <img src="<%=picPath%>/${school.logoPhoto.path}">
+           </div>
        </div>
     </div>
 </div>
@@ -97,10 +99,11 @@
             <li>院校排名</li>
         </ul>
         <div class="school_content">
-            <div class="cur">专业课程专业课程专业课程专业课程</div>
-            <div>入学条件入学条件入学条件入学条件</div>
-            <div>成功案例成功案例成功案例成功案例</div>
-            <div>院校排名院校排名院校排名院校排名</div>
+            <div class="cur">${school.description}</div>
+            <div>${school.subject}</div>
+            <div>${school.term}</div>
+            <div>${school.honour}</div>
+            <div>${school.flyDic}</div>
         </div>
     </div>
     <div class="school_ranking fr">

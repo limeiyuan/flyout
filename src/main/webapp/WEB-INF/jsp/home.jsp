@@ -242,7 +242,7 @@
                             <li>70分以下</li>
                         </ul>
                     </li>
-                    <li class="fastEst intentionE">快速评估</li>
+                    <li class="fastEst intentionE" ng-click="estimate()">快速评估</li>
                 </ul>
                 <ul class="asseContent" style="display: none">
                     <li class="focusCur intentionA">
@@ -797,6 +797,11 @@
                     $(item).addClass("teacherCur").siblings().removeClass('teacherCur');
                 }
             });
+        };
+
+        $scope.estimate = function () {
+            //TODO::提交评估结果
+            window.location.href = "<%=path%>/school/estimate.htm";
         };
 
         $scope.render = function () {

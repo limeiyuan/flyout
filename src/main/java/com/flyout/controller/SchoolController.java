@@ -1,10 +1,8 @@
 package com.flyout.controller;
 
 import com.flyout.common.cache.MemcachedManager;
-import com.flyout.common.constance.MemcachedConstance;
 import com.flyout.common.dto.PaginationDto;
 import com.flyout.common.util.HtmlUtil;
-import com.flyout.common.util.RandomUtil;
 import com.flyout.domain.SchoolInfo;
 import com.flyout.service.SchoolServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,6 +34,11 @@ public class SchoolController {
         return "school/list";
     }
 
+    @RequestMapping("estimate")
+    public String estimate() {
+        return "school/estimate";
+    }
+
     @RequestMapping("detail")
     public String detail(Long id, ModelMap map) {
         SchoolInfo schoolInfo = schoolService.getSchool(id);
@@ -58,11 +60,20 @@ public class SchoolController {
         return dto;
     }
 
-    @RequestMapping("list")
+    @RequestMapping("query")
     @ResponseBody
     public PaginationDto<SchoolInfo> getSchoolList(String name) {
         PaginationDto<SchoolInfo> dto = new PaginationDto<>();
         List<SchoolInfo> schools = schoolService.getSchoolList(name);
+        dto.autoFill(schools);
+        return dto;
+    }
+
+    @RequestMapping("getEstimateResult")
+    @ResponseBody
+    public PaginationDto<SchoolInfo> getEstimateResult() {
+        PaginationDto<SchoolInfo> dto = new PaginationDto<>();
+        List<SchoolInfo> schools = schoolService.getSchoolList("");
         for (SchoolInfo school : schools) {
             String subject = HtmlUtil.getPlainText(school.getSubject().replace("<div>", "：").replace("<br>", "、"));
             if (subject.indexOf("、") > 0) {
@@ -80,13 +91,5 @@ public class SchoolController {
         }
         dto.autoFill(schools);
         return dto;
-    }
-
-    @RequestMapping("estimate")
-    @ResponseBody
-    public PaginationDto<SchoolInfo> estimate() {
-        String dataId = RandomUtil.genRandomChar(8, RandomUtil.RandomType.LOWER_UPPER_NUMBER);
-        memcachedManager.add(MemcachedConstance.DATA_ID + dataId, MemcachedConstance.DATA_EXPIRE, new ArrayList<SchoolInfo>());
-        return new PaginationDto<>();
     }
 }
