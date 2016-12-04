@@ -2,6 +2,7 @@ package com.flyout.controller;
 
 import com.flyout.common.constance.Constance;
 import com.flyout.common.dto.BasicDto;
+import com.flyout.common.util.PhoneUtil;
 import com.flyout.service.VerificationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class VerificationController {
     @RequestMapping(value = "get", method = {RequestMethod.POST})
     @ResponseBody
     public BasicDto getVerification(HttpServletRequest request, @RequestParam String tel) {
+        if (!PhoneUtil.isValidPhoneCN(tel)) {
+            return new BasicDto("号码格式不正确");
+        }
         return verificationService.sendVerificationNum(request, Constance.PHONE_AREA_CN, tel);
     }
 }
