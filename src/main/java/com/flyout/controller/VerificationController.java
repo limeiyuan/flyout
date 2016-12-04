@@ -2,7 +2,6 @@ package com.flyout.controller;
 
 import com.flyout.common.constance.Constance;
 import com.flyout.common.dto.BasicDto;
-import com.flyout.service.AccountServiceImpl;
 import com.flyout.service.VerificationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
