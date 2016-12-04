@@ -1,6 +1,9 @@
 package com.flyout.service;
 
+import com.flyout.common.auth.AuthHelper;
+import com.flyout.common.dto.CustomServiceDto;
 import com.flyout.common.util.AuthUtil;
+import com.flyout.common.util.RandomUtil;
 import com.flyout.dao.AccountDaoImpl;
 import com.flyout.domain.Account;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,11 @@ import org.springframework.stereotype.Service;
 public class AccountServiceImpl {
     @Autowired
     private AccountDaoImpl accountDao;
+
+    public Boolean isUsernameDulplicate(String username) {
+        Account account = accountDao.findByUsername(username);
+        return account == null;
+    }
 
     public Account login(String loginName, String password) {
         Account account = accountDao.findByUsername(loginName);
@@ -29,8 +37,9 @@ public class AccountServiceImpl {
         Account account = new Account();
         account.setPassword(AuthUtil.getPassword(password));
         account.setUsername(username);
-        account.setScreenname(username);
+        account.setScreenname(username + "_" + RandomUtil.genRandomChar(4, RandomUtil.RandomType.NUMBER));
         accountDao.saveOrUpdate(account, null);
+        AuthHelper.login(account);
     }
 
     public void save(Account account) {

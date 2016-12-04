@@ -312,8 +312,6 @@
                 data: params
             }).then(function success(response) {
                 var result = response.data;
-                $scope.schools = result.data;
-                $scope.pagination = result.pagination;
 
                 if (!!result.result) {
                     $('#queryCoverModal').modal('hide');
@@ -348,8 +346,6 @@
                 data: params
             }).then(function success(response) {
                 var result = response.data;
-                $scope.schools = result.data;
-                $scope.pagination = result.pagination;
 
                 if (!!result.result) {
                     item.removeClass('verificationValid');
@@ -389,23 +385,20 @@
                 alert('密码为空');
             }
             var params = $.param({
-                phonenumber: $scope.phonenumber,
-                verifCode: $scope.verifCode,
-                setpassword: $scope.setpassword
+                tel: $scope.phonenumber,
+                verifyCode: $scope.verifCode,
+                password: $scope.setpassword
             });
             $http({
                 method: 'POST',
-                url: url,
+                url: '<%=path%>/login/register.htm',
                 data: params
             }).then(function success(response) {
                 var result = response.data;
-                $scope.schools = result.data;
-                $scope.pagination = result.pagination;
 
                 if (!!result.result) {
                     $('#queryCoverModal').modal('hide');
-                    $('#loginForm').addClass("active").siblings().removeClass('active');
-                    $(".loginContent>div").eq($(".loginTab span").index('#loginForm')).show().siblings().hide();
+                    window.location.href = "<%=path%>/home/home.htm";
                 } else {
                     alert(result.message)
                 }

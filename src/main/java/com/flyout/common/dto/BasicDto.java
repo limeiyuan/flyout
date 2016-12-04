@@ -9,6 +9,13 @@ public class BasicDto {
     protected Boolean result = false;
     protected Object data;
 
+    public BasicDto() {
+    }
+
+    public BasicDto(String message) {
+        this.message = message;
+    }
+
     public String getMessage() {
         return message;
     }
