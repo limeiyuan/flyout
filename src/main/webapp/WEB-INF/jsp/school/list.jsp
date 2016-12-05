@@ -66,7 +66,10 @@
             cursor: pointer;
             padding: 0 0 12px 0;
             background: #fff;
-            left: 45px;
+            left: 52px;
+        }
+        .school_result .case_list .son_ul1 {
+            left: 33px;
         }
 
         .school_result .case_list .son_ul li {
@@ -119,20 +122,21 @@
             width: 25%;
             height: 250px;
             border-radius: 10px;
-            padding: 10px;
-            margin: 10px 0;
+            padding:0 10px;
             background: #fff;
             position: relative;
         }
 
         .school_form .school_img {
             width: 100%;
-            height: 130px;
+            height: 142px;
             border: 1px solid #eee;
+            margin-bottom: 15px;
         }
 
         .school_form img {
             width: 90%;
+            height: 100%;
             display: block;
             margin: 10px auto;
         }
@@ -150,7 +154,7 @@
 
         .school_form .fenye {
             text-align: center;
-            margin: 20px auto;
+            margin:0 auto;
             color: #999;
         }
 
@@ -198,7 +202,7 @@
     <div class="case_list fl">
         <ul>
             <li>国家 <input class="inte_choice" type="text" placeholder="请选择">
-                <ul class="son_ul" style="display: none">
+                <ul class="son_ul son_ul1" style="display: none">
                     <li>选选项一选项一选项一选项一项一</li>
                     <li>选项二</li>
                     <li>选项三</li>
@@ -245,13 +249,14 @@
                     <p class="school_area">所在地区：{{school.nation.name}}</p>
                 </li>
             </ul>
-            <p class="fenye">26条记录 1/2 <span class="cur">1</span><span>2</span> 下一条</p>
+           <%-- <p class="fenye">26条记录 1/2 <span class="cur">1</span><span>2</span> 下一条</p>--%>
 
             <div class="fenye cl" ng-controller="paginationCtrl">
-                <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
+
                 <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"
                     max-size="maxSize"
                     previous-text="上一页" next-text="下一页" force-ellipses="true"></ul>
+                <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
             </div>
         </div>
     </div>
