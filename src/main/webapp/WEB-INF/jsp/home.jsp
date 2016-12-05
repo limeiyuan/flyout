@@ -831,17 +831,7 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        //左箭头
-        $('#leftArrow').click(function () {
-            $(this).parent().prev("ul").append($(this).parent().prev("ul").find('li:eq(0)'));
-        });
-        //右箭头
-        $('#rightArrow').click(function () {
-            $(this).parent().prev("ul").prepend($(this).parent().prev("ul").find('li:last'));
-        });
-        //    right__red_img
         var imgArr=[{url:"<%=resourcePath%>/img/home/avatar5.png",user:"林同学",effort:"普林斯顿大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"王同学",effort:"哈佛大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"张同学",effort:"耶鲁大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"刘同学",effort:"斯坦福大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"赵同学",effort:"芝加哥大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"薛同学",effort:"哥伦比亚大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"古同学",effort:"宾夕法尼亚大学"}];
-
 
         reload();
 
