@@ -165,6 +165,10 @@
 
         .school_detail .school_content {
             margin-top: 10px;
+            color: #999;
+            font-size: 1.5em !important;
+            text-indent: 2em;
+            font-family: '微软雅黑' !important;
         }
 
         .school_content > div {
