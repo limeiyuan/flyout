@@ -211,7 +211,7 @@
         <div class="school_sort fl">
             <ul>
                 <li class="school_list fr" ng-repeat="product in products">
-                    <div><img src="<%=resourcePath%>/img/school/schoo_view.png" alt=""></div>
+                    <div><img ng-src="{{product.photo.path!=null ? '<%=picPath%>'+product.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}" alt=""></div>
                     <p>{{product.title}}</p>
                     <p class="passing_rate">申请通过率8%</p>
                     <p><span class="now_price">{{product.price}}</span><span class="original_price">￥34543</span><span
