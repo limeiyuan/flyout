@@ -49,19 +49,23 @@
     .school_sort{width: 80%;}
     .school_sort ul{overflow: hidden}
     .school_sort li{float:left;width: 31%;margin-right: 2%;    border: 1px solid #eee;    margin-bottom: 16px;    padding-bottom: 10px;}
-    .school_sort li div{width: 100%;    margin-bottom: 10px;}
+    .school_sort li div{width: 100%;margin-bottom: 10px;height: 310px;}
     .school_sort  .passing_rate{color: #ccc;}
-    .school_sort li div img{width: 100%;}
+    .school_sort li div img{width: 100%; height: 100%;}
     .school_sort li p{padding: 0 5px 0 15px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;    line-height: 20px;}
     .may_like{width: 20%;height: 500px;}
     .may_like img{width: 100%;}
     .school_sort .now_price{font-size: 16px;color: red;}
     .school_sort .original_price{color: #ccc;text-decoration: line-through;}
     .school_sort .collection{float: right;padding-right: 24px;margin-right: 10px;background: url("<%=resourcePath%>/img/abroad/heart_grey.png")no-repeat 92% center;}
-    .school_view .fenye{ padding-bottom: 5px;text-align: center;}
-    .school_view .fenye  p{ text-align: center;  color: #ccc;}
+    .school_view .fenye{ padding-bottom: 5px;text-align: center;margin-top: 15px;}
+    .school_view .fenye  p{ text-align: center;  color: #ccc;display: inline-block;vertical-align: bottom;}
     .school_view .fenye  p span{text-align: center;  color: #ccc; padding: 4px 10px; border: 1px solid #0099ec; margin-right: 9px;}
     .school_view .fenye  p .cur{background: #0099ec;color: #fff;}
+    .school_view .pagination {margin: 15px 0 0 0;vertical-align: bottom;}
+    .school_view .pagination > li{float: left;margin: 0 5px;}
+    .school_view .pagination > .active > a{border-color: #0099ec;background: #0099ec;color: #fff;}
+    .school_view .pagination  a{color: #999;}
     </style>
 <body>
 <%@include file="../header.jsp" %>
@@ -231,9 +235,11 @@
     boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
     previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
     last-text="&raquo;"></uib-pagination>
-
+        <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
     <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize"
-    previous-text="上一页" next-text="下一页" force-ellipses="true"></ul>
+    previous-text="上一页" next-text="下一页" force-ellipses="true">
+    </ul>
+
     </div>
 
         <!-- 分页-->

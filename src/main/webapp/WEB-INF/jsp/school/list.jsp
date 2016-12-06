@@ -156,6 +156,7 @@
             text-align: center;
             margin:0 auto;
             color: #999;
+            padding-bottom: 5px;
         }
 
         .school_form .fenye span {
@@ -167,7 +168,18 @@
             text-align: center;
             line-height: 25px;
         }
-
+        .school_form .fenye p {
+          display: inline-block;;vertical-align:bottom;
+        }
+        .school_form .pagination > li {
+            float: left;
+            margin: 0 5px;}
+        .school_form .pagination{margin: 15px 0 0 0;vertical-align: bottom;}
+        .school_form .pagination  a{color: #999;}
+        .school_form .pagination > .active > a {
+            border-color: #0099ec;
+            background: #0099ec;
+            color: #fff;}
         .school_form .fenye .cur {
             color: #fff;
             background: #0099ec;
@@ -252,11 +264,11 @@
            <%-- <p class="fenye">26条记录 1/2 <span class="cur">1</span><span>2</span> 下一条</p>--%>
 
             <div class="fenye cl" ng-controller="paginationCtrl">
-
+                <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
                 <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"
                     max-size="maxSize"
                     previous-text="上一页" next-text="下一页" force-ellipses="true"></ul>
-                <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
+
             </div>
         </div>
     </div>
