@@ -1,14 +1,14 @@
 package com.flyout.controller;
 
 import com.flyout.common.dto.BasicDto;
-import com.flyout.service.AccountServiceImpl;
+import com.flyout.common.enums.CategoryEnum;
 import com.flyout.service.AdviserServiceImpl;
-import com.flyout.service.SchoolServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.flyout.service.ProductServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,14 +19,11 @@ import java.util.Map;
 @Controller
 @RequestMapping("home")
 public class HomeController {
-    @Autowired
+    @Resource
     private AdviserServiceImpl adviserService;
 
-    @Autowired
-    private SchoolServiceImpl schoolService;
-
-    @Autowired
-    private AccountServiceImpl accountService;
+    @Resource
+    private ProductServiceImpl productService;
 
     @RequestMapping("index")
     public String index() {
@@ -53,6 +50,7 @@ public class HomeController {
         BasicDto dto = new BasicDto();
         Map<String, Object> data = new HashMap<>();
         data.put("advisers", adviserService.getRecommendAdviser());
+        data.put("abroads", productService.getRecommend(CategoryEnum.STUDY_ABROAD, 8));
         dto.setData(data);
         return dto;
     }

@@ -46,7 +46,8 @@
         .productImag{width: 228px;height: 450px;}
         .productsList ul li{float: right; width: 228px; height: 220px; margin: 5px; background: #fff;cursor: pointer;}
         .productsList ul li div{width: 210px; height: 150px; background: #ccc; margin: 8px auto;}
-        .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;line-height: 20px;}
+        .productsList ul li img{width: 100%; height: 100%;}
+        .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;line-height: 24px;}
         .productsList ul li span{ height: 34px; display: block;font-size: 12px;color: #666; padding-left: 14px;line-height: 17px;overflow: hidden;}
         .productsList ul .productCurr div{ height: 110px; }
         .productsList ul  .productFly{ height: 32px; color: #666;background: none;}
@@ -302,86 +303,23 @@
                 <h3>热门留学产品</h3>
                 <p>Recommend abroad</p>
             </div>
-            <div class="moreAbroad fr">查看更多</div>
+            <div class="moreAbroad fr" ng-click="productMore()">查看更多</div>
         </div>
 
         <div class="productsList">
             <div class="productImag fl">
                 <img src="<%=resourcePath%>/img/home/ad_left.jpg" alt="热门留学产品">
             </div>
-
             <ul>
-
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写内容简介，签证通过率95%以上，专家跟踪办理。</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
+                <li ng-repeat="abroad in abroads" abroad-loaded>
+                    <div><img class=""
+                            ng-src="{{abroad.photo.path!=null ? '<%=picPath%>'+abroad.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}">
                     </div>
-                </li>
-                <li class="productCurr">
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
+                    <p>{{abroad.title}}</p>
+                    <%--<span>这里填写内容简介，签证通过率95%以上，专家跟踪办理。</span>--%>
                     <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
-                    </div>
-                </li>
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
-                    </div>
-                </li>
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
-                    </div>
-                </li>
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
-                    </div>
-                </li>
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
-                    </div>
-                </li>
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
-                    </div>
-                </li>
-                <li>
-                    <div></div>
-                    <p>英国高中留学申请</p>
-                    <span>这里填写产品的内容简介，签证通过率95%以上，专家跟踪办理</span>
-                    <div class="productFly">
-                        <div class="flyAbroad fl">飞出国</div>
-                        <div class="likeNum fr">284</div>
+                        <div class="flyAbroad fl"><img ng-src="<%=picPath%>{{abroad.vender.photo.path}}"> {{abroad.vender.venderName}}</div>
+                        <div class="likeNum fr">{{abroad.favoriteNum}}</div>
                     </div>
                 </li>
             </ul>
@@ -728,6 +666,7 @@
             }).then(function success(response) {
                 var result = response.data;
                 $scope.advisers = result.data.advisers;
+                $scope.abroads = result.data.abroads;
                 $.each($scope.advisers, function (index) {
                     if (index < 5) {
                         adviserShowList.push(index);
@@ -797,11 +736,19 @@
                     $(item).addClass("teacherCur").siblings().removeClass('teacherCur');
                 }
             });
+            $('.famousTeacher').hover(function () {
+                $(this).addClass("teacherCur").siblings().removeClass('teacherCur');
+            });
         };
 
         $scope.estimate = function () {
             //TODO::提交评估结果
             window.location.href = "<%=path%>/school/estimate.htm";
+        };
+
+        $scope.productMore = function(){
+            console.log('123')
+            window.location.href = "<%=path%>/abroadRecommend/index.htm";
         };
 
         $scope.render = function () {
@@ -815,13 +762,26 @@
         })
     });
 
-    app.directive('adviserLoaded',function(){
+    app.directive('adviserLoaded', function () {
         return {
             restrict: 'A',
             link: function (scope) {
                 if (scope.$last === true) {
                     $('.famousTeacher').hover(function () {
                         $(this).addClass("teacherCur").siblings().removeClass('teacherCur');
+                    });
+                }
+                scope.renderAdviser();
+            }
+        };
+    });
+    app.directive('abroadLoaded', function () {
+        return {
+            restrict: 'A',
+            link: function (scope) {
+                if (scope.$last === true) {
+                    $('.productsList ul li').hover(function () {
+                        $(this).addClass("productCurr").siblings().removeClass('productCurr');
                     });
                 }
                 scope.renderAdviser();
@@ -889,13 +849,6 @@
          $(this).parents('li')[0].style.borderRadius="20px";
          })*/
 
-        $('.famousTeacher').hover(function () {
-            $(this).addClass("teacherCur").siblings().removeClass('teacherCur');
-        });
-        $('.productsList ul li').hover(function () {
-            $(this).addClass("productCurr").siblings().removeClass('productCurr');
-
-        });
         //回显
         function reload() {
             var html='';

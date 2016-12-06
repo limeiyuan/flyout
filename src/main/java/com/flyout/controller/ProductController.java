@@ -1,6 +1,7 @@
 package com.flyout.controller;
 
 import com.flyout.common.dto.PaginationDto;
+import com.flyout.common.enums.CategoryEnum;
 import com.flyout.domain.Product;
 import com.flyout.service.ProductServiceImpl;
 import org.springframework.stereotype.Controller;
@@ -10,25 +11,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 /**
- * Created by LiMeiyuan on 2016/11/15 9:52.
- * description: 留学优选 控制层
+ * Created by LiMeiyuan on 2016/12/6.
+ * Description: 产品控制层，提供产品查询等服务
  */
 @Controller
-@RequestMapping("abroadRecommend")
-public class AbroadRecommendController {
+@RequestMapping("product")
+public class ProductController {
     @Resource
     private ProductServiceImpl productService;
 
-    @RequestMapping("index")
-    public String index() {
-        return "abroad/index";
-    }
-
-    @RequestMapping("query")
+    @RequestMapping("getRecommend")
     @ResponseBody
-    public PaginationDto<Product> query(String name) {
+    public PaginationDto<Product> getRecommend(CategoryEnum category) {
         PaginationDto<Product> dto = new PaginationDto<>();
-        dto.autoFill(productService.query(name));
+        dto.setResult(true);
+        dto.autoFill(productService.getRecommend(category, null));
         return dto;
     }
 }

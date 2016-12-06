@@ -1,6 +1,7 @@
 package com.flyout.dao;
 
 import com.flyout.common.dao.BaseHibernateDao;
+import com.flyout.common.enums.CategoryEnum;
 import com.flyout.common.enums.EnableEnum;
 import com.flyout.domain.Product;
 import org.hibernate.criterion.DetachedCriteria;
@@ -17,11 +18,19 @@ import java.util.List;
  */
 @Repository
 public class ProductDaoImpl extends BaseHibernateDao<Product, Long> {
-    public List<Product> getRecommendProduct() {
+    public List<Product> getRecommendProduct(CategoryEnum category, Integer limit) {
         DetachedCriteria dc = createDetachedCriteria();
         dc.add(Restrictions.eq("enable", EnableEnum.enable));
+        if (category != null) {
+            dc.add(Restrictions.eq("category", category));
+        }
         dc.addOrder(Order.desc("topFlag"));
-        dc.addOrder(Order.desc("topOrder"));
+        dc.addOrder(Order.asc("topOrder"));
+        dc.addOrder(Order.desc("score"));
+        dc.addOrder(Order.desc("createTime"));
+        if (limit != null && limit > 0) {
+            dc.getExecutableCriteria(getSession()).setMaxResults(limit);
+        }
         return query(dc);
     }
 

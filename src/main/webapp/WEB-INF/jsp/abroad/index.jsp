@@ -262,7 +262,7 @@
 
         $scope.initial = function () {
             var timestamp = (new Date()).valueOf();
-            var url = "getRecommend.htm?timestamp=" + timestamp;
+            var url = "<%=path%>/product/getRecommend.htm?timestamp=" + timestamp + "&category=STUDY_ABROAD";
             $scope.getList(url);
         };
 

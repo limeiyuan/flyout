@@ -1,10 +1,11 @@
 package com.flyout.service;
 
+import com.flyout.common.enums.CategoryEnum;
 import com.flyout.dao.ProductDaoImpl;
 import com.flyout.domain.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,11 +14,11 @@ import java.util.List;
  */
 @Service
 public class ProductServiceImpl {
-    @Autowired
+    @Resource
     private ProductDaoImpl productDao;
 
-    public List<Product> getRecommend() {
-        return productDao.getRecommendProduct();
+    public List<Product> getRecommend(CategoryEnum category, Integer limit) {
+        return productDao.getRecommendProduct(category, limit);
     }
 
     public List<Product> query(String name) {
