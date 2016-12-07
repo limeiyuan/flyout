@@ -10,63 +10,352 @@
 <head>
     <%@include file="../commonResource.jsp" %>
 </head>
-    <style>
+<style>
     .mainPanel {
-    width: 1200px;
-    margin: auto;
+        width: 1200px;
+        margin: auto;
     }
-    .schoo_li{width: 1200px;}
-    .schoo_li ul{overflow: hidden;}
-    .schoo_li ul div{width: 106px;height: 106px;margin:auto;}
-    .schoo_li li{float: left;width: 208px;margin-right:37.5px;border: 1px solid #eee;padding: 10px 0 30px 0;}
-    .schoo_li li p{text-align: center;line-height: 20px;}
-    .schoo_li li .appli_name{font-weight: bold;}
-    .schoo_li li .appli_num{color: red;}
-    .schoo_li li .applied{color: #0099ec;}
-    .schoo_li li .free_appli{ width: 100px;margin-top: 20px; background: #0099ec; height: 30px; line-height: 30px; text-align: center; border-radius: 40px;color: #fff;}
-    .schoo_li .last_school{margin: 0;}
-    .filter_school{width: 1200px;overflow: hidden;}
-    .filter_school .country_study{position: relative; overflow: hidden;  border: 1px solid #eee;background: #ccc}
-    .filter_school .country_study .head{background: #ccc;width: 8%;}
-    .filter_school .country_study .head h4{line-height: 40px;text-align: center;}
-    .filter_school .country_study .body{width: 92%;background: #fff;}
-    .filter_school .country_study .body li{float: left; padding: 0 22px;}
-    .filter_school .country_study .body .country_item{overflow: hidden;line-height: 40px;}
-    .filter_school .country_study .body .country_item ul{    width: 90%}
-    .filter_school .country_study .body .country_item span{color: #0099ec;line-height: 40px;padding: 0 20px;}
-    .filter_school .country_study .body .country_item ul{display: inline-block;}
-    .filter_school .country_study .foot{width: 8%;line-height: 40px; position: absolute; top: 0; right: 0;}
-    .filter_school .country_study .foot span{text-align: center; display: block;background: url("<%=resourcePath%>/img/home/arrow_down.png")no-repeat 70% center;}
-    .filter_factor{width: 1200px;    padding: 26px 0;}
-    .filter_factor>div{display: inline-block;margin-right: 24px;}
-    .filter_factor .popularity{color: #0099ec;border: 1px solid #0099ec; padding: 0 25px 0 14px; line-height: 20px; border-radius: 37px;background: url("<%=resourcePath%>/img/abroad/arrow_blue.png")no-repeat 92% center;}
-    .filter_factor .worth{color: #ccc;border: 1px solid #ccc; padding: 0 25px 0 14px;line-height: 20px;border-radius: 37px;background: url("<%=resourcePath%>/img/abroad/arrow_grey.png")no-repeat 92% center;}
-    .filter_factor .keyword input{line-height: 20px;border: 1px solid #0099ec;text-indent: 10px;  border-radius: 50px;}
-    .filter_factor .keyword{position: relative}
-    .filter_factor .keyword span{width:40px;position: absolute;display: inline-block;background: url("<%=resourcePath%>/img/home/search_bg.png")no-repeat center center;vertical-align: middle;right: 1px;text-align: center; height: 100%;}
-    .filter_factor .keyword span img{position: absolute; top: 50%; margin-top: -8px;right: 50%; margin-right: -8px;}
-    .school_view{width: 1200px;overflow: hidden;}
-    .school_sort{width: 80%;}
-    .school_sort ul{overflow: hidden}
-    .school_sort li{float:left;width: 31%;margin-right: 2%;    border: 1px solid #eee;    margin-bottom: 16px;    padding-bottom: 10px;}
-    .school_sort li div{width: 100%;margin-bottom: 10px;height: 310px;}
-    .school_sort  .passing_rate{color: #ccc;}
-    .school_sort li div img{width: 100%; height: 100%;}
-    .school_sort li p{padding: 0 5px 0 15px;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;    line-height: 20px;}
-    .may_like{width: 20%;height: 500px;}
-    .may_like img{width: 100%;}
-    .school_sort .now_price{font-size: 16px;color: red;}
-    .school_sort .original_price{color: #ccc;text-decoration: line-through;}
-    .school_sort .collection{float: right;padding-right: 24px;margin-right: 10px;background: url("<%=resourcePath%>/img/abroad/heart_grey.png")no-repeat 92% center;}
-    .school_view .fenye{ padding-bottom: 5px;text-align: center;margin-top: 15px;}
-    .school_view .fenye  p{ text-align: center;  color: #ccc;display: inline-block;vertical-align: bottom;}
-    .school_view .fenye  p span{text-align: center;  color: #ccc; padding: 4px 10px; border: 1px solid #0099ec; margin-right: 9px;}
-    .school_view .fenye  p .cur{background: #0099ec;color: #fff;}
-    .school_view .pagination {margin: 15px 0 0 0;vertical-align: bottom;}
-    .school_view .pagination > li{float: left;margin: 0 5px;}
-    .school_view .pagination > .active > a{border-color: #0099ec;background: #0099ec;color: #fff;}
-    .school_view .pagination  a{color: #999;}
-    </style>
+
+    .schoo_li {
+        width: 1200px;
+    }
+
+    .schoo_li ul {
+        overflow: hidden;
+    }
+
+    .schoo_li ul div {
+        width: 106px;
+        height: 106px;
+        margin: auto;
+    }
+
+    .schoo_li li {
+        float: left;
+        width: 208px;
+        margin-right: 37.5px;
+        border: 1px solid #eee;
+        padding: 10px 0 30px 0;
+    }
+
+    .schoo_li li p {
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .schoo_li li .appli_name {
+        font-weight: bold;
+    }
+
+    .schoo_li li .appli_num {
+        color: red;
+    }
+
+    .schoo_li li .applied {
+        color: #0099ec;
+    }
+
+    .schoo_li li .free_appli {
+        width: 100px;
+        margin-top: 20px;
+        background: #0099ec;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 40px;
+        color: #fff;
+    }
+
+    .schoo_li .last_school {
+        margin: 0;
+    }
+
+    .filter_school {
+        width: 1200px;
+        overflow: hidden;
+    }
+
+    .filter_school .country_study {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #eee;
+        background: #ccc
+    }
+
+    .filter_school .country_study .head {
+        background: #ccc;
+        width: 8%;
+    }
+
+    .filter_school .country_study .head h4 {
+        line-height: 40px;
+        text-align: center;
+    }
+
+    .filter_school .country_study .body {
+        width: 92%;
+        background: #fff;
+    }
+
+    .filter_school .country_study .body li {
+        float: left;
+        padding: 0 22px;
+    }
+
+    .filter_school .country_study .body .country_item {
+        overflow: hidden;
+        line-height: 40px;
+    }
+
+    .filter_school .country_study .body .country_item ul {
+        width: 90%
+    }
+
+    .filter_school .country_study .body .country_item span {
+        color: #0099ec;
+        line-height: 40px;
+        padding: 0 20px;
+    }
+
+    .filter_school .country_study .body .country_item ul {
+        display: inline-block;
+    }
+
+    .filter_school .country_study .foot {
+        width: 8%;
+        line-height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .filter_school .country_study .foot span {
+        text-align: center;
+        display: block;
+        background: url("<%=resourcePath%>/img/home/arrow_down.png") no-repeat 70% center;
+    }
+
+    .filter_factor {
+        width: 1200px;
+        padding: 26px 0;
+    }
+
+    .filter_factor > div {
+        display: inline-block;
+        margin-right: 24px;
+    }
+
+    .filter_factor .popularity {
+        color: #0099ec;
+        border: 1px solid #0099ec;
+        padding: 0 25px 0 14px;
+        line-height: 20px;
+        border-radius: 37px;
+        background: url("<%=resourcePath%>/img/abroad/arrow_blue.png") no-repeat 92% center;
+    }
+
+    .filter_factor .worth {
+        color: #ccc;
+        border: 1px solid #ccc;
+        padding: 0 25px 0 14px;
+        line-height: 20px;
+        border-radius: 37px;
+        background: url("<%=resourcePath%>/img/abroad/arrow_grey.png") no-repeat 92% center;
+    }
+
+    .filter_factor .keyword input {
+        line-height: 20px;
+        border: 1px solid #0099ec;
+        text-indent: 10px;
+        border-radius: 50px;
+    }
+
+    .filter_factor .keyword {
+        position: relative
+    }
+
+    .filter_factor .keyword span {
+        width: 40px;
+        position: absolute;
+        display: inline-block;
+        background: url("<%=resourcePath%>/img/home/search_bg.png") no-repeat center center;
+        vertical-align: middle;
+        right: 1px;
+        text-align: center;
+        height: 100%;
+    }
+
+    .filter_factor .keyword span img {
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+        right: 50%;
+        margin-right: -8px;
+    }
+
+    .school_view {
+        width: 1200px;
+        overflow: hidden;
+    }
+
+    .school_sort {
+        width: 80%;
+    }
+
+    .school_sort ul {
+        overflow: hidden
+    }
+
+    .school_sort li {
+        float: left;
+        width: 31%;
+        margin-right: 2%;
+        border: 1px solid #eee;
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+        position: relative;
+    }
+
+    .school_sort ul .mask_school {
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+        width: 100%;
+    }
+
+    .school_sort ul .mask_school p {
+        font-weight: bold;
+        margin: 0 40px;
+        text-align: left;
+        color: #fff;
+        line-height: 30px;
+    }
+
+    .school_sort ul .mask_school .schoo_name {
+        font-size: 20px;
+        margin: 20px 40px;
+    }
+
+    .school_sort ul .mask_school .hot_prof {
+        height: 60px;
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        display: -webkit-box;
+
+        -webkit-box-orient: vertical;
+
+        -webkit-line-clamp: 2;
+    }
+
+    .school_sort ul .mask_school .details {
+        width: 100px;
+        height: 30px;
+        background: #0099ec;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50px;
+        cursor: pointer;
+        margin: 5px auto 0;
+    }
+
+    .school_sort li div {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 310px;
+    }
+
+    .school_sort .passing_rate {
+        color: #ccc;
+    }
+
+    .school_sort li div img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .school_sort li > p {
+        padding: 0 5px 0 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 20px;
+    }
+
+    .may_like {
+        width: 20%;
+        height: 500px;
+    }
+
+    .may_like img {
+        width: 100%;
+    }
+
+    .school_sort .now_price {
+        font-size: 16px;
+        color: red;
+    }
+
+    .school_sort .original_price {
+        color: #ccc;
+        text-decoration: line-through;
+    }
+
+    .school_sort .collection {
+        float: right;
+        padding-right: 24px;
+        margin-right: 10px;
+        background: url("<%=resourcePath%>/img/abroad/heart_grey.png") no-repeat 92% center;
+    }
+
+    .school_view .fenye {
+        padding-bottom: 5px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .school_view .fenye p {
+        text-align: center;
+        color: #ccc;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .school_view .fenye p span {
+        text-align: center;
+        color: #ccc;
+        padding: 4px 10px;
+        border: 1px solid #0099ec;
+        margin-right: 9px;
+    }
+
+    .school_view .fenye p .cur {
+        background: #0099ec;
+        color: #fff;
+    }
+
+    .school_view .pagination {
+        margin: 15px 0 0 0;
+        vertical-align: bottom;
+    }
+
+    .school_view .pagination > li {
+        float: left;
+        margin: 0 5px;
+    }
+
+    .school_view .pagination > .active > a {
+        border-color: #0099ec;
+        background: #0099ec;
+        color: #fff;
+    }
+
+    .school_view .pagination a {
+        color: #999;
+    }
+</style>
 <body>
 <%@include file="../header.jsp" %>
 <div ng-controller="mainController" class="mainPanel">
@@ -214,8 +503,18 @@
     <div class="school_view">
         <div class="school_sort fl">
             <ul>
-                <li class="school_list fr" ng-repeat="product in products">
-                    <div><img ng-src="{{product.photo.path!=null ? '<%=picPath%>'+product.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}" alt=""></div>
+                <li class="school_list fr" ng-repeat="product in products" ng-mouseenter="show = true"
+                    ng-mouseleave="show = false">
+                    <div><img
+                            ng-src="{{product.photo.path!=null ? '<%=picPath%>'+product.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}"
+                            alt=""></div>
+                    <div ng-show="show" class="mask_school">
+                        <p class="schoo_name">{{school.ownname}}</p>
+                        <p>地区：美国</p>
+                        <p>类型：私立</p>
+                        <p class="hot_prof">热门专业：热门专业热门专业热门专业热门热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业专业热门专业</p>
+                        <div class="details" ng-click="detail(school.id)">查看详情</div>
+                    </div>
                     <p>{{product.title}}</p>
                     <p class="passing_rate">申请通过率8%</p>
                     <p><span class="now_price">{{product.price}}</span><span class="original_price">￥34543</span><span
@@ -228,27 +527,28 @@
             <div><img src="<%=resourcePath%>/img/abroad/may_like2.png" alt=""></div>
 
         </div>
-    <div class="fenye cl" ng-controller="paginationCtrl">
-    <%-- <p> {{totalItems}}条记录 {{currentPage}}/{{numPages}}页 <span class="cur">1</span> <span>2</span><span>下一页</span></p>--%>
+        <div class="fenye cl" ng-controller="paginationCtrl">
+            <%-- <p> {{totalItems}}条记录 {{currentPage}}/{{numPages}}页 <span class="cur">1</span> <span>2</span><span>下一页</span></p>--%>
 
-    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
-    boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
-    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
-    last-text="&raquo;"></uib-pagination>
-        <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
-    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize"
-    previous-text="上一页" next-text="下一页" force-ellipses="true">
-    </ul>
+            <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
+                            boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"
+                            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"
+                            last-text="&raquo;"></uib-pagination>
+            <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
+            <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"
+                max-size="maxSize"
+                previous-text="上一页" next-text="下一页" force-ellipses="true">
+            </ul>
 
-    </div>
+        </div>
 
         <!-- 分页-->
         <%--<div ng-controller="paginationCtrl" style="text-align: right">--%>
-            <%--<pre>共{{totalItems}}条 {{numPages}}页</pre>--%>
-            <%--<uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"--%>
-                            <%--boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"--%>
-                            <%--previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"--%>
-                            <%--last-text="&raquo;"></uib-pagination>--%>
+        <%--<pre>共{{totalItems}}条 {{numPages}}页</pre>--%>
+        <%--<uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"--%>
+        <%--boundary-links="true" items-per-page="itemsPerPage" ng-change="pageChanged()"--%>
+        <%--previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;"--%>
+        <%--last-text="&raquo;"></uib-pagination>--%>
         <%--</div>--%>
     </div>
 </div>
@@ -290,6 +590,10 @@
                 $('#queryCoverModal').modal('hide');
                 $scope.errorMsg = '发生未知错误，请与系统管理员联系！';
             });
+        };
+
+        $scope.detail = function (id) {
+            window.location.href = "<%=path%>/school/detail.htm?id=" + id;
         };
 
         $scope.initial();
