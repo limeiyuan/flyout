@@ -322,7 +322,7 @@
             </div>
             <div style="float: right;width: 956px">
                 <ul>
-                    <li ng-repeat="abroad in abroads" abroad-loaded>
+                    <li ng-repeat="abroad in abroads" abroad-loaded ng-click="abroadDetail(abroad.id)">
                         <div><img class=""
                                   ng-src="{{abroad.photo.path!=null ? '<%=picPath%>'+abroad.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}">
                         </div>
@@ -756,8 +756,11 @@
         };
 
         $scope.productMore = function(){
-            console.log('123')
             window.location.href = "<%=path%>/abroadRecommend/index.htm";
+        };
+
+        $scope.abroadDetail = function (id) {
+            window.location.href = "<%=path%>/product/detail.htm?id=" + id;
         };
 
         $scope.render = function () {
