@@ -24,4 +24,8 @@ public class ProductServiceImpl {
     public List<Product> query(String name) {
         return productDao.query(name);
     }
+
+    public Product get(Long id) {
+        return productDao.find(id);
+    }
 }

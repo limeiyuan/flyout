@@ -513,7 +513,7 @@
                         <p>地区：美国</p>
                         <p>类型：私立</p>
                         <p class="hot_prof">热门专业：热门专业热门专业热门专业热门热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业专业热门专业</p>
-                        <div class="details" ng-click="detail(school.id)">查看详情</div>
+                        <div class="details" ng-click="detail(product.id)">查看详情</div>
                     </div>
                     <p>{{product.title}}</p>
                     <p class="passing_rate">申请通过率8%</p>
@@ -593,7 +593,7 @@
         };
 
         $scope.detail = function (id) {
-            window.location.href = "<%=path%>/school/detail.htm?id=" + id;
+            window.location.href = "<%=path%>/product/detail.htm?id=" + id;
         };
 
         $scope.initial();
