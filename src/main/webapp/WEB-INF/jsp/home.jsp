@@ -73,7 +73,12 @@
         .teacher{height: 34px;overflow: hidden;padding-bottom: 6px;background: #f7f7f7;}
         .teacher::before{content:'|';background: #0099ec;width: 6px;height: 30px;float: left;color: #0099ec;margin-right: 5px;}
         .repuTeacher{margin: 30px auto; width: 1200px; position: relative;}
-        .repuTeacher ul .arrow_img{width: 3px;}
+
+        .repuTeacher ul .arrow_img {
+            width: 3px;
+            background: #f7f7f7;
+            border: none;
+        }
         .repuTeacher ul .arrow_img img{margin-top: 90px;}
         .repuTeacher ul{width: 100%;overflow: hidden; padding: 0 24px;}
         .repuTeacher ul li{width: 175px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 15px;border-radius: 11px;margin-top: 60px;background: #fff;}
@@ -719,7 +724,7 @@
             } else {
                 adviserShowList.push(adviserShowList[adviserShowList.length - 1] + 1);
             }
-            $(dom).parent().prev("ul").prepend($(dom).parent().prev("ul").find('li:last'));
+            $(dom).parents("ul").find('li:eq(0)').after($(dom).parents("ul").find('li:eq(-2)'));
             adviserShowList.shift();
             $scope.renderAdviser();
         };
@@ -731,7 +736,7 @@
                 adviserShowList.unshift(adviserShowList[0] - 1);
             }
             adviserShowList.pop();
-            $(dom).parent().prev("ul").append($(dom).parent().prev("ul").find('li:eq(0)'));
+            $(dom).parents("ul").find('li:eq(-1)').before($(dom).parents("ul").find('li:eq(1)'));
             $scope.renderAdviser();
         };
 

@@ -19,6 +19,9 @@ public class Adviser extends Account {
     @Column(name = "description_ac")
     private String description;//顾问简介
 
+    @Column(name = "score_ac")
+    private Integer score;
+
     public String getAdviserType() {
         return adviserType;
     }
@@ -41,5 +44,13 @@ public class Adviser extends Account {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }
