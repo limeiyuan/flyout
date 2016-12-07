@@ -44,7 +44,15 @@
         .moreAbroad{ color: #666;    padding-right: 19px;line-height: 30px;cursor:pointer;}
         .productsList{overflow: hidden;margin-top: 5px;}
         .productImag{width: 228px;height: 450px;}
-        .productsList ul li{float: right; width: 228px; height: 220px; margin: 5px; background: #fff;cursor: pointer;}
+
+        .productsList ul li {
+            float: left;
+            width: 228px;
+            height: 220px;
+            margin: 5px;
+            background: #fff;
+            cursor: pointer;
+        }
         .productsList ul li div{width: 210px; height: 160px; margin: 8px auto;}
         .productsList ul li img{width: 100%; height: 100%;}
         .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;`height: 50px;}
@@ -312,21 +320,22 @@
             <div class="productImag fl">
                 <img src="<%=resourcePath%>/img/home/ad_left.jpg" alt="热门留学产品">
             </div>
-            <ul>
-                <li ng-repeat="abroad in abroads" abroad-loaded>
-                    <div><img class=""
-                            ng-src="{{abroad.photo.path!=null ? '<%=picPath%>'+abroad.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}">
-                    </div>
-                    <p>{{abroad.title}}</p>
-                    <%--<span>这里填写内容简介，签证通过率95%以上，专家跟踪办理。</span>--%>
-                    <div class="productFly">
-                        <div class="flyAbroad fl"><img ng-src="<%=picPath%>{{abroad.vender.photo.path}}"> {{abroad.vender.venderName}}</div>
-                        <div class="likeNum fr">{{abroad.favoriteNum}}</div>
-                    </div>
-                </li>
-            </ul>
+            <div style="float: right;width: 956px">
+                <ul>
+                    <li ng-repeat="abroad in abroads" abroad-loaded>
+                        <div><img class=""
+                                  ng-src="{{abroad.photo.path!=null ? '<%=picPath%>'+abroad.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}">
+                        </div>
+                        <p>{{abroad.title}}</p>
+                        <%--<span>这里填写内容简介，签证通过率95%以上，专家跟踪办理。</span>--%>
+                        <div class="productFly">
+                            <div class="flyAbroad fl"><img ng-src="<%=picPath%>{{abroad.vender.photo.path}}"> {{abroad.vender.venderName}}</div>
+                            <div class="likeNum fr">{{abroad.favoriteNum}}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-
     </div>
     <div class="consultant">
         <div class="teacher">
