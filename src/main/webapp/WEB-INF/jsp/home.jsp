@@ -45,13 +45,14 @@
         .productsList{overflow: hidden;margin-top: 5px;}
         .productImag{width: 228px;height: 450px;}
         .productsList ul li{float: right; width: 228px; height: 220px; margin: 5px; background: #fff;cursor: pointer;}
-        .productsList ul li div{width: 210px; height: 150px; background: #ccc; margin: 8px auto;}
+        .productsList ul li div{width: 210px; height: 160px; margin: 8px auto;}
         .productsList ul li img{width: 100%; height: 100%;}
-        .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;line-height: 24px;}
+        .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;`height: 50px;}
         .productsList ul li span{ height: 34px; display: block;font-size: 12px;color: #666; padding-left: 14px;line-height: 17px;overflow: hidden;}
-        .productsList ul .productCurr div{ height: 110px; }
-        .productsList ul  .productFly{ height: 32px; color: #666;background: none;}
-        .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 70px;background: url("<%=resourcePath%>/img/home/brand.png")no-repeat left center;padding-left: 26px;}
+        .productsList ul .productCurr div{ height: 140px; }
+        .productsList ul  .productFly{ height: 32px; color: #666;background: none;margin-top: 30px;}
+        .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 80%;}
+        .productsList ul .productFly .flyAbroad img{ width: 20px;}
         .productsList ul .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/home/like_slect.png")no-repeat left center;padding-left: 16px;}
         .intentionA{top:50px}
         .intentionB{top:110px}
@@ -64,12 +65,13 @@
         .teacher{height: 34px;overflow: hidden;padding-bottom: 6px;background: #f7f7f7;}
         .teacher::before{content:'|';background: #0099ec;width: 6px;height: 30px;float: left;color: #0099ec;margin-right: 5px;}
         .repuTeacher{margin: 30px auto; width: 1200px; position: relative;}
-        .arrow_img{position: absolute; width: 100%; top: 50%;margin-top:-34px;}
+        .repuTeacher ul .arrow_img{width: 3px;}
+        .repuTeacher ul .arrow_img img{margin-top: 90px;}
         .repuTeacher ul{width: 100%;overflow: hidden; padding: 0 24px;}
-        .repuTeacher ul li{width: 180px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 21px;border-radius: 11px;margin-top: 60px;background: #fff;}
+        .repuTeacher ul li{width: 175px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 15px;border-radius: 11px;margin-top: 60px;background: #fff;}
         .repuTeacher ul li .teacherImag{width: 120px;height: 120px;margin: auto;margin: 14px auto }
         .repuTeacher ul li .teacherImag img{width: 120px; height: 120px; border-radius: 50%;}
-
+       .btarrow_img{ overflow: hidden; position: absolute; top: 50%; width: 100%; margin-top: -32px;}
         .repuTeacher ul li p{font-size: 18px;font-weight: bold;color: #0099ec;margin-bottom: 8px;}
         .repuTeacher ul li span{color: #999;}
         .repuTeacher ul li.arrow{width: 1%;line-height: 220px;border: none;background: #f7f7f7;}
@@ -333,6 +335,7 @@
         </div>
         <div class="repuTeacher">
             <ul>
+                <li class="arrow_img"><img id="leftArrow" ng-click="adviserPre($event.target)" class="fl" src="<%=resourcePath%>/img/home/arrow_left.png" alt=""></li>
                 <li class="famousTeacher" ng-repeat="adviser in advisers"
                     adviser-loaded>
                     <div class="teacherImag"><img ng-src="<%=picPath%>/{{adviser.photo.path}}" alt=""></div>
@@ -343,11 +346,8 @@
                         <div>鹏润留学</div>
                     </div>
                 </li>
+                <li class="arrow_img"> <img id="rightArrow" ng-click="adviserNext($event.target)" class="fr" src="<%=resourcePath%>/img/home/arrow_right.png" alt=""></li>
             </ul>
-            <div class="arrow_img">
-                <img id="leftArrow" ng-click="adviserPre($event.target)" class="fl" src="<%=resourcePath%>/img/home/arrow_left.png" alt="">
-                <img id="rightArrow" ng-click="adviserNext($event.target)" class="fr" src="<%=resourcePath%>/img/home/arrow_right.png" alt="">
-            </div>
         </div>
     </div>
     <div class="queAns">
@@ -489,7 +489,7 @@
                        <img src="<%=resourcePath%>/img/arrow_right_red.png" alt="">
                    </li>--%>
             </ul>
-            <div class="arrow_img">
+            <div class="btarrow_img">
                 <img id="left__red_img" class="fl" src="<%=resourcePath%>/img/home/arrow_left_red.png" alt="">
                 <img id="right__red_img" class="fr" src="<%=resourcePath%>/img/home/arrow_right_red.png" alt="">
             </div>
@@ -782,6 +782,8 @@
                 if (scope.$last === true) {
                     $('.productsList ul li').hover(function () {
                         $(this).addClass("productCurr").siblings().removeClass('productCurr');
+                        $('.productFly').css('marginTop','30')
+                        $(this).find('.productFly').css('marginTop','0')
                     });
                 }
                 scope.renderAdviser();
