@@ -509,15 +509,16 @@
                             ng-src="{{product.photo.path!=null ? '<%=picPath%>'+product.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}"
                             alt=""></div>
                     <div ng-show="show" class="mask_school">
-                        <p class="schoo_name">{{school.ownname}}</p>
-                        <p>地区：美国</p>
-                        <p>类型：私立</p>
-                        <p class="hot_prof">热门专业：热门专业热门专业热门专业热门热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业热门专业专业热门专业</p>
+                        <p class="schoo_name">{{product.title}}</p>
+                        <p>地区：{{product.nation.name}}</p>
+                        <p>购买：{{product.orderNum}}</p>
+                        <p>点赞：{{product.clickNum}}</p>
+                        <p class="hot_prof">收藏：{{product.favoriteNum}}</p>
                         <div class="details" ng-click="detail(product.id)">查看详情</div>
                     </div>
                     <p>{{product.title}}</p>
                     <p class="passing_rate">申请通过率8%</p>
-                    <p><span class="now_price">{{product.price}}</span><span class="original_price">￥34543</span><span
+                    <p><span class="now_price">￥{{product.discount}}</span><span class="original_price">￥{{product.price}}</span><span
                             class="collection">收藏</span></p>
                 </li>
             </ul>
