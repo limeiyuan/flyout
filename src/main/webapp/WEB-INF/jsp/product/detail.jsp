@@ -40,6 +40,10 @@
                 <td> ${product.vender.photo.path}</td>
             </tr>
             <tr>
+                <td>price</td>
+                <td> ${product.price}</td>
+            </tr>
+            <tr>
                 <td>discount</td>
                 <td> ${product.discount}</td>
             </tr>
