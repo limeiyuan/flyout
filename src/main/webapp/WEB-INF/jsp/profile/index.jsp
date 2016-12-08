@@ -18,7 +18,7 @@
         .user_nav{width:200px;background: #fff;border: 1px solid #eee;padding: 10px 0;}
         .next_icon{margin-left: 36px;}
         .user_nav li{text-align: left;}
-        .user_nav li a{padding: 10px 10px 10px 40px;;display:block;cursor:pointer;color: #999;}
+        .user_nav li a{padding: 10px 10px 10px 40px;;display:block;cursor:pointer;color: #999;text-decoration: none;}
         .user_nav li .personal_enter{background: url("<%=resourcePath%>/img/home/arrow_down.png")no-repeat 70% center;}
 
         .user_nav li .user_icon{padding:  8px 8px 8px 24px;;}

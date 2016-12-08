@@ -21,7 +21,10 @@ To change this template use File | Settings | File Templates.
         padding-bottom: 5px;
     }
     .school_guarantee .location span a{
-       color: #0099ec;
+       color: #0099ec;text-decoration: none;
+    }
+    .school_guarantee .location span a:visited{
+       text-decoration: none;
     }
     .school_guarantee .location img {
         margin-right: 6px;
@@ -83,6 +86,10 @@ To change this template use File | Settings | File Templates.
     .guarantee_content > div {
         display: none;
         padding: 18px;
+    }
+    .guarantee_content > div img {
+        display: block;
+        margin: 0 auto 16px;
     }
 
     .guarantee_content > div.cur {
@@ -397,7 +404,10 @@ To change this template use File | Settings | File Templates.
                 <li>入学时间</li>
             </ul>
             <div class="guarantee_content">
-                <div class="cur">${product.intro}</div>
+                <div class="cur">
+                    <img src="${picPath}${product.introPhoto.path!=null?product.introPhoto.path:'/fly/product/default.jpg'}" alt="">
+                    <p>${product.intro}</p>
+                </div>
                 <div>${product.targetUsers}</div>
                 <div>${product.detail}</div>
                 <div>${product.priceDetail}</div>
