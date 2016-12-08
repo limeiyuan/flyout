@@ -12,38 +12,190 @@
     <title>飞出国</title>
     <style>
         /*banner开始*/
-        .banner{width: 100%;height: 400px;position: relative}
-        .banner .bannerImage img{height: 100%;}
-        .banner .estimateContainer{width: 1200px;position: absolute;right: 50%;top: 0;}
-        .banner .estimate{width: 300px;height: 400px;position: relative;right: -50%;float: right;background: #fff;}
-        .estimate div{height: 40px;}
-        .estimate div>span{display: inline-block;width: 50%;line-height: 40px;text-align: center;font-size: 16px;color: #666;background: #f0f0f0;cursor:pointer;}
-        .estimate div .active{color: #0099ec;background: #fff;}
-        .estimate ul{width: 100%;overflow: hidden;}
+        .banner {
+            width: 100%;
+            height: 400px;
+            position: relative
+        }
+
+        .banner .bannerImage img {
+            height: 100%;
+        }
+
+        .banner .estimateContainer {
+            width: 1200px;
+            position: absolute;
+            right: 50%;
+            top: 0;
+        }
+
+        .banner .estimate {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            right: -50%;
+            float: right;
+            background: #fff;
+        }
+
+        .estimate div {
+            height: 40px;
+        }
+
+        .estimate div > span {
+            display: inline-block;
+            width: 50%;
+            line-height: 40px;
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+
+        .estimate div .active {
+            color: #0099ec;
+            background: #fff;
+        }
+
+        .estimate ul {
+            width: 100%;
+            overflow: hidden;
+        }
+
         /*.estimate ul li{width: 240px;height: 30px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 45px;}*/
-        .estimate ul .focusCur{border-color: #0099ec;overflow: hidden; background: #fff;}
-        .estimate ul .fastEst{background: #0099ec;color: #fff;text-align: center;line-height: 30px;margin: 0 auto;cursor:pointer;}
-        .estimate>ul>li{width: 240px;margin: 30px auto;border: 1px solid #d2d2d2;border-radius: 15px;position: absolute;left: 10%}
-        .estimate ul li input{margin-left: 18px;width: 180px;border: none;outline: none;line-height: 26px;border-radius: 45px;}
-        .estimate ul li span{font-size: 18px;color: #999;line-height: 12px;}
-        .estimate ul li img{position: relative;top: -2px;}
-        .estimate p{color: #666;text-align: center;line-height: 40px;}
-        .estimate p span{color: #fb5454;}
-        .select_box ul li { cursor: pointer; }
-        .estimate .son_ul {text-indent: 12px; text-indent: 12px;border-radius:20px;background:#fff; position: relative; z-index: 5; }
-        .estimate .son_ul li { display: block; line-height: 25px;  }
-        .hover { background: #ccc; color: #fff; }
+        .estimate ul .focusCur {
+            border-color: #0099ec;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .estimate ul .fastEst {
+            background: #0099ec;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .estimate > ul > li {
+            width: 240px;
+            margin: 30px auto;
+            border: 1px solid #d2d2d2;
+            border-radius: 15px;
+            position: absolute;
+            left: 10%
+        }
+
+        .estimate ul li input {
+            margin-left: 18px;
+            width: 180px;
+            border: none;
+            outline: none;
+            line-height: 26px;
+            border-radius: 45px;
+        }
+
+        .estimate ul li span {
+            font-size: 18px;
+            color: #999;
+            line-height: 12px;
+        }
+
+        .estimate ul li img {
+            position: relative;
+            top: -2px;
+        }
+
+        .estimate p {
+            color: #666;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .estimate p span {
+            color: #fb5454;
+        }
+
+        .select_box ul li {
+            cursor: pointer;
+        }
+
+        .estimate .son_ul {
+            text-indent: 12px;
+            text-indent: 12px;
+            border-radius: 20px;
+            background: #fff;
+            position: relative;
+            z-index: 5;
+        }
+
+        .estimate .son_ul li {
+            display: block;
+            line-height: 25px;
+        }
+
+        .hover {
+            background: #ccc;
+            color: #fff;
+        }
+
         /*banner结束*/
         /*products 开始*/
-        .productsContent{ width: 1200px; margin: auto;height: 500px;margin-top: 20px;}
-        .productsInfo{height: 34px;overflow: hidden;}
-        .productsInfo::before{content:'|';background: #fb5454;width: 6px;height: 30px;float: left;color: #fb5454;margin-right: 5px;}
-        .productsInfo h3,.teacher h3,.community h3{font-size: 16px;color: #333;font-weight: bold;}
-        .productsInfo .abroad p,.abroad p,.community p,.teacher p{font-size: 12px;color: #666;font-family: Arial;}
-        .moreAbroad{}
-        .moreAbroad{ color: #666;    padding-right: 19px;line-height: 30px;cursor:pointer;}
-        .productsList{overflow: hidden;margin-top: 5px;}
-        .productImag{width: 228px;height: 450px;}
+        .productsContent {
+            width: 1200px;
+            margin: auto;
+            height: 500px;
+            margin-top: 20px;
+        }
+
+        .productsInfo {
+            height: 34px;
+            overflow: hidden;
+        }
+
+        .productsInfo::before {
+            content: '|';
+            background: #fb5454;
+            width: 6px;
+            height: 30px;
+            float: left;
+            color: #fb5454;
+            margin-right: 5px;
+        }
+
+        .productsInfo h3, .teacher h3, .community h3 {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .productsInfo .abroad p, .abroad p, .community p, .teacher p {
+            font-size: 12px;
+            color: #666;
+            font-family: Arial;
+        }
+
+        .moreAbroad {
+        }
+
+        .moreAbroad {
+            color: #666;
+            padding-right: 19px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .productsList {
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .productImag {
+            width: 228px;
+            height: 450px;
+        }
 
         .productsList ul li {
             float: left;
@@ -53,141 +205,714 @@
             background: #fff;
             cursor: pointer;
         }
-        .productsList ul li div{width: 210px; height: 160px; margin: 8px auto;}
-        .productsList ul li img{width: 100%; height: 100%;}
-        .productsList ul li p{font-size: 14px;color: #333; padding-left: 14px;`height: 50px;}
-        .productsList ul li span{ height: 34px; display: block;font-size: 12px;color: #666; padding-left: 14px;line-height: 17px;overflow: hidden;}
-        .productsList ul .productCurr div{ height: 140px; }
-        .productsList ul  .productFly{ height: 32px; color: #666;background: none;margin-top: 30px;}
-        .productsList ul .productFly .flyAbroad{ height: 20px;line-height: 20px; width: 80%;}
-        .productsList ul .productFly .flyAbroad img{ width: 20px;}
-        .productsList ul .productFly .likeNum{ height: 20px;line-height: 20px;width: 40px; background: url("<%=resourcePath%>/img/home/like_slect.png")no-repeat left center;padding-left: 16px;}
-        .intentionA{top:50px}
-        .intentionB{top:110px}
-        .intentionC{ top:170px}
-        .intentionD{top:230px}
-        .intentionE{bottom: 42px;}
+
+        .productsList ul li div {
+            width: 210px;
+            height: 160px;
+            margin: 8px auto;
+        }
+
+        .productsList ul li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .productsList ul li p {
+            font-size: 14px;
+            color: #333;
+            padding-left: 14px;
+            ` height: 50px;
+        }
+
+        .productsList ul li span {
+            height: 34px;
+            display: block;
+            font-size: 12px;
+            color: #666;
+            padding-left: 14px;
+            line-height: 17px;
+            overflow: hidden;
+        }
+
+        .productsList ul .productCurr div {
+            height: 140px;
+        }
+
+        .productsList ul .productFly {
+            height: 32px;
+            color: #666;
+            background: none;
+            margin-top: 30px;
+        }
+
+        .productsList ul .productFly .flyAbroad {
+            height: 20px;
+            line-height: 20px;
+            width: 80%;
+        }
+
+        .productsList ul .productFly .flyAbroad img {
+            width: 20px;
+        }
+
+        .productsList ul .productFly .likeNum {
+            height: 20px;
+            line-height: 20px;
+            width: 40px;
+            background: url("<%=resourcePath%>/img/home/like_slect.png") no-repeat left center;
+            padding-left: 16px;
+        }
+
+        .intentionA {
+            top: 50px
+        }
+
+        .intentionB {
+            top: 110px
+        }
+
+        .intentionC {
+            top: 170px
+        }
+
+        .intentionD {
+            top: 230px
+        }
+
+        .intentionE {
+            bottom: 42px;
+        }
+
         /*products结束*/
         /*consultant 开始*/
-        .consultant{ width: 1200px; margin: auto;margin-top: 20px;}
-        .teacher{height: 34px;overflow: hidden;padding-bottom: 6px;background: #f7f7f7;}
-        .teacher::before{content:'|';background: #0099ec;width: 6px;height: 30px;float: left;color: #0099ec;margin-right: 5px;}
-        .repuTeacher{margin: 30px auto; width: 1200px; position: relative;}
+        .consultant {
+            width: 1200px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .teacher {
+            height: 34px;
+            overflow: hidden;
+            padding-bottom: 6px;
+            background: #f7f7f7;
+        }
+
+        .teacher::before {
+            content: '|';
+            background: #0099ec;
+            width: 6px;
+            height: 30px;
+            float: left;
+            color: #0099ec;
+            margin-right: 5px;
+        }
+
+        .repuTeacher {
+            margin: 30px auto;
+            width: 1200px;
+            position: relative;
+        }
 
         .repuTeacher ul .arrow_img {
             width: 3px;
             background: #f7f7f7;
             border: none;
         }
-        .repuTeacher ul .arrow_img img{margin-top: 90px;}
-        .repuTeacher ul{width: 100%;overflow: hidden; padding: 0 24px;}
-        .repuTeacher ul li{width: 175px;height:220px;float: left; text-align: center;border:  1px solid #eee;margin: 0 15px;border-radius: 11px;margin-top: 60px;background: #fff;}
-        .repuTeacher ul li .teacherImag{width: 120px;height: 120px;margin: auto;margin: 14px auto }
-        .repuTeacher ul li .teacherImag img{width: 120px; height: 120px; border-radius: 50%;}
-       .btarrow_img{ overflow: hidden; position: absolute; top: 50%; width: 100%; margin-top: -32px;}
-        .repuTeacher ul li p{font-size: 18px;font-weight: bold;color: #0099ec;margin-bottom: 8px;}
-        .repuTeacher ul li span{color: #999;}
-        .repuTeacher ul li.arrow{width: 1%;line-height: 220px;border: none;background: #f7f7f7;}
-        .arrow img{position: relative; top: 50%;margin-top: -19px;}
-        .repuTeacher ul li.teacherCur{width: 220px;height: 300px;margin-top: 12px;}
-        .repuTeacher .teacherInfo{display: none;}
-        .repuTeacher .teacherCur .teacherInfo{display: block;}
-        .repuTeacher .teacherCur .teacherInfo p{color:#fb5454;width: 80%;margin: 8px auto; }
-        .repuTeacher .teacherCur .teacherInfo div{margin:0 auto;width: 80px;height: 24px;line-height:24px;color: #999;border: 1px solid #999;border-radius: 12px;text-align: center;cursor: pointer; }
+
+        .repuTeacher ul .arrow_img img {
+            margin-top: 90px;
+        }
+
+        .repuTeacher ul {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 24px;
+        }
+
+        .repuTeacher ul li {
+            width: 179px;
+            height: 220px;
+            float: left;
+            text-align: center;
+            border: 1px solid #eee;
+            margin: 0 15px;
+            border-radius: 11px;
+            margin-top: 60px;
+            background: #fff;
+        }
+
+        .repuTeacher ul li .teacherImag {
+            width: 120px;
+            height: 120px;
+            margin: auto;
+            margin: 14px auto
+        }
+
+        .repuTeacher ul li .teacherImag img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .btarrow_img {
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            margin-top: -32px;
+        }
+
+        .repuTeacher ul li p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0099ec;
+            margin-bottom: 8px;
+        }
+
+        .repuTeacher ul li span {
+            color: #999;
+        }
+
+        .repuTeacher ul li.arrow {
+            width: 1%;
+            line-height: 220px;
+            border: none;
+            background: #f7f7f7;
+        }
+
+        .arrow img {
+            position: relative;
+            top: 50%;
+            margin-top: -19px;
+        }
+
+        .repuTeacher ul li.teacherCur {
+            width: 220px;
+            height: 300px;
+            margin-top: 12px;
+        }
+
+        .repuTeacher .teacherInfo {
+            display: none;
+        }
+
+        .repuTeacher .teacherCur .teacherInfo {
+            display: block;
+        }
+
+        .repuTeacher .teacherCur .teacherInfo p {
+            color: #fb5454;
+            width: 80%;
+            margin: 8px auto;
+        }
+
+        .repuTeacher .teacherCur .teacherInfo div {
+            margin: 0 auto;
+            width: 80px;
+            height: 24px;
+            line-height: 24px;
+            color: #999;
+            border: 1px solid #999;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+        }
+
         /*consultant结束*/
         /*questionsAnswers开始*/
-        .queAns{width: 1200px; margin: auto;margin-top: 20px;}
-        .communityBox{width: 1200px;height: 30px;}
-        .communityBox .shuxian{font-size: 18px;padding: 0;color: #999;}
-        .community::before{content:'|';background: #fb5454;width: 6px;height: 30px;float: left;color: #fb5454;margin-right: 5px;}
-        .community{ width: 200px;}
-        .communityBox ul li{ float: left;line-height: 30px;padding: 0 16px;font-size: 14px;}
-        .communityBox ul li img{margin-top: 6px;}
-        .communityBox ul li span{color:#0099ec;}
-        .queAnsExam{width: 1200px;height: 180px;border: 1px solid #999;margin-top: 12px;}
-        .examples{width: 958px;height: 180px;float: left;}
-        .queAnsExam .goQues{width: 239px;height: 160px;float: left;border-left: 1px solid #999;margin-top: 10px;}
-        .examples li{font-size: 14px;color: #666;margin: 20px 24px;}
-        .examples li p{display: inline-block;width: 800px;white-space:nowrap;overflow: hidden;text-overflow:ellipsis;}
-        .examples li span{float: right;font-size: 12px;color: #666;}
-        .examples .quePre, .examples .quePre span{color: #999;}
-        .goQues div{width: 120px;height: 42px;background: #0099ec;margin: 56px auto 13px;line-height: 42px;text-align: center;color: #fff;border-radius: 30px;cursor:pointer;}
-        .goQues p{font-size: 14px;color: #666;text-align: center;}
+        .queAns {
+            width: 1200px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .communityBox {
+            width: 1200px;
+            height: 30px;
+        }
+
+        .communityBox .shuxian {
+            font-size: 18px;
+            padding: 0;
+            color: #999;
+        }
+
+        .community::before {
+            content: '|';
+            background: #fb5454;
+            width: 6px;
+            height: 30px;
+            float: left;
+            color: #fb5454;
+            margin-right: 5px;
+        }
+
+        .community {
+            width: 200px;
+        }
+
+        .communityBox ul li {
+            float: left;
+            line-height: 30px;
+            padding: 0 16px;
+            font-size: 14px;
+        }
+
+        .communityBox ul li img {
+            margin-top: 6px;
+        }
+
+        .communityBox ul li span {
+            color: #0099ec;
+        }
+
+        .queAnsExam {
+            width: 1200px;
+            height: 180px;
+            border: 1px solid #999;
+            margin-top: 12px;
+        }
+
+        .examples {
+            width: 958px;
+            height: 180px;
+            float: left;
+        }
+
+        .queAnsExam .goQues {
+            width: 239px;
+            height: 160px;
+            float: left;
+            border-left: 1px solid #999;
+            margin-top: 10px;
+        }
+
+        .examples li {
+            font-size: 14px;
+            color: #666;
+            margin: 20px 24px;
+        }
+
+        .examples li p {
+            display: inline-block;
+            width: 800px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .examples li span {
+            float: right;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .examples .quePre, .examples .quePre span {
+            color: #999;
+        }
+
+        .goQues div {
+            width: 120px;
+            height: 42px;
+            background: #0099ec;
+            margin: 56px auto 13px;
+            line-height: 42px;
+            text-align: center;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .goQues p {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+
         /*questionsAnswers结束*/
         /*studyAbroad开始*/
-        .studyAbroad{width: 1200px;margin: 30px auto;overflow: hidden;}
-        .moreStudy{padding-right: 30px;font-size: 14px;color: #666;cursor: pointer;}
-        .studyTab{width: 1200px;height: 320px;}
-        .studyTab .tabBox{width: 820px;height: 320px;background: #fff;}
-        .studyTab .vidoBox{width: 320px;height: 320px;background: #fff;margin-top: 6px;}
-        .studyTab .vidoBox h3{font-size: 16px;color: #333;font-weight: bold;padding: 0 5px;margin: 10px auto;}
-        .studyTab .vidoBox h3 a{float: right;color: #999;font-size: 14px;}
-        .studyTab .vidoBox div{ width: 100%;height: 100%;border-top: 1px solid #999;}
-        .studyTab .vidoBox .vidoContent{width: 80%;height: 80%;background: #ccc;margin: 5% auto;}
-        .tabbedPanels{ overflow:hidden; margin:10px auto;}
-        .tabbedPanels .examples li p{width:520px;}
-        .tabbedPanels .examplesCoten{height: 286px;}
-        .tabbedPanels ul{ list-style:none; margin:0; padding:0; overflow:hidden; border-bottom: 1px solid #999;width: 820px;}
-        .tabbedPanels li.tab{ float:left; width:120px;font-size:16px;text-align:center; cursor:pointer;color: #666;  padding-bottom: 10px; }
-        .tabbedPanels div.contentGroup{ clear:both; overflow:hidden;}
-        .tabbedPanels div.content{ width:100%; display:none; height:400px;}
+        .studyAbroad {
+            width: 1200px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
 
-        .tabbedPanels li.selectedTab{font-weight:bold; color: #0099ec;border-bottom: 1px solid #0099ec; }
-        .tabbedPanels div.selectedContent{ display:block;}
+        .moreStudy {
+            padding-right: 30px;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+        }
 
-        /*studyAbroad结束*/
-        /*caseBox开始*/
-        .caseBox{width: 1200px;margin: 20px auto;}
-        .caseContent{width: 1200px;overflow: hidden;position: relative;}
-        .caseContent li{float: left;}
-        .caseBox .caseContent li img{width: 80%;}
-        .caseContent ul{overflow: hidden;padding: 0 14px;}
-        .caseBox .caseContent ul .arrow{width: 1200px;margin:0 auto; width: 1%; line-height: 220px; border: none;}
-        .caseBox .caseContent ul li{height:220px;float: left; text-align: center;margin: 0 26px;margin-top: 60px;}
-        .caseBox .caseContent ul .case0,.caseBox .caseContent ul .case6{height:78px;width:104px;float: left; text-align: center;margin: 60px 14px 0;}
-        .caseBox .caseContent ul .case0 div,.caseBox .caseContent ul .case6 div{display: none;}
-        .caseBox .caseContent ul .case1,.caseBox .caseContent ul .case5{height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;}
-        .caseBox .caseContent ul .case1 div,.caseBox .caseContent ul .case5 div{display: none;}
-        .caseBox .caseContent ul .case2,.caseBox .caseContent ul .case4{height:128px;width:154px;float: left; text-align: center;margin: 35px 14px 0;}
-        .caseBox .caseContent ul .case3{width:190px;float: left; text-align: center;margin:25px 14px 0;;}
-        .caseBox .caseContent ul .arrowR{float: right;}
-        .caseBox .caseContent ul li span a {color: red;}
-        .caseBox .caseContent ul li p{text-align: center;font-size: 14px;color: #666;margin: 8px auto;}
-        .caseBox .caseContent ul li span{text-align: center;font-size: 12px;color: #666;}
-        .viewCase{width: 1200px;overflow: hidden;}
-        .viewCase ul{overflow: hidden;}
-        .viewCase .viewBox{float: left;width: 280px;height: 378px; border: 1px solid #eee;border-radius: 10px;padding: 24px;margin: 0 9px;background: #fff;position: relative;}
-        .viewCase .viewBox .titeBox{border-bottom: 1px solid #eee;    padding-bottom: 8px;}
-        .viewCase .viewBox div p{font-size: 14px;color: #333;}
-        .viewCase .viewBox div h3{font-size: 18px;font-weight: bold;color: #333;line-height: 28px;}
-        .viewCase .viewBox ul{padding: 10px 0;font-size: 14px;color: #666;}
-        .viewCase .viewBox ul li{line-height: 22px;}
-        .viewCase .viewBox .gpa{margin-bottom: 7px;}
+        .studyTab {
+            width: 1200px;
+            height: 320px;
+        }
 
-        .viewCase .viewBox .viewTit{display: inline-block;width: 34%;vertical-align: top;}
-        .viewCase .viewBox .viewTitCont{display: inline-block;width: 65%;}
-        .viewCase .btnBox{overflow: hidden;    position: absolute;
+        .studyTab .tabBox {
+            width: 820px;
+            height: 320px;
+            background: #fff;
+        }
+
+        .studyTab .vidoBox {
+            width: 320px;
+            height: 320px;
+            background: #fff;
+            margin-top: 6px;
+        }
+
+        .studyTab .vidoBox h3 {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            padding: 0 5px;
+            margin: 10px auto;
+        }
+
+        .studyTab .vidoBox h3 a {
+            float: right;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .studyTab .vidoBox div {
+            width: 100%;
+            height: 100%;
+            border-top: 1px solid #999;
+        }
+
+        .studyTab .vidoBox .vidoContent {
+            width: 80%;
+            height: 80%;
+            background: #ccc;
+            margin: 5% auto;
+        }
+
+        .tabbedPanels {
+            overflow: hidden;
+            margin: 10px auto;
+        }
+
+        .tabbedPanels .examples li p {
+            width: 520px;
+        }
+
+        .tabbedPanels .examplesCoten {
+            height: 286px;
+        }
+
+        .tabbedPanels ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border-bottom: 1px solid #999;
+            width: 820px;
+        }
+
+        .tabbedPanels li.tab {
+            float: left;
+            width: 120px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            color: #666;
+            padding-bottom: 10px;
+        }
+
+        .tabbedPanels div.contentGroup {
+            clear: both;
+            overflow: hidden;
+        }
+
+        .tabbedPanels div.content {
+            width: 100%;
+            display: none;
+            height: 400px;
+        }
+
+        .tabbedPanels li.selectedTab {
+            font-weight: bold;
+            color: #0099ec;
+            border-bottom: 1px solid #0099ec;
+        }
+
+        .tabbedPanels div.selectedContent {
+            display: block;
+        }
+
+        .caseBox {
+            width: 1200px;
+            margin: 20px auto;
+        }
+
+        .caseContent {
+            width: 1200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .caseContent li {
+            float: left;
+        }
+
+        .caseBox .caseContent li img {
+            width: 80%;
+        }
+
+        .caseContent ul {
+            overflow: hidden;
+            padding: 0 14px;
+        }
+
+        .caseBox .caseContent ul .arrow {
+            width: 1200px;
+            margin: 0 auto;
+            width: 1%;
+            line-height: 220px;
+            border: none;
+        }
+
+        .caseBox .caseContent ul li {
+            height: 220px;
+            float: left;
+            text-align: center;
+            margin: 0 26px;
+            margin-top: 60px;
+        }
+
+        .caseBox .caseContent ul .case0, .caseBox .caseContent ul .case6 {
+            height: 78px;
+            width: 104px;
+            float: left;
+            text-align: center;
+            margin: 60px 14px 0;
+        }
+
+        .caseBox .caseContent ul .case0 div, .caseBox .caseContent ul .case6 div {
+            display: none;
+        }
+
+        .caseBox .caseContent ul .case1, .caseBox .caseContent ul .case5 {
+            height: 108px;
+            width: 134px;
+            float: left;
+            text-align: center;
+            margin: 45px 14px 0;
+        }
+
+        .caseBox .caseContent ul .case1 div, .caseBox .caseContent ul .case5 div {
+            display: none;
+        }
+
+        .caseBox .caseContent ul .case2, .caseBox .caseContent ul .case4 {
+            height: 128px;
+            width: 154px;
+            float: left;
+            text-align: center;
+            margin: 35px 14px 0;
+        }
+
+        .caseBox .caseContent ul .case3 {
+            width: 190px;
+            float: left;
+            text-align: center;
+            margin: 25px 14px 0;;
+        }
+
+        .caseBox .caseContent ul .arrowR {
+            float: right;
+        }
+
+        .caseBox .caseContent ul li span a {
+            color: red;
+        }
+
+        .caseBox .caseContent ul li p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin: 8px auto;
+        }
+
+        .caseBox .caseContent ul li span {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .viewCase {
+            width: 1200px;
+            overflow: hidden;
+        }
+
+        .viewCase ul {
+            overflow: hidden;
+        }
+
+        .viewCase .viewBox {
+            float: left;
+            width: 280px;
+            height: 378px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 24px;
+            margin: 0 9px;
+            background: #fff;
+            position: relative;
+        }
+
+        .viewCase .viewBox .titeBox {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .viewCase .viewBox div p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .viewCase .viewBox div h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            line-height: 28px;
+        }
+
+        .viewCase .viewBox ul {
+            padding: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .viewCase .viewBox ul li {
+            line-height: 22px;
+        }
+
+        .viewCase .viewBox .gpa {
+            margin-bottom: 7px;
+        }
+
+        .viewCase .viewBox .viewTit {
+            display: inline-block;
+            width: 34%;
+            vertical-align: top;
+        }
+
+        .viewCase .viewBox .viewTitCont {
+            display: inline-block;
+            width: 65%;
+        }
+
+        .viewCase .btnBox {
+            overflow: hidden;
+            position: absolute;
             bottom: 22px;
-            width: 84%;}
-        .viewCase .btnBox span{width: 100px;height: 32px; border-radius: 60px;line-height: 32px;display: inline-block;border: 1px solid #fb5454;text-align: center;cursor:pointer;}
-        .viewCase .viwExam{background: #fb5454;color: #fff;}
-        .viewCase .onlineQue{background: #fff;color:#fb5454; }
-        .clickMore{display: block; margin: 25px auto; width: 100px;color: #333;font-size: 14px;}
-        .clickMore span{cursor: pointer;}
+            width: 84%;
+        }
+
+        .viewCase .btnBox span {
+            width: 100px;
+            height: 32px;
+            border-radius: 60px;
+            line-height: 32px;
+            display: inline-block;
+            border: 1px solid #fb5454;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .viewCase .viwExam {
+            background: #fb5454;
+            color: #fff;
+        }
+
+        .viewCase .onlineQue {
+            background: #fff;
+            color: #fb5454;
+        }
+
+        .clickMore {
+            display: block;
+            margin: 25px auto;
+            width: 100px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .clickMore span {
+            cursor: pointer;
+        }
+
         /*caseBox结束*/
         /*advantage开始*/
-        .advantage{width: 1200px;margin: 30px auto;background: #fff;}
-        .advantage .advantageBox{height: 320px;border: 1px solid #eee;}
-        .advantageCont ul{overflow: hidden; padding: 40px 0;border-bottom: 1px solid #eee;margin: 0 24px;}
-        .advantageCont li{float: left; text-align: center;width: 20%;}
-        .advantageCont li h6{color: #333;font-size: 16px;line-height: 33px;}
-        .advantageCont li p{color: #666;font-size: 14px;}
-        .advantageCont li p span{color: #fb5454;}
-        .advantageMedia li{float: left; text-align: center;margin: 10px 20px;}
-        .advantageMedia{overflow: hidden}
-        .advantageMedia ul{padding: 0 23px;overflow: hidden;}
-        .advantageMedia h3{font-size: 18px;color: #fb5454;text-align: center;margin: 23px 18px;}
-        .advantageMedia img{height: 32px;}
+        .advantage {
+            width: 1200px;
+            margin: 30px auto;
+            background: #fff;
+        }
+
+        .advantage .advantageBox {
+            height: 320px;
+            border: 1px solid #eee;
+        }
+
+        .advantageCont ul {
+            overflow: hidden;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+            margin: 0 24px;
+        }
+
+        .advantageCont li {
+            float: left;
+            text-align: center;
+            width: 20%;
+        }
+
+        .advantageCont li h6 {
+            color: #333;
+            font-size: 16px;
+            line-height: 33px;
+        }
+
+        .advantageCont li p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .advantageCont li p span {
+            color: #fb5454;
+        }
+
+        .advantageMedia li {
+            float: left;
+            text-align: center;
+            margin: 10px 20px;
+        }
+
+        .advantageMedia {
+            overflow: hidden
+        }
+
+        .advantageMedia ul {
+            padding: 0 23px;
+            overflow: hidden;
+        }
+
+        .advantageMedia h3 {
+            font-size: 18px;
+            color: #fb5454;
+            text-align: center;
+            margin: 23px 18px;
+        }
+
+        .advantageMedia img {
+            height: 32px;
+        }
+
         /*advantage结束*/
 
         .right.carousel-control, .left.carousel-control {
@@ -200,7 +925,8 @@
 <div ng-controller="mainController">
     <div class="banner">
         <div id="js_banner" class="fx_banner" uib-carousel interval="myInterval" no-wrap="noWrapSlides" active="active">
-            <ul id="js_banner_img" class="fx_banner_img clear" uib-slide ng-repeat="slide in slides track by slide.id" index="$index">
+            <ul id="js_banner_img" class="fx_banner_img clear" uib-slide ng-repeat="slide in slides track by slide.id"
+                index="$index">
                 <li>
                     <div class="fx_banner_inner fx_grid_c1">
                         <div class="child child0" data-z="1"><img ng-src="{{slide.image}}"></div>
@@ -334,7 +1060,9 @@
                         <p>{{abroad.title}}</p>
                         <%--<span>这里填写内容简介，签证通过率95%以上，专家跟踪办理。</span>--%>
                         <div class="productFly">
-                            <div class="flyAbroad fl"><img ng-src="<%=picPath%>{{abroad.vender.photo.path}}"> {{abroad.vender.venderName}}</div>
+                            <div class="flyAbroad fl"><img ng-src="<%=picPath%>{{abroad.vender.photo.path}}">
+                                {{abroad.vender.venderName}}
+                            </div>
                             <div class="likeNum fr">{{abroad.favoriteNum}}</div>
                         </div>
                     </li>
@@ -349,7 +1077,8 @@
         </div>
         <div class="repuTeacher">
             <ul>
-                <li class="arrow_img"><img id="leftArrow" ng-click="adviserPre($event.target)" class="fl" src="<%=resourcePath%>/img/home/arrow_left.png" alt=""></li>
+                <li class="arrow_img"><img id="leftArrow" ng-click="adviserPre($event.target)" class="fl"
+                                           src="<%=resourcePath%>/img/home/arrow_left.png" alt=""></li>
                 <li class="famousTeacher" ng-repeat="adviser in advisers"
                     adviser-loaded>
                     <div class="teacherImag"><img ng-src="<%=picPath%>/{{adviser.photo.path}}" alt=""></div>
@@ -360,7 +1089,8 @@
                         <div>鹏润留学</div>
                     </div>
                 </li>
-                <li class="arrow_img"> <img id="rightArrow" ng-click="adviserNext($event.target)" class="fr" src="<%=resourcePath%>/img/home/arrow_right.png" alt=""></li>
+                <li class="arrow_img"><img id="rightArrow" ng-click="adviserNext($event.target)" class="fr"
+                                           src="<%=resourcePath%>/img/home/arrow_right.png" alt=""></li>
             </ul>
         </div>
     </div>
@@ -373,7 +1103,7 @@
             <ul>
                 <li class="shuxian">|</li>
                 <li><img src="<%=resourcePath%>/img/home/placard.png" alt=""></li>
-                <li>Jerry正则咨询<span>陈老师</span> </li>
+                <li>Jerry正则咨询<span>陈老师</span></li>
                 <li>小鱼米正在咨询<span>LillianLIU</span>老师</li>
                 <li>Jerry正则咨询<span>陈老师</span></li>
                 <li>Jerry正则咨询<span>陈老师</span></li>
@@ -420,10 +1150,12 @@
                             <ul class="examples examplesCoten">
                                 <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
                                 <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
-                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p><span>2016-3-17</span></li>
+                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p>
+                                    <span>2016-3-17</span></li>
                                 <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
                                 <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
-                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p><span>2016-3-17</span></li>
+                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p>
+                                    <span>2016-3-17</span></li>
                             </ul>
                         </div>
                         <div class="content">内容三</div>
@@ -517,13 +1249,14 @@
                     </div>
                     <ul>
                         <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">深圳大学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">计算机专业</span></li>
-                        <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科（专接本）</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.0</span></li>
-                        <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
-                        <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">研究生</span></li>
-                        <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of Sydney</span></li>
-                        <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">计算机技术专业</span></li>
+                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">计算机专业</span></li>
+                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">本科（专接本）</span></li>
+                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">3.0</span></li>
+                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">澳大利亚</span></li>
+                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">研究生</span></li>
+                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">The University of Sydney</span>
+                        </li>
+                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">计算机技术专业</span></li>
                     </ul>
                     <div class="btnBox">
                         <span class="viwExam fl">查看案例</span>
@@ -537,13 +1270,14 @@
                     </div>
                     <ul>
                         <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">中国政法大学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">法学专业</span></li>
-                        <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.0</span></li>
-                        <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
-                        <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">研究生</span></li>
-                        <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of New South Wales</span></li>
-                        <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">Juris Doctor</span></li>
+                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">法学专业</span></li>
+                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">本科</span></li>
+                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">3.0</span></li>
+                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">澳大利亚</span></li>
+                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">研究生</span></li>
+                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">The University of New South Wales</span>
+                        </li>
+                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">Juris Doctor</span></li>
                     </ul>
                     <div class="btnBox">
                         <span class="viwExam fl">查看案例</span>
@@ -557,13 +1291,13 @@
                     </div>
                     <ul>
                         <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">北京师范大学附属中学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">高一</span></li>
-                        <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">高中</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">80</span></li>
-                        <li><span class="viewTit">申请国家</span><span  class="viewTitCont">澳大利亚</span></li>
-                        <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">高中</span></li>
-                        <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">Balwyn High School</span></li>
-                        <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">无</span></li>
+                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">高一</span></li>
+                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">高中</span></li>
+                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">80</span></li>
+                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">澳大利亚</span></li>
+                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">高中</span></li>
+                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">Balwyn High School</span></li>
+                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">无</span></li>
                     </ul>
                     <div class="btnBox">
                         <span class="viwExam fl">查看案例</span>
@@ -577,13 +1311,14 @@
                     </div>
                     <ul>
                         <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">天津商业大学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span  class="viewTitCont">机械工程</span></li>
-                        <li><span class="viewTit">当前学历：</span><span  class="viewTitCont">本科大一</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span  class="viewTitCont">3.4</span></li>
-                        <li><span class="viewTit">申请国家</span><span  class="viewTitCont">新西兰</span></li>
-                        <li><span class="viewTit">申请学历：</span><span  class="viewTitCont">本科</span></li>
-                        <li><span class="viewTit">申请学校：</span><span  class="viewTitCont">The University of Auckland</span></li>
-                        <li><span class="viewTit">申请专业：</span><span  class="viewTitCont">商科</span></li>
+                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">机械工程</span></li>
+                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">本科大一</span></li>
+                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">3.4</span></li>
+                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">新西兰</span></li>
+                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">本科</span></li>
+                        <li><span class="viewTit">申请学校：</span><span
+                                class="viewTitCont">The University of Auckland</span></li>
+                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">商科</span></li>
                     </ul>
                     <div class="btnBox">
                         <span class="viwExam fl">查看案例</span>
@@ -646,13 +1381,14 @@
                     <li><a href="http://www.donews.com/m/2927947" target="_blank">
                         <img src="http://ui.donews.com/donews2013/img/donews_logo.gif" alt=""></a></li>
                     <li><a href="http://qianbidao.baijia.baidu.com/article/441594" target="_blank">
-                        <img src="http://baijia.baidu.com/static/home/widget/header/images/logo_7745737.jpg" alt=""></a></li>
+                        <img src="http://baijia.baidu.com/static/home/widget/header/images/logo_7745737.jpg" alt=""></a>
+                    </li>
                     <li><a href="http://finance.jrj.com.cn/tech/2016/03/06184520650106.shtml" target="_blank">
                         <img src="http://i0.jrjimg.cn/textv2015/titlogo01.png" alt=""></a></li>
                     <li><a href="http://news.cnfol.com/it/20160306/22359490.shtml" target="_blank">
                         <img src="http://i8.cnfolimg.com/file/201402/Logo_201402071215264931.jpg" alt=""></a></li>
                     <%--<li><a href="http://info.it.hc360.com/2015/10/101433830042.shtml" target="_blank">--%>
-                        <%--<img src="http://style.org.hc360.com/css_hy/images/2011nlogo/it_172X45_zg.gif" alt=""></a></li>--%>
+                    <%--<img src="http://style.org.hc360.com/css_hy/images/2011nlogo/it_172X45_zg.gif" alt=""></a></li>--%>
                 </ul>
             </div>
         </div>
@@ -760,7 +1496,7 @@
             window.location.href = "<%=path%>/school/estimate.htm";
         };
 
-        $scope.productMore = function(){
+        $scope.productMore = function () {
             window.location.href = "<%=path%>/abroadRecommend/index.htm";
         };
 
@@ -774,7 +1510,7 @@
         $scope.initial();
         $scope.addSlide();
 
-        $scope.$on('adviserRepeat',function(){
+        $scope.$on('adviserRepeat', function () {
             $scope.render();
         })
     });
@@ -799,8 +1535,8 @@
                 if (scope.$last === true) {
                     $('.productsList ul li').hover(function () {
                         $(this).addClass("productCurr").siblings().removeClass('productCurr');
-                        $('.productFly').css('marginTop','30')
-                        $(this).find('.productFly').css('marginTop','0')
+                        $('.productFly').css('marginTop', '30')
+                        $(this).find('.productFly').css('marginTop', '0')
                     });
                 }
                 scope.renderAdviser();
@@ -810,31 +1546,55 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        var imgArr=[{url:"<%=resourcePath%>/img/home/avatar5.png",user:"林同学",effort:"普林斯顿大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"王同学",effort:"哈佛大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"张同学",effort:"耶鲁大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"刘同学",effort:"斯坦福大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"赵同学",effort:"芝加哥大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"薛同学",effort:"哥伦比亚大学"},{url:"<%=resourcePath%>/img/home/avatar5.png",user:"古同学",effort:"宾夕法尼亚大学"}];
+        var imgArr = [{
+            url: "<%=resourcePath%>/img/home/avatar5.png",
+            user: "林同学",
+            effort: "普林斯顿大学"
+        }, {
+            url: "<%=resourcePath%>/img/home/avatar5.png",
+            user: "王同学",
+            effort: "哈佛大学"
+        }, {
+            url: "<%=resourcePath%>/img/home/avatar5.png",
+            user: "张同学",
+            effort: "耶鲁大学"
+        }, {
+            url: "<%=resourcePath%>/img/home/avatar5.png",
+            user: "刘同学",
+            effort: "斯坦福大学"
+        }, {
+            url: "<%=resourcePath%>/img/home/avatar5.png",
+            user: "赵同学",
+            effort: "芝加哥大学"
+        }, {
+            url: "<%=resourcePath%>/img/home/avatar5.png",
+            user: "薛同学",
+            effort: "哥伦比亚大学"
+        }, {url: "<%=resourcePath%>/img/home/avatar5.png", user: "古同学", effort: "宾夕法尼亚大学"}];
 
         reload();
 
         $('#left__red_img').click(function () {
-            var imgArrs=[];
-            imgArrs=imgArr.shift();
+            var imgArrs = [];
+            imgArrs = imgArr.shift();
             imgArr.push(imgArrs);
             reload();
 
         });
         $('#right__red_img').click(function () {
-            var imgArrs=[];
-            imgArrs=imgArr.pop();
+            var imgArrs = [];
+            imgArrs = imgArr.pop();
             imgArr.unshift(imgArrs);
             reload();
 
         });
 
         //选项卡
-        $(".tabGroup li").click(function(){
+        $(".tabGroup li").click(function () {
             $(this).addClass("selectedTab").siblings().removeClass('selectedTab');
             $(".contentGroup div").eq($(".tabGroup li").index(this)).addClass("selectedContent").siblings().removeClass('selectedContent');
         });
-        $("#asseSele span").click(function(){
+        $("#asseSele span").click(function () {
             $(this).addClass("active").siblings().removeClass('active');
             $(".asseContent").eq($("#asseSele span").index(this)).show().siblings().hide();
             $('#asseSele').show();
@@ -862,7 +1622,7 @@
         $('ul.son_ul li').click(function () {
             $(this).parents('li').find('input').val($(this).html());
             $(this).parents('li').find('ul').slideUp(1);
-            $(this).parents('li')[0].style.borderRadius="20px";
+            $(this).parents('li')[0].style.borderRadius = "20px";
         });
         /* $('.son_ul').hover(function () {
          $(this).parents('li')[0].style.borderRadius="20px";
@@ -870,39 +1630,39 @@
 
         //回显
         function reload() {
-            var html='';
-            html+='<li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
-                    <img src='+imgArr[0].url+' alt="">\
+            var html = '';
+            html += '<li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
+                    <img src=' + imgArr[0].url + ' alt="">\
                     </li>\
                     <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\
-                      <img src='+imgArr[1].url+' alt="">\
+                      <img src=' + imgArr[1].url + ' alt="">\
                     </li>\
                     <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
-                    <img src='+imgArr[2].url+' alt="">\
+                    <img src=' + imgArr[2].url + ' alt="">\
                     <div>\
-                    <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[2].user+'</p>\
-                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">'+imgArr[2].effort+'</a>Offer</span>\
+                    <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">' + imgArr[2].user + '</p>\
+                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">' + imgArr[2].effort + '</a>Offer</span>\
                     </div>\
                     </li>\
                     <li style="width:190px;float: left; text-align: center;margin:25px 14px 0;">\
-                     <img src='+imgArr[3].url+' alt="">\
+                     <img src=' + imgArr[3].url + ' alt="">\
                     <div>\
-                       <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[3].user+'</p>\
-                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">'+imgArr[3].effort+'</a>Offer</span>\
+                       <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">' + imgArr[3].user + '</p>\
+                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">' + imgArr[3].effort + '</a>Offer</span>\
                     </div>\
                     </li>\
                     <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
-                    <img src='+imgArr[4].url+' alt="">\
+                    <img src=' + imgArr[4].url + ' alt="">\
                     <div>\
-                      <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">'+imgArr[4].user+'</p>\
-                    <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)"  style="color: red;">'+imgArr[4].effort+'</a>Offer</span>\
+                      <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">' + imgArr[4].user + '</p>\
+                    <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)"  style="color: red;">' + imgArr[4].effort + '</a>Offer</span>\
                     </div>\
                     </li>\
                     <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\
-                   <img src='+imgArr[5].url+' alt="">\
+                   <img src=' + imgArr[5].url + ' alt="">\
                     </li>\
                     <li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
-                    <img src='+imgArr[6].url+' alt="">\
+                    <img src=' + imgArr[6].url + ' alt="">\
                     </li>';
 
             $('.caseContent>ul').html(html);

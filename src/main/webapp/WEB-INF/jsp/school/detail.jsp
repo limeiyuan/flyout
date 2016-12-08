@@ -173,9 +173,9 @@
 
         .school_content > div {
             display: none;
-            border: 1px solid #0099ec;
+            border: 1px solid #eee;
             padding: 18px 10px;
-            min-height: 555px;
+            min-height: 700px;
         }
 
         .school_content > div.cur {
