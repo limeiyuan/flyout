@@ -221,7 +221,6 @@
             font-size: 14px;
             color: #333;
             padding-left: 14px;
-            ` height: 50px;
         }
 
         .productsList ul li span {
@@ -1083,9 +1082,9 @@
                     adviser-loaded>
                     <div class="teacherImag"><img ng-src="<%=picPath%>/{{adviser.photo.path}}" alt=""></div>
                     <p>{{adviser.screenname}}</p>
-                    <span>美国顾问专家</span>
+                    <span>{{adviser.shortDescription}}</span>
                     <div class="teacherInfo">
-                        <p>/海外留学生活背景，精通澳洲留学程序/</p>
+                        <p>{{adviser.speciality}}</p>
                         <div>鹏润留学</div>
                     </div>
                 </li>

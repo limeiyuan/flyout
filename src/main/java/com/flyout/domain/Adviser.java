@@ -22,6 +22,12 @@ public class Adviser extends Account {
     @Column(name = "score_ac")
     private Integer score;
 
+    @Column(name = "short_description_ac")
+    private String shortDescription;
+
+    @Column(name = "specialities_ac")
+    private String speciality;
+
     public String getAdviserType() {
         return adviserType;
     }
@@ -52,5 +58,21 @@ public class Adviser extends Account {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 }
