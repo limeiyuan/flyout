@@ -4,6 +4,7 @@ import com.flyout.common.dto.BasicDto;
 import com.flyout.common.enums.CategoryEnum;
 import com.flyout.service.AdviserServiceImpl;
 import com.flyout.service.ProductServiceImpl;
+import com.flyout.service.SuccessCaseServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,6 +25,9 @@ public class HomeController {
 
     @Resource
     private ProductServiceImpl productService;
+
+    @Resource
+    private SuccessCaseServiceImpl successCaseService;
 
     @RequestMapping("index")
     public String index() {
@@ -51,6 +55,7 @@ public class HomeController {
         Map<String, Object> data = new HashMap<>();
         data.put("advisers", adviserService.getRecommendAdviser());
         data.put("abroads", productService.getRecommend(CategoryEnum.STUDY_ABROAD, 8));
+        data.put("cases", successCaseService.getRecommend());
         dto.setData(data);
         return dto;
     }

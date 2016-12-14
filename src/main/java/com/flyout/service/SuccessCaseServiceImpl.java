@@ -17,6 +17,10 @@ public class SuccessCaseServiceImpl {
     private SuccessCaseDaoImpl successCaseDao;
 
     public List<SuccessCase> list() {
-        return successCaseDao.list();
+        return successCaseDao.list(null);
+    }
+
+    public List<SuccessCase> getRecommend() {
+        return successCaseDao.list(15);
     }
 }

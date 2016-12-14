@@ -1178,146 +1178,40 @@
         </div>
         <div class="caseContent">
             <ul>
-                <%--  <li class="arrow fl">
-                      <img src="<%=resourcePath%>/img/arrow_left_red.png" alt="">
-                  </li>--%>
-                <li class="case0">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
+                <li ng-repeat="successCase in cases | orderBy: 'showOrder' | limitTo:7:caseStartIndex"
+                    class="case{{$index}}">
+                    <img ng-src="{{successCase.school.badgePhoto.path!=null ? '<%=picPath%>'+successCase.school.badgePhoto.path: '<%=resourcePath%>/img/school/default_badge.png'}}"
+                         alt="{{successCase.showOrder}}">
                     <div>
-                        <p>王同学</p>
-                        <span>成功获取<a href="javascript:void(0)">悉尼大学</a>Offer</span>
+                        <p>{{successCase.name}}</p>
+                        <span>成功获取<a href="<%=path%>/school/detail.htm?id={{successCase.school.id}}">{{successCase.school.name}}</a>Offer</span>
                     </div>
                 </li>
-                <li class="case1">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
-                    <div>
-                        <p>李同学</p>
-                        <span>成功获取<a href="javascript:void(0)">新南威尔士大学</a>Offer</span>
-                    </div>
-                </li>
-                <li class="case2">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
-                    <div>
-                        <p>刘同学</p>
-                        <span>成功获取<a href="javascript:void(0)">博文中学</a>Offer</span>
-                    </div>
-                </li>
-                <li class="case3">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
-                    <div>
-                        <p>加雪佩</p>
-                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
-                    </div>
-                </li>
-                <li class="case4">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
-                    <div>
-                        <p>加雪佩</p>
-                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
-                    </div>
-                </li>
-                <li class="case5">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
-                    <div>
-                        <p>加雪佩</p>
-                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
-                    </div>
-                </li>
-                <li class="case6">
-                    <img src="<%=resourcePath%>/img/home/avatar5.png" alt="">
-                    <div>
-                        <p>加雪佩</p>
-                        <span>成功获取<a href="javascript:void(0)">莫纳什大学</a>Offer</span>
-                    </div>
-                </li>
-                <%--   <li class="arrow arrowR">
-                       <img src="<%=resourcePath%>/img/arrow_right_red.png" alt="">
-                   </li>--%>
             </ul>
             <div class="btarrow_img">
-                <img id="left__red_img" class="fl" src="<%=resourcePath%>/img/home/arrow_left_red.png" alt="">
-                <img id="right__red_img" class="fr" src="<%=resourcePath%>/img/home/arrow_right_red.png" alt="">
+                <img id="left__red_img" ng-click="caseChange(-1)" class="fl"
+                     src="<%=resourcePath%>/img/home/arrow_left_red.png" alt="">
+                <img id="right__red_img" ng-click="caseChange(1)" class="fr"
+                     src="<%=resourcePath%>/img/home/arrow_right_red.png" alt="">
             </div>
         </div>
         <div class="viewCase">
             <ul>
-                <li class="viewBox">
+                <li class="viewBox" ng-repeat="successCase in cases | orderBy: 'showOrder' | limitTo:4:6">
                     <div class="titeBox">
-                        <p>王同学</p>
-                        <h3>悉尼大学</h3>
+                        <p>{{successCase.name}}</p>
+                        <h3>{{successCase.school.name}}</h3>
                     </div>
                     <ul>
-                        <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">深圳大学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">计算机专业</span></li>
-                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">本科（专接本）</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">3.0</span></li>
-                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">澳大利亚</span></li>
+                        <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">{{successCase.graduateSchool}}</span></li>
+                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">{{successCase.major}}</span></li>
+                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">{{successCase.degree}}</span></li>
+                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">{{successCase.gpa}}</span></li>
+                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">{{successCase.nation.name}}</span></li>
                         <li><span class="viewTit">申请学历：</span><span class="viewTitCont">研究生</span></li>
-                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">The University of Sydney</span>
+                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">{{successCase.school.ownname}}</span>
                         </li>
-                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">计算机技术专业</span></li>
-                    </ul>
-                    <div class="btnBox">
-                        <span class="viwExam fl">查看案例</span>
-                        <span class="onlineQue fr">在线咨询</span>
-                    </div>
-                </li>
-                <li class="viewBox">
-                    <div class="titeBox">
-                        <p>李同学</p>
-                        <h3>新南威尔士大学</h3>
-                    </div>
-                    <ul>
-                        <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">中国政法大学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">法学专业</span></li>
-                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">本科</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">3.0</span></li>
-                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">澳大利亚</span></li>
-                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">研究生</span></li>
-                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">The University of New South Wales</span>
-                        </li>
-                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">Juris Doctor</span></li>
-                    </ul>
-                    <div class="btnBox">
-                        <span class="viwExam fl">查看案例</span>
-                        <span class="onlineQue fr">在线咨询</span>
-                    </div>
-                </li>
-                <li class="viewBox">
-                    <div class="titeBox">
-                        <p>刘同学</p>
-                        <h3>博文中学</h3>
-                    </div>
-                    <ul>
-                        <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">北京师范大学附属中学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">高一</span></li>
-                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">高中</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">80</span></li>
-                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">澳大利亚</span></li>
-                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">高中</span></li>
-                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">Balwyn High School</span></li>
-                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">无</span></li>
-                    </ul>
-                    <div class="btnBox">
-                        <span class="viwExam fl">查看案例</span>
-                        <span class="onlineQue fr">在线咨询</span>
-                    </div>
-                </li>
-                <li class="viewBox">
-                    <div class="titeBox">
-                        <p>孙同学</p>
-                        <h3>奥克兰大学</h3>
-                    </div>
-                    <ul>
-                        <li><span class="viewTit">毕业院校：</span><span class="viewTitCont">天津商业大学</span></li>
-                        <li><span class="viewTit">当前专业：</span><span class="viewTitCont">机械工程</span></li>
-                        <li><span class="viewTit">当前学历：</span><span class="viewTitCont">本科大一</span></li>
-                        <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">3.4</span></li>
-                        <li><span class="viewTit">申请国家</span><span class="viewTitCont">新西兰</span></li>
-                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">本科</span></li>
-                        <li><span class="viewTit">申请学校：</span><span
-                                class="viewTitCont">The University of Auckland</span></li>
-                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">商科</span></li>
+                        <li><span class="viewTit">申请专业：</span><span class="viewTitCont">{{successCase.destMajor}}</span></li>
                     </ul>
                     <div class="btnBox">
                         <span class="viwExam fl">查看案例</span>
@@ -1397,12 +1291,13 @@
 <script type="text/javascript">
     var app = angular.module("app", ['ngAnimate', 'ui.bootstrap']);
 
-    app.controller("mainController", function ($scope, $http) {
+    app.controller("mainController", ['$scope', '$http', 'orderByFilter', function ($scope, $http, orderBy) {
         $scope.myInterval = 3000;
         $scope.noWrapSlides = false;
         var adviserShowList = $scope.adviserShowList = [];
         var slides = $scope.slides = [];
         $scope.active = 0;
+        $scope.caseStartIndex = 0;
 
         $scope.initial = function () {
             var timestamp = (new Date()).valueOf();
@@ -1416,10 +1311,14 @@
                 var result = response.data;
                 $scope.advisers = result.data.advisers;
                 $scope.abroads = result.data.abroads;
+                $scope.cases = result.data.cases;
                 $.each($scope.advisers, function (index) {
                     if (index < 5) {
                         adviserShowList.push(index);
                     }
+                });
+                $.each($scope.cases, function (index, item) {
+                    item.showOrder = index;
                 });
 
                 $scope.$broadcast('initialed');
@@ -1451,6 +1350,15 @@
                 image: '<%=resourcePath%>/img/home/banner.jpg',
                 text: '测试图片'
             });
+        };
+
+        $scope.caseChange = function (count) {
+            if (count > 0) {
+                $scope.cases[0].showOrder = $scope.cases[$scope.cases.length - 1].showOrder + 1;
+            } else {
+                $scope.cases[$scope.cases.length - 1].showOrder = $scope.cases[0].showOrder - 1;
+            }
+            $scope.cases = orderBy($scope.cases, 'showOrder', false);
         };
 
         $scope.adviserPre = function (dom) {
@@ -1512,7 +1420,7 @@
         $scope.$on('adviserRepeat', function () {
             $scope.render();
         })
-    });
+    }]);
 
     app.directive('adviserLoaded', function () {
         return {
@@ -1545,49 +1453,6 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        var imgArr = [{
-            url: "<%=resourcePath%>/img/home/avatar5.png",
-            user: "林同学",
-            effort: "普林斯顿大学"
-        }, {
-            url: "<%=resourcePath%>/img/home/avatar5.png",
-            user: "王同学",
-            effort: "哈佛大学"
-        }, {
-            url: "<%=resourcePath%>/img/home/avatar5.png",
-            user: "张同学",
-            effort: "耶鲁大学"
-        }, {
-            url: "<%=resourcePath%>/img/home/avatar5.png",
-            user: "刘同学",
-            effort: "斯坦福大学"
-        }, {
-            url: "<%=resourcePath%>/img/home/avatar5.png",
-            user: "赵同学",
-            effort: "芝加哥大学"
-        }, {
-            url: "<%=resourcePath%>/img/home/avatar5.png",
-            user: "薛同学",
-            effort: "哥伦比亚大学"
-        }, {url: "<%=resourcePath%>/img/home/avatar5.png", user: "古同学", effort: "宾夕法尼亚大学"}];
-
-        reload();
-
-        $('#left__red_img').click(function () {
-            var imgArrs = [];
-            imgArrs = imgArr.shift();
-            imgArr.push(imgArrs);
-            reload();
-
-        });
-        $('#right__red_img').click(function () {
-            var imgArrs = [];
-            imgArrs = imgArr.pop();
-            imgArr.unshift(imgArrs);
-            reload();
-
-        });
-
         //选项卡
         $(".tabGroup li").click(function () {
             $(this).addClass("selectedTab").siblings().removeClass('selectedTab');
@@ -1601,22 +1466,22 @@
 
         $('.son_ul').hide(); //初始ul隐藏
         $('.selectedInput').hover(function () {//鼠标移动函数
-                    $(this).parent()[0].style.borderRadius = "15px";
-                    $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
-                    $(this).parent().find('li').hover(function () {
-                        $(this).addClass('hover')
-                    }, function () {
-                        $(this).removeClass('hover')
-                    }); //li的hover效果
-                    $(this).parent().hover(function () {
-                            },
-                            function () {
-                                $(this).parent().find("ul.son_ul").slideUp();
-                            }
-                    );
+                $(this).parent()[0].style.borderRadius = "15px";
+                $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
+                $(this).parent().find('li').hover(function () {
+                    $(this).addClass('hover')
                 }, function () {
-                    $(this).parents('li')[0].style.borderRadius = "15px";
-                }
+                    $(this).removeClass('hover')
+                }); //li的hover效果
+                $(this).parent().hover(function () {
+                    },
+                    function () {
+                        $(this).parent().find("ul.son_ul").slideUp();
+                    }
+                );
+            }, function () {
+                $(this).parents('li')[0].style.borderRadius = "15px";
+            }
         );
         $('ul.son_ul li').click(function () {
             $(this).parents('li').find('input').val($(this).html());
@@ -1626,46 +1491,6 @@
         /* $('.son_ul').hover(function () {
          $(this).parents('li')[0].style.borderRadius="20px";
          })*/
-
-        //回显
-        function reload() {
-            var html = '';
-            html += '<li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
-                    <img src=' + imgArr[0].url + ' alt="">\
-                    </li>\
-                    <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\
-                      <img src=' + imgArr[1].url + ' alt="">\
-                    </li>\
-                    <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
-                    <img src=' + imgArr[2].url + ' alt="">\
-                    <div>\
-                    <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">' + imgArr[2].user + '</p>\
-                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">' + imgArr[2].effort + '</a>Offer</span>\
-                    </div>\
-                    </li>\
-                    <li style="width:190px;float: left; text-align: center;margin:25px 14px 0;">\
-                     <img src=' + imgArr[3].url + ' alt="">\
-                    <div>\
-                       <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">' + imgArr[3].user + '</p>\
-                      <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)" style="color: red;">' + imgArr[3].effort + '</a>Offer</span>\
-                    </div>\
-                    </li>\
-                    <li style="height: 128px;width: 154px;float: left;text-align: center;margin: 35px 14px 0;">\
-                    <img src=' + imgArr[4].url + ' alt="">\
-                    <div>\
-                      <p style="text-align: center;font-size: 14px;color: #666;margin: 8px auto;">' + imgArr[4].user + '</p>\
-                    <span style="text-align: center;font-size: 12px;color: #666;">成功获取<a href="javascript:void(0)"  style="color: red;">' + imgArr[4].effort + '</a>Offer</span>\
-                    </div>\
-                    </li>\
-                    <li style="height:108px;width:134px;float: left; text-align: center;margin: 45px 14px 0;">\
-                   <img src=' + imgArr[5].url + ' alt="">\
-                    </li>\
-                    <li style="height: 78px;width: 104px;float: left;text-align: center;margin: 60px 14px 0;">\
-                    <img src=' + imgArr[6].url + ' alt="">\
-                    </li>';
-
-            $('.caseContent>ul').html(html);
-        }
     });
 </script>
 <%@include file="footer.jsp" %>

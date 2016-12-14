@@ -75,6 +75,10 @@ public class SchoolInfo {
             inverseJoinColumns = {@JoinColumn(name = "photo_id_sdp")})
     private List<Photo> detailPhotos;
 
+    @OneToOne
+    @JoinColumn(name="school_badge_pic_si")
+    private Photo badgePhoto;//校徽
+
     public Long getId() {
         return id;
     }
@@ -201,5 +205,13 @@ public class SchoolInfo {
 
     public void setDetailPhotos(List<Photo> detailPhotos) {
         this.detailPhotos = detailPhotos;
+    }
+
+    public Photo getBadgePhoto() {
+        return badgePhoto;
+    }
+
+    public void setBadgePhoto(Photo badgePhoto) {
+        this.badgePhoto = badgePhoto;
     }
 }

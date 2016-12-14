@@ -16,10 +16,13 @@ import java.util.List;
  */
 @Repository
 public class SuccessCaseDaoImpl extends BaseHibernateDao<SuccessCase, Long> {
-    public List<SuccessCase> list(){
+    public List<SuccessCase> list(Integer limit) {
         DetachedCriteria dc = createDetachedCriteria();
         dc.add(Restrictions.eq("enable", EnableEnum.enable));
-        dc.addOrder(Order.desc("order"));
+        dc.addOrder(Order.asc("order"));
+        if (limit != null && limit > 0) {
+            dc.getExecutableCriteria(getSession()).setMaxResults(limit);
+        }
         return query(dc);
     }
 }
