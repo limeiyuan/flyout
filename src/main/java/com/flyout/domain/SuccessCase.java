@@ -33,6 +33,9 @@ public class SuccessCase {
     @Column(name = "dest_major_sc")
     private String destMajor;//申请专业
 
+    @Column(name = "dest_degree_sc")
+    private String destDegree;
+
     @OneToOne()
     @JoinColumn(name = "photo_id_sc")
     private Photo photo;
@@ -107,6 +110,14 @@ public class SuccessCase {
 
     public void setDestMajor(String destMajor) {
         this.destMajor = destMajor;
+    }
+
+    public String getDestDegree() {
+        return destDegree;
+    }
+
+    public void setDestDegree(String destDegree) {
+        this.destDegree = destDegree;
     }
 
     public Photo getPhoto() {

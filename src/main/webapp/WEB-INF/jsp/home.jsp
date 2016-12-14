@@ -1181,7 +1181,7 @@
                 <li ng-repeat="successCase in cases | orderBy: 'showOrder' | limitTo:7:caseStartIndex"
                     class="case{{$index}}">
                     <img ng-src="{{successCase.school.badgePhoto.path!=null ? '<%=picPath%>'+successCase.school.badgePhoto.path: '<%=resourcePath%>/img/school/default_badge.png'}}"
-                         alt="{{successCase.showOrder}}">
+                         alt="{{successCase.showOrder}}" style="border-radius: 50%">
                     <div>
                         <p>{{successCase.name}}</p>
                         <span>成功获取<a href="<%=path%>/school/detail.htm?id={{successCase.school.id}}">{{successCase.school.name}}</a>Offer</span>
@@ -1208,9 +1208,8 @@
                         <li><span class="viewTit">当前学历：</span><span class="viewTitCont">{{successCase.degree}}</span></li>
                         <li class="gpa"><span class="viewTit">GPA：</span><span class="viewTitCont">{{successCase.gpa}}</span></li>
                         <li><span class="viewTit">申请国家</span><span class="viewTitCont">{{successCase.nation.name}}</span></li>
-                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">研究生</span></li>
-                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">{{successCase.school.ownname}}</span>
-                        </li>
+                        <li><span class="viewTit">申请学历：</span><span class="viewTitCont">{{successCase.destDegree}}</span></li>
+                        <li><span class="viewTit">申请学校：</span><span class="viewTitCont">{{successCase.school.ownname}}</span></li>
                         <li><span class="viewTit">申请专业：</span><span class="viewTitCont">{{successCase.destMajor}}</span></li>
                     </ul>
                     <div class="btnBox">
