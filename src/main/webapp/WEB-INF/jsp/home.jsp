@@ -1197,7 +1197,7 @@
         </div>
         <div class="viewCase">
             <ul>
-                <li class="viewBox" ng-repeat="successCase in cases | orderBy: 'showOrder' | limitTo:4:6">
+                <li class="viewBox" ng-repeat="successCase in cases | orderBy: 'showOrder' | limitTo:4:caseStartIndex+3">
                     <div class="titeBox">
                         <p>{{successCase.name}}</p>
                         <h3>{{successCase.school.name}}</h3>
