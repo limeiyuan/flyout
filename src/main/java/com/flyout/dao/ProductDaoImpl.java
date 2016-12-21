@@ -4,10 +4,8 @@ import com.flyout.common.dao.BaseHibernateDao;
 import com.flyout.common.enums.CategoryEnum;
 import com.flyout.common.enums.EnableEnum;
 import com.flyout.domain.Product;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.MatchMode;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
+import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -31,7 +29,15 @@ public class ProductDaoImpl extends BaseHibernateDao<Product, Long> {
         if (limit != null && limit > 0) {
             dc.getExecutableCriteria(getSession()).setMaxResults(limit);
         }
-        return query(dc);
+        dc.setProjection(Projections.projectionList()
+                .add(Projections.property("photo"), "photo")
+                .add(Projections.property("id"), "id")
+                .add(Projections.property("title"), "title")
+                .add(Projections.property("vender"), "vender")
+                .add(Projections.property("favoriteNum"), "favoriteNum")
+        );
+        dc.setResultTransformer(Transformers.aliasToBean(Product.class));
+        return dc.getExecutableCriteria(getSession()).list();
     }
 
     public List<Product> query(String name) {

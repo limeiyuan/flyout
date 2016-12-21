@@ -68,7 +68,7 @@ public class Account {
     @JoinColumn(name = "target_country_ac")
     private NationInfo nation;//目标国家
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "target_school_ac")
     private SchoolInfo school;//目标学校
 
@@ -83,18 +83,18 @@ public class Account {
     @JoinColumn(name = "photo_id_ac")
     private Photo photo;//头像
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "account_invitation_ship_ais",
             joinColumns = {@JoinColumn(name = "account_id_ais")},
             inverseJoinColumns = {@JoinColumn(name = "inviter_id_ais")})
     @JsonBackReference
     private Account inviter;
 
-    @OneToMany(mappedBy = "inviter")
+    @OneToMany(mappedBy = "inviter", fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Account> invitedAccounts;
 
-    @OneToMany(mappedBy = "account")
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private List<BankCard> bankCards;
 
     @Column(name = "isbuddy_ac")

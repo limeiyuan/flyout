@@ -54,7 +54,7 @@ public class Product {
     @JoinColumn(name = "vender_id_pi")
     private Vender vender;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "adviser_id_pi")
     private Account adviser;
 

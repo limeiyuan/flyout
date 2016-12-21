@@ -4,10 +4,8 @@ import com.flyout.common.dao.BaseHibernateDao;
 import com.flyout.common.enums.EnableEnum;
 import com.flyout.domain.Adviser;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.*;
+import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,16 +27,27 @@ public class AdviserDaoImpl extends BaseHibernateDao<Adviser, Long> {
         return null;
     }
 
-    public List<Adviser> findAdvisers(String keyword, Integer limit) {
+    public List<Adviser> findRecommend() {
+        DetachedCriteria dc = createDetachedCriteria();
+        dc.add(Restrictions.eq("enable", EnableEnum.enable));
+        dc.setProjection(Projections.projectionList()
+                .add(Projections.property("photo"), "photo")
+                .add(Projections.property("screenname"), "screenname")
+                .add(Projections.property("shortDescription"), "shortDescription")
+                .add(Projections.property("speciality"), "speciality")).setResultTransformer(Transformers.aliasToBean(Adviser.class));
+        dc.getExecutableCriteria(getSession()).setMaxResults(10);
+        dc.addOrder(Order.desc("score"));
+        dc.addOrder(Order.asc("id"));
+        return dc.getExecutableCriteria(getSession()).list();
+    }
+
+    public List<Adviser> findAdvisers(String keyword) {
         DetachedCriteria dc = createDetachedCriteria();
         dc.add(Restrictions.eq("enable", EnableEnum.enable));
         if (!StringUtils.isBlank(keyword)) {
             Criterion a = Restrictions.like("screenName", "%" + keyword + "%");
             Criterion b = Restrictions.like("username", "%" + keyword + "%");
             dc.add(Restrictions.or(a, b));
-        }
-        if (limit != null && limit != 0) {
-            dc.getExecutableCriteria(getSession()).setMaxResults(limit);
         }
         dc.addOrder(Order.desc("score"));
         dc.addOrder(Order.asc("id"));

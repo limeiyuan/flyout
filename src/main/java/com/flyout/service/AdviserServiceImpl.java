@@ -2,9 +2,9 @@ package com.flyout.service;
 
 import com.flyout.dao.AdviserDaoImpl;
 import com.flyout.domain.Adviser;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,10 +13,10 @@ import java.util.List;
  */
 @Service
 public class AdviserServiceImpl {
-    @Autowired
+    @Resource
     private AdviserDaoImpl adviserDao;
 
     public List<Adviser> getRecommendAdviser() {
-        return adviserDao.findAdvisers(null, 10);
+        return adviserDao.findRecommend();
     }
 }

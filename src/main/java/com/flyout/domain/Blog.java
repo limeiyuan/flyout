@@ -2,6 +2,8 @@ package com.flyout.domain;
 
 import com.flyout.common.enums.BlogCategoryEnum;
 import com.flyout.common.enums.EnableEnum;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 import org.springframework.context.annotation.Lazy;
 
@@ -22,7 +24,7 @@ public class Blog {
     @Column(name="id_b")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_id_b")
     private Account account;
 
@@ -39,6 +41,8 @@ public class Blog {
 
     @Column(name="content_b")
     @Lazy
+    @Lob
+    @Fetch(FetchMode.SELECT)
     private String content;
 
     @Column(name = "enable_b")
