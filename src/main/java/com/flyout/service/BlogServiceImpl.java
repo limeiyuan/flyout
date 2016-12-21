@@ -17,6 +17,10 @@ public class BlogServiceImpl {
     @Resource
     private BlogDaoImpl blogDao;
 
+    public Blog get(Long id) {
+        return blogDao.find(id);
+    }
+
     public List<Blog> getRecommend(Integer limit, BlogCategoryEnum category) {
         return blogDao.list(limit, category);
     }

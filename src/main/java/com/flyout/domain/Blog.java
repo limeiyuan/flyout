@@ -27,7 +27,7 @@ public class Blog {
     private Account account;
 
     @Column(name = "category_b")
-    @Type(type = "com.flyout.common.enums.BlogCategoryEnum", parameters = {
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
             @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.BlogCategoryEnum"),
             @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
             @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
