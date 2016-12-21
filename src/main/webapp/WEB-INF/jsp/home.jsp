@@ -1144,21 +1144,34 @@
                         <li class="tab promoted">新西兰</li>
                     </ul>
                     <div class="contentGroup">
-                        <div class="content">内容一</div>
-                        <div class="content selectedContent">
+                        <div class="content">
                             <ul class="examples examplesCoten">
-                                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
-                                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
-                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p>
-                                    <span>2016-3-17</span></li>
-                                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
-                                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
-                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p>
-                                    <span>2016-3-17</span></li>
+                                <li ng-repeat="blog in blogs_qa"><p>{{blog.title}}</p><span>{{blog.createTime | date:'yyyy-MM-dd'}}</span></li>
                             </ul>
                         </div>
-                        <div class="content">内容三</div>
-                        <div class="content">内容四</div>
+                        <div class="content selectedContent">
+                            <ul class="examples examplesCoten">
+                                <li ng-repeat="blog in blogs_recommend"><p>{{blog.title}}</p><span>{{blog.createTime | date:'yyyy-MM-dd'}}</span></li>
+<%--                                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
+                                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
+                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p>
+                                    <span>2016-3-17</span></li>
+                                <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
+                                <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
+                                <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p>
+                                    <span>2016-3-17</span></li>--%>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <ul class="examples examplesCoten">
+                                <li ng-repeat="blog in blogs_au"><p>{{blog.title}}</p><span>{{blog.createTime | date:'yyyy-MM-dd'}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <ul class="examples examplesCoten">
+                                <li ng-repeat="blog in blogs_nz"><p>{{blog.title}}</p><span>{{blog.createTime | date:'yyyy-MM-dd'}}</span></li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -1311,6 +1324,10 @@
                 $scope.advisers = result.data.advisers;
                 $scope.abroads = result.data.abroads;
                 $scope.cases = result.data.cases;
+                $scope.blogs_qa = result.data.blogs_qa;
+                $scope.blogs_recommend = result.data.blogs_recommend;
+                $scope.blogs_au = result.data.blogs_au;
+                $scope.blogs_nl = result.data.blogs_nl;
                 $.each($scope.advisers, function (index) {
                     if (index < 5) {
                         adviserShowList.push(index);

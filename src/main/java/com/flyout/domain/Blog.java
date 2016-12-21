@@ -1,8 +1,12 @@
 package com.flyout.domain;
 
+import com.flyout.common.enums.BlogCategoryEnum;
+import com.flyout.common.enums.EnableEnum;
+import org.hibernate.annotations.Type;
 import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * @author LiMeiyuan
@@ -22,9 +26,13 @@ public class Blog {
     @JoinColumn(name = "account_id_b")
     private Account account;
 
-    @ManyToOne()
-    @JoinColumn(name = "nation_id_b")
-    private NationInfo nation;
+    @Column(name = "category_b")
+    @Type(type = "com.flyout.common.enums.BlogCategoryEnum", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.BlogCategoryEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private BlogCategoryEnum category;
 
     @Column(name="title_b")
     private String title;
@@ -33,11 +41,19 @@ public class Blog {
     @Lazy
     private String content;
 
-    @Column(name="enable_b")
-    private Integer enable;
+    @Column(name = "enable_b")
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;
 
     @Column(name = "order_b")
     private Integer order;
+
+    @Column(name = "create_time_b")
+    private Date createTime;
 
     public Long getId() {
         return id;
@@ -55,12 +71,12 @@ public class Blog {
         this.account = account;
     }
 
-    public NationInfo getNation() {
-        return nation;
+    public BlogCategoryEnum getCategory() {
+        return category;
     }
 
-    public void setNation(NationInfo nation) {
-        this.nation = nation;
+    public void setCategory(BlogCategoryEnum category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -79,11 +95,11 @@ public class Blog {
         this.content = content;
     }
 
-    public Integer getEnable() {
+    public EnableEnum getEnable() {
         return enable;
     }
 
-    public void setEnable(Integer enable) {
+    public void setEnable(EnableEnum enable) {
         this.enable = enable;
     }
 
@@ -93,6 +109,14 @@ public class Blog {
 
     public void setOrder(Integer order) {
         this.order = order;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
 

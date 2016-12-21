@@ -1,10 +1,9 @@
 package com.flyout.controller;
 
 import com.flyout.common.dto.BasicDto;
+import com.flyout.common.enums.BlogCategoryEnum;
 import com.flyout.common.enums.CategoryEnum;
-import com.flyout.service.AdviserServiceImpl;
-import com.flyout.service.ProductServiceImpl;
-import com.flyout.service.SuccessCaseServiceImpl;
+import com.flyout.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,6 +27,12 @@ public class HomeController {
 
     @Resource
     private SuccessCaseServiceImpl successCaseService;
+
+    @Resource
+    private BlogServiceImpl blogService;
+
+    @Resource
+    private NationServiceImpl nationService;
 
     @RequestMapping("index")
     public String index() {
@@ -56,6 +61,10 @@ public class HomeController {
         data.put("advisers", adviserService.getRecommendAdviser());
         data.put("abroads", productService.getRecommend(CategoryEnum.STUDY_ABROAD, 8));
         data.put("cases", successCaseService.getRecommend());
+        data.put("blogs_qa", blogService.getRecommend(6, BlogCategoryEnum.QA));
+        data.put("blogs_recommend", blogService.getRecommend(6, BlogCategoryEnum.RECOMMEND));
+        data.put("blogs_au", blogService.getRecommend(6, BlogCategoryEnum.AUSTRALIA));
+        data.put("blogs_nl", blogService.getRecommend(6, BlogCategoryEnum.NZ));
         dto.setData(data);
         return dto;
     }
