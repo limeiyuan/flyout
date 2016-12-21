@@ -5,6 +5,10 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
+<meta name="description" content="">
+<meta name="Author" content="飞出国">
+<meta name="keywords" content="飞出国 留学 澳大利亚 移民 新西兰 咨询">
+<meta name="Copyright" content="飞出国">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
