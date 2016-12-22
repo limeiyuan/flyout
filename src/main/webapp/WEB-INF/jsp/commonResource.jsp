@@ -5,17 +5,17 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
-<meta name="description" content="">
-<meta name="Author" content="飞出国">
-<meta name="keywords" content="飞出国 留学 澳大利亚 移民 新西兰 咨询">
-<meta name="Copyright" content="飞出国">
+<meta name="description" content="鹏润飞出国留学平台，定位于一个优质的留学信息平台，致力于整合留学产业，通过甄选优质的服务提供商入驻，为学生提供一站式服务，15年出国留学、海外移民服务经验保证。全国咨询电话：400-6688-066">
+<meta name="Author" content="fcgliuxue.com 飞出国留学">
+<meta name="keywords" content="飞出国 留学优选 移民评估 海外院校 留学顾问 留学资讯 澳大利亚留学 新西兰大学 英国中介">
+<meta name="Copyright" content="鹏润教育集团 飞出国留学 版权所有">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<title>飞出国</title>
+<title>飞出国留学_全球留学信息发布平台_真正权威的留学平台</title>
 
 <%
     String path = request.getContextPath();

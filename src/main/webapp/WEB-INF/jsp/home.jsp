@@ -596,6 +596,7 @@
 
         .tabbedPanels .examples li p {
             width: 520px;
+            cursor: hand;
         }
 
         .tabbedPanels .examplesCoten {
@@ -1138,7 +1139,7 @@
 
                     <ul class="tabGroup">
                         <span class="moreStudy fr">更多</span>
-                        <li class="tab">留学咨询</li>
+                        <li class="tab">留学资讯</li>
                         <li class="tab selectedTab">留学干货</li>
                         <li class="tab">澳大利亚</li>
                         <li class="tab promoted">新西兰</li>
