@@ -7,9 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.hibernate.metadata.ClassMetadata;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
+import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.Collections;
@@ -21,7 +21,7 @@ import java.util.Map;
  * description:
  */
 public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T, ID> {
-    @Autowired
+    @Resource
     private SessionFactory sf;
 
     private Class<T> persistenctClass;
