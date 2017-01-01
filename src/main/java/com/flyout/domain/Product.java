@@ -67,6 +67,8 @@ public class Product {
     @Column(name = "highlight_pi")
     private String highlight;
 
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
     @Column(name = "intro_pi")
     private String intro;
 

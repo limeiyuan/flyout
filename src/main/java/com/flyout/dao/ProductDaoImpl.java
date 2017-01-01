@@ -3,9 +3,9 @@ package com.flyout.dao;
 import com.flyout.common.dao.BaseHibernateDao;
 import com.flyout.common.enums.CategoryEnum;
 import com.flyout.common.enums.EnableEnum;
+import com.flyout.common.util.AliasToBeanNestedResultTransformer;
 import com.flyout.domain.Product;
 import org.hibernate.criterion.*;
-import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -30,13 +30,16 @@ public class ProductDaoImpl extends BaseHibernateDao<Product, Long> {
             dc.getExecutableCriteria(getSession()).setMaxResults(limit);
         }
         dc.setProjection(Projections.projectionList()
-                .add(Projections.property("photo"), "photo")
                 .add(Projections.property("id"), "id")
                 .add(Projections.property("title"), "title")
-                .add(Projections.property("vender"), "vender")
                 .add(Projections.property("favoriteNum"), "favoriteNum")
+                .add(Projections.property("photo.path"), "photo.path")
+                .add(Projections.property("vender.venderName"), "vender.venderName")
+                .add(Projections.property("vender.photo"), "vender.photo")
         );
-        dc.setResultTransformer(Transformers.aliasToBean(Product.class));
+        dc.createAlias("photo", "photo");
+        dc.createAlias("vender", "vender");
+        dc.setResultTransformer(new AliasToBeanNestedResultTransformer(Product.class));
         return dc.getExecutableCriteria(getSession()).list();
     }
 

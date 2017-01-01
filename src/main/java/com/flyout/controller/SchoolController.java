@@ -84,7 +84,7 @@ public class SchoolController {
             }
             school.setSubject(subject);
             school.setHonour(HtmlUtil.getPlainText(school.getHonour()));
-            school.setDescription("");
+            school.setDescription("".getBytes());
             school.setTerm("");
             school.setFlyDic("");
             school.setPriceCk("");

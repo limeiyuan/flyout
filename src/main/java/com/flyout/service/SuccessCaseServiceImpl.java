@@ -2,9 +2,9 @@ package com.flyout.service;
 
 import com.flyout.dao.SuccessCaseDaoImpl;
 import com.flyout.domain.SuccessCase;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Service
 public class SuccessCaseServiceImpl {
-    @Autowired
+    @Resource
     private SuccessCaseDaoImpl successCaseDao;
 
     public List<SuccessCase> list() {

@@ -207,7 +207,6 @@ public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T
 
             PaginationUtil.setPaginationToRequest(count, pageCount);
         }
-        c.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
         List<T> list = c.list();
         if (isFillOtherInfo) {
             fillOtherInfoList(list);
