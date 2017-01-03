@@ -32,7 +32,7 @@ public class HomeController {
     private BlogServiceImpl blogService;
 
     @Resource
-    private NationServiceImpl nationService;
+    private CarouselWebServiceImpl carouselWebService;
 
     @RequestMapping("index")
     public String index() {
@@ -65,6 +65,7 @@ public class HomeController {
         data.put("blogs_recommend", blogService.getRecommend(6, BlogCategoryEnum.RECOMMEND));
         data.put("blogs_au", blogService.getRecommend(6, BlogCategoryEnum.AUSTRALIA));
         data.put("blogs_nl", blogService.getRecommend(6, BlogCategoryEnum.NZ));
+        data.put("carousels", carouselWebService.getCarousels());
         dto.setData(data);
         return dto;
     }
