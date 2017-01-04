@@ -1,6 +1,7 @@
 package com.flyout.domain;
 
 import com.flyout.common.enums.EnableEnum;
+import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -15,26 +16,32 @@ import java.util.Date;
 public class CarouselWeb {
     @Id
     @GeneratedValue
-    @Column(name = "id_cl")
+    @Column(name="id_cw")
     private Long id;
 
-    @Column(name = "title_cl")
+    @Column(name="title_cw")
     private String title;
 
-    @Column(name = "path_cl")
-    private String path;
+    @Column(name="type_cw")
+    private Integer typeId;
 
-    @Column(name = "order_by_cl")
+    @Formula(value = "case when type_cw='1' then '顾问' when type_cw='2' then '学校' when type_cw='3' then '活动' when type_cw='4' then '方案' when type_cw='5' then '网页URL' when type_cw='6' then '问答' end")
+    private String typeName;
+
+    @Column(name="detail_cw")
+    private String detail;
+
+    @Column(name="order_by_cw")
     private Integer order;
 
-    @Column(name = "createtime_cl")
+    @Column(name="createtime_cw")
     private Date createDate = new Date();
 
     @ManyToOne()
-    @JoinColumn(name = "photo_id_cl")
+    @JoinColumn(name = "photo_id_cw")
     private Photo photo;
 
-    @Column(name = "enable_b")
+    @Column(name = "enable_cw")
     @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
             @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
             @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
@@ -58,12 +65,28 @@ public class CarouselWeb {
         this.title = title;
     }
 
-    public String getPath() {
-        return path;
+    public Integer getTypeId() {
+        return typeId;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public Integer getOrder() {
@@ -80,6 +103,14 @@ public class CarouselWeb {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 
     public EnableEnum getEnable() {

@@ -1325,6 +1325,7 @@
                 $scope.blogs_recommend = result.data.blogs_recommend;
                 $scope.blogs_au = result.data.blogs_au;
                 $scope.blogs_nl = result.data.blogs_nl;
+                $scope.carousels = result.data.carousels;
                 $.each($scope.advisers, function (index) {
                     if (index < 5) {
                         adviserShowList.push(index);
@@ -1335,6 +1336,7 @@
                 });
 
                 $scope.$broadcast('initialed');
+                $scope.addSlide();
                 $('#queryCoverModal').modal('hide');
             }, function error() {
                 $('#queryCoverModal').modal('hide');
@@ -1343,26 +1345,23 @@
         };
 
         $scope.addSlide = function () {
-            slides.push({
-                id: 1,
-                image: '<%=resourcePath%>/img/home/banner.jpg',
-                text: '测试图片'
-            });
-            slides.push({
-                id: 2,
-                image: '<%=resourcePath%>/img/home/banner.jpg',
-                text: '测试图片'
-            });
-            slides.push({
-                id: 3,
-                image: '<%=resourcePath%>/img/home/banner.jpg',
-                text: '测试图片'
-            });
-            slides.push({
-                id: 4,
-                image: '<%=resourcePath%>/img/home/banner.jpg',
-                text: '测试图片'
-            });
+            if ($scope.carousels && $scope.carousels.length > 0) {
+                slides = [];
+                $.each($scope.carousels, function (index, item) {
+                    slides.push({
+                        id: item.id,
+                        image: '<%=picPath%>' + item.photo.path,
+                        text: item.title
+                    });
+                });
+            } else {
+                slides.push({
+                    id: 1,
+                    image: '<%=resourcePath%>/img/home/banner.jpg',
+                    text: '测试图片'
+                });
+            }
+            $scope.slides = slides;
         };
 
         $scope.caseChange = function (count) {
@@ -1432,7 +1431,6 @@
         };
 
         $scope.initial();
-        $scope.addSlide();
 
         $scope.$on('adviserRepeat', function () {
             $scope.render();
