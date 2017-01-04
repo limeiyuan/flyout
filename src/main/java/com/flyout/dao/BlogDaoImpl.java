@@ -5,7 +5,11 @@ import com.flyout.common.enums.BlogCategoryEnum;
 import com.flyout.common.enums.EnableEnum;
 import com.flyout.common.util.AliasToBeanNestedResultTransformer;
 import com.flyout.domain.Blog;
-import org.hibernate.criterion.*;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,7 +27,7 @@ public class BlogDaoImpl extends BaseHibernateDao<Blog, Long> {
         if (category != null) {
             dc.add(Restrictions.eq("category", category));
         }
-        dc.createAlias("account", "account");
+        dc.createAlias("account", "account", JoinType.LEFT_OUTER_JOIN);
         dc.setProjection(Projections.projectionList()
                 .add(Projections.property("id"), "id")
                 .add(Projections.property("account.id"), "account.id")

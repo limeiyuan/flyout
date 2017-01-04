@@ -929,17 +929,16 @@
                 index="$index">
                 <li>
                     <div class="fx_banner_inner fx_grid_c1">
-                        <div class="child child0" data-z="1"><img ng-src="{{slide.image}}"></div>
+                        <div class="child child0" data-z="1" ng-click="visitBanner()"><img ng-src="{{slide.image}}"></div>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="estimateContainer">
-            <div class="estimate">
+        <div class="estimateContainer" ng-click="visitBanner()">
+            <div class="estimate" ng-click="$event.stopPropagation();">
                 <div id="asseSele">
                     <span class="active" id="studyAsse">留学评估</span><span id="colonAsse">移民评估</span>
                 </div>
-
 
                 <ul class="asseContent">
                     <li class="focusCur intentionA">
@@ -1410,6 +1409,15 @@
             });
         };
 
+        $scope.visitBanner = function () {
+            var curSlide = $scope.carousels[$scope.active];
+            if (curSlide.typeName == '方案') {
+                window.location.href = "<%=path%>/product/detail.htm?id=" + curSlide.detail;
+            } else if (curSlide.typeName == '学校') {
+                window.location.href = "<%=path%>/school/detail.htm?id=" + curSlide.detail;
+            }
+        };
+
         $scope.estimate = function () {
             //TODO::提交评估结果
             window.location.href = "<%=path%>/school/estimate.htm";
@@ -1434,7 +1442,7 @@
 
         $scope.$on('adviserRepeat', function () {
             $scope.render();
-        })
+        });
     }]);
 
     app.directive('adviserLoaded', function () {
@@ -1457,7 +1465,7 @@
                 if (scope.$last === true) {
                     $('.productsList ul li').hover(function () {
                         $(this).addClass("productCurr").siblings().removeClass('productCurr');
-                        $('.productFly').css('marginTop', '30')
+                        $('.productFly').css('marginTop', '30');
                         $(this).find('.productFly').css('marginTop', '0')
                     });
                 }

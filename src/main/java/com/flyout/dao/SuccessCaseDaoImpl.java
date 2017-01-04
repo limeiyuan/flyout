@@ -8,6 +8,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,9 +22,9 @@ public class SuccessCaseDaoImpl extends BaseHibernateDao<SuccessCase, Long> {
     public List<SuccessCase> list(Integer limit) {
         DetachedCriteria dc = createDetachedCriteria();
         dc.add(Restrictions.eq("enable", EnableEnum.enable));
-        dc.createAlias("school", "school");
-        dc.createAlias("nation", "nation");
-        dc.createAlias("photo", "photo");
+        dc.createAlias("school", "school", JoinType.LEFT_OUTER_JOIN);
+        dc.createAlias("nation", "nation", JoinType.LEFT_OUTER_JOIN);
+        dc.createAlias("photo", "photo", JoinType.LEFT_OUTER_JOIN);
         dc.setProjection(Projections.projectionList()
                 .add(Projections.property("school.badgePhoto"), "school.badgePhoto")
                 .add(Projections.property("school.name"), "school.name")
