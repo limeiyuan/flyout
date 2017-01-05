@@ -1164,7 +1164,7 @@
                         </div>
                         <div class="content">
                             <ul class="examples examplesCoten">
-                                <li ng-repeat="blog in blogs_nz" ng-click="blogDetail(blog.id)"><p>{{blog.title}}</p><span>{{blog.createTime | date:'yyyy-MM-dd'}}</span>
+                                <li ng-repeat="blog in blogs_nl" ng-click="blogDetail(blog.id)"><p>{{blog.title}}</p><span>{{blog.createTime | date:'yyyy-MM-dd'}}</span>
                                 </li>
                             </ul>
                         </div>
