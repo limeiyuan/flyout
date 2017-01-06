@@ -34,6 +34,9 @@ public class HomeController {
     @Resource
     private CarouselWebServiceImpl carouselWebService;
 
+    @Resource
+    private QuestionServiceImpl questionService;
+
     @RequestMapping("index")
     public String index() {
         return "redirect:home/home.htm";
@@ -66,6 +69,7 @@ public class HomeController {
         data.put("blogs_au", blogService.getRecommend(6, BlogCategoryEnum.AUSTRALIA));
         data.put("blogs_nl", blogService.getRecommend(6, BlogCategoryEnum.NZ));
         data.put("carousels", carouselWebService.getCarousels());
+        data.put("questions", questionService.getRecommend(10));
         dto.setData(data);
         return dto;
     }

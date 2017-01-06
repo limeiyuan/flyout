@@ -1,13 +1,13 @@
 package com.flyout.service;
 
 import com.flyout.common.auth.AuthHelper;
-import com.flyout.common.dto.CustomServiceDto;
 import com.flyout.common.util.AuthUtil;
 import com.flyout.common.util.RandomUtil;
 import com.flyout.dao.AccountDaoImpl;
 import com.flyout.domain.Account;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * Created by LiMeiyuan on 2016/11/9 16:26.
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AccountServiceImpl {
-    @Autowired
+    @Resource
     private AccountDaoImpl accountDao;
 
     public Boolean isUsernameDulplicate(String username) {

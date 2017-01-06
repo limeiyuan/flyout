@@ -1,6 +1,8 @@
 package com.flyout.domain;
 
+import com.flyout.common.enums.EnableEnum;
 import org.hibernate.annotations.Formula;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,7 +24,12 @@ public class Question {
     private String content;
 
     @Column(name = "enable_qt")
-    private Integer enable;
+    @Type(type = "com.flyout.common.util.EnumUserType", parameters = {
+            @org.hibernate.annotations.Parameter(name = "enumClassName", value = "com.flyout.common.enums.EnableEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateEnumMthd", value = "recreateEnum"),
+            @org.hibernate.annotations.Parameter(name = "recreateStringMthd", value = "recreateString")
+    })
+    private EnableEnum enable;
 
     @Column(name = "order_qt")
     private Integer order;
@@ -40,7 +47,6 @@ public class Question {
 
     @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
     private List<Answer> answerList;
-
 
     @Formula(value = "(select count(*) from question_answer_qa q where q.question_id_qa = id_qt)")
     private Integer answerCount;
@@ -61,11 +67,11 @@ public class Question {
         this.content = content;
     }
 
-    public Integer getEnable() {
+    public EnableEnum getEnable() {
         return enable;
     }
 
-    public void setEnable(Integer enable) {
+    public void setEnable(EnableEnum enable) {
         this.enable = enable;
     }
 

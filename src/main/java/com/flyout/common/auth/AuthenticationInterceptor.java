@@ -5,10 +5,10 @@ import com.flyout.common.util.RandomUtil;
 import com.flyout.common.util.WebContextUtil;
 import com.flyout.controller.RongyunController;
 import com.flyout.domain.Account;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -28,7 +28,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         this.forbidUrls = forbidUrls;
     }
 
-    @Autowired
+    @Resource
     private RongyunController rongyunController;
 
     @Override

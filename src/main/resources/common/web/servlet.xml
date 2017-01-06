@@ -49,6 +49,7 @@
             <bean class="com.flyout.common.auth.AuthenticationInterceptor">
                 <property name="forbidUrls">
                     <list>
+                        <value type="java.lang.String">/blog/create.htm</value>
                     </list>
                 </property>
             </bean>

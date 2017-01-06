@@ -477,6 +477,7 @@
             width: 958px;
             height: 180px;
             float: left;
+            padding-top: 20px;
         }
 
         .queAnsExam .goQues {
@@ -489,8 +490,11 @@
 
         .examples li {
             font-size: 14px;
+            height: 40px;
             color: #666;
-            margin: 20px 24px;
+            margin-left: 24px;
+            margin-right: 24px;
+            cursor: hand;
         }
 
         .examples li p {
@@ -1113,16 +1117,15 @@
         </div>
         <div class="queAnsExam">
             <div class="examples">
-                <ul>
-                    <li><p>Jerry：去英国留学有什么要求？准备去读研，商业专科。</p><span>2016-3-17</span></li>
-                    <li><p>Cinderella：你好，我想去日本留学，大专，学翻译或者商务，大概咨询费用需要多少？</p><span>2016-3-21</span></li>
-                    <li><p>小鱼米：你好，我今天37岁，想移民去澳洲，目前在医院检验科上班，专业是临床检验诊断学，硕士研究生，不知道可不可以</p><span>2016-3-17</span></li>
-                    <li class="quePre"><P>李一毛虫：去英国留学有什么要求？准备去读研，商业专科。</P><span>2016-3-17</span></li>
+                <ul class="slide-list js-slide-list">
+                    <li ng-repeat="question in questions | limitTo:4" ng-click="questionDetail(question.id)">
+                        <p>{{question.account.screenname}}：{{question.content}}</p><span>{{question.createTime|date:'yyyy-MM-dd'}}</span>
+                    </li>
                 </ul>
             </div>
             <div class="goQues">
                 <div id="freeQue">免费提问</div>
-                <p>明显顾问为您专业解答</p>
+                <p>明星顾问为您专业解答</p>
             </div>
         </div>
     </div>
@@ -1325,6 +1328,7 @@
                 $scope.blogs_au = result.data.blogs_au;
                 $scope.blogs_nl = result.data.blogs_nl;
                 $scope.carousels = result.data.carousels;
+                $scope.questions = result.data.questions;
                 $.each($scope.advisers, function (index) {
                     if (index < 5) {
                         adviserShowList.push(index);
@@ -1435,6 +1439,10 @@
             window.location.href = "<%=path%>/blog/detail.htm?id=" + id;
         };
 
+        $scope.questionDetail = function (id) {
+            window.location.href = "<%=path%>/question/detail.htm?id=" + id;
+        }
+
         $scope.render = function () {
         };
 
@@ -1511,9 +1519,30 @@
             $(this).parents('li').find('ul').slideUp(1);
             $(this).parents('li')[0].style.borderRadius = "20px";
         });
-        /* $('.son_ul').hover(function () {
-         $(this).parents('li')[0].style.borderRadius="20px";
-         })*/
+
+        //问答滚动
+        var doScroll = function () {
+            var $parent = $('.js-slide-list');
+            var $first = $parent.find('li:first');
+            var height = $first.height();
+            $.each($parent.find('li'), function (index, item) {
+                item = $(item);
+                if (index < 5) {
+                    item.css('display', 'block');
+                } else {
+                    item.css('display', 'none');
+                }
+            });
+            $first.animate({
+                height: 0
+            }, 1500, function () {
+                $first.css('height', height).appendTo($parent);
+                $first.css('display', 'none');
+            });
+        };
+        setInterval(function () {
+            doScroll()
+        }, 2000);
     });
 </script>
 <%@include file="footer.jsp" %>

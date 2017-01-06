@@ -354,4 +354,9 @@ public class Account {
     public void setProfit(BigDecimal profit) {
         this.profit = profit;
     }
+
+    @Transient
+    public String getType() {
+        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+    }
 }
