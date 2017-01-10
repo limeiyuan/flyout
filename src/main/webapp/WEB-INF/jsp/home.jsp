@@ -1118,13 +1118,13 @@
         <div class="queAnsExam">
             <div class="examples">
                 <ul class="slide-list js-slide-list">
-                    <li ng-repeat="question in questions | limitTo:4" ng-click="questionDetail(question.id)">
+                    <li ng-repeat="question in questions" ng-click="questionDetail(question.id)" question-loaded>
                         <p>{{question.account.screenname}}：{{question.content}}</p><span>{{question.createTime|date:'yyyy-MM-dd'}}</span>
                     </li>
                 </ul>
             </div>
             <div class="goQues">
-                <div id="freeQue">免费提问</div>
+                <div id="freeQue" onclick="createQuestion()">免费提问</div>
                 <p>明星顾问为您专业解答</p>
             </div>
         </div>
@@ -1282,7 +1282,7 @@
                         <img src="http://www.jiemodui.com/Static/HomeV2/images/jmd_logo.svg" alt=""></a></li>
                     <li><a href="http://www.51vv.com/zhuanti/youthModel03.shtml" target="_blank">
                         <img src="http://www.51vv.com/images_1405/logo.png" alt=""></a></li>
-                    <li><a href="http://www.donews.com/m/2927947" target="_blank">
+                    <li><a href="http://www.donews.com/dtv/201605/2927947.shtm" target="_blank">
                         <img src="http://ui.donews.com/donews2013/img/donews_logo.gif" alt=""></a></li>
                     <li><a href="http://qianbidao.baijia.baidu.com/article/441594" target="_blank">
                         <img src="http://baijia.baidu.com/static/home/widget/header/images/logo_7745737.jpg" alt=""></a>
@@ -1297,6 +1297,20 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="questionDialog" title="Create new user">
+    <p class="validateTips">All form fields are required.</p>
+
+    <form>
+        <fieldset>
+            <label for="content">Name</label>
+            <input type="text" name="content" id="content" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+    </form>
 </div>
 
 <script type="text/javascript">
@@ -1414,11 +1428,14 @@
         };
 
         $scope.visitBanner = function () {
+            //轮播图点击
             var curSlide = $scope.carousels[$scope.active];
             if (curSlide.typeName == '方案') {
                 window.location.href = "<%=path%>/product/detail.htm?id=" + curSlide.detail;
             } else if (curSlide.typeName == '学校') {
                 window.location.href = "<%=path%>/school/detail.htm?id=" + curSlide.detail;
+            } else if (curSlide.typeName = 'URL') {
+                window.open(curSlide.detail, '_blank');
             }
         };
 
@@ -1441,7 +1458,7 @@
 
         $scope.questionDetail = function (id) {
             window.location.href = "<%=path%>/question/detail.htm?id=" + id;
-        }
+        };
 
         $scope.render = function () {
         };
@@ -1481,8 +1498,66 @@
             }
         };
     });
+    app.directive('questionLoaded', function () {
+        return {
+            restrict: 'A',
+            link: function (scope) {
+                if (scope.$last === true) {
+                    doScroll();
+                }
+            }
+        }
+    });
 </script>
 <script type="text/javascript">
+
+    //问答滚动
+    function doScroll() {
+        var $parent = $('.js-slide-list');
+        var $first = $parent.find('li:first');
+        var height = $first.height();
+        $.each($parent.find('li'), function (index, item) {
+            item = $(item);
+            if (index < 5) {
+                item.css('display', 'block');
+            } else {
+                item.css('display', 'none');
+            }
+        });
+        $first.animate({
+            height: 0
+        }, 1500, function () {
+            $first.css('height', height).appendTo($parent);
+            $first.css('display', 'none');
+        });
+    }
+
+    //添加问答
+    questionDialog = $("#questionDialog").dialog({
+        autoOpen: false,
+        height: 400,
+        width: 350,
+        modal: true,
+        buttons: {
+            "提交": function () {
+
+            },
+            '取消': function () {
+                questionDialog.dialog("close");
+            }
+        },
+        close: function () {
+            form[0].reset();
+        }
+    });
+
+    function createQuestion() {
+        debugger;
+        if (isLogin()) {
+            questionDialog.show();
+        }
+    }
+
     $(document).ready(function () {
         //选项卡
         $(".tabGroup li").click(function () {
@@ -1520,26 +1595,6 @@
             $(this).parents('li')[0].style.borderRadius = "20px";
         });
 
-        //问答滚动
-        var doScroll = function () {
-            var $parent = $('.js-slide-list');
-            var $first = $parent.find('li:first');
-            var height = $first.height();
-            $.each($parent.find('li'), function (index, item) {
-                item = $(item);
-                if (index < 5) {
-                    item.css('display', 'block');
-                } else {
-                    item.css('display', 'none');
-                }
-            });
-            $first.animate({
-                height: 0
-            }, 1500, function () {
-                $first.css('height', height).appendTo($parent);
-                $first.css('display', 'none');
-            });
-        };
         setInterval(function () {
             doScroll()
         }, 2000);
