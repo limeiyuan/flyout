@@ -605,6 +605,7 @@
 
         .tabbedPanels .examplesCoten {
             height: 286px;
+            padding-top: 20px;
         }
 
         .tabbedPanels ul {
@@ -1503,7 +1504,15 @@
             restrict: 'A',
             link: function (scope) {
                 if (scope.$last === true) {
-                    doScroll();
+                    var $parent = $('.js-slide-list');
+                    $.each($parent.find('li'), function (index, item) {
+                        item = $(item);
+                        if (index < 5) {
+                            item.css('display', 'block');
+                        } else {
+                            item.css('display', 'none');
+                        }
+                    });
                 }
             }
         }
