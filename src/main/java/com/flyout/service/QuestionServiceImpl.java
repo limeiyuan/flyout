@@ -1,5 +1,6 @@
 package com.flyout.service;
 
+import com.flyout.common.enums.EnableEnum;
 import com.flyout.dao.QuestionDaoImpl;
 import com.flyout.domain.Question;
 import org.hibernate.Hibernate;
@@ -18,6 +19,7 @@ public class QuestionServiceImpl {
     private QuestionDaoImpl questionDao;
 
     public void save(Question question) {
+        question.setEnable(EnableEnum.enable);
         questionDao.saveOrUpdate(question, question.getId());
     }
 

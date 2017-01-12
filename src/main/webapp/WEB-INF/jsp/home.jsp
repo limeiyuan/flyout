@@ -475,9 +475,10 @@
 
         .examples {
             width: 958px;
-            height: 180px;
+            height: 178px;
             float: left;
             padding-top: 20px;
+            overflow: hidden;
         }
 
         .queAnsExam .goQues {
@@ -1125,7 +1126,7 @@
                 </ul>
             </div>
             <div class="goQues">
-                <div id="freeQue" onclick="createQuestion()">免费提问</div>
+                <div id="freeQue" onclick="createQuestion(event)">免费提问</div>
                 <p>明星顾问为您专业解答</p>
             </div>
         </div>
@@ -1300,16 +1301,11 @@
     </div>
 </div>
 
-<div id="questionDialog" title="Create new user">
-    <p class="validateTips">All form fields are required.</p>
-
-    <form>
+<div id="questionDialog" title="提问" class="questionDialog">
+    <form id="questionForm">
         <fieldset>
-            <label for="content">Name</label>
-            <input type="text" name="content" id="content" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-
-            <!-- Allow form submission with keyboard without duplicating the dialog button -->
-            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            <textarea name="content" id="content" placeholder="说出你的问题，我们将安排专人尽快解答"
+                      class="text ui-widget-content ui-corner-all" style="width: 300px;height: 80px;resize:none"></textarea>
         </fieldset>
     </form>
 </div>
@@ -1544,26 +1540,42 @@
     //添加问答
     questionDialog = $("#questionDialog").dialog({
         autoOpen: false,
-        height: 400,
+        height: 200,
         width: 350,
-        modal: true,
+        modal: false,
+        position: {
+            my: "center center",
+            at: "center center",
+            of: (".queAns")
+        },
         buttons: {
             "提交": function () {
-
+                $.ajax({
+                    url: '<%=path%>/question/submit.htm',
+                    data: $(questionForm[0]).serialize(),
+                    method: 'post',
+                    success: function (result) {
+                        showMessage(result.message, function () {
+                            questionDialog.dialog("close");
+                        });
+                    }
+                });
             },
             '取消': function () {
                 questionDialog.dialog("close");
             }
         },
         close: function () {
-            form[0].reset();
+            questionForm[0].reset();
         }
     });
 
-    function createQuestion() {
-        debugger;
+    questionForm = questionDialog.find('form');
+
+    function createQuestion(event) {
         if (isLogin()) {
-            questionDialog.show();
+//            questionDialog.dialog("option", "appendto", $('.queAns')[0]);
+            questionDialog.dialog("open");
         }
     }
 

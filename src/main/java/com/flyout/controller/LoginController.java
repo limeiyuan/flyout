@@ -9,11 +9,12 @@ import com.flyout.common.util.PhoneUtil;
 import com.flyout.domain.Account;
 import com.flyout.service.AccountServiceImpl;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
 
 /**
  * Created by LiMeiyuan on 2016/11/9 16:01.
@@ -22,10 +23,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("login")
 public class LoginController {
-    @Autowired
+    @Resource
     private AccountServiceImpl accountService;
 
-    @Autowired
+    @Resource
     private MemcachedManager memcachedManager;
 
     @RequestMapping("index")

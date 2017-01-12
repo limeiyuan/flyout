@@ -2,9 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.flyout.common.auth.AuthHelper" %>
 <%@ page import="com.flyout.domain.Account" %>
-<%
-    Account user = AuthHelper.getLoginUser();
-%>
 <style type="text/css">
     body,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,div,span,a,input,img,p{ margin: 0; padding: 0;}
     body{ font-size: 12px; font-family: "Microsoft YaHei","Arial";background: #f7f7f7;}
@@ -71,7 +68,7 @@
         </div>
         <div class="topHeadContentRight fr">
             <ul class="topHeadContentRightUl">
-                <li class="sayHi"><a href="javascript:void(0)">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user==null?"":user.getScreenname()%></a><a href="javascript:void(0)" onclick="logout()">退出</a></li>
+                <li class="sayHi"><a href="javascript:void(0)">Hi,</a><a href="/profile/index.htm" class="hiName"><%=user.getId()==null?"":user.getScreenname()%></a><a href="javascript:void(0)" onclick="logout()">退出</a></li>
                 <li class="regisLogin"><a href="/login/index.htm" class="login">登录</a><a href="/login/register.htm">注册</a></li>
                 <li class="shuxian">|</li>
                 <li class="goalCol"><a href="javascript:void(0)">目标院校</a></li>
@@ -147,7 +144,7 @@
 </div>
 
 <script type="text/javascript">
-    var username = '<%=user==null?"":"123"%>';
+    var username = '<%=user.getId()==null?"":user.getScreenname()%>';
     if (!username) {
         $('.sayHi').css({"display": "none"});
     } else {
