@@ -588,10 +588,9 @@
         }
 
         .studyTab .vidoBox .vidoContent {
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 90%;
             background: #ccc;
-            margin: 5% auto;
         }
 
         .tabbedPanels {
@@ -1180,7 +1179,12 @@
             <div class="vidoBox fr">
                 <h3>相关视频 <a href="javascript:void(0)">更多</a></h3>
                 <div>
-                    <div class="vidoContent"></div>
+                    <div class="vidoContent">
+                        <video controls style="width:100%;height: 100%;">
+                            <source src="<%=resourcePath%>/videos/introduce.mp4" type="video/mp4">
+                            不好意思，您浏览器版本过低无法播放视频
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
