@@ -40,13 +40,13 @@
 <link type="text/css" href="<%=resourcePath%>/css/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
 
 <script src="<%=resourcePath%>/js/jquery-3.1.1.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/angular.1.6.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/angular-animate.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/angular-resource.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular-animate.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular-resource.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
 <script src="<%=resourcePath%>/js/angular/ui-bootstrap-tpls-2.2.0.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/bootstrap/bootstrap.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/rongyun/RongIMWidget.js" type="text/javascript"></script>
-<script src="<%=resourcePath%>/js/jquery-ui.js" type="text/javascript"></script>
+<script src="<%=resourcePath%>/js/bootstrap/bootstrap.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/rongyun/RongIMWidget.min.js" type="text/javascript"></script>
+<script src="<%=resourcePath%>/js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<%=resourcePath%>/js/bootbox.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     var username = '<%=user.getUsername()%>'
