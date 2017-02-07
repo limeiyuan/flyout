@@ -49,7 +49,7 @@
 <script src="<%=resourcePath%>/js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<%=resourcePath%>/js/bootbox.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    var username = '<%=user.getUsername()%>'
+    var username = '<%=user.getUsername()%>';
 
     function isLogin() {
         if (username) {
