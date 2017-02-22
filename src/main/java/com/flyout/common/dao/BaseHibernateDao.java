@@ -1,7 +1,10 @@
 package com.flyout.common.dao;
 
+import com.flyout.common.OrderInfo;
 import com.flyout.common.PaginationInfo;
+import com.flyout.common.hibernate.PropertyFilter;
 import com.flyout.common.util.GenericUtil;
+import com.flyout.common.util.HibernateUtils;
 import com.flyout.common.util.PaginationUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.*;
@@ -181,6 +184,15 @@ public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T
         return doQuery(c, true);
     }
 
+    protected List<T> query(DetachedCriteria dc, List<PropertyFilter> filters) {
+        Criteria c = dc.getExecutableCriteria(getSession());
+        Criterion[] cs = HibernateUtils.buildCriterion(filters);
+        for (Criterion criteria : cs) {
+            c.add(criteria);
+        }
+        return doQuery(c, true);
+    }
+
     protected List<T> queryBase(DetachedCriteria dc) {
         Criteria c = dc.getExecutableCriteria(getSession());
         return doQuery(c, false);
@@ -192,13 +204,13 @@ public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T
             int count = Integer.parseInt(c.setProjection(Projections.countDistinct("id")).uniqueResult().toString());
             c.setProjection(null);
 
-            int pageCount = count / pageInfo.getpageSizes();
-            if (count % pageInfo.getpageSizes() > 0) {
+            int pageCount = count / pageInfo.getPageSizes();
+            if (count % pageInfo.getPageSizes() > 0) {
                 pageCount++;
             }
 
-            int pageNo = pageInfo.getpageNo();
-            int pageSize = pageInfo.getpageSizes();
+            int pageNo = pageInfo.getPageNo();
+            int pageSize = pageInfo.getPageSizes();
             if (pageNo <= 0) pageNo = 1;
             if (pageNo > pageCount) pageNo = pageCount;
 
@@ -206,6 +218,15 @@ public class BaseHibernateDao<T, ID extends Serializable> implements CommonDao<T
                     .setMaxResults(pageSize);
 
             PaginationUtil.setPaginationToRequest(count, pageCount);
+        }
+
+        OrderInfo order = PaginationUtil.getOrderFromRequest();
+        if (order != null) {
+            if (order.getSequence().equalsIgnoreCase("asc")) {
+                c.addOrder(Order.asc(order.getName()));
+            } else {
+                c.addOrder(Order.desc(order.getName()));
+            }
         }
         List<T> list = c.list();
         if (isFillOtherInfo) {

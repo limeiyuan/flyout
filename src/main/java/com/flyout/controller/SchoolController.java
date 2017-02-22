@@ -2,15 +2,18 @@ package com.flyout.controller;
 
 import com.flyout.common.cache.MemcachedManager;
 import com.flyout.common.dto.PaginationDto;
+import com.flyout.common.hibernate.PropertyFilter;
 import com.flyout.common.util.HtmlUtil;
+import com.flyout.domain.NationInfo;
 import com.flyout.domain.SchoolInfo;
+import com.flyout.service.NationServiceImpl;
 import com.flyout.service.SchoolServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,17 +23,22 @@ import java.util.List;
 @Controller
 @RequestMapping("school")
 public class SchoolController {
-    @Autowired
+    @Resource
     private SchoolServiceImpl schoolService;
 
-    @Autowired
+    @Resource
     private MemcachedManager memcachedManager;
+
+    @Resource
+    private NationServiceImpl nationService;
 
     @RequestMapping("index")
     public String index(String dataId, ModelMap map) {
         if (dataId != null) {
             map.put("dataId", dataId);
         }
+        List<NationInfo> nations = nationService.getNations(null);
+        map.put("nations", nations);
         return "school/list";
     }
 
@@ -62,8 +70,9 @@ public class SchoolController {
 
     @RequestMapping("query")
     @ResponseBody
-    public PaginationDto<SchoolInfo> getSchoolList(String name) {
+    public PaginationDto<SchoolInfo> getSchoolList(String name, ModelMap map) {
         PaginationDto<SchoolInfo> dto = new PaginationDto<>();
+        List<PropertyFilter> filters = PropertyFilter.build(map);
         List<SchoolInfo> schools = schoolService.getSchoolList(name);
         dto.autoFill(schools);
         return dto;
@@ -84,7 +93,7 @@ public class SchoolController {
             }
             school.setSubject(subject);
             school.setHonour(HtmlUtil.getPlainText(school.getHonour()));
-            school.setDescription("".getBytes());
+            school.setDescription("");
             school.setTerm("");
             school.setFlyDic("");
             school.setPriceCk("");

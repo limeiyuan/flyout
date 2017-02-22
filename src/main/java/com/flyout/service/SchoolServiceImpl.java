@@ -2,9 +2,9 @@ package com.flyout.service;
 
 import com.flyout.dao.SchoolDaoImpl;
 import com.flyout.domain.SchoolInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Service
 public class SchoolServiceImpl {
-    @Autowired
+    @Resource
     private SchoolDaoImpl schoolDao;
 
     public List<SchoolInfo> getSchoolList(String name) {

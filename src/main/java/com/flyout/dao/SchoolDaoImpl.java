@@ -2,6 +2,7 @@ package com.flyout.dao;
 
 import com.flyout.common.dao.BaseHibernateDao;
 import com.flyout.common.enums.EnableEnum;
+import com.flyout.common.hibernate.PropertyFilter;
 import com.flyout.domain.SchoolInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.Criterion;
@@ -18,6 +19,11 @@ import java.util.List;
  */
 @Repository
 public class SchoolDaoImpl extends BaseHibernateDao<SchoolInfo, Long> {
+    public List<SchoolInfo> query(List<PropertyFilter> filters) {
+        DetachedCriteria dc = createDetachedCriteria();
+        return query(dc, filters);
+    }
+
     public List<SchoolInfo> findByName(String name) {
         DetachedCriteria dc = createDetachedCriteria();
         if (StringUtils.isNotEmpty(name)) {

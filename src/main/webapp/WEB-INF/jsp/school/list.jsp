@@ -68,6 +68,7 @@
             background: #fff;
             left: 52px;
         }
+
         .school_result .case_list .son_ul1 {
             left: 33px;
         }
@@ -122,7 +123,7 @@
             width: 25%;
             height: 250px;
             border-radius: 10px;
-            padding:0 10px;
+            padding: 0 10px;
             background: #fff;
             position: relative;
         }
@@ -154,7 +155,7 @@
 
         .school_form .fenye {
             text-align: center;
-            margin:0 auto;
+            margin: 0 auto;
             color: #999;
             padding-bottom: 5px;
         }
@@ -168,18 +169,32 @@
             text-align: center;
             line-height: 25px;
         }
+
         .school_form .fenye p {
-          display: inline-block;;vertical-align:bottom;
+            display: inline-block;;
+            vertical-align: bottom;
         }
+
         .school_form .pagination > li {
             float: left;
-            margin: 0 5px;}
-        .school_form .pagination{margin: 15px 0 0 0;vertical-align: bottom;}
-        .school_form .pagination  a{color: #999;}
+            margin: 0 5px;
+        }
+
+        .school_form .pagination {
+            margin: 15px 0 0 0;
+            vertical-align: bottom;
+        }
+
+        .school_form .pagination a {
+            color: #999;
+        }
+
         .school_form .pagination > .active > a {
             border-color: #0099ec;
             background: #0099ec;
-            color: #fff;}
+            color: #fff;
+        }
+
         .school_form .fenye .cur {
             color: #fff;
             background: #0099ec;
@@ -215,11 +230,9 @@
         <ul>
             <li>国家 <input class="inte_choice" type="text" placeholder="请选择">
                 <ul class="son_ul son_ul1" style="display: none">
-                    <li>选选项一选项一选项一选项一项一</li>
-                    <li>选项二</li>
-                    <li>选项三</li>
-                    <li>选项选项一选项一选项一四</li>
-                    <li>选项五</li>
+                    <c:forEach items="${nations}" var="nation">
+                        <li ng-click="addProperty('filter_EQL_nation.id',${nation.id})">${nation.name}</li>
+                    </c:forEach>
                 </ul>
             </li>
             <li>学校性质<input class="inte_choice" type="text" placeholder="请选择">
@@ -247,7 +260,7 @@
             <ul>
                 <li class="current" ng-click="query('order')">QS排名 ↓</li>
                 <li ng-click="query('rate')">人气 ↓</li>
-                <li class="school_total fr">共有<span>12000</span>所大学</li>
+                <li class="school_total fr">共有<span>{{pagination.count}}</span>所大学</li>
             </ul>
         </div>
         <div class="school_form">
@@ -261,7 +274,7 @@
                     <p class="school_area">所在地区：{{school.nation.name}}</p>
                 </li>
             </ul>
-           <%-- <p class="fenye">26条记录 1/2 <span class="cur">1</span><span>2</span> 下一条</p>--%>
+            <%-- <p class="fenye">26条记录 1/2 <span class="cur">1</span><span>2</span> 下一条</p>--%>
 
             <div class="fenye cl" ng-controller="paginationCtrl">
                 <p class="fenye">{{totalItems}}条记录&nbsp;{{currentPage}}/{{numPages}}</p>
@@ -290,19 +303,19 @@
 <script>
     $('.son_ul').hide(); //初始ul隐藏
     $('.inte_choice').click(function () { //鼠标移动函数
-                $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
-                $(this).parent().find('li').hover(function () {
-                    $(this).addClass('hover')
-                }, function () {
-                    $(this).removeClass('hover')
-                }); //li的hover效果
-                $(this).parent().hover(function () {
-                        },
-                        function () {
-                            $(this).parent().find("ul.son_ul").slideUp();
-                        }
-                );
-            }
+            $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
+            $(this).parent().find('li').hover(function () {
+                $(this).addClass('hover')
+            }, function () {
+                $(this).removeClass('hover')
+            }); //li的hover效果
+            $(this).parent().hover(function () {
+                },
+                function () {
+                    $(this).parent().find("ul.son_ul").slideUp();
+                }
+            );
+        }
     );
     $('ul.son_ul li').click(function () {
         $(this).parents('li').find('input').val($(this).html());
@@ -316,16 +329,18 @@
         $scope.pagination = {"pageNo": "1", "pageCount": "1"};
         $scope.sortField = "";
         $scope.sortOrder = true;
+        $scope.properties = {};
 
         $scope.query = function (sortField) {
             var keyword = encodeURIComponent($scope.queryObj);
             var timestamp = (new Date()).valueOf();
             var url = "query.htm?timestamp=" + timestamp + "&name=" + keyword;
             url += '&pageNo=' + $scope.pagination.pageNo
-                    + '&sortField=' + $scope.sortField + '&sortOrder=' + $scope.sortOrder;
+                + '&sortField=' + $scope.sortField + '&sortOrder=' + $scope.sortOrder;
             $http({
                 method: 'GET',
-                url: url
+                url: url,
+                data: $scope.properties
             }).then(function success(response) {
                 var result = response.data;
                 $scope.schools = result.data;
@@ -337,6 +352,10 @@
                 $('#queryCoverModal').modal('hide');
                 $scope.errorMsg = '发生未知错误，请与系统管理员联系！';
             });
+        };
+
+        $scope.addProperty = function (name, value) {
+            $scope.properties[name] = value;
         };
 
         $scope.detail = function (id) {
