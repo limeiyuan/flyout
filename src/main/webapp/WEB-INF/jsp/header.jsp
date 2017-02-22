@@ -228,7 +228,7 @@
     }
 
     .search a {
-        width: 80px;
+        width: 79px;
         height: 35px;
         background: #0099ec;
         line-height: 35px;

@@ -21,9 +21,9 @@
 
 <%
     String path = request.getContextPath();
-    String resourcePath = request.getContextPath();
 
     ApplicationProperties properties = WebApplicationContextUtils.getWebApplicationContext(application).getBean(ApplicationProperties.class);
+    String resourcePath = properties.getMap().get("STATIC_RESOURCE").toString();
     String picPath = properties.getMap().get("SERVER_PIC_PATH").toString();
     request.setAttribute("picPath", picPath);
 

@@ -1,8 +1,6 @@
 package com.flyout.domain;
 
 import com.flyout.common.enums.EnableEnum;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -36,10 +34,8 @@ public class SchoolInfo {
     private String rate;//录取率
 
     @Lob
-    @Fetch(FetchMode.SELECT)
-    @Type(type="org.hibernate.type.PrimitiveByteArrayBlobType")
     @Column(name = "description_si")
-    private byte[] description;//简介
+    private String description;//简介
 
     @Lob
     @Basic(fetch = FetchType.LAZY)
@@ -140,11 +136,11 @@ public class SchoolInfo {
         this.rate = rate;
     }
 
-    public byte[] getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(byte[] description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

@@ -1,5 +1,6 @@
 package com.flyout.common.util;
 
+import com.flyout.common.OrderInfo;
 import com.flyout.common.PaginationInfo;
 import org.apache.commons.lang3.StringUtils;
 
@@ -28,14 +29,14 @@ public class PaginationUtil {
                 try {
                     if (StringUtils.isNotEmpty(pageNoStr)) {
                         int pageNo = Integer.parseInt(pageNoStr);
-                        pageInfo.setpageNo(pageNo);
+                        pageInfo.setPageNo(pageNo);
                     } else {
-                        pageInfo.setpageNo(1);
+                        pageInfo.setPageNo(1);
                     }
 
                     if (StringUtils.isNotEmpty(pageSizeStr)) {
                         int pageSizes = Integer.parseInt(pageSizeStr);
-                        pageInfo.setpageSizes(pageSizes);
+                        pageInfo.setPageNo(pageSizes);
                     }
 
                     return pageInfo;
@@ -48,6 +49,28 @@ public class PaginationUtil {
             }
         } catch (Exception e) {
             System.out.println("不执行分页处理");
+            return null;
+        }
+    }
+
+    public static OrderInfo getOrderFromRequest() {
+        try {
+            HttpServletRequest request = WebContextUtil.getRequest();
+            String order = request.getParameter("order");
+            String sequence = request.getParameter("sequence");
+            if (StringUtils.isNotEmpty(order)) {
+                if (StringUtils.isEmpty(sequence)) {
+                    sequence = "asc";
+                }
+                OrderInfo orderInfo = new OrderInfo();
+                orderInfo.setName(order);
+                orderInfo.setSequence(sequence);
+                return orderInfo;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println("不进行排序");
             return null;
         }
     }

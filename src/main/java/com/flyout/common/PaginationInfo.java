@@ -6,7 +6,7 @@ package com.flyout.common;
  */
 public class PaginationInfo {
     /** 记录总数 **/
-    private int count;
+    private long count;
 
     /** 每页行数 **/
     private int pageSizes = 30;
@@ -25,27 +25,27 @@ public class PaginationInfo {
         this.pageCount = pageCount;
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(long count) {
         this.count = count;
     }
 
-    public int getpageSizes() {
+    public int getPageSizes() {
         return pageSizes;
     }
 
-    public void setpageSizes(int pageSizes) {
+    public void setPageSizes(int pageSizes) {
         this.pageSizes = pageSizes;
     }
 
-    public int getpageNo() {
+    public int getPageNo() {
         return pageNo;
     }
 
-    public void setpageNo(int pageNo) {
+    public void setPageNo(int pageNo) {
         this.pageNo = pageNo;
     }
 }

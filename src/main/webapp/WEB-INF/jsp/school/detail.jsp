@@ -13,6 +13,7 @@
         .banner {
             position: relative;
             height: 400px;
+            background: url("<%=resourcePath%>/img/school/abroad_univer.png");
         }
 
         .banner img {
@@ -26,8 +27,8 @@
         }
 
         .banner .school_intre .schoo_dagai {
-            position: absolute;
             top: 0;
+            float: right;
             height: 100%;
             width: 230px;
         }
@@ -82,11 +83,10 @@
 
         .banner .school_intre .school_xqc .btn_next {
             color: #fff;
-            width: 90%;
             position: absolute;
             bottom: 10px;
-            left: 50%;
-            margin-left: -45%;
+            width: 200px;
+            margin-left: 15px
         }
 
         .banner .school_intre .school_xqc .btn_next span {
@@ -111,8 +111,7 @@
             position: absolute;
             top: 27%;
             background: #000;
-            left: 50%;
-            margin-left: -50px;
+            margin-left: 65px;
         }
 
         .banner .school_img img {
@@ -166,9 +165,9 @@
         .school_detail .school_content {
             margin-top: 10px;
             color: #999;
-            font-size: 1.5em !important;
             text-indent: 2em;
-            font-family: '微软雅黑' !important;
+            font-size: 1.5em;
+            font-family: '微软雅黑';
         }
 
         .school_content > div {
@@ -250,7 +249,6 @@
 <body>
 <%@include file="../header.jsp" %>
 <div class="banner">
-    <img src="<%=resourcePath%>/img/school/abroad_univer.png" alt="">
     <div class="school_intre">
         <div class="schoo_dagai">
             <div class="school_xqt">
