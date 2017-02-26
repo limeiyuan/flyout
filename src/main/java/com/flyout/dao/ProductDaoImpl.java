@@ -33,6 +33,8 @@ public class ProductDaoImpl extends BaseHibernateDao<Product, Long> {
                 .add(Projections.property("id"), "id")
                 .add(Projections.property("title"), "title")
                 .add(Projections.property("favoriteNum"), "favoriteNum")
+                .add(Projections.property("price"), "price")
+                .add(Projections.property("discount"), "discount")
                 .add(Projections.property("photo.path"), "photo.path")
                 .add(Projections.property("vender.venderName"), "vender.venderName")
                 .add(Projections.property("vender.photo"), "vender.photo")
