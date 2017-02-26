@@ -279,7 +279,10 @@
 <div class="school_detail">
     <p class="location">
         <img src="<%=resourcePath%>/img/abroad/location.png"
-             alt="所在位置">所在位置：<span>首页</span><span>></span><span>留学优选</span><span>></span><span>产品详情</span><span>></span><span>英国8所院校留学套餐</span>
+             alt="所在位置">所在位置：
+        <span><a href="<%=path%>/home/home.htm">首页</a></span><span>></span>
+        <span><a href="<%=path%>/school/index.htm">海外院校</a></span><span>></span>
+        <span>学校详情</span>
     </p>
     <div class="school_detail fl">
         <ul class="school_info">

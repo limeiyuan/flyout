@@ -200,6 +200,10 @@
             background: #0099ec;
         }
 
+        .school_form li {
+            cursor: pointer;
+        }
+
         .hot_school li {
             border: 1px solid #eee;
             margin-bottom: 26px;
