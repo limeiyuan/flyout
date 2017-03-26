@@ -20,12 +20,16 @@ To change this template use File | Settings | File Templates.
     .school_guarantee .location {
         padding-bottom: 5px;
     }
-    .school_guarantee .location span a{
-       color: #0099ec;text-decoration: none;
+
+    .school_guarantee .location span a {
+        color: #0099ec;
+        text-decoration: none;
     }
-    .school_guarantee .location span a:visited{
-       text-decoration: none;
+
+    .school_guarantee .location span a:visited {
+        text-decoration: none;
     }
+
     .school_guarantee .location img {
         margin-right: 6px;
     }
@@ -87,9 +91,12 @@ To change this template use File | Settings | File Templates.
         display: none;
         padding: 18px;
     }
+
     .guarantee_content > div img {
         display: block;
         margin: 0 auto 16px;
+        float: right;
+        padding: 0 0 15px 15px;
     }
 
     .guarantee_content > div.cur {
@@ -328,7 +335,9 @@ To change this template use File | Settings | File Templates.
 <div class="school_guarantee" ng-controller="mainController">
     <p class="location">
         <img src="<%=resourcePath%>/img/abroad/location.png"
-             alt="所在位置">所在位置：<span><a href="javascript:jumpTo('/')">首页</a></span><span>></span><span><a href="javascript:jumpTo('/abroadRecommend/index.htm')">留学优选</a></span><span>></span><span><a href="javascript:void(0)">产品详情</a></span><span>></span><span> ${product.title}</span>
+             alt="所在位置">所在位置：<span><a href="javascript:jumpTo('/')">首页</a></span><span>></span><span><a
+            href="javascript:jumpTo('/abroadRecommend/index.htm')">留学优选</a></span><span>></span><span><a
+            href="javascript:void(0)">产品详情</a></span><span>></span><span> ${product.title}</span>
     </p>
 
     <div class="study_packages">
@@ -337,7 +346,7 @@ To change this template use File | Settings | File Templates.
         </div>
         <div class="right_tex fr">
             <div class="title_box">
-                <h3>${product.title}  飞出国推荐 </h3>
+                <h3>${product.title} 飞出国推荐 </h3>
                 <p>一站式服务 超高申请通过率</p>
                 <span>收藏</span>
             </div>
@@ -380,16 +389,6 @@ To change this template use File | Settings | File Templates.
                     <span class="fr">签约</span>
                 </div>
             </li>
-            <li>
-                <div class="consultant_img">
-                    <img src="<%=resourcePath%>/img/account/avatar.png" alt="">
-                </div>
-                <p class="consultant_name">郭强</p>
-                <div class="consultant_box">
-                    <span class="advisory fl">咨询</span>
-                    <span class="fr">签约</span>
-                </div>
-            </li>
         </ul>
     </div>
 
@@ -399,17 +398,16 @@ To change this template use File | Settings | File Templates.
             <ul class="guarantee_box">
                 <li class="cur">详情介绍</li>
                 <li>申请资格</li>
-                <li>服务保障</li>
                 <li>费用明细</li>
                 <li>入学时间</li>
             </ul>
             <div class="guarantee_content">
                 <div class="cur">
-                    <img src="${picPath}${product.introPhoto.path!=null?product.introPhoto.path:'/fly/product/default.jpg'}" alt="">
-                    <p>${product.intro}</p>
+                    <img src="${picPath}${product.introPhoto.path!=null?product.introPhoto.path:'/fly/product/default.jpg'}"
+                         alt="">
+                    <div>${product.detail}</div>
                 </div>
                 <div>${product.targetUsers}</div>
-                <div>${product.detail}</div>
                 <div>${product.priceDetail}</div>
                 <div>${product.timePlace}</div>
             </div>

@@ -79,7 +79,7 @@ public class Product {
     @Column(name = "target_users_pi")
     private String targetUsers;
 
-    @Column(name = "detail_pi")
+    @Column(name = "detail_pc_pi")
     private String detail;
 
     @Column(name = "price_detail_pi")
