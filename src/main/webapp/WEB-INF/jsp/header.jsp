@@ -362,7 +362,7 @@
             <li><a href="<%=path%>/home/home.htm">首页</a></li>
             <li><a href="<%=path%>/abroadRecommend/index.htm">留学优选</a></li>
             <li><a href="<%=path%>/school/index.htm">海外院校</a></li>
-            <li><a href="http://www.lionstudy.com">LionStudy</a> </li>
+            <li><a href="http://www.lionstudy.com">语言中心</a> </li>
         </ul>
     </div>
 </div>

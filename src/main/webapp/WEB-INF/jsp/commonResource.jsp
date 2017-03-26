@@ -7,7 +7,8 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
-<meta name="description" content="鹏润飞出国留学平台，定位于一个优质的留学信息平台，致力于整合留学产业，通过甄选优质的服务提供商入驻，为学生提供一站式服务，15年出国留学、海外移民服务经验保证。全国咨询电话：400-6688-066">
+<meta name="description"
+      content="鹏润飞出国留学平台，定位于一个优质的留学信息平台，致力于整合留学产业，通过甄选优质的服务提供商入驻，为学生提供一站式服务，15年出国留学、海外移民服务经验保证。全国咨询电话：400-6688-066">
 <meta name="Author" content="fcgliuxue.com 飞出国留学">
 <meta name="keywords" content="飞出国 留学优选 移民评估 海外院校 留学顾问 留学资讯 澳大利亚留学 新西兰大学 英国中介">
 <meta name="Copyright" content="鹏润教育集团 飞出国留学 版权所有">
@@ -39,12 +40,18 @@
 <link type="text/css" href="<%=resourcePath%>/rongyun/css/RongIMWidget.css" rel="stylesheet"/>
 <link type="text/css" href="<%=resourcePath%>/css/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
 
-<script src="<%=resourcePath%>/js/jquery-3.1.1.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/angular.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/angular-animate.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/angular-resource.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/angular/ui-bootstrap-tpls-2.2.0.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
-<script src="<%=resourcePath%>/js/bootstrap/bootstrap.min.js" type="text/javascript" charset="UTF-8" language="javascript"></script>
+<script src="<%=resourcePath%>/js/jquery-3.1.1.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular-animate.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/angular-resource.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/angular/ui-bootstrap-tpls-2.2.0.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
+<script src="<%=resourcePath%>/js/bootstrap/bootstrap.min.js" type="text/javascript" charset="UTF-8"
+        language="javascript"></script>
 <script src="<%=resourcePath%>/rongyun/RongIMWidget.min.js" type="text/javascript"></script>
 <script src="<%=resourcePath%>/js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<%=resourcePath%>/js/bootbox.min.js" type="text/javascript"></script>
@@ -94,6 +101,12 @@
             },
             callback: callback
         });
+    }
+
+    function jumpTo(url) {
+        if (url) {
+            window.location.href = url;
+        }
     }
 </script>
 

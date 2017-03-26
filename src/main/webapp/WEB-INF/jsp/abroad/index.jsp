@@ -508,13 +508,13 @@
                     <div><img
                             ng-src="{{product.photo.path!=null ? '<%=picPath%>'+product.photo.path : '<%=resourcePath%>/img/school/schoo_view.png'}}"
                             alt=""></div>
-                    <div ng-show="show" class="mask_school">
+                    <div ng-show="show" class="mask_school" ng-click="detail(product.id)">
                         <p class="schoo_name">{{product.title}}</p>
                         <p>地区：{{product.nation.name}}</p>
                         <p>购买：{{product.orderNum}}</p>
                         <p>点赞：{{product.clickNum}}</p>
                         <p class="hot_prof">收藏：{{product.favoriteNum}}</p>
-                        <div class="details" ng-click="detail(product.id)">查看详情</div>
+                        <div class="details">查看详情</div>
                     </div>
                     <p>{{product.title}}</p>
                     <p class="passing_rate">申请通过率8%</p>

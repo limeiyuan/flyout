@@ -328,7 +328,7 @@ To change this template use File | Settings | File Templates.
 <div class="school_guarantee" ng-controller="mainController">
     <p class="location">
         <img src="<%=resourcePath%>/img/abroad/location.png"
-             alt="所在位置">所在位置：<span><a href="javascript:void(0)">首页</a></span><span>></span><span><a href="javascript:void(0)">留学优选</a></span><span>></span><span><a href="javascript:void(0)">产品详情</a></span><span>></span><span> ${product.title}</span>
+             alt="所在位置">所在位置：<span><a href="javascript:jumpTo('/')">首页</a></span><span>></span><span><a href="javascript:jumpTo('/abroadRecommend/index.htm')">留学优选</a></span><span>></span><span><a href="javascript:void(0)">产品详情</a></span><span>></span><span> ${product.title}</span>
     </p>
 
     <div class="study_packages">
