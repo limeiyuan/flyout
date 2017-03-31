@@ -24,6 +24,7 @@ public class BlogDaoImpl extends BaseHibernateDao<Blog, Long> {
         DetachedCriteria dc = createDetachedCriteria();
         dc.add(Restrictions.eq("enable", EnableEnum.enable));
         dc.addOrder(Order.asc("order"));
+        dc.addOrder(Order.desc("createTime"));
         if (category != null) {
             dc.add(Restrictions.eq("category", category));
         }
